@@ -1,0 +1,1 @@
+groff -e -ms test.ms -Tps > psfile.ps && ps2pdf psfile.ps

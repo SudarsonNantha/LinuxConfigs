@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =3
+let g:netrw_dirhist_3='/home/sudarson/Study'
+let g:netrw_dirhist_2='/home/sudarson/Study/ALEMO'
+let g:netrw_dirhist_1='/home/sudarson/Study/ALEMO/TP4'
+let g:netrw_dirhist_0='/home/sudarson/Study/NUMME/FE_Lab2'
+let g:netrw_dirhist_9='/home/sudarson/Study/NUMME'
+let g:netrw_dirhist_8='/home/sudarson/Study/ALEMO'
+let g:netrw_dirhist_7='/home/sudarson/Study'
+let g:netrw_dirhist_6='/home/sudarson/Study/ALEMO'
+let g:netrw_dirhist_5='/home/sudarson/Study'
+let g:netrw_dirhist_4='/home/sudarson/Study/ALEMO'

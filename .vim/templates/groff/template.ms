@@ -1,0 +1,1 @@
+/home/sudarson/.config/groff/groff_template.ms

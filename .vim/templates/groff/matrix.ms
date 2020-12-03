@@ -1,0 +1,1 @@
+/home/sudarson/.config/groff/matrix.ms
