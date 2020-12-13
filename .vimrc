@@ -47,10 +47,16 @@ augroup END
 
 " Groff options
 	" Load template when creating a new file
-	au BufNewFile *.ms r $HOME/.vim/templates/groff/template.ms
+	au BufNewFile *.ms r  $HOME/.vim/templates/groff/ms_template.ms
+    au BufNewFile *.mom r $HOME/.vim/templates/groff/mom_template.mom
 
-	" Set file type to groff
-	au BufNewFile,BufRead *.ms set filetype=groff
+    " Set file type to groff
+	au BufNewFile,BufRead *.ms,*.mom set filetype=groff
 
 	" Insert matrix templates
 	autocmd FileType groff nnoremap <leader>m :-1read $HOME/.vim/templates/groff/matrix.ms<CR>/ccol {<CR>5l i
+
+
+
+
+

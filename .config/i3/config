@@ -30,6 +30,7 @@ for_window [class="Xfce4-terminal"] border normal
 # screen before suspend. Use loginctl lock-session to lock your screen.
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
+
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
@@ -251,21 +252,22 @@ mode "(S)uspend, (L)ogout, (R)eboot, (P)oweroff" {
 #				  									#
 #####################################################
 
-set $Locker i3lock && sleep 1
-bindsym $mod+shift+x exec i3lock
+#set $Locker i3lock && sleep 1
+#bindsym $mod+shift+x exec $Locker
 
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
 mode "$mode_system" {
-    bindsym l exec --no-startup-id $Locker, mode "default"
+    bindsym l exec --no-startup-id /home/sudarson/.local/bin/i3Screenlocker, mode "default"
     bindsym e exec --no-startup-id i3-msg exit, mode "default"
-    bindsym s exec --no-startup-id $Locker && systemctl suspend, mode "default"
-    bindsym h exec --no-startup-id $Locker && systemctl hibernate, mode "default"
+    bindsym s exec --no-startup-id /home/sudarson/.local/bin/i3Screenlocker && systemctl suspend, mode "default"
+    bindsym h exec --no-startup-id /home/sudarson/.local/bin/i3Screenlocker && systemctl hibernate, mode "default"
     bindsym r exec --no-startup-id systemctl reboot, mode "default"
     bindsym p exec --no-startup-id systemctl poweroff -i, mode "default"
 
     # back to normal: Enter or Escape
     bindsym Return mode "default"
     bindsym Escape mode "default"
+
 }
 
 bindsym $mod2+Shift+e mode "$mode_system"; exec "i3-nagbar -t warning -m 'Press (L)ock, (E) Logout, (S)uspend, (H)ibernate, (R)eboot, (P)oweroff'"

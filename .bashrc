@@ -59,6 +59,8 @@ shopt -s autocd		# Auto change directory
 alias ls="ls -hN --color=auto --group-directories-first"
 alias cat="echo 'This is actually highlight, check .bashrc aliases for cat' && echo && highlight --out-format=ansi"
 alias mkdir="mkdir -pv"
+alias numme="cd /home/sudarson/Study/NUMME/NUMMEFELab2020-2021/"
+alias alemo="cd /home/sudarson/Study/ALEMO/Project/"
 
 # Paths for executable files
 export PATH=$PATH:/usr/bin/thunderbird
