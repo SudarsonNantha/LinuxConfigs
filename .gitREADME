@@ -5,6 +5,7 @@ Custom Linux Configs
 
 
 git add foobar                  # add file to be commited
+git add --all                   # add all updated files to commit
 git commit -m "Commit message"  # commit changes with a meaningful message
 git status                      # get the status of files to be changed
 git push -u origin master       # push changes to github with upstream reference

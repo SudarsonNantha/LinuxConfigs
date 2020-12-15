@@ -1,82 +1,3 @@
-gropdf test.mom > abc.ps
-clear
-gropdf -Tpdf test.mom > abc.pdf
-clear
-rm abc.*
-clear
-groff -e -mom -Tps test.mom > test.ps
-groff -e -mom -Tps test.mom > test.ps
-groff -e -Tps test.mom > test.ps
-groff -mom -kept -Tpdf test.mom > test.pdf
-groff -mom -kept -Tps test.mom > test.ps
-groff -mom -kept -Tps test.mom > test.ps
-groff -e -mom -kept -Tps test.mom > test.ps
-groff -e -mom -Tps test.mom > test.ps
-pdfmom -e -Tps test.mom > test.pdf
-pdfmom -e -Tps test.mom > test.pdf
-pdfmom -e -Tps test.mom > test.pdf
-pdfmom -e -Tps test.mom > test.pdf
-pdfmom -e -Tps test.mom > test.pdf
-pdfmom -e -Tps test.mom > test.pdf
-pdfmom -e -Tps test.mom > test.pdf
-pdfmom -e -Tps test.mom > test.pdf
-pdfmom -e -Tps test.mom > test.pdf
-groff -e -mom test.mom -Tps > test.ps
-groff -e -mom test.mom -Tps > test.ps
-groff -e -mom test.mom -Tps > test.ps
-groff -e -mom test.mom -Tps > test.ps
-clear
-groff -e -mom test.mom -Tps > test.ps
-groff -e -mom test.mom -Tps > test.ps
-groff -e -mom test.mom -Tps > test.ps
-groff -e -mom test.mom -Tps > test.ps
-groff -e -mom test.mom -Tps > test.ps
-groff -e -mom test.mom -Tps > test.ps
-pdfmom -e -Tps test.mom > test.pdf
-groff --version
-groff -h
-groff -mom
-clear
-vim .local/bin/compiler 
-cd Test/
-vim .local/bin/compiler 
-vim ~/.local/bin/compiler 
-ls
-rm test.py 
-vim ~/.local/bin/compiler 
-vim test.mom
-ls mom-2.4-4_b/momdoc/
-ls mom-2.4-4_b/examples/
-cd mom-2.4-4_b/examples/
-ls
-vim mom.vim 
-vim ~/.local/bin/compiler 
-cat ~/.config/groff/compileCommands 
-cat ~/.config/groff/compileCommands 
-cat ~/.config/groff/compileCommands --syntax C
-groff -mom -kept sample_docs.mom -T pdf > test.pdf
-groff -mom sample_docs.mom > test.ps
-evince test.p
-evince test.ps 
-clear
-vim test.mom
-groff -mom test.mom > test.ps
-groff -mom test.mom > test.ps
-groff -mom test.mom > test.ps
-evince test.ps 
-evince test.ps 
-evince test.ps $
-evince test.ps &
-evince test.ps &
-evince test.ps &
-evince test.ps &
-evince test.ps &
-evince test.ps &
-evince test.ps &
-evince test.ps &
-groff -mom sample_docs.mom > test.ps 
-evince test.ps 
-groff -mom sample_docs.mom > test.ps 
 evince test.ps 
 groff -mom sample_docs.mom > test.ps 
 groff -mom sample_docs.mom > test.ps 
@@ -498,3 +419,82 @@ octave-cli
 exit
 numme 
 vim Report.ms 
+git status
+git add .vim/
+git status
+git add --all
+git status
+git add Study/NUMME/NUMMEFELab2020-2021/Report.ms 
+git add Study/NUMME/NUMMEFELab2020-2021/Report.ms -f
+git add Study/NUMME/NUMMEFELab2020-2021/tri3ThermalDirect.py -f
+git add Study/NUMME/NUMMEFELab2020-2021/checkFE.py -f
+git add Study/NUMME/NUMMEFELab2020-2021/testFE.py -f
+git status
+cat .gitREADME 
+git commit -m "Config changes and backedup NUMME work"
+git status
+git push -u origin master
+clear
+sudo pacman -Syy
+sudo pacman -Syu
+clear
+vim .gitREADME 
+ffrecord DIFF_TD_GRPA
+exit
+numme
+vim testFE.py 
+vim testFE.py 
+numme
+vim checkFE.py 
+ls -l
+ls -lh
+clear
+ls -l
+ls | grep *.py > pyfiles
+cat pyfiles 
+ls | grep *.py 
+ls 
+ls | grep .py
+ls | grep .msh
+ls | grep *.msh
+ls | grep "*.msh"
+ls *.msh
+clear
+ls *.msh > meshfiles
+cat meshfiles 
+vim meshfiles 
+sed "s/$/,/g" meshfiles 
+ls *.msh > meshfiles
+cat meshfiles 
+awk '{ print "\""$0"\""}' meshfiles 
+sed "s/$/,/g" meshfiles 
+cat meshfiles 
+awk '{ print "\""$0"\""}' meshfiles 
+cat meshfiles 
+awk '{ print "\""$0"\""}' meshfiles > meshfiles
+cat meshfiles 
+ls *.msh > meshfiles
+cat meshfiles 
+awk '{ print "\""$0"\""}' meshfiles
+cat meshfiles 
+awk '{ print "\""$0"\""}' meshfiles > test
+cat test
+sed "s/$/,/g" test
+vim test
+sed "s/$/,/g" test
+vim checkFE.py 
+vim checkFE.py 
+wq
+mogrify -format eps *square*.png
+ls *eps
+ls -l
+ls -d
+ls -d *
+clear
+ls -d $PWD/*
+ls -d $PWD/*.eps
+ls -l $PWD/*.eps
+numme
+vim Report.ms 
+ffrecord COMEC_TD
+numme

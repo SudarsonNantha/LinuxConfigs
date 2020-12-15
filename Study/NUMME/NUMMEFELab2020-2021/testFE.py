@@ -53,8 +53,8 @@ meshes = [
             "circuit2.msh",             #19
             "circuit3.msh",             #20
           ]
-meshNumber = 11
-openMesh = 0
+meshNumber = 2
+openMesh = 1
 displayU = 0
 isFD = 0
 plotErrors = 1
@@ -116,15 +116,16 @@ name = meshName[:-4]
 exportName = 'outputs/temp' + '-' + name + '.pos'
 
 
-if case != -1 and plotErrors == 0:
+if plotErrors == 0:
     U = solveFE(meshName, conductivities, BCNs, BCD_lns, BCD_nds, sourceTerm, exportName, useSparse, verboseOutput)
+    print(U)
     # Open export .pos file in Gmsh
     if openMesh == 1:
         cmd = "gmsh " + exportName + " &"
         os.system(cmd)
 
 # Plot errors if file is normal square
-if plotErrors == 1:
+else:
     isBimat = 0
     if case == 0:
         newMesh = square
@@ -140,15 +141,24 @@ if plotErrors == 1:
     e = np.zeros(N)
     a = np.zeros(N)
 
+    plt.figure()
+    plt.plot(xex,uex,label='Exact Solution',linewidth=3,color='black')
     for i in range(0,len(newMesh)):
         meshName = newMesh[i]
         U = solveFE(meshName, conductivities, BCNs, BCD_lns, BCD_nds, sourceTerm, exportName, useSparse, verboseOutput)
-        u, v = getApprox1D(U,K,qN,r,isBimat)
+        x, u, v = getApprox1D(U,K,qN,r,isBimat)
         e[i] = max(abs(v-u))
         a[i] = sum(abs(v-u))/len(u)
 
         print(meshName)
         print('Max Error = %g, Avg Error = %g\n'%(e[i],a[i]))
+
+        plt.plot(x,u, label=newMesh[i])
+
+    plt.legend()
+    plt.grid()
+    plt.savefig('Exact-vs-Approx_r=%g.png'%r)
+    plt.show()
 
     plt.figure(num=None, figsize=(8, 6), dpi=80, facecolor='w', edgecolor='k')
     #plt.figure()
@@ -161,6 +171,6 @@ if plotErrors == 1:
     plt.ylabel("Error")
     plt.legend()
     plt.grid()
-    plt.savefig("Fig.png")
-#    plt.show()
+    plt.savefig('ErrorPlot_r=%g.png'%r)
+    plt.show()
 

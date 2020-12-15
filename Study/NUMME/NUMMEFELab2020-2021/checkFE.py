@@ -5,14 +5,17 @@ import matplotlib.pyplot as plt
 def getApprox1D(U,K,qN,r,isBitmat = 0):
     N = getSize(len(U))
     u = np.zeros(N)
+
+
     U = np.sort(U)
     p = np.zeros(N)
     L = 1
 
     u = U[N-1:N*N-N:N]
+
     u = np.insert(u,0,0,axis=0)
-#    for i in range(0,len(u)):
-#        print('U[%i]= %f\n'%(i+1,u[i]))
+    for i in range(0,len(u)):
+        print('U[%i]= %f\n'%(i+1,u[i]))
     x = np.linspace(-L,L,N)
 
     print(u)
@@ -31,7 +34,7 @@ def getApprox1D(U,K,qN,r,isBitmat = 0):
         K1 = K[0]
         p = uFunSquare(np.linspace(-L,L,N),K1,qN,r,L)
 
-    return u, p
+    return x, u, p
 
 def getSize(c):
     a = 1
@@ -45,7 +48,6 @@ def uFunSquare(x,K,qN,r,L):
     return -(r*x**2/(2*K)) + (qN + r*L)*x/K + 3*r*L**2/(2*K) + qN*L/K
 
 def uFunBimat_1(x,K,qN,r,L):
-#    return -(r*x**2/(2*K)) + qN*x/K + r*L**2/(2*K) + qN*L/K
     return -(r*x**2/(2*K)) + qN*x/K + r*L**2/(2*K) + qN*L/K
 
 def uFunBimat_2(x,K,qN,r,L,prev):

@@ -76,7 +76,7 @@ N sub i (x)~=~c sub 0 sup i + c sub 1 sup i x + c sub 2 sup i y~~~~i=k,l,m
 .LP
 Each of these interpolation functions
 .I "N\*<i\*>"
-must satusfy the condition that they are equal to 1 at
+must satisfy the condition that they are equal to 1 at
 .I "x\*<i\*>"
 and 0 everywhere else. For example,
 .EQ I
@@ -214,7 +214,11 @@ In the case of isotropic matrial, [K] is a diagonal and:
 [K sub e ] = Kappa~A sub e~[B sub e ] sup T [B sub e ]
 .EN
 .LP
-First, seperate functions to compute the area of an element and constants c\*<k\*>, c\*<l\*>, and c\*<m\*> were written to cleanup the code and make these values available to any function.
+First, seperate functions to compute the area of an element and constants c\*<k\*>, c\*<l\*>, and c\*<m\*> were written to cleanup the code and make these values available anywhere in the script. The
+.I "getConstants()"
+function takes arguements for the coordinates of elemental nodes and finds the coefficients of the interpolation functions by solving the linear system of equations. The
+.I "getArea()"
+function finds area of the triangular element using its coordinates. This function takes advantage of the fact that area of a triangle is half the determinant of its coordinates.
 
 .ft CW
 .B1
@@ -266,19 +270,200 @@ def computeKe(xyzVerts, conductivity):
 .B2
 .ft
 
-
-\# Invoke monospace font for code using .ft CW
-\# CW stands for constant width
-\#
-\# Change font size using .ps <n> or .ps +-<n>
-\#
-\# Code can be put in a box by putting it between .B1 and .B2
+.NH 2
+Compute Volumic Force Vector
+.LP
+The equation to compute Volumic Force Vector and its function definition are:
+.EQ I
+[F sub e sup v ] = r over 3 A sub e~
+left [ matrix{
+ccol {1 above 1 above 1}
+} right ]
+.EN
 .B1
 .ft CW
-def myfunction(arg):
-    arg = arg**2 - arg + 1
-    return int(arg)
+def computeFve(xyzVerts, sourceTerm, physElt):
+    N = 3
+    area = getArea(xyzVerts)
+    Fve = np.zeros(N)
+    one = np.ones(N)
+
+    Fve = sourceTerm(xyzVerts,physElt) * area * one / 3
+
+    return Fve
 .sp
 .ft
 .B2
-.PSPIC -I 4 /home/sudarson/.config/groff/pondy.eps
+.NH 2
+Compute Neumann Force Vector
+.SH
+WHAT TO WRITE HERE??
+.ft CW
+.B1
+def computeFNe(xyzVerts, flux):
+    x1 = xyzVerts[0][0]
+    x2 = xyzVerts[1][0]
+    y1 = xyzVerts[0][1]
+    y2 = xyzVerts[1][1]
+    Le = np.sqrt( (x2-x1)**2 + (y2-y1)**2)
+
+    FNe = [flux*Le/2, flux*Le/2]
+
+    return FNe
+
+.B2
+.ft
+.bp
+.NH 2
+Results
+.LP
+The following results were obtained by  considering
+.I "u = 0"
+on the Dirichlet Boundary,
+.I "q\*<N\*> = 1"
+on the Neumann Boundary, and source term
+.I "r = 0."
+For group A-03, the conductivity was 3
+.I "W/mK."
+These results are shown for a 4x4, 10x10, 20x20, and 40x40 mesh.
+\#.PSPIC -C /home/sudarson/Study/NUMME/NUMMEFELab2020-2021/outputs/temp-square4x4.eps 6.5
+\#.PSPIC -C /home/sudarson/Study/NUMME/NUMMEFELab2020-2021/outputs/temp-square10x10.eps 6.5
+\#.PSPIC -C /home/sudarson/Study/NUMME/NUMMEFELab2020-2021/outputs/temp-square20x20.eps 7
+\#.PSPIC -C /home/sudarson/Study/NUMME/NUMMEFELab2020-2021/outputs/temp-square40x40.eps 7
+.bp
+.NH
+Analytical Solution
+.NH 2
+Solving the problem in 1 Dimension
+.LP
+It can be seen clearly from the FEM results that this problem has the same temperature anywhere along the x-axis. Therefore, the problem can be reduced from a 2D problem into a 1D problem.
+.EQ I
+(S)~=~~
+left { matrix{
+lcol {~div({q bar }) - r = 0 above
+      ~q bar = -K. del u above
+      ~u(x) = u sub D (x)~\[fa]~x~~\[mo]~partial Omega sub D above
+      ~-{q bar}.{n bar} = q sub N~~~~\[fa]~x~~\[mo]~partial Omega sub N  }
+}
+.EN
+
+.EQ I
+\[rA]~~~~ div(- Kappa . del bar u ) - r = 0~~~~~~~~~~~
+\[rA]~~~- Kappa~ div({del bar} u ) = r~~~~(if~ Kappa~ is~ a~ constant)
+.EN
+.EQ I
+\[rA]~~~~Delta u = -r over Kappa~~~~~~
+or~~~~~~
+{partial sup 2 u} over {partial x sup 2} + {partial sup 2 u} over {partial y sup 2} = -r over Kappa
+.EN
+.LP
+Since we can simplify our problem into a 1D problem, the derivitave of
+.I "x"
+is equal to zero.
+.EQ I
+\[3d]~~~~ {partial sup 2 u} over {partial y sup 2}~=~mark u''~=~-r over K
+.EN
+.EQ I
+lineup u'~=~-ry over Kappa + A
+.EN
+.EQ I
+lineup u~=~{-ry sup 2} over 2K + Ay + B~~~~\[fa]~u~~\[mo]~[-L, L]
+.EN
+.LP
+This is the general solution of the problem. The exact solution can be found by considering boundary conditions.
+.LP
+.B "Neumann Boundary Condition"
+.LP
+The Neumann boundary on
+.EQ I
+From~~q bar = - Kappa . del bar u~~~and~~~~-{q bar}.{n bar} = q sub N~~~~\[fa]~y~~\[mo]~partial Omega sub N
+.EN
+.EQ I
+del bar u~=~u'~= {q sub N} over Kappa~~~~~\[fa]~y~~\[mo]~partial Omega sub N
+.EN
+.EQ I
+\[3d]~~~~~u'(L)~=~{-rL} over Kappa + A~=~{q sub N} over Kappa~~~~~~~~~~~~~~when~y~=~L
+.EN
+.EQ I
+\[rA]~~~~ A~=~{q sub N + r~L} over Kappa
+.EN
+.LP
+.B "Dirichlet Boundary Conditions"
+.EQ I
+u(-L)~=~{-r (-L) sup 2} over {2 Kappa} + A(-L) + B = 0~~~~~~when~y~\[mo]~-L
+.EN
+.EQ I
+\[rA]~B~=~3 over 2 {r L sup 2} over Kappa + {q sub N L} over Kappa
+.EN
+.LP
+Therefore the exact 1D problem can be written as follows:
+.EQ I
+u(y)~=~{-ry sup 2} over {2 Kappa} + {(q sub N + rL) y} over Kappa + ~3 over 2 {r L sup 2} over Kappa + {q sub N L} over Kappa
+.EN
+.LP
+When source term
+.I "r = 0"
+the equation is simplified into the form:
+.EQ I
+u(y)~={q sub N} over Kappa (y + L)
+.EN
+.LP
+The exact analytical solution represented as a python function
+.I "uFunSquare()"
+like so:
+
+.ft CW
+.B1
+def uFunSquare(x,K,qN,r,L):
+    return -(r*x**2/(2*K)) + (qN + r*L)*x/K + 3*r*L**2/(2*K) + qN*L/K
+
+.B2
+.ft
+.NH 2
+Getting the FEM Solution
+.LP
+A seperate file
+.I "checkFE.py"
+was written to check the FEM results and compare it to the analytical solution (the above mentioned
+.I "uFunSquare()"
+function is also included in this file). Since the results from the FEM calculation are random and hard to decode, it becomes difficult to find out the temperature at each node. Since this problem can be considered a 1D problem, only one value from each row of nodes is required. The built-in function
+.I "numpy.sort()"
+was employed to sort the values in order of lowest value to highest values, and then the lowest value from each row was considered the temperature at that particular 1D node. It was noticed from
+.I "solveFE.py"
+that the the variable
+.I "U"
+did not store the temperature of the nodes at the Dirichlet Boundary. Hence, a seperate function
+.I "getSize()"
+was written to get the true size of the mesh as the number of nodes on each side of the square mesh.
+
+.ft CW
+.B1
+def getApprox1D(U,K,qN,r):
+    N = getSize(len(U))
+    u = np.zeros(N)
+    U = np.sort(U)
+    p = np.zeros(N)
+    L = 1
+
+    u = U[N-1:N*N-N:N]
+    u = np.insert(u,0,0,axis=0)
+    x = np.linspace(-L,L,N)
+
+    K1 = K[0]
+    p = uFunSquare(np.linspace(-L,L,N),K1,qN,r,L)
+
+    return u, p
+
+def getSize(c):
+    a = 1
+    b = -1
+    c = -c
+    d = b**2 - 4*a*c
+    size = (-b+math.sqrt(d))/2*a
+    return int(size)
+
+.B2
+.ft
+.NH 2
+Comparing FEM Solution to Analytical Solution
+
