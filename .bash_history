@@ -1,40 +1,3 @@
-evince test.ps 
-groff -mom sample_docs.mom > test.ps 
-groff -mom sample_docs.mom > test.ps 
-evince test.ps 
-groff -mom sample_docs.mom > test.ps 
-evince test.ps 
-groff -mom sample_docs.mom > test.ps 
-evince test.ps 
-groff -mom sample_docs.mom > test.ps 
-evince test.ps 
-groff -mom sample_docs.mom > test.ps 
-evince test.ps 
-groff -mom sample_docs.mom > test.ps 
-evince test.ps 
-groff -mom test.mom > test.ps 
-evince test.ps 
-groff -mom test.mom > test.ps 
-evince test.ps 
-groff -mom test.mom > test.ps 
-evince test.ps 
-groff -mom test.mom > test.ps 
-groff -mom test.mom > test.ps 
-groff -mom test.mom > test.ps 
-evince test.ps 
-evince test.ps 
-groff -mom test.mom > test.ps 
-groff -mom test.mom > test.ps 
-groff -mom test.mom > test.ps 
-evince test.ps 
-groff -mom test.mom > test.ps 
-evince test.ps 
-groff -mom test.mom > test.ps 
-groff -mom test.mom > test.ps 
-groff -mom test.mom > test.ps 
-evince test.ps 
-groff -mom test.mom > test.ps 
-evince test.ps 
 groff -mom test.mom > test.ps 
 evince test.ps 
 groff -mom test.mom > test.ps 
@@ -498,3 +461,40 @@ numme
 vim Report.ms 
 ffrecord COMEC_TD
 numme
+git add --all
+git status
+cd .config/
+vim .gitignore 
+echo baloofileinformationrc >> .gitignore 
+echo kconf_updaterc >> .gitignore 
+cat .gitignore 
+clear
+git status
+cd ~
+git reset
+git status
+git add --all
+git status
+git commit -m "Updates to NUMME report"
+cat .gitREADME 
+git push -u origin master
+clear
+numme
+ls *.png
+rm Fig.png 
+mogrify -format png *.eps
+mogrify -format eps *.png
+ls *.eps
+ls $PWD/*.eps
+ls -l $PWD/*.eps
+numme
+ls *.eps
+rm Exact-vs-Approx_r\=1..eps 
+numme
+cd outputs/
+mogrify -format eps *.png
+echo "mogrify -format eps *.png" > epsConvert
+cat epsConvert 
+chmod +x epsConvert 
+./epsConvert 
+clear

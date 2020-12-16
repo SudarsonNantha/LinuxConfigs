@@ -466,4 +466,106 @@ def getSize(c):
 .ft
 .NH 2
 Comparing FEM Solution to Analytical Solution
+.LP
+In order to check that our FEM solutions are accurate, it is important to compare them to the analytical solution and plot the error. We expect the errors to reduce as we increase the mesh density, i.e make the mesh finer. It was observed that the FEM solution was very close to the analytical solution when there was no source term present, but the accuracy of the error is more defined if there is a source term.
 
+.ft CW
+.B1
+    isBimat = 0
+    if case == 0:
+        newMesh = square
+        xex, uex = getExactSoln_Square(K,qN,r)
+        newMesh.pop(0)
+    if case == 1:
+        newMesh = bimat
+        isBimat = 1
+        xex, uex = getExactSoln_Bimat(K,qN,r)
+    N = len(newMesh)
+    e = np.zeros(N)
+    a = np.zeros(N)
+
+    plt.figure()
+    plt.plot(xex,uex,label='Exact Solution',linewidth=3,color='black')
+
+    for i in range(0,len(newMesh)):
+        meshName = newMesh[i]
+        U = solveFE(meshName, conductivities, BCNs, BCD_lns, BCD_nds, sourceTerm, exportName, useSparse, verboseOutput)
+        x, u, v = getApprox1D(U,K,qN,r,isBimat)
+        e[i] = max(abs(v-u))
+        a[i] = sum(abs(v-u))/len(u)
+
+        print('Max Error = %g, Avg Error = %g\n'%(e[i],a[i]))
+        plt.plot(x,u, label=newMesh[i])
+
+    plt.legend()
+    plt.grid()
+    plt.savefig('Exact-vs-Approx_r=%g.png'%r)
+    plt.show()
+
+    plt.figure(num=None, figsize=(8, 6), dpi=80, facecolor='w', edgecolor='k')
+    plt.plot(newMesh,e, label='Maximum Error')
+    plt.plot(newMesh,a, label='Average Error')
+    plt.scatter(newMesh,e)
+    plt.scatter(newMesh,a)
+    plt.yscale("log")
+    plt.xlabel("Meshes")
+    plt.ylabel("Error")
+    plt.legend()
+    plt.grid()
+    plt.savefig('ErrorPlot_r=%g.png'%r)
+    plt.show()
+
+
+.B2
+.ft
+.bp
+\#.PSPIC -C /home/sudarson/Study/NUMME/NUMMEFELab2020-2021/Exact-vs-Approx_r=0.eps 5.4
+\#.PSPIC -C /home/sudarson/Study/NUMME/NUMMEFELab2020-2021/ErrorPlot_r=0.eps 5.4
+.LP
+We can see here that when
+.I "r = 0"
+the errors are extremely small and that the FEM solutions are difficult to distinguish from the analytical solutions.
+.bp
+\#.PSPIC -C /home/sudarson/Study/NUMME/NUMMEFELab2020-2021/Exact-vs-Approx_r=1.eps 5.4
+\#.PSPIC -C /home/sudarson/Study/NUMME/NUMMEFELab2020-2021/ErrorPlot_r=1.eps 5.4
+.LP
+However, when
+.I "r = 1"
+the accuracy of the FEM solutions reduce significantly, and they can be distinguished from the analytical solution.
+.bp
+.NH
+Comparing solution with Finite Difference (FD) Lab
+.LP
+It is relatively simple to redefine our FE problem as the same one from the FD problem. In order to do this, the Dirichelt Boundary Conditions on all 4 corners of the square were set to
+.I "u = 0"
+, the source term was set as
+.I "r = 1"
+, and the conductivity was set to a unit value.
+Upon doing this, a contour plot very similar to FD lab was obtained.
+.LP
+It was noted that:
+.RS
+.BL
+For the same number of nodes,
+.B "Gmsh seems to display a more accurate ouput which closely resembles the exact solution."
+However, the actual error of the FEM solution is not much better than the FD solution. The graphs comparing the errors is shown below.
+.BL
+.B "FEM was demonstrated to be significantly faster than FD."
+The computing time required for FEM solution was much lower than FD solution for the same number of nodes. To compute the temperature across 5 meshes (N = 4, 10, 20, 30, 40), the FEM solution only took around
+.I "1.3 seconds"
+wherease the FD solution took approximately
+.I "5.9 seconds,"
+i.e. it was more than four times faster.
+.RE
+.PSPIC -C /home/sudarson/Study/NUMME/NUMMEFELab2020-2021/outputs/FD20x20.eps 9
+.CD
+.I "Gmsh temperature output for 20x20 mesh"
+.DE
+.PSPIC -C /home/sudarson/Study/NUMME/NUMMEFELab2020-2021/outputs/FD40x40.eps 9
+.CD
+.I "Gmsh temperature output for 40x40 mesh"
+.DE
+
+.PSPIC -C /home/sudarson/Study/NUMME/NUMMEFELab2020-2021/FD_Error.eps 5.4
+
+.PSPIC -C /home/sudarson/Study/NUMME/NUMMEFELab2020-2021/2D_ErrorLog.eps 5.4

@@ -36,6 +36,45 @@ def getApprox1D(U,K,qN,r,isBitmat = 0):
 
     return x, u, p
 
+def FDExact(L,n):
+    U = np.zeros((n,n))
+    N = 5
+    X = np.linspace(-L,L,n)
+    Y = np.linspace(-L,L,n)
+    for p in range(0,n):
+        for q in range(0,n):
+            x = X[p]
+            y = Y[q]
+            out = 0
+            for i in range(1,2*N,2):
+                for j in range(1,2*N,2):
+                    out += (64/(i*j*(i**2+j**2)*math.pi**4)) * math.sin(i*math.pi*(x+1)/2) * math.sin(j*math.pi*(y+1)/2)
+                    U[p][q] = out
+
+    return U
+
+def FD_getMaxError(U):
+    N = getSize(len(U))
+    U = np.sort(U)
+    L = 1
+
+    Uex = FDExact(L,N)
+    Uex = Uex.flatten()
+
+    U = np.sort(U)
+    Uex = np.sort(Uex)
+
+    c = 2*N+2*(N-2)
+    max = 0
+    for i in range(0,N*N):
+#        print('%i: %g - %g\n'%(i,U[i],Uex[i]))
+        temp = abs(U[i] - Uex[i])
+        if temp > max:
+            max = temp
+    print('N = %i, Error = %g\n'%(N,max))
+
+    return max, N
+
 def getSize(c):
     a = 1
     b = -1
@@ -53,6 +92,8 @@ def uFunBimat_1(x,K,qN,r,L):
 def uFunBimat_2(x,K,qN,r,L,prev):
     return -(r*x**2/(2*K)) + (qN + r*L)*x/K + prev
 
+
+    return xex, uex
 def getExactSoln_Square(K,qN,r):
     n = 100
     L = 1
