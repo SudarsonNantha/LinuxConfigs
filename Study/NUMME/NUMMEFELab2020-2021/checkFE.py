@@ -2,40 +2,42 @@ import math
 import numpy as np
 import matplotlib.pyplot as plt
 
+# This function sorts the values of U
+# and extracts 1D values from it
 def getApprox1D(U,K,qN,r,isBitmat = 0):
     N = getSize(len(U))
-    u = np.zeros(N)
+    u = np.zeros(N)     # Stores the 1D values
+    U = np.sort(U)      # Sort U values
+    p = np.zeros(N)     # Exact values for 1D nodes
+    L = 1               # Size of the boundary from -1 to 1
 
-
-    U = np.sort(U)
-    p = np.zeros(N)
-    L = 1
-
-    u = U[N-1:N*N-N:N]
+    u = U[N-1:N*N-N:N]  # Extract 1D values
 
     u = np.insert(u,0,0,axis=0)
-    for i in range(0,len(u)):
-        print('U[%i]= %f\n'%(i+1,u[i]))
+#    for i in range(0,len(u)):
+#        print('U[%i]= %f\n'%(i+1,u[i]))
+
     x = np.linspace(-L,L,N)
 
-    print(u)
+    # Two different PDEs need to be used in the case of two isotropic materials
     if isBitmat == 1:
         K1 = K[0]
         K2 = K[1]
         N = int(N/2)+1
-        p1 = uFunBimat_1(np.linspace(-L,0,N),K1,qN,r,L)
-        p2 = uFunBimat_2(np.linspace(0,L,N), K2,qN,r,L,p1[-1])
+        p1 = uFun(np.linspace(-L,0,N),K1,qN,r,L,case=1)
+        p2 = uFun(np.linspace(0,L,N), K2,qN,r,L,prev=p1[-1],case=2)
         p2 = np.delete(p2,0)
         p   = np.concatenate((p1,p2),axis=0)
-        print(p1)
-        print(p2)
-        print(p)
+
+    # Use standard PDE for single material
     else:
         K1 = K[0]
-        p = uFunSquare(np.linspace(-L,L,N),K1,qN,r,L)
+        p = uFun(np.linspace(-L,L,N),K1,qN,r,L,case=0)
 
     return x, u, p
 
+# Returns exact FD values for a given NxN mesh size
+# Taken from FD Lab script
 def FDExact(L,n):
     U = np.zeros((n,n))
     N = 5
@@ -53,18 +55,18 @@ def FDExact(L,n):
 
     return U
 
+# Compares the FEM solution to the Analytical solution
 def FD_getMaxError(U):
     N = getSize(len(U))
     U = np.sort(U)
     L = 1
 
-    Uex = FDExact(L,N)
+    Uex = FDExact(L,N)      # Stores exact temperature values
     Uex = Uex.flatten()
-
-    U = np.sort(U)
+    U = np.sort(U)          # Sorts U values like in getAprrox1D()
     Uex = np.sort(Uex)
 
-    c = 2*N+2*(N-2)
+#    c = 2*N+2*(N-2)         # Ignores zeroes
     max = 0
     for i in range(0,N*N):
 #        print('%i: %g - %g\n'%(i,U[i],Uex[i]))
@@ -72,9 +74,9 @@ def FD_getMaxError(U):
         if temp > max:
             max = temp
     print('N = %i, Error = %g\n'%(N,max))
-
     return max, N
 
+# Returns size of the mesh given the number of elements
 def getSize(c):
     a = 1
     b = -1
@@ -83,25 +85,27 @@ def getSize(c):
     size = (-b+math.sqrt(d))/2*a
     return int(size)
 
-def uFunSquare(x,K,qN,r,L):
-    return -(r*x**2/(2*K)) + (qN + r*L)*x/K + 3*r*L**2/(2*K) + qN*L/K
+# Returns exact solution based on Square or Bimat
+def uFun(y,K,qN,r,L,prev = 0, case = 0):
+    out = 0
+    if case == 0:   # Normal Square
+        out = -(r*y**2/(2*K)) + (qN + r*L)*y/K + 3*r*L**2/(2*K) + qN*L/K
+    elif case == 1: # Bimat PDE 1
+        out =  r*(L**2-y**2)/(2*K) + qN*(y+L)/K
+    elif case == 2: # Bimat PDE 2
+        out =  -(r*y**2/(2*K)) + (qN + r*L)*y/K + prev
+    return out
 
-def uFunBimat_1(x,K,qN,r,L):
-    return -(r*x**2/(2*K)) + qN*x/K + r*L**2/(2*K) + qN*L/K
-
-def uFunBimat_2(x,K,qN,r,L,prev):
-    return -(r*x**2/(2*K)) + (qN + r*L)*x/K + prev
-
-
-    return xex, uex
+# Returns high precision values for Square mesh
 def getExactSoln_Square(K,qN,r):
     n = 100
     L = 1
     K1 = K[0]
     xex = np.linspace(-L,L,n)
-    uex = uFunSquare(xex,K1,qN,r,L)
+    uex = uFun(xex,K1,qN,r,L,case=0)
     return xex, uex
 
+# Returns high precision values for Bimat mesh
 def getExactSoln_Bimat(K,qN,r):
     n = 100
     L = 1
@@ -110,13 +114,20 @@ def getExactSoln_Bimat(K,qN,r):
 
     x1 = np.linspace(-L,0,n)
     x2 = np.linspace(0,L,n)
-    u1 = uFunBimat_1(x1,K1,qN,r,L)
-    u2 = uFunBimat_2(x2,K2,qN,r,L,u1[-1])
-    u2 = np.delete(u2,0)
+    u1 = uFun(x1,K1,qN,r,L,case=1)
+    u2 = uFun(x2,K2,qN,r,L,prev=u1[-1],case=2)
 
     uex = np.concatenate((u1,u2),axis=0)
     xex = np.concatenate((x1,x2),axis=0)
     return xex, uex
+
+# Returns max temperature variation
+def getTempDiff(U):
+    U = np.sort(U)
+    p = U[0]
+    q = U[len(U)-1]
+    print("Difference: %g - %g = %g" %(p,q,abs(p-q)))
+    return abs(p-q)
 
 """
 def get1DSoln(U, K, BCN, r, bimate = 0):
@@ -187,4 +198,13 @@ def getTemp(U):
 
     return P, N
 
+def uFunSquare(y,K,qN,r,L):
+    return -(r*y**2/(2*K)) + (qN + r*L)*y/K + 3*r*L**2/(2*K) + qN*L/K
+
+def uFunBimat_1(y,K,qN,r,L):
+#    return -(r*y**2/(2*K)) + qN*y/K + r*L**2/(2*K) + qN*L/K
+    return r*(L**2-y**2)/(2*K) + qN*(y+L)/K
+
+def uFunBimat_2(y,K,qN,r,L,prev):
+    return -(r*y**2/(2*K)) + (qN + r*L)*y/K + prev
 """

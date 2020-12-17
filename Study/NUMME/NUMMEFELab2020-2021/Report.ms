@@ -1,9 +1,4 @@
 \#
-\# This is a standard groff template.
-\#
-\# Use \# to comment the entire line
-\# Use \" to add comment after some text
-\#
 \# Some standard functions:
 \# .NH <x> for a numbered section - x denotes the level of the secionl is 0 by default
 \# .SH unnumbered section
@@ -25,12 +20,21 @@
 \# Import custom macros
 \# .BL creates a bulleted list
 .so /home/sudarson/.config/groff/macros
-.TL \" Title of the document
-NUMME Lab - Finite Elements
-.AU \" Authoer of the document
-Sudarson Nanthacoumarane
-.AI \" Article institution
-Group A-03
+.ds CH
+.ds CF - % -
+.nr LL 6.3i
+.DS C
+.ps 12
+.B "Group A-03"
+.sp
+.ps 15
+.B "NUMME Lab - Finite Elements"
+
+.ps 12
+.I "Sudarson Nanthacoumarane"
+.I "Tiffany Morgan Bachelet"
+.DE
+
 .LP
 .BI "Objective"
 - Use Finite Element Methods to find the temperature distribution across a domain given the source term and boundary conditions.
@@ -53,7 +57,6 @@ Solving the problem
 We solve the problem using the Ritz Method, or by minimizing energy
 .I "J"
 in a 2-Dimentional space.
-\#in a finite dimensional subspace.
 .EQ I
 J(u sup h )~=~1 over 2 a(u sup h, u sup h )~-~b(u sup h )
 .EN
@@ -108,9 +111,6 @@ Elemental Stiffness Matrix
 The first term of the energy expression over a single element
 .I "n"
 can be written as:
-\#Since
-\#.I "J\*<a\*>"
-\#represents the global energy, we write the elemental energy as follows:
 .EQ I
 J sub a sup {(n)} =~1 over 2 a sup {(a)} (u sup h , u sup h ) = 1 over 2 int from {tau sub n} del bar u sup h Kappa del bar u sup h ~d Omega
 .EN
@@ -165,7 +165,7 @@ J sub {b,N} (u sup h ) = int from {partial Omega sub N} u sup h q sub N ~d Gamma
 .LP
 Consider the elementary contributions of the first term mentioned above:
 .EQ I
-J sub {b,v} sup {(n)} (u sup h ) = int from {Tau sub n} [U sub e ] sup T [N sub e ] r~d Omega~~ =~~ [U sub e ] sup T [F sub e sup v ]
+J sub {b,v} sup {(n)} (u sup h ) = int from {Tau sub n} [U sub e ]~ [N sub e ] sup T ~r~d Omega~~ =~~ [U sub e ] [F sub e sup v ]
 .EN
 .EQ I
 where~[F sub e sup v ] = int from {Tau sub e} [N sub e ] sup T r~d Omega
@@ -197,8 +197,15 @@ represents the Neumann boundary conditions for our problem:
 .EQ I
 J sub {b,N} (u sup h )= int from {partial Omega sub N} u sup h q sub N ~d Gamma
 .EN
-.SH
-WHAT TO WRITE HERE??
+.LP
+Across each element, this term is written as:
+.EQ I
+J sub {b,N} sup {(n)} (u sup h )= int from {Tau sub e} [U sub e ]~[N sub e ] sup T q sub N ~d Gamma
+~~~~=~~[U sub e ]~[F sub e sup N ]
+.EN
+.EQ I
+[F sub e sup N ]=~int from {edge} [N sub e ] sup T q sub N~d Gamma
+.EN
 .NH
 Complete tri3thermalDirect.py
 .NH 2
@@ -289,15 +296,17 @@ def computeFve(xyzVerts, sourceTerm, physElt):
     one = np.ones(N)
 
     Fve = sourceTerm(xyzVerts,physElt) * area * one / 3
-
     return Fve
 .sp
 .ft
 .B2
 .NH 2
 Compute Neumann Force Vector
-.SH
-WHAT TO WRITE HERE??
+.LP
+In practice, instead of writing restrictions of the interpolation functions on the Neumann Boundary, the approximation is written directly on the edges lying on the boundary as 1D interpolation functions. The integral is therefore simplified into:
+.EQ I
+[F sub e sup N ]~=~int from 0 to {edge} [N sub k ( eta ) , N sub l ( eta ) ] sup T q sub N~~d eta
+.EN
 .ft CW
 .B1
 def computeFNe(xyzVerts, flux):
@@ -308,7 +317,6 @@ def computeFNe(xyzVerts, flux):
     Le = np.sqrt( (x2-x1)**2 + (y2-y1)**2)
 
     FNe = [flux*Le/2, flux*Le/2]
-
     return FNe
 
 .B2
@@ -326,17 +334,17 @@ on the Neumann Boundary, and source term
 For group A-03, the conductivity was 3
 .I "W/mK."
 These results are shown for a 4x4, 10x10, 20x20, and 40x40 mesh.
-\#.PSPIC -C /home/sudarson/Study/NUMME/NUMMEFELab2020-2021/outputs/temp-square4x4.eps 6.5
-\#.PSPIC -C /home/sudarson/Study/NUMME/NUMMEFELab2020-2021/outputs/temp-square10x10.eps 6.5
-\#.PSPIC -C /home/sudarson/Study/NUMME/NUMMEFELab2020-2021/outputs/temp-square20x20.eps 7
-\#.PSPIC -C /home/sudarson/Study/NUMME/NUMMEFELab2020-2021/outputs/temp-square40x40.eps 7
+.PSPIC -C /home/sudarson/Study/NUMME/NUMMEFELab2020-2021/outputs/temp-square4x4.eps 6.5
+.PSPIC -C /home/sudarson/Study/NUMME/NUMMEFELab2020-2021/outputs/temp-square10x10.eps 6.5
+.PSPIC -C /home/sudarson/Study/NUMME/NUMMEFELab2020-2021/outputs/temp-square20x20.eps 7
+.PSPIC -C /home/sudarson/Study/NUMME/NUMMEFELab2020-2021/outputs/temp-square40x40.eps 7
 .bp
 .NH
 Analytical Solution
 .NH 2
 Solving the problem in 1 Dimension
 .LP
-It can be seen clearly from the FEM results that this problem has the same temperature anywhere along the x-axis. Therefore, the problem can be reduced from a 2D problem into a 1D problem.
+It can be seen clearly from the FEM results that this problem has the same temperature anywhere along the x-axis. Therefore, the problem can be reduced from a 2D problem into a 1D problem in the domain [-L,L].
 .EQ I
 (S)~=~~
 left { matrix{
@@ -367,7 +375,7 @@ is equal to zero.
 lineup u'~=~-ry over Kappa + A
 .EN
 .EQ I
-lineup u~=~{-ry sup 2} over 2K + Ay + B~~~~\[fa]~u~~\[mo]~[-L, L]
+lineup u~=~{-ry sup 2} over 2K + Ay + B~~~~\[fa]~y~~\[mo]~[-L, L]
 .EN
 .LP
 This is the general solution of the problem. The exact solution can be found by considering boundary conditions.
@@ -398,7 +406,7 @@ u(-L)~=~{-r (-L) sup 2} over {2 Kappa} + A(-L) + B = 0~~~~~~when~y~\[mo]~-L
 .LP
 Therefore the exact 1D problem can be written as follows:
 .EQ I
-u(y)~=~{-ry sup 2} over {2 Kappa} + {(q sub N + rL) y} over Kappa + ~3 over 2 {r L sup 2} over Kappa + {q sub N L} over Kappa
+u(y)~=~{-ry sup 2} over {2 Kappa} + {(q sub N + rL) } over Kappa y + ~3 over 2 {r L sup 2} over Kappa + {q sub N L} over Kappa
 .EN
 .LP
 When source term
@@ -414,8 +422,17 @@ like so:
 
 .ft CW
 .B1
-def uFunSquare(x,K,qN,r,L):
-    return -(r*x**2/(2*K)) + (qN + r*L)*x/K + 3*r*L**2/(2*K) + qN*L/K
+# Returns exact solution based on Square or Bimat
+.bp
+def uFun(y,K,qN,r,L,prev = 0, case = 0):
+out = 0
+    if case == 0:   # Normal Square
+        out = -(r*y**2/(2*K)) + (qN + r*L)*y/K + 3*r*L**2/(2*K) + qN*L/K
+    elif case == 1: # Bimat PDE 1
+        out =  r*(L**2-y**2)/(2*K) + qN*(y+L)/K
+    elif case == 2: # Bimat PDE 2
+        out =  -(r*y**2/(2*K)) + (qN + r*L)*y/K + prev
+    return out
 
 .B2
 .ft
@@ -471,22 +488,27 @@ In order to check that our FEM solutions are accurate, it is important to compar
 
 .ft CW
 .B1
+    # Finds exact solution based on square or bimat
     isBimat = 0
     if case == 0:
         newMesh = square
         xex, uex = getExactSoln_Square(K,qN,r)
-        newMesh.pop(0)
+        name = "square"
     if case == 1:
         newMesh = bimat
         isBimat = 1
         xex, uex = getExactSoln_Bimat(K,qN,r)
+        name = "bimat"
     N = len(newMesh)
     e = np.zeros(N)
     a = np.zeros(N)
+    h = np.zeros(N)
 
+    # Plot exact solution
     plt.figure()
-    plt.plot(xex,uex,label='Exact Solution',linewidth=3,color='black')
+    plt.plot(xex,uex,label='Exact Solution',linewidth=4,color='black')
 
+    # Find solution and errors for different mesh sizes
     for i in range(0,len(newMesh)):
         meshName = newMesh[i]
         U = solveFE(meshName, conductivities, BCNs, BCD_lns, BCD_nds, sourceTerm, exportName, useSparse, verboseOutput)
@@ -494,40 +516,33 @@ In order to check that our FEM solutions are accurate, it is important to compar
         e[i] = max(abs(v-u))
         a[i] = sum(abs(v-u))/len(u)
 
-        print('Max Error = %g, Avg Error = %g\n'%(e[i],a[i]))
+        print(meshName)
+        print('Max Error = %g, Avg Error = %g\\n'%(e[i],a[i]))
         plt.plot(x,u, label=newMesh[i])
+        h[i] = len(u)
 
     plt.legend()
     plt.grid()
-    plt.savefig('Exact-vs-Approx_r=%g.png'%r)
-    plt.show()
-
-    plt.figure(num=None, figsize=(8, 6), dpi=80, facecolor='w', edgecolor='k')
-    plt.plot(newMesh,e, label='Maximum Error')
-    plt.plot(newMesh,a, label='Average Error')
-    plt.scatter(newMesh,e)
-    plt.scatter(newMesh,a)
-    plt.yscale("log")
-    plt.xlabel("Meshes")
-    plt.ylabel("Error")
-    plt.legend()
-    plt.grid()
-    plt.savefig('ErrorPlot_r=%g.png'%r)
-    plt.show()
-
+    plt.xlabel("Position y", fontsize = 12)
+    plt.ylabel("Temperature u(y)", fontsize = 12)
+    plt.title('FEM Deviations for r = %g'%r)
+    figName = "Exact-vs-Approx_r=" + str(r) + "_"+name+".png"
+    plt.savefig(figName, bbox_inches='tight', dpi=300)
+    cmd = "convert "+figName+" "+figName[:-3]+"eps"     # Save as eps file to import into groff document
+    os.system(cmd)
 
 .B2
 .ft
 .bp
-\#.PSPIC -C /home/sudarson/Study/NUMME/NUMMEFELab2020-2021/Exact-vs-Approx_r=0.eps 5.4
-\#.PSPIC -C /home/sudarson/Study/NUMME/NUMMEFELab2020-2021/ErrorPlot_r=0.eps 5.4
+.PSPIC -C /home/sudarson/Study/NUMME/NUMMEFELab2020-2021/Exact-vs-Approx_r=0_square.eps 5.1
+.PSPIC -C /home/sudarson/Study/NUMME/NUMMEFELab2020-2021/ErrorPlot_r=0_square.eps 5.1
 .LP
 We can see here that when
 .I "r = 0"
 the errors are extremely small and that the FEM solutions are difficult to distinguish from the analytical solutions.
 .bp
-\#.PSPIC -C /home/sudarson/Study/NUMME/NUMMEFELab2020-2021/Exact-vs-Approx_r=1.eps 5.4
-\#.PSPIC -C /home/sudarson/Study/NUMME/NUMMEFELab2020-2021/ErrorPlot_r=1.eps 5.4
+.PSPIC -C /home/sudarson/Study/NUMME/NUMMEFELab2020-2021/Exact-vs-Approx_r=1_square.eps 5.1
+.PSPIC -C /home/sudarson/Study/NUMME/NUMMEFELab2020-2021/ErrorPlot_r=1_square.eps 5.1
 .LP
 However, when
 .I "r = 1"
@@ -552,10 +567,10 @@ However, the actual error of the FEM solution is not much better than the FD sol
 .BL
 .B "FEM was demonstrated to be significantly faster than FD."
 The computing time required for FEM solution was much lower than FD solution for the same number of nodes. To compute the temperature across 5 meshes (N = 4, 10, 20, 30, 40), the FEM solution only took around
-.I "1.3 seconds"
-wherease the FD solution took approximately
-.I "5.9 seconds,"
-i.e. it was more than four times faster.
+.I "1.9 seconds"
+whereas the FD solution took approximately
+.I "6.2 seconds,"
+i.e. it was more than three times faster.
 .RE
 .PSPIC -C /home/sudarson/Study/NUMME/NUMMEFELab2020-2021/outputs/FD20x20.eps 9
 .CD
@@ -565,7 +580,593 @@ i.e. it was more than four times faster.
 .CD
 .I "Gmsh temperature output for 40x40 mesh"
 .DE
-
 .PSPIC -C /home/sudarson/Study/NUMME/NUMMEFELab2020-2021/FD_Error.eps 5.4
-
 .PSPIC -C /home/sudarson/Study/NUMME/NUMMEFELab2020-2021/2D_ErrorLog.eps 5.4
+.LP
+From both of these error plots, we can see that the two methods have about the same accuracies, with FEM being only slightly more accurate.
+.bp
+.NH
+FEM solution for two Isotropic Materials
+.NH 2
+Modifying the program
+.LP
+It is relatively simple to solve the problem for a mesh with two isotropic materials. The only change that was required in the program was to add the conductivity of the second element to the
+.I "conductivities"
+variable defined in
+.I "testFE.py."
+In this case, a pre-defined element ID of 2000 was assigned a conductivity value of 1 W/(mm.K) was assgined.
+
+.ft CW
+.B1
+# Assigns conductivities
+.bp
+K = [3,1,1.38e-3,1510e-3]
+.bp
+if case == 0:                                   # Normal square(hole)
+.bp
+    conductivities = {1000: K[0]}
+.bp
+elif case == -1:                                # FD Problem
+.bp
+    conductivities = {1000: 1}
+.bp
+elif case == 1:                                 # Bimat and Inclusion
+.bp
+    conductivities = {1000: K[0], 2000: K[1]}
+.bp
+elif case == 2:                                 # Circuit
+.bp
+    conductivities = {1000: K[2], 2000: K[3]}
+.bp
+
+.B2
+.ft
+.PSPIC -C /home/sudarson/Study/NUMME/NUMMEFELab2020-2021/outputs/Bimat20.eps 9
+.DS C
+.I "Temperate gradient for squareBimat20.msh"
+.DE
+.bp
+.NH 2
+Analytical Solution for two Isotropic Materials
+.LP
+The exact solution across a domain with two isotropic materials must be found by defining two different PDEs - one for each material. If we reduce the problem to a 1D problem like before and split up the domain equally, the first material esists in the domain [-L,0] and the second material exists in a domain [0,L]. Consider the same general solution as a domain with single conductivity, but change the boundary conditions to match this change in boundary.
+.EQ C
+mark u(y)~=~{-ry sup 2} over {2 Kappa} + Ay + B~~~~~~~~and~~~~~~~
+u'(y)~=~{-ry} over Kappa + A
+.EN
+.SH
+First Material [-L,0]
+.EQ I
+A = {q sub N} over Kappa ~~~~~~~~~~ B = {rL sup 2} over {2 Kappa} + {q sub N L} over Kappa
+.EN
+.EQ I
+\[3d]~~~u(y)~mark =~ r over {2 Kappa} (L sup 2 - y sup 2 ) + {q sub N } over Kappa (y + L)~~~~~\[fa]~y~\[mo]~~[-L,0]
+.EN
+.SH
+Second Material [0,L]
+.EQ I
+A = {rL + q sub N} over Kappa ~~~~~~~~~~ B = T sub b ~~(Temperature~ at~ Boundary)
+.EN
+.EQ I
+\[3d]~~~u(y)~=~{-ry sup 2} over {2 Kappa} + {(rL + q sub N )} over Kappa y + T sub b~~~~~\[fa]~y~\[mo]~~[0,L]
+.EN
+
+.LP
+We can compare our FEM solution against the analytical solution, and errors can be plotted:
+.PSPIC -C /home/sudarson/Study/NUMME/NUMMEFELab2020-2021/Exact-vs-Approx_r=0_bimat.eps 5
+.PSPIC -C /home/sudarson/Study/NUMME/NUMMEFELab2020-2021/ErrorPlot_r=0_bimat.eps
+.LP
+Again, we see that when source term is equal to zero, the deviations from the analytical solution are extremely small to a point where they can be neglected.
+In the graph of
+.I "Position y v.s. Temperature u(y)"
+we see that the there is a
+.B "sudden change in slope of the graph"
+at
+.I "y = 0"
+, i.e. at the boudnary of the two materials. This is where the conductivity changes from 3 W/(mm.K) to 1 W/(mm.K).
+.bp
+.NH
+Solving the Heating Circuit
+.LP
+The conditions for the heating circuit are:
+.RS
+.BL
+Size of the plate is 4mm x 2.1mm x 0.05mm, but due to how thin the circuit is, it is modelled as a 2D problem
+.BL
+Heat source
+.I "r"
+= 1 W/mm\*{-2\*}
+.BL
+Temperature on the lateral sides = 293K, i.e. Dirichlet Boundary Conditions are fixed at 293K
+.BL
+Conductivity of Glass = 1.38 10\*{-3\*} W/(mm.K), and Conductivity of Nichrome = 15 10\*{-3\*} W/(mm.K)
+.RE
+.NH 2
+Propose a Converged Solution
+.LP
+In order to measure convergence, the max temperature variation across the mesh was recorded.
+.RS
+.BL
+.B "Circuit 0"
+- Difference: 292.198 - 538.813 = 246.615 K,
+.B "Convergence = 26.0416%"
+.BL
+.B "Circuit 1"
+- Difference: 228.25 - 539.087 = 310.837 K,
+.B "Convergence = 12.2018%"
+.BL
+.B "Circuit 2"
+- Difference: 266.342 - 539.252 = 272.91 K,
+.B "Convergence = 2.42835%"
+.BL
+.B "Circuit 3"
+- Difference: 273.007 - 539.29 = 266.283 K
+.RE
+.LP
+From this we can see that convergence of less than 5% accuracy is only reached as we reach
+.B "Circuit 2."
+.PSPIC /home/sudarson/Study/NUMME/NUMMEFELab2020-2021/outputs/temp-circuit0_cropped.eps 9.5
+.DS C
+.I "Gmsh Temperature field for circuit0.msh"
+.bp
+.DE
+.PSPIC /home/sudarson/Study/NUMME/NUMMEFELab2020-2021/outputs/temp-circuit3_cropped.eps 9.5
+.DS C
+.I "Gmsh Temperature fieldfor circuit3.msh"
+.DE
+.LP
+We see a much cleaner boundary in Circuit 3 as compared to Circuit 0 because the mesh is much finer.
+.bp
+
+.NH 2
+Range of Temperature Variation
+.LP
+Temperature variation for each circuit mesh was mentioned in the previous section. The variation has been plotted below. Here, we can clearly see that the variation reduces as we increase the density of the mesh, and why the FEM solution converges at
+.I "Circuit 2."
+.PSPIC -C /home/sudarson/Study/NUMME/NUMMEFELab2020-2021/Circuit_Temp_Variation.eps
+.bp
+.DS C
+.ps 16
+.B "User Scripts"
+.DE
+.LP
+.SH
+testFE.py
+.LP
+This is the main python script that calls all other functions. Since this script needs to execute different functions based on different meshes and boundary conditions, there are a set of "control variables" at the beginning of the script which let the user test for different conditions quickly.
+
+
+.ft CW
+ import os
+ import time
+ import matplotlib.pyplot as plt
+ import numpy as np
+
+ #Import finite element solver function
+ from solveFE import solveFE
+ from checkFE import *
+
+ np.set_printoptions(linewidth=300)
+ np.set_printoptions(precision=3, suppress=True)
+
+ start = time.time()
+
+ # List to store all the mesh files
+ meshes = [
+             "square1x1.msh",            #0
+             "square2x2.msh",            #1
+             "square4x4.msh",            #2
+             "square10x10.msh",          #3
+             "square20x20.msh",          #4
+             "square30x30.msh",          #5
+             "square40x40.msh",          #6
+
+             "squareHole20.msh",         #7
+             "squareHole30.msh",         #8
+             "squareHole40.msh",         #9
+             "squareHole60.msh",         #10
+
+             "squareBimat4.msh",         #11
+             "squareBimat8.msh",         #12
+             "squareBimat10.msh",        #13
+             "squareBimat20.msh",        #14
+
+             "squareInclusion20.msh",    #15
+             "squareInclusion40.msh",    #16
+
+             "circuit0.msh",             #17
+             "circuit1.msh",             #18
+             "circuit2.msh",             #19
+             "circuit3.msh",             #20
+           ]
+
+
+
+ #-------------------------------------------------------#
+ #          These values control the programme           #
+ #-------------------------------------------------------#
+
+ meshNumber = 2
+ openMesh = 0
+ displayU = 0
+ isFD = 0
+ plotErrors = 1
+ showPlot = 1
+ useSparse = True           # Reduce memory consumption
+ verboseOutput = False      # Reduce console output
+
+ #-------------------------------------------------------#
+
+ # Stores the Meshes in seperate lists
+ square = meshes[:7]
+ squareHole = meshes[7:11]
+ bimat = meshes[11:15]
+ inclusion = meshes[15:17]
+ circuit = meshes[17:21]
+
+ meshName = meshes[meshNumber]
+
+ # Sets the case based on chosen mesh
+ if isFD == 1:
+     case = -1
+ elif meshNumber <=10 and isFD == 0:
+     case = 0
+ elif meshNumber > 10 and meshNumber <= 16:
+     case = 1
+ elif meshNumber > 16 and meshNumber <= 20:
+     case = 2
+
+
+ # Assigns Neumann Boundary Conditions
+ if case == -1:
+     BCNs = {103: 0}
+ else:
+     BCNs = {103: 1}
+     qN = 1
+
+
+ # Assigns Dirichlet Boundary Conditions
+ if case == -1:
+     BCD_lns = {101: 0, 102: 0, 103: 0, 104: 0}
+ elif case == 2:
+     BCD_lns = {101: 293, 102: 293, 103: 293, 104: 293}
+ else:
+     BCD_lns = {101: 0}
+ BCD_nds = {1: 0}
+
+
+ # Assings conductivities
+ K = [3,1,1.38e-3,15e-3]
+ if case == 0:                                   # Normal square or square hole
+     conductivities = {1000: K[0]}
+ elif case == -1:                                    # FD Problem
+     conductivities = {1000: 1}
+ elif case == 1:                                     # Bimat and Inclusion
+     conductivities = {1000: K[0], 2000: K[1]}
+ elif case == 2:                                     # Circuit
+     conductivities = {1000: K[2], 2000: K[3]}
+
+
+ # Assigns source term
+ if case == -1 or case == 2:
+     r = 1
+ else:
+     r = 1
+ sourceTerm = lambda xyz, physdom: r
+
+
+ # Name of temperature file to be stored
+ name = meshName[:-4]
+ exportName = 'outputs/temp' + '-' + name + '.pos'
+
+ # Calls function to calculate temperature and export to .pos
+ if plotErrors == 0:
+     U = solveFE(meshName, conductivities, BCNs, BCD_lns, BCD_nds, sourceTerm, exportName, useSparse, verboseOutput)
+
+     getTempDiff(U)
+     if case == -1:
+         FD_getMaxError(U)
+     # Open .pos file in Gmsh
+     if openMesh == 1:
+         cmd = "gmsh " + exportName + " &"
+         os.system(cmd)
+
+
+ # Plots errors based on the case
+ # e stores the maximum error
+ # a stores the average error
+ # h = 1/h or the number of nodes
+ else:
+
+     # Plot the error for the Finite DIFFERENCE problem
+     if case == -1:
+         newMesh = square
+         newMesh = np.delete(newMesh,0)
+         newMesh = np.delete(newMesh,0)
+         N = len(newMesh)
+         e = np.zeros(N)
+         h = np.zeros(N)
+
+         for i in range(0,N):
+             meshName = newMesh[i]
+             U = solveFE(meshName, conductivities, BCNs, BCD_lns, BCD_nds, sourceTerm, exportName, useSparse, verboseOutput)
+             e[i], h[i] = FD_getMaxError(U)
+
+         errFig = plt.figure()
+         ax = errFig.add_subplot(111)
+         plt.loglog(h,e)
+         ax.scatter(h,e,color='black')
+         j = 0
+         for xy in zip(h, e):
+             ax.annotate('  N=%i' % (h[j]+1), xy=xy, textcoords='data')
+             j += 1
+
+         plt.xlabel('1/h', fontsize=12)
+         plt.ylabel('Error', fontsize=12)
+         plt.title("Error Plot - Finite Element Method", fontsize=14)
+         plt.grid(b=True, which='major', color='grey', linestyle='-')
+         plt.grid(b=True, which='minor', color='lightsteelblue', linestyle='--')
+         plt.tight_layout()
+         figName = "FD_Error.png"
+         plt.savefig(figName, bbox_inches='tight',dpi=300)
+         end = time.time()
+         cmd = "convert "+figName+" "+figName[:-3]+"eps"     # Save as eps file to import into groff document
+         os.system(cmd)
+         if showPlot:
+             plt.show()
+
+     # Plot error for CIRCUIT
+     elif case == 2:
+         newMesh = circuit
+         N = len(newMesh)
+         diff = np.zeros(N)
+
+         for i in range(0,N):
+             U = solveFE(newMesh[i], conductivities, BCNs, BCD_lns, BCD_nds, sourceTerm, exportName, useSparse, verboseOutput)
+
+             diff[i] = getTempDiff(U)
+             print(diff[i])
+
+             if i > 0:
+                 conv = abs((diff[i]-diff[i-1])/diff[i-1])
+                 print("Convergence = %g%%"%(conv*100))
+
+         plt.figure()
+         plt.plot(newMesh,diff)
+         plt.scatter(newMesh,diff)
+         plt.ylim([0, 350])
+         plt.xlabel('Circuit Mesh', fontsize=12)
+         plt.ylabel('Temperature (K)', fontsize=12)
+         plt.title("Temperature Variation", fontsize=14)
+         plt.grid(b=True, which='major', color='grey', linestyle='-')
+         plt.grid(b=True, which='minor', color='lightsteelblue', linestyle='--')
+         figName = "Circuit_Temp_Variation.png"
+         plt.savefig(figName, bbox_inches='tight', dpi=300)
+         cmd = "convert "+figName+" "+figName[:-3]+"eps"     # Save as eps file to import into groff document
+         os.system(cmd)
+         if showPlot:
+             plt.show()
+
+     # Plot error for SQUARE and BIMAT
+     else:
+         # Finds exact solution based on square or bimat
+         isBimat = 0
+         if case == 0:
+             newMesh = square
+             xex, uex = getExactSoln_Square(K,qN,r)
+             name = "square"
+         if case == 1:
+             newMesh = bimat
+             isBimat = 1
+             xex, uex = getExactSoln_Bimat(K,qN,r)
+             name = "bimat"
+         print("isBimat = ",isBimat)
+         N = len(newMesh)
+
+         # Stores maximum and average error
+         e = np.zeros(N)
+         a = np.zeros(N)
+         h = np.zeros(N)
+
+         # Plot exact solution
+         plt.figure()
+         plt.plot(xex,uex,label='Exact Solution',linewidth=4,color='black')
+
+         # Find solution and errors for different mesh sizes
+         for i in range(0,len(newMesh)):
+             meshName = newMesh[i]
+             U = solveFE(meshName, conductivities, BCNs, BCD_lns, BCD_nds, sourceTerm, exportName, useSparse, verboseOutput)
+             x, u, v = getApprox1D(U,K,qN,r,isBimat)
+             e[i] = max(abs(v-u))
+             a[i] = sum(abs(v-u))/len(u)
+
+             print(meshName)
+             print('Max Error = %g, Avg Error = %g\\n'%(e[i],a[i]))
+             plt.plot(x,u, label=newMesh[i])
+             h[i] = len(u)
+
+         plt.legend()
+         plt.grid()
+         plt.xlabel("Position y", fontsize = 12)
+         plt.ylabel("Temperature u(y)", fontsize = 12)
+         plt.title('FEM Deviations for r = %g'%r)
+         figName = "Exact-vs-Approx_r=" + str(r) + "_"+name+".png"
+         plt.savefig(figName, bbox_inches='tight', dpi=300)
+         cmd = "convert "+figName+" "+figName[:-3]+"eps"     # Save as eps file to import into groff document
+         os.system(cmd)
+
+         if showPlot:
+             plt.show()
+
+         if case == 0 and r == 0:
+             newMesh.pop(0)
+             e = np.delete(e,0)
+             a = np.delete(a,0)
+             h = np.delete(h,0)
+         plt.figure()
+         for i in range(0,len(newMesh)):
+             newMesh[i] = newMesh[i][6:]
+             newMesh[i] = newMesh[i][:-4]
+         plt.plot(h,e, label='Maximum Error')
+         plt.plot(h,a, label='Average Error')
+         plt.scatter(h,e)
+         plt.scatter(h,a)
+         plt.yscale("log")
+         plt.xlabel("Mesh Size", fontsize=12)
+         plt.ylabel("Error", fontsize=12)
+         plt.title('Error for r = %g'%r)
+         plt.legend()
+         plt.grid()
+         figName = "ErrorPlot_r="+str(r)+"_"+name+".png"
+         plt.savefig(figName,bbox_inches='tight',dpi=300)
+         cmd = "convert "+figName+" "+figName[:-3]+"eps"     # Save as eps file to import into groff document
+         os.system(cmd)
+
+         end = time.time()
+
+         if showPlot:
+             plt.show()
+
+ try:
+     end
+ except NameError:
+     end = time.time()
+ print('\\n\\nTime Elapsed = %g\\n\\n'%(end-start))a
+.ft
+.bp
+.SH
+checkFE.py
+.LP
+This script containts user functions used to extract approximate and exact values of U for all the different cases in the FE Lab problem.
+
+.ft CW
+ import math
+ import numpy as np
+ import matplotlib.pyplot as plt
+
+ # This function sorts the values of U
+ # and extracts 1D values from it
+ def getApprox1D(U,K,qN,r,isBitmat = 0):
+     N = getSize(len(U))
+     u = np.zeros(N)     # Stores the 1D values
+     U = np.sort(U)      # Sort U values
+     p = np.zeros(N)     # Exact values for 1D nodes
+     L = 1               # Size of the boundary from -1 to 1
+
+     u = U[N-1:N*N-N:N]  # Extract 1D values
+     u = np.insert(u,0,0,axis=0)    # Add BCD
+     x = np.linspace(-L,L,N)
+
+     # Two different PDEs need to be used in the case of two isotropic materials
+     if isBitmat == 1:
+         K1 = K[0]
+         K2 = K[1]
+         N = int(N/2)+1
+         p1 = uFun(np.linspace(-L,0,N),K1,qN,r,L,case=1)
+         p2 = uFun(np.linspace(0,L,N), K2,qN,r,L,prev=p1[-1],case=2)
+         p2 = np.delete(p2,0)
+         p   = np.concatenate((p1,p2),axis=0)
+
+     # Use standard PDE for single material
+     else:
+         K1 = K[0]
+         p = uFun(np.linspace(-L,L,N),K1,qN,r,L,case=0)
+
+     return x, u, p
+
+ # Returns exact FD values for a given NxN mesh size
+ # Taken from FD Lab script
+ def FDExact(L,n):
+     U = np.zeros((n,n))
+     N = 5
+     X = np.linspace(-L,L,n)
+     Y = np.linspace(-L,L,n)
+     for p in range(0,n):
+         for q in range(0,n):
+             x = X[p]
+             y = Y[q]
+             out = 0
+             for i in range(1,2*N,2):
+                 for j in range(1,2*N,2):
+                     out += (64/(i*j*(i**2+j**2)*math.pi**4)) * math.sin(i*math.pi*(x+1)/2) * math.sin(j*math.pi*(y+1)/2)
+                     U[p][q] = out
+
+     return U
+
+ # Compares the FEM solution to the Analytical solution
+ def FD_getMaxError(U):
+     N = getSize(len(U))
+     U = np.sort(U)
+     L = 1
+
+     Uex = FDExact(L,N)      # Stores exact temperature values
+     Uex = Uex.flatten()
+     U = np.sort(U)          # Sorts U values like in getAprrox1D()
+     Uex = np.sort(Uex)
+
+     max = 0
+     for i in range(0,N*N):
+         temp = abs(U[i] - Uex[i])
+         if temp > max:
+             max = temp
+     print('N = %i, Error = %g\\n'%(N,max))
+     return max, N
+
+ # Returns size of the mesh given the number of elements
+ def getSize(c):
+     a = 1
+     b = -1
+     c = -c
+     d = b**2 - 4*a*c
+     size = (-b+math.sqrt(d))/2*a
+     return int(size)
+
+ # Returns exact solution based on Square or Bimat
+ def uFun(y,K,qN,r,L,prev = 0, case = 0):
+     out = 0
+     if case == 0:   # Normal Square
+         out = -(r*y**2/(2*K)) + (qN + r*L)*y/K + 3*r*L**2/(2*K) + qN*L/K
+     elif case == 1: # Bimat PDE 1
+         out =  r*(L**2-y**2)/(2*K) + qN*(y+L)/K
+     elif case == 2: # Bimat PDE 2
+         out =  -(r*y**2/(2*K)) + (qN + r*L)*y/K + prev
+     return out
+
+ # Returns high precision values for Square mesh
+ def getExactSoln_Square(K,qN,r):
+     n = 100
+     L = 1
+     K1 = K[0]
+     xex = np.linspace(-L,L,n)
+     uex = uFun(xex,K1,qN,r,L,case=0)
+     return xex, uex
+
+ # Returns high precision values for Bimat mesh
+ def getExactSoln_Bimat(K,qN,r):
+     n = 100
+     L = 1
+     K1 = K[0]
+     K2 = K[1]
+
+     x1 = np.linspace(-L,0,n)
+     x2 = np.linspace(0,L,n)
+     u1 = uFun(x1,K1,qN,r,L,case=1)
+     u2 = uFun(x2,K2,qN,r,L,prev=u1[-1],case=2)
+
+     uex = np.concatenate((u1,u2),axis=0)
+     xex = np.concatenate((x1,x2),axis=0)
+     return xex, uex
+
+ # Returns max temperature variation
+ def getTempDiff(U):
+     U = np.sort(U)
+     p = U[0]
+     q = U[len(U)-1]
+     print("Difference: %g - %g = %g" %(p,q,abs(p-q)))
+     return abs(p-q)
+
+.ft
+
+
+
+

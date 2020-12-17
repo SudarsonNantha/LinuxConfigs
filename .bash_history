@@ -1,56 +1,3 @@
-groff -mom test.mom > test.ps 
-evince test.ps 
-groff -mom test.mom > test.ps 
-evince test.ps 
-groff -mom test.mom > test.ps 
-groff -mom test.mom > test.ps 
-evince test.ps 
-groff -mom test.mom > test.ps 
-evince test.ps 
-groff -mom test.mom > test.ps 
-groff -mom test.mom > test.ps 
-evince test.ps 
-groff -mom test.mom > test.ps 
-evince test.ps 
-groff -mom test.mom > test.ps 
-evince test.ps 
-groff -mom test.mom > test.ps 
-evince test.ps 
-groff -mom test.mom > test.ps 
-groff -mom test.mom > test.ps 
-evince test.ps 
-groff -mom test.mom > test.ps 
-evince test.ps 
-groff -mom test.mom > test.ps 
-evince test.ps 
-groff -mom test.mom > test.ps 
-evince test.ps 
-groff -mom sample_docs.mom > test.ps 
-evince test.ps 
-groff -mom sample_docs.mom > test.ps 
-evince test.ps 
-groff -mom test.mom > test.ps 
-evince test.ps 
-groff -mom test.mom > test.ps 
-evince test.ps 
-groff -mom sample_docs.mom > test.ps 
-evince test.ps 
-groff -mom sample_docs.mom > test.ps 
-evince test.ps 
-groff -mom test.mom > test.ps 
-evince test.ps 
-groff -mom test.mom > test.ps 
-evince test.ps 
-groff -mom test.mom > test.ps 
-evince test.ps 
-groff -mom test.mom > test.ps 
-evince test.ps 
-groff -mom test.mom > test.ps 
-evince test.ps 
-groff -mom sample_docs.mom > test.ps 
-evince test.ps 
-groff -mom test.mom > test.ps 
-evince test.ps 
 pdfmom -Tps sample_docs.mom > sample_docs.pdf
 evince sample_docs.pdf 
 pdfmom -Tps test.mom > sample_docs.pdf
@@ -498,3 +445,56 @@ cat epsConvert
 chmod +x epsConvert 
 ./epsConvert 
 clear
+numme
+cd outputs/
+vim epsConvert 
+./epsConvert 
+cp epsConvert ~/.local/bin/
+cd ..
+epsConvert 
+epsConvert 
+epsConvert 
+cd ..
+cd FD_Lab1/FD\ 2D/
+ls
+epsConvert 
+ls -1a $PWD/*.eps
+clear
+cp 2D_ErrorLog.eps ~/Study/NUMME/NUMMEFELab2020-2021/outputs/
+numme
+ls $PWD/*.eps
+ls -1a $PWD/*.eps
+cd ~
+get add --all
+git add --all
+git status
+git commit -m "Compared FD and FEM solutions"
+git status
+git push -u origin master
+clear
+cd Test/
+groff -ms -P-l -P-pA4 test.ms | ps2pdf - test1.pdf
+evince test1.pdf 
+vim .local/bin/compiler 
+numme
+cd outputs/
+gmsh temp-square2x2.pos {Print "file.png"; Exit;}
+gmsh temp-square2x2.pos Print "file.png"; Exit;
+ls
+cd ..
+cd outputs/
+vim gmshScript
+gmsh temp-square2x2.pos gmshScript 
+feh file.png 
+gmsh temp-circuit0.pos gmshScript 
+feh file.png 
+gmsh temp-squareBimat8.pos gmshScript 
+gmsh temp-squareHole30.pos gmshScript 
+feh file.png 
+rm gmshScript 
+clear
+cd ~
+cd Test/
+ls
+cat test.ms
+vim test.ms

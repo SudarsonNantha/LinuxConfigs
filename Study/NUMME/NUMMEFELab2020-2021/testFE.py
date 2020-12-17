@@ -62,10 +62,11 @@ meshes = [
 #-------------------------------------------------------#
 
 meshNumber = 2
-openMesh = 1
+openMesh = 0
 displayU = 0
-isFD = 1
+isFD = 0
 plotErrors = 1
+showPlot = 1
 useSparse = True           # Reduce memory consumption
 verboseOutput = False      # Reduce console output
 
@@ -110,7 +111,7 @@ BCD_nds = {1: 0}
 
 
 # Assings conductivities
-K = [3,10,1.38e-3,1510e-3]
+K = [3,1,1.38e-3,15e-3]
 if case == 0:                                       # Normal square or square hole
     conductivities = {1000: K[0]}
 elif case == -1:                                    # FD Problem
@@ -137,6 +138,7 @@ exportName = 'outputs/temp' + '-' + name + '.pos'
 if plotErrors == 0:
     U = solveFE(meshName, conductivities, BCNs, BCD_lns, BCD_nds, sourceTerm, exportName, useSparse, verboseOutput)
 
+    getTempDiff(U)
     if case == -1:
         FD_getMaxError(U)
     # Open .pos file in Gmsh
@@ -145,8 +147,13 @@ if plotErrors == 0:
         os.system(cmd)
 
 
-# Plot errors if file is normal square
+# Plots errors based on the case
+# e stores the maximum error
+# a stores the average error
+# h = 1/h or the number of nodes
 else:
+
+    # Plot the error for the Finite DIFFERENCE problem
     if case == -1:
         newMesh = square
         newMesh = np.delete(newMesh,0)
@@ -154,7 +161,6 @@ else:
         N = len(newMesh)
         e = np.zeros(N)
         h = np.zeros(N)
-        a = np.zeros(N)
 
         for i in range(0,N):
             meshName = newMesh[i]
@@ -171,24 +177,64 @@ else:
             j += 1
 
         plt.xlabel('1/h', fontsize=12)
-        plt.ylabel(r'$\epsilon$', fontsize=12)
+        plt.ylabel('Error', fontsize=12)
         plt.title("Error Plot - Finite Element Method", fontsize=14)
         plt.grid(b=True, which='major', color='grey', linestyle='-')
         plt.grid(b=True, which='minor', color='lightsteelblue', linestyle='--')
-        plt.savefig("FD_Error.png")
+        plt.tight_layout()
+        figName = "FD_Error.png"
+        plt.savefig(figName, bbox_inches='tight',dpi=300)
         end = time.time()
-        plt.show()
+        cmd = "convert "+figName+" "+figName[:-3]+"eps"     # Save as eps file to import into groff document
+        os.system(cmd)
+        if showPlot:
+            plt.show()
 
+    # Plot error for CIRCUIT
+    elif case == 2:
+        newMesh = circuit
+        N = len(newMesh)
+        diff = np.zeros(N)
+
+        for i in range(0,N):
+            U = solveFE(newMesh[i], conductivities, BCNs, BCD_lns, BCD_nds, sourceTerm, exportName, useSparse, verboseOutput)
+
+            diff[i] = getTempDiff(U)
+            print(diff[i])
+
+            if i > 0:
+                conv = abs((diff[i]-diff[i-1])/diff[i-1])
+                print("Convergence = %g%%"%(conv*100))
+
+        plt.figure()
+        plt.plot(newMesh,diff)
+        plt.scatter(newMesh,diff)
+        plt.ylim([0, 350])
+        plt.xlabel('Circuit Mesh', fontsize=12)
+        plt.ylabel('Temperature (K)', fontsize=12)
+        plt.title("Temperature Variation", fontsize=14)
+        plt.grid(b=True, which='major', color='grey', linestyle='-')
+        plt.grid(b=True, which='minor', color='lightsteelblue', linestyle='--')
+        figName = "Circuit_Temp_Variation.png"
+        plt.savefig(figName, bbox_inches='tight', dpi=300)
+        cmd = "convert "+figName+" "+figName[:-3]+"eps"     # Save as eps file to import into groff document
+        os.system(cmd)
+        if showPlot:
+            plt.show()
+
+    # Plot error for SQUARE and BIMAT
     else:
-        # Finds exact solution based on square or bimate
+        # Finds exact solution based on square or bimat
         isBimat = 0
         if case == 0:
             newMesh = square
             xex, uex = getExactSoln_Square(K,qN,r)
+            name = "square"
         if case == 1:
             newMesh = bimat
             isBimat = 1
             xex, uex = getExactSoln_Bimat(K,qN,r)
+            name = "bimat"
         print("isBimat = ",isBimat)
         N = len(newMesh)
 
@@ -219,13 +265,15 @@ else:
         plt.xlabel("Position y", fontsize = 12)
         plt.ylabel("Temperature u(y)", fontsize = 12)
         plt.title('FEM Deviations for r = %g'%r)
-        figName = "Exact-vs-Approx_r=" + str(r) + ".png"
-        plt.savefig(figName, dpi=300)
+        figName = "Exact-vs-Approx_r=" + str(r) + "_"+name+".png"
+        plt.savefig(figName, bbox_inches='tight', dpi=300)
         cmd = "convert "+figName+" "+figName[:-3]+"eps"     # Save as eps file to import into groff document
         os.system(cmd)
-    #    plt.show()
 
-        if r == 0:
+        if showPlot:
+            plt.show()
+
+        if case == 0 and r == 0:
             newMesh.pop(0)
             e = np.delete(e,0)
             a = np.delete(a,0)
@@ -236,22 +284,23 @@ else:
             newMesh[i] = newMesh[i][:-4]
         plt.plot(h,e, label='Maximum Error')
         plt.plot(h,a, label='Average Error')
-    #    plt.scatter(newMesh,e)
-    #    plt.scatter(newMesh,a)
+        plt.scatter(h,e)
+        plt.scatter(h,a)
         plt.yscale("log")
-        plt.xscale("log")
-        plt.xlabel("Meshes Size", fontsize=12)
+        plt.xlabel("Mesh Size", fontsize=12)
         plt.ylabel("Error", fontsize=12)
         plt.title('Error for r = %g'%r)
         plt.legend()
         plt.grid()
-        figName = "ErrorPlot_r="+str(r)+".png"
-        plt.savefig(figName,dpi=300)
+        figName = "ErrorPlot_r="+str(r)+"_"+name+".png"
+        plt.savefig(figName,bbox_inches='tight',dpi=300)
         cmd = "convert "+figName+" "+figName[:-3]+"eps"     # Save as eps file to import into groff document
         os.system(cmd)
 
         end = time.time()
-        plt.show()
+
+        if showPlot:
+            plt.show()
 
 try:
     end
