@@ -61,12 +61,12 @@ meshes = [
 #          These values control the programme           #
 #-------------------------------------------------------#
 
-meshNumber = 2
+meshNumber = 3
 openMesh = 0
 displayU = 0
-isFD = 0
-plotErrors = 1
-showPlot = 1
+isFD = 1
+plotErrors = 0
+showPlot = 0
 useSparse = True           # Reduce memory consumption
 verboseOutput = False      # Reduce console output
 
@@ -126,7 +126,7 @@ elif case == 2:                                     # Circuit
 if case == -1 or case == 2:
     r = 1
 else:
-    r = 1
+    r = 0
 sourceTerm = lambda xyz, physdom: r
 
 
@@ -138,9 +138,9 @@ exportName = 'outputs/temp' + '-' + name + '.pos'
 if plotErrors == 0:
     U = solveFE(meshName, conductivities, BCNs, BCD_lns, BCD_nds, sourceTerm, exportName, useSparse, verboseOutput)
 
-    getTempDiff(U)
     if case == -1:
         FD_getMaxError(U)
+
     # Open .pos file in Gmsh
     if openMesh == 1:
         cmd = "gmsh " + exportName + " &"

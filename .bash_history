@@ -1,83 +1,3 @@
-pdfmom -Tps sample_docs.mom > sample_docs.pdf
-evince sample_docs.pdf 
-pdfmom -Tps test.mom > sample_docs.pdf
-evince sample_docs.pdf 
-pdfmom -Tps test.mom > sample_docs.pdf
-evince sample_docs.pdf 
-pdfmom -Tps test.mom > sample_docs.pdf
-evince sample_docs.pdf 
-evince sample_docs.pdf 
-pdfmom -Tps test.mom > sample_docs.pdf
-evince sample_docs.pdf 
-pdfmom -Tps test.mom > sample_docs.pdf
-evince sample_docs.pdf 
-pdfmom -Tps test.mom > sample_docs.pdf
-evince sample_docs.pdf 
-groff -mom test.mom > test.ps 
-evince test.ps 
-groff -mom test.mom > test.ps 
-evince test.ps 
-groff -mom test.mom > test.ps 
-evince test.ps 
-groff -mom test.mom > test.ps 
-evince test.ps 
-groff -mom test.mom > test.ps 
-evince test.ps 
-groff -mom test.mom > test.ps 
-evince test.ps 
-groff -mom test.mom > test.ps 
-evince test.ps 
-pdfmom -Tps test.mom > test.pdf
-evince test.pdf 
-pdfmom -Tps test.mom > test.pdf
-evince test.pdf 
-pdfmom -Tps test.mom > test.pdf
-evince test.pdf 
-pdfmom -Tps test.mom > test.pdf
-evince test.pdf 
-pdfmom -Tps test.mom > test.pdf
-evince test.pdf 
-pdfmom -Tps test.mom > test.pdf
-evince test.pdf 
-pdfmom -Tps test.mom > test.pdf
-evince test.pdf 
-pdfmom -Tps test.mom > test.pdf
-evince test.pdf 
-pdfmom -Tps test.mom > test.pdf
-pdfmom -Tps test.mom > test.pdf
-evince test.pdf 
-pdfmom -Tps test.mom > test.pdf
-evince test.pdf 
-cd ~/.local/bin/
-vim compiler 
-vim compiler 
-vim compiler 
-vim compiler 
-vim opout 
-exit
-vim .vim/templates/groff/template.ms 
-exit
-test.ms
-vim test.ms
-man groff
-cd Test/mom-2.4-4_b/examples/
-vim sample_docs.mom 
-vim test.mom
-ls
-cd ~
-cd Test/
-ls
-vim test.mom
-vim test.mom
-cd ..
-cat .vim/templates/groff/mom_template.mom 
-vim test.mom
-ls
-cd Test/mom-2.4-4_b/examples/
-vim sample_docs.mom 
-vim test.mom
-vim test.mom
-vim test.mom
 cd ~
 cd .config/groff/
 vim equation
@@ -498,3 +418,83 @@ cd Test/
 ls
 cat test.ms
 vim test.ms
+numme
+vim Report.ms 
+cd ~
+git add --all
+git status
+git commit -m "Finished Report"
+git push -u origin master
+numme
+vim checkFE.py 
+numme
+vim checkFE.py 
+numme
+cd ..
+cd FD_Lab1/FD\ 2D/
+ls
+vim main.py 
+vim main.py 
+vim main.py 
+numme
+epsConvert 
+rm 2D_ErrorLog.eps 
+ln -s ~/Study/NUMME/FD_Lab1/FD\ 2D/2D_ErrorLog.png 2D_ErrorLog.png
+ls -al
+clear
+ls *.png
+ls -l *.png
+epsConvert 
+feh 2D_ErrorLog.
+feh 2D_ErrorLog.eps 
+clear
+epsConvert 
+ls -1a *.eps
+ls -1a $PWD/*.eps
+cd outputs/
+epsConvert 
+epsConvert 
+epsConvert 
+cd ..
+ls $PWD/*.eps
+ls -1a $PWD/*.eps
+clear
+ls -1a $PWD/*.eps
+ls -1a $PWD/*.eps
+clear
+clear
+ls -1a $PWD/*.eps
+git add --all
+git status
+git push -u origin master
+git push -u origin master
+nummme
+numme
+vim Report.ms 
+numme
+vim testFE.py 
+sudo pacman -Syy
+sudo pacman -S zoom
+yay -Ss zoom
+yay -S zoom
+ls -1a $PWD/*.eps
+ls -1a *.eps
+$PWD
+numme
+ls -1a *.eps
+ls -1a $PWD/*.eps
+cd outputs/
+epsConvert 
+alemo
+cat testKomarova.m 
+exit
+numme
+vim checkFE.py 
+alemo
+vim testKomarova.m 
+vim convergenceStudy.m
+cat testKomarova.m 
+vim convergenceStudy.m
+cd Test/
+vim test.py
+clear

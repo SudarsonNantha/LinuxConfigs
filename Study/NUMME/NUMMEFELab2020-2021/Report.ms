@@ -41,7 +41,7 @@
 .NH
 Problem Statement
 .LP
-The temperature across a domain can be represented in is strong form as:
+The temperature across a domain can be represented in its strong form as:
 .EQ C
 (S)~=~~
 left { matrix{
@@ -61,7 +61,7 @@ in a 2-Dimentional space.
 J(u sup h )~=~1 over 2 a(u sup h, u sup h )~-~b(u sup h )
 .EN
 .EQ I
-with~J sub a (u sup h ) = ~1 over 2 a(u sup h, u sup h )~and~J sub b (u sup h ) = b(u sup h )
+with~J sub a (u sup h ) = ~1 over 2 a(u sup h, u sup h )~~~~~and~~~~~J sub b (u sup h ) = b(u sup h )
 .EN
 .EQ I
 where~u sup h~=~N sub k (x)~U sub K + N sub l (x)~U sub l + N sub m (x)~U sub m
@@ -332,7 +332,7 @@ on the Dirichlet Boundary,
 on the Neumann Boundary, and source term
 .I "r = 0."
 For group A-03, the conductivity was 3
-.I "W/mK."
+.I "W/(mm.K)."
 These results are shown for a 4x4, 10x10, 20x20, and 40x40 mesh.
 .PSPIC -C /home/sudarson/Study/NUMME/NUMMEFELab2020-2021/outputs/temp-square4x4.eps 6.5
 .PSPIC -C /home/sudarson/Study/NUMME/NUMMEFELab2020-2021/outputs/temp-square10x10.eps 6.5
@@ -384,21 +384,21 @@ This is the general solution of the problem. The exact solution can be found by 
 .LP
 The Neumann boundary on
 .EQ I
-From~~q bar = - Kappa . del bar u~~~and~~~~-{q bar}.{n bar} = q sub N~~~~\[fa]~y~~\[mo]~partial Omega sub N
+From~~q bar = - Kappa . del bar u~~~and~~~~-{q bar}.{n bar} = q sub N~~~~\[fa]~u~~\[mo]~partial Omega sub N
 .EN
 .EQ I
-del bar u~=~u'~= {q sub N} over Kappa~~~~~\[fa]~y~~\[mo]~partial Omega sub N
+del bar u~=~u'~= {q sub N} over Kappa~~~~~\[fa]~u~~\[mo]~partial Omega sub N
 .EN
 .EQ I
 \[3d]~~~~~u'(L)~=~{-rL} over Kappa + A~=~{q sub N} over Kappa~~~~~~~~~~~~~~when~y~=~L
 .EN
 .EQ I
-\[rA]~~~~ A~=~{q sub N + r~L} over Kappa
+\[rA]~~~~ A~=~{q sub N + rL} over Kappa
 .EN
 .LP
 .B "Dirichlet Boundary Conditions"
 .EQ I
-u(-L)~=~{-r (-L) sup 2} over {2 Kappa} + A(-L) + B = 0~~~~~~when~y~\[mo]~-L
+u(-L)~=~{-r (-L) sup 2} over {2 Kappa} + A(-L) + B = 0~~~~~~when~y~=~-L
 .EN
 .EQ I
 \[rA]~B~=~3 over 2 {r L sup 2} over Kappa + {q sub N L} over Kappa
@@ -411,28 +411,28 @@ u(y)~=~{-ry sup 2} over {2 Kappa} + {(q sub N + rL) } over Kappa y + ~3 over 2 {
 .LP
 When source term
 .I "r = 0"
-the equation is simplified into the form:
+the equation is simplified into a linear equation of the form:
 .EQ I
 u(y)~={q sub N} over Kappa (y + L)
 .EN
 .LP
-The exact analytical solution represented as a python function
-.I "uFunSquare()"
+The exact analytical solution is calculated in the function
+.I "uFun()"
 like so:
 
 .ft CW
 .B1
 # Returns exact solution based on Square or Bimat
 .bp
-def uFun(y,K,qN,r,L,prev = 0, case = 0):
-out = 0
-    if case == 0:   # Normal Square
-        out = -(r*y**2/(2*K)) + (qN + r*L)*y/K + 3*r*L**2/(2*K) + qN*L/K
-    elif case == 1: # Bimat PDE 1
-        out =  r*(L**2-y**2)/(2*K) + qN*(y+L)/K
-    elif case == 2: # Bimat PDE 2
-        out =  -(r*y**2/(2*K)) + (qN + r*L)*y/K + prev
-    return out
+ def uFun(y,K,qN,r,L,prev = 0, case = 0):
+ out = 0
+     if case == 0:   # Normal Square
+         out = -(r*y**2/(2*K)) + (qN + r*L)*y/K + 3*r*L**2/(2*K) + qN*L/K
+     elif case == 1: # Bimat PDE 1
+         out =  r*(L**2-y**2)/(2*K) + qN*(y+L)/K
+     elif case == 2: # Bimat PDE 2
+         out =  -(r*y**2/(2*K)) + (qN + r*L)*y/K + prev
+     return out
 
 .B2
 .ft
@@ -442,7 +442,7 @@ Getting the FEM Solution
 A seperate file
 .I "checkFE.py"
 was written to check the FEM results and compare it to the analytical solution (the above mentioned
-.I "uFunSquare()"
+.I "uFun()"
 function is also included in this file). Since the results from the FEM calculation are random and hard to decode, it becomes difficult to find out the temperature at each node. Since this problem can be considered a 1D problem, only one value from each row of nodes is required. The built-in function
 .I "numpy.sort()"
 was employed to sort the values in order of lowest value to highest values, and then the lowest value from each row was considered the temperature at that particular 1D node. It was noticed from
@@ -468,7 +468,6 @@ def getApprox1D(U,K,qN,r):
 
     K1 = K[0]
     p = uFunSquare(np.linspace(-L,L,N),K1,qN,r,L)
-
     return u, p
 
 def getSize(c):
@@ -488,48 +487,48 @@ In order to check that our FEM solutions are accurate, it is important to compar
 
 .ft CW
 .B1
-    # Finds exact solution based on square or bimat
-    isBimat = 0
-    if case == 0:
-        newMesh = square
-        xex, uex = getExactSoln_Square(K,qN,r)
-        name = "square"
-    if case == 1:
-        newMesh = bimat
-        isBimat = 1
-        xex, uex = getExactSoln_Bimat(K,qN,r)
-        name = "bimat"
-    N = len(newMesh)
-    e = np.zeros(N)
-    a = np.zeros(N)
-    h = np.zeros(N)
+ # Finds exact solution based on square or bimat
+ isBimat = 0
+ if case == 0:
+     newMesh = square
+     xex, uex = getExactSoln_Square(K,qN,r)
+     name = "square"
+ if case == 1:
+     newMesh = bimat
+     isBimat = 1
+     xex, uex = getExactSoln_Bimat(K,qN,r)
+     name = "bimat"
+ N = len(newMesh)
+ e = np.zeros(N)
+ a = np.zeros(N)
+ h = np.zeros(N)
 
-    # Plot exact solution
-    plt.figure()
-    plt.plot(xex,uex,label='Exact Solution',linewidth=4,color='black')
+ # Plot exact solution
+ plt.figure()
+ plt.plot(xex,uex,label='Exact Solution',linewidth=4,color='black')
 
-    # Find solution and errors for different mesh sizes
-    for i in range(0,len(newMesh)):
-        meshName = newMesh[i]
-        U = solveFE(meshName, conductivities, BCNs, BCD_lns, BCD_nds, sourceTerm, exportName, useSparse, verboseOutput)
-        x, u, v = getApprox1D(U,K,qN,r,isBimat)
-        e[i] = max(abs(v-u))
-        a[i] = sum(abs(v-u))/len(u)
+ # Find solution and errors for different mesh sizes
+ for i in range(0,len(newMesh)):
+     meshName = newMesh[i]
+     U = solveFE(meshName, conductivities, BCNs, BCD_lns, BCD_nds, sourceTerm, exportName, useSparse, verboseOutput)
+     x, u, v = getApprox1D(U,K,qN,r,isBimat)
+     e[i] = max(abs(v-u))
+     a[i] = sum(abs(v-u))/len(u)
 
-        print(meshName)
-        print('Max Error = %g, Avg Error = %g\\n'%(e[i],a[i]))
-        plt.plot(x,u, label=newMesh[i])
-        h[i] = len(u)
+     print(meshName)
+     print('Max Error = %g, Avg Error = %g\\n'%(e[i],a[i]))
+     plt.plot(x,u, label=newMesh[i])
+     h[i] = len(u)
 
-    plt.legend()
-    plt.grid()
-    plt.xlabel("Position y", fontsize = 12)
-    plt.ylabel("Temperature u(y)", fontsize = 12)
-    plt.title('FEM Deviations for r = %g'%r)
-    figName = "Exact-vs-Approx_r=" + str(r) + "_"+name+".png"
-    plt.savefig(figName, bbox_inches='tight', dpi=300)
-    cmd = "convert "+figName+" "+figName[:-3]+"eps"     # Save as eps file to import into groff document
-    os.system(cmd)
+ plt.legend()
+ plt.grid()
+ plt.xlabel("Position y", fontsize = 12)
+ plt.ylabel("Temperature u(y)", fontsize = 12)
+ plt.title('FEM Deviations for r = %g'%r)
+ figName = "Exact-vs-Approx_r=" + str(r) + "_"+name+".png"
+ plt.savefig(figName, bbox_inches='tight', dpi=300)
+ cmd = "convert "+figName+" "+figName[:-3]+"eps"     # Save as eps file to import into groff document
+ os.system(cmd)
 
 .B2
 .ft
@@ -572,13 +571,17 @@ whereas the FD solution took approximately
 .I "6.2 seconds,"
 i.e. it was more than three times faster.
 .RE
-.PSPIC -C /home/sudarson/Study/NUMME/NUMMEFELab2020-2021/outputs/FD20x20.eps 9
-.CD
-.I "Gmsh temperature output for 20x20 mesh"
-.DE
 .PSPIC -C /home/sudarson/Study/NUMME/NUMMEFELab2020-2021/outputs/FD40x40.eps 9
 .CD
 .I "Gmsh temperature output for 40x40 mesh"
+.DE
+.PSPIC -C /home/sudarson/Study/NUMME/NUMMEFELab2020-2021/outputs/FD20x20.eps 7
+.CD
+.I "Gmsh temperature output for 20x20 mesh"
+.DE
+.PSPIC -C /home/sudarson/Study/NUMME/NUMMEFELab2020-2021/FD_approxSolution.eps 5
+.CD
+.I "FD Lab approximation plot for N = 20"
 .DE
 .PSPIC -C /home/sudarson/Study/NUMME/NUMMEFELab2020-2021/FD_Error.eps 5.4
 .PSPIC -C /home/sudarson/Study/NUMME/NUMMEFELab2020-2021/2D_ErrorLog.eps 5.4
@@ -637,18 +640,18 @@ u'(y)~=~{-ry} over Kappa + A
 .SH
 First Material [-L,0]
 .EQ I
-A = {q sub N} over Kappa ~~~~~~~~~~ B = {rL sup 2} over {2 Kappa} + {q sub N L} over Kappa
+A = {q sub N} over Kappa sub 1~~~~~~~~~~ B = {rL sup 2} over {2 Kappa sub 1} + {q sub N L} over Kappa sub 1
 .EN
 .EQ I
-\[3d]~~~u(y)~mark =~ r over {2 Kappa} (L sup 2 - y sup 2 ) + {q sub N } over Kappa (y + L)~~~~~\[fa]~y~\[mo]~~[-L,0]
+\[3d]~~~u(y)~mark =~ r over {2 Kappa sub 1} (L sup 2 - y sup 2 ) + {q sub N } over Kappa sub 1 (y + L)~~~~~\[fa]~y~\[mo]~~[-L,0]
 .EN
 .SH
 Second Material [0,L]
 .EQ I
-A = {rL + q sub N} over Kappa ~~~~~~~~~~ B = T sub b ~~(Temperature~ at~ Boundary)
+A = {rL + q sub N} over Kappa sub 2~~~~~~~~~~ B = T sub b ~~(Temperature~ at~ Boundary)
 .EN
 .EQ I
-\[3d]~~~u(y)~=~{-ry sup 2} over {2 Kappa} + {(rL + q sub N )} over Kappa y + T sub b~~~~~\[fa]~y~\[mo]~~[0,L]
+\[3d]~~~u(y)~=~{-ry sup 2} over {2 Kappa sub 2} + {(rL + q sub N )} over Kappa sub 2 y + T sub b~~~~~\[fa]~y~\[mo]~~[0,L]
 .EN
 
 .LP
@@ -664,6 +667,17 @@ we see that the there is a
 at
 .I "y = 0"
 , i.e. at the boudnary of the two materials. This is where the conductivity changes from 3 W/(mm.K) to 1 W/(mm.K).
+.bp
+.NH
+Temperature fields of meshes with hole/inclusion
+.PSPIC /home/sudarson/Study/NUMME/NUMMEFELab2020-2021/outputs/temp-squareHole60.eps 6
+.DS C
+.I "squareHole60.msh : r = 0"
+.DE
+.PSPIC /home/sudarson/Study/NUMME/NUMMEFELab2020-2021/outputs/temp-squareInclusion40.eps 6
+.DS C
+.I "squareInclusion40.msh : r = 0"
+.DE
 .bp
 .NH
 Solving the Heating Circuit
@@ -715,7 +729,7 @@ From this we can see that convergence of less than 5% accuracy is only reached a
 .I "Gmsh Temperature fieldfor circuit3.msh"
 .DE
 .LP
-We see a much cleaner boundary in Circuit 3 as compared to Circuit 0 because the mesh is much finer.
+We see a cleaner boundary in Circuit 3 as compared to Circuit 0 because the mesh is much finer.
 .bp
 
 .NH 2
@@ -735,8 +749,9 @@ testFE.py
 .LP
 This is the main python script that calls all other functions. Since this script needs to execute different functions based on different meshes and boundary conditions, there are a set of "control variables" at the beginning of the script which let the user test for different conditions quickly.
 
-
 .ft CW
+.ps -1
+.nr VS 8
  import os
  import time
  import matplotlib.pyplot as plt
@@ -783,7 +798,7 @@ This is the main python script that calls all other functions. Since this script
 
 
  #-------------------------------------------------------#
- #          These values control the programme           #
+ #           These values control the program            #
  #-------------------------------------------------------#
 
  meshNumber = 2
@@ -837,7 +852,7 @@ This is the main python script that calls all other functions. Since this script
 
  # Assings conductivities
  K = [3,1,1.38e-3,15e-3]
- if case == 0:                                   # Normal square or square hole
+ if case == 0:                             # Normal square or square hole
      conductivities = {1000: K[0]}
  elif case == -1:                                    # FD Problem
      conductivities = {1000: 1}
@@ -851,7 +866,7 @@ This is the main python script that calls all other functions. Since this script
  if case == -1 or case == 2:
      r = 1
  else:
-     r = 1
+     r = 0
  sourceTerm = lambda xyz, physdom: r
 
 
@@ -863,9 +878,9 @@ This is the main python script that calls all other functions. Since this script
  if plotErrors == 0:
      U = solveFE(meshName, conductivities, BCNs, BCD_lns, BCD_nds, sourceTerm, exportName, useSparse, verboseOutput)
 
-     getTempDiff(U)
      if case == -1:
          FD_getMaxError(U)
+
      # Open .pos file in Gmsh
      if openMesh == 1:
          cmd = "gmsh " + exportName + " &"
@@ -1031,14 +1046,18 @@ This is the main python script that calls all other functions. Since this script
      end
  except NameError:
      end = time.time()
- print('\\n\\nTime Elapsed = %g\\n\\n'%(end-start))a
+ print('\\n\\nTime Elapsed = %g\\n\\n'%(end-start))
 .ft
 .bp
+.ps +1
+.nr VS 12
 .SH
 checkFE.py
 .LP
 This script containts user functions used to extract approximate and exact values of U for all the different cases in the FE Lab problem.
 
+.ps -1
+.nr VS 8
 .ft CW
  import math
  import numpy as np
