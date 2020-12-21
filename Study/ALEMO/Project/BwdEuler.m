@@ -29,6 +29,8 @@ for i = 1:numel(t)-1
     % solve nonlinear problem using the solution at previous time step as
     % initial guess
     y(:,i+1) = solveNR(gfun,Lfun,y(:,i));
+
+    #gfun(y(:,i+1))
     %Display message
 #    fprintf('Solved time step %d of %d\n',i,numel(time))
 endfor

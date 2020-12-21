@@ -32,7 +32,7 @@
 
 .ps 12
 .I "Sudarson Nanthacoumarane"
-.I "Tiffany Morgan Bachelet"
+.I "Tiffany Bachelet"
 .DE
 
 .LP
@@ -258,7 +258,9 @@ def getArea(xyz):
 .bp
 .ft
 .LP
-The computeKe() function uses the above functions to calculate Elemental Stiffness Matrix:
+The
+.I "computeKe()"
+function uses the above functions to calculate Elemental Stiffness Matrix:
 
 .ft CW
 .B1
@@ -437,7 +439,7 @@ like so:
 .B2
 .ft
 .NH 2
-Getting the FEM Solution
+Extracting the FEM Solution
 .LP
 A seperate file
 .I "checkFE.py"
@@ -1185,7 +1187,3 @@ This script containts user functions used to extract approximate and exact value
      return abs(p-q)
 
 .ft
-
-
-
-

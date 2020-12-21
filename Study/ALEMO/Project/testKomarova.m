@@ -30,7 +30,7 @@ y0 = yss + [10;0];
 #k2 = 0.0008;
 
 %% NUMERICAL PARAMETERS
-Nt = 10;
+Nt = 1000;
 days = 500;
 time = linspace(0,days,Nt+1);
 %% HANDLE FUNCTIONS DEFINITION
@@ -39,25 +39,46 @@ Jfun = @(t,y)KomarovaModel_Jac(y,a1,a2,b1,b2,g11,g12,g21,g22);
 % since all the parameters are fixed fun only depends on t and
 %% SOLUTION
 
-calc = 0;
-saveValue = 0;
+normal = 0;
 plotError = 0;
+plotBMi = 0;
 
-y = BwdEuler(time,ffun,Jfun,y0);
-boneMass(y,yss,time,k1,k2,BMi);
-
-if calc == 1
-    y = BwdEuler(time,ffun,Jfun,y0);
-    o1 = y(1,:);
-    o2 = y(2,:);
-    ax = plotyy (time, o1, time, o2);
-    legend("Osteoclasts","Osteoblasts")
-endif
 tic
-if saveValue == 1
-    fileName = strcat("vectorData/data_D",num2str(days),"_N",num2str(Nt),".mat");
+imageName = strcat("images/IMG_D",num2str(days),"_N",num2str(Nt),".eps");
+fileName = strcat("vectorData/data_D",num2str(days),"_N",num2str(Nt),".mat");
+if exist(fileName)
+    printf("%s exists. Loading data...\n",fileName);
+    cmd = sprintf("load %s",fileName);
+    eval(cmd);
+else
+    printf("%s does not exist. Calculating and saving data...\n",fileName);
     y = BwdEuler(time,ffun,Jfun,y0);
     str = sprintf("save %s y time Nt days",fileName);
+    eval(str);
+endif
+
+#BwdEuler(time,ffun,Jfun,y0);
+#boneMass(y,yss,time,Nt,k1,k2,BMi);
+#convergenceStudy(y,days,time,Nt);
+
+plotNormal(y,time,Nt,days);
+
+if normal == 1
+    o1 = y(1,:);
+    o2 = y(2,:);
+    [ax,l1,l2] = plotyy (time, o1, time, o2);
+    set(l1, 'linestyle', '--', 'LineWidth', 1);
+#    set(l2, 'marker', 'o', 'MarkerSize',10, 'LineWidth', 1);
+    legend("Osteoclasts","Osteoblasts");
+    xlabel('Time [days]');
+    ylabel(ax(1), 'Cell Count  [OC]');
+    ylabel(ax(2), 'Cell Count  [OB]');
+
+    titleName = strcat("Osteoclast and  Osteoblast count over",{" "},num2str(days)," days");
+    title(titleName);
+    set(ax,'FontSize',14);
+    set(ax,'LineWidth',1.5);
+    str = sprintf("print -depsc %s",imageName);
     eval(str);
 endif
 
@@ -82,6 +103,7 @@ if plotError == 1
             cmd = sprintf("load %s",fileName);
             eval(cmd);
         else
+            printf("%s does not exist. Calculating y and saving values...\n",fileName);
             y = BwdEuler(time,ffun,Jfun,y0);
             str = sprintf("save %s y time Nt days",fileName);
             eval(str);
@@ -97,7 +119,45 @@ if plotError == 1
     loglog(N,e1,'-o','MarkerSize',10,'LineWidth',1.5);
     hold on
     loglog(N,e2,'-o','MarkerSize',10,'LineWidth',1.5);
+    xlabel("Time Discretization Nt");
+    ylabel("Norm (ref - approx)");
     legend("Error 1", "Error 2");
+endif
+
+if plotBMi == 1
+    a = 1000;
+    for i=1:20
+        N(i) = a;
+        if a > 200000
+            break;
+        endif
+        a = a + 1000;
+    endfor
+
+    for i = 1:length(N)
+        Nt = N(i)
+        fileName = strcat("vectorData/data_D",num2str(days),"_N",num2str(Nt),".mat");
+        c = exist(fileName);
+        time = linspace(0,days,Nt+1);
+
+        if c == 2
+            printf("%s already exists\n",fileName);
+            cmd = sprintf("load %s",fileName);
+            eval(cmd);
+        else
+            y = BwdEuler(time,ffun,Jfun,y0);
+            str = sprintf("save %s y time Nt days",fileName);
+            eval(str);
+        endif
+
+        M(i) = boneMass(y,yss,time,Nt,k1,k2);
+
+        printf("\n");
+    endfor
+
+    M(1) = BMi;
+    plot(N,M,'-o','MarkerSize',10,'LineWidth',1.5);
+
 endif
 
 

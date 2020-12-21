@@ -1,173 +1,3 @@
-cd ~
-cd .config/groff/
-vim equation
-cd ~
-vim .config/groff/mom_template.mom 
-ls
-ls .config/groff/
-vim .vimrc 
-cd Test/mom-2.4-4_b/examples/
-vim test.mom 
-vim sample_docs.mom 
-vim test.mom 
-cp test.mom ~/.config/groff/mom_template.mom
-cd ~/.config/groff/
-ls
-mv groff_template.ms ms_template.ms
-ls
-ls -l
-cd ~
-cd .vim/
-cd templates/
-ls
-cd groff/
-ls
-ls -s ~/.config/groff/mom_template.mom mom_template.mom
-ln -s ~/.config/groff/mom_template.mom mom_template.mom
-ls
-mv template.ms ms_template.ms
-ls
-ls -l
-clear
-cd ..
-cd ..
-cd ..
-vim .vimrc 
-exit
-vim test.ms
-ls .vim/templates/groff/
-cd .vim/templates/groff/
-cat ms_template.ms 
-ln -s ~/.config/groff/ms_template.ms ms_template.ms 
-rm ms_template.ms 
-ln -s ~/.config/groff/ms_template.ms ms_template.ms 
-cat ms_template.ms 
-vim test.ms
-pwd
-cd ~
-vim test.ms
-vim test.ms
-clear
-ls .config/groff/
-vim .config/groff/mom_template.mom 
-cd Test/
-vim test.py
-exit
-cd Study/ALEMO/TP4/
-ls
-vim ex1.m 
-cd ..
-cd Project/
-ls
-vim testKomarova.m 
-octave-cli
-exit
-cd Study/ALEMO/Project/
-vim testKomarova.m 
-cd Test/
-vim test.ms
-exit
-vim .config/i3/config
-vim .config/i3/config
-cd Study/NUMME/NUMMEFELab2020-2021/
-vim testFE.py 
-ffrecord VINRA_CM
-zoom --version
-man zoom
-zoom -h
-ls
-cat tri3ThermalDirect.py 
-gedit tri3ThermalDirect.py 
-clear
-vim testFE.py 
-exit
-cd Study/NUMME/NUMMEFELab2020-2021/
-vim tri3ThermalDirect.py 
-exit
-cd Test/
-ls
-vim test.py
-ls
-rm test.py 
-cd ~
-cd Study/NUMME/
-ls
-cd test/
-ls
-cd ..
-vim FE_Report.mom
-exit
-ffrecord ALEMO_TD_GRPA
-ffrecord ALEMO_TD_GRPA2
-cd Study/ALEMO/Project/
-ls
-cat solveNR.m 
-cat BwdEuler.m 
-vim BwdEuler.m 
-clear
-cd ~
-vim .config/groff/ms_template.ms 
-exit
-cd Study/ALEMO/Project/
-vim solveNR.m 
-cd Study/ALEMO/Project/
-vim BwdEuler.m 
-ping -c 3 google.com
-cd Study/NUMME/NUMMEFELab2020-2021/
-ls -l
-cd Study/NUMME/NUMMEFELab2020-2021/
-vim solveFE.py 
-cd Study/NUMME/NUMMEFELab2020-2021/
-vim solveFE.py 
-cd Test/
-vim test.py
-cd ..
-cd Study/NUMME/FD_Lab1/
-ls
-cd FD\ 1D/
-ls
-vim main.py 
-cd ..
-cd ..
-ls
-vim FE_Report.mom 
-exit
-cd Study/NUMME/NUMMEFELab2020-2021/
-vim Report.ms
-exit
-vim checkFE.py
-mv checkFE.py Study/NUMME/NUMMEFELab2020-2021/
-cd Study/NUMME/NUMMEFELab2020-2021/
-vim checkFE.py 
-exit
-cd Study/NUMME/NUMMEFELab2020-2021/
-vim testFE.py 
-exit
-find -iname "*FLUID*"
-cd Study/NUMME/NUMMEFELab2020-2021/
-vim tri3ThermalDirect.py 
-ffrecord FLUID_TD
-ffrecord FLUID_TD2
-cd Study/NUMME/NUMMEFELab2020-2021/
-clear
-ls
-vim testFE.py 
-cd Study/NUMME/NUMMEFELab2020-2021/
-ls
-cd ..
-find -iname *.ms
-cd NUMMEFELab2020-2021/
-vim Report.
-vim Report.ms 
-sudo pacman -Ss zoom
-yay -Ss zoom
-yay -Syy
-yay -S zoom
-exit
-cd Study/NUMME/NUMMEFELab2020-2021/
-vim testFE.py 
-clear
-ffrecord COMEC_TD
 cd Study/NUMME/NUMMEFELab2020-2021/
 vim checkFE.py 
 numme 
@@ -498,3 +328,173 @@ vim convergenceStudy.m
 cd Test/
 vim test.py
 clear
+alemo
+cat myfile.mat 
+cat BwdEuler.m 
+cat solveNR.m 
+clear
+cat solveNR.m 
+cd ..
+cd TP4/
+clear
+cat newton.m 
+cd ..
+cd Project/
+cd ..
+vim test.m
+alemo
+cat data 
+cat data 
+clear
+cat data 
+cat data 
+cat data 
+cat data 
+cat data 
+ls
+vim user.m
+rm user.m 
+cat data 
+cat fileName 
+rm data myfile.mat 
+clear
+ls -1a
+ls -1a
+rm fileName 
+ls -1a
+mkdir vectorData
+ls -1a
+rm data_D500_N100.mat 
+ls -1a
+clear
+ls -1a vectorData/
+ls -1a vectorData/
+ls -1a vectorData/
+cd ..
+ls -1a 
+cd Project/
+ls -1a 
+cd vectorData/
+ls
+ls
+cd ..
+ls -1a vectorData/
+clear
+ls -1a vectorData/
+cat vectorData/data_D500_N500.mat 
+cd vectorData/
+ls 1a
+ls -1a
+cat data_D500_N500.mat 
+cat data_D500_N1000.mat 
+clear
+cat data_D500_N1000.mat 
+cat data_D500_N1000.mat 
+cd..
+cd ..
+ls
+git add * -f
+git status
+cd ..
+df -sh *
+du -h *
+du -h Project/
+cd Project/
+du -h *
+git reset
+git status
+git add *.m
+git add *.m -f
+git status
+git add --all
+git status
+git commit -m "Alemo progress"
+git push -u origin master
+numme
+clear
+vim Report.ms 
+du -sh NUMMEFELab2020-2021
+cd NUMMEFELab2020-2021/
+du -sh *
+cd ..
+rm *.eps
+cd outputs/
+rm *.eps
+cd ..
+du -sh *
+cd ..
+du -sh FE_Lab/
+clear
+ncdu
+cd FE_Lab/
+ls
+rm Report.ps 
+cd ..
+ncdu
+cat newton.m 
+cat quasinewton_ng.m 
+alemo
+vim testKomarova.m 
+exit
+alemo
+vim convergenceStudy.m 
+clear
+vim boneMass.m
+exit
+numme
+vim testFE.py 
+alemo
+cd ..
+cd TP4/
+ls
+cat newton.m 
+evince TP4.pdf 
+alemo
+clear
+vom testKomarova.m 
+vim testKomarova.m 
+octave-cli
+cp testKomarova.m sourceFile.m
+vim sourceFile.m 
+vim testKomarova.m 
+octave-cli
+octave-cli
+exit
+alemo
+vim testKomarova.m 
+exit
+alemo
+vim testKomarova.m 
+exit
+vim test.m
+cat myfile.mat 
+vim test.m
+rm myfile.mat 
+tm test.m 
+rm test.m 
+clear
+cd Test/
+vim test.m
+alemo
+octave-cli
+clear
+vim Rerport.ms
+vim Report.ms
+numme
+vim Report.ms 
+alemo
+vim Report.
+vim Report.ms 
+alemo
+cd vectorData/
+ls
+rm *
+groff_char -h
+man groff_char 
+cd Test/
+vim test.ms
+rm test.*
+vim test.ms
+alemo
+ls
+feh file.eps 
