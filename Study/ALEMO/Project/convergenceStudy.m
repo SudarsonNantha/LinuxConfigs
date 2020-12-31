@@ -1,30 +1,36 @@
-function [err1, err2] = convergenceStudy(apx, d, t, N)
+function convergenceStudy(days,ffun,Jfun,y0)
+    a = 1000;
+    for i=1:20
+        N(i) = a;
+        if a > 200000
+            break;
+        endif
+        a = a * 2;
+    endfor
 
-    fileName = "vectorData/data_D500_N500000.mat";
-    cmd = sprintf("load %s",fileName);
-    eval(cmd);
+    #N(i+1) = 500000;
 
-    if days != d
-        error('Number of days is not the same')
-    endif
+    for i = 1:length(N)
+        Nt = N(i);
+        [y, time] = dataExist(days,Nt,ffun,Jfun,y0);
+        [e1(i),e2(i)] = getInterpError(y,days,time,Nt);
 
-    ref = y;
-    #printf("\tDays\tTimestep\nRef\t%g\t%g\nApx\t%g\t%g\n",days,Nt,d,N);
+        printf("\n");
+    endfor
 
-    r1 = ref(1,:);  # Reference 0.5M value y1 for 'time'
-    r2 = ref(2,:);  # Reference 0.5M value y2 for 'time'
+    ax1 = loglog(N,e1,'-o','MarkerSize',10,'LineWidth',1.5);
+    hold on
+    ax2 = loglog(N,e2,'-o','MarkerSize',10,'LineWidth',1.5);
+    xlabel("Time Discretization Nt");
+    ylabel("Norm (reference - approx)");
+    legend("Osteoclast Error", "Osteoblast Error");
+    set(gca, 'linewidth', 1.5, 'fontsize', 14);
+    grid minor;
+    titleName = strcat("Error plot for",{" "},num2str(days)," days");
+    title(titleName);
 
-    a1 = apx(1,:);  # Approx Nt value y1 for 't'
-    a2 = apx(2,:);  # Approx Nt value y2 for 't'
-
-    b1 = interp1(t,a1,time,'spline');   # Interpolation y1
-    b2 = interp1(t,a2,time,'spline');   # Interpolation y2
-
-
-    err1 = norm(r1-b1)  # Find error y1
-    err2 = norm(r2-b2)  # Find error y2
-
-#   ax = plotyy (t, a1, t, a2);
-#   legend("Osteoclasts","Osteoblasts")
+    imageName = strcat("images/IMG_D",num2str(days),"_ErrorPlot.eps");
+    str = sprintf("print -depsc %s", imageName);
+    eval(str);
 
 endfunction

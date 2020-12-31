@@ -51,7 +51,7 @@ exec redshift -P -O 3250
 
 # Execute every time i3 reloads
 exec_always feh --bg-scale ~/Pictures/Arch\ Wallpapers/NOFQh9F-arch-linux-wallpaper.png		# Set wallpaper
-#exec_always --no-startup-id picom --config /home/sudarson/.config/picom.conf &			# Start Comton compositor
+exec_always --no-startup-id picom --config /home/sudarson/.config/picom.conf &			# Start Comton compositor
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh &					# Launch Polybar in background
 
 # Notification daemon

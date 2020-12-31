@@ -1,200 +1,3 @@
-cd Study/NUMME/NUMMEFELab2020-2021/
-vim checkFE.py 
-numme 
-ls
-numme
-ls
-pwd
-clear
-cd .local/bin/
-./numme 
-numme
-clear
-alemo
-ls
-ls -al
-numme 
-ls -al
-echo $pwd
-echo pwd
-alemo
-pacman -Ss fzf
-sudo pacman -Rns fzf 
-sudo pacman -Rns fzf vim-fzf-git 
-vim .vimrc 
-cd .local/bin/
-vim numme
-vim i3Screenlocker 
-vim numme
-cat i3Screenlocker 
-cat numme 
-chmod +x numme 
-vim numme 
-vim numme 
-rm numme 
-cd ~
-vim .bashrc
-exit
-numme
-feh Fig.png &
-cd Study/NUMME/NUMMEFELab2020-2021/
-vim checkFE.py 
-vim checkFE.py 
-exit
-cd Study/NUMME/NUMMEFELab2020-2021/
-vim testFE.py 
-vim testFE.py 
-numme
-vim checkFE.py 
-numme
-car pylog 
-cat pylog 
-cd ..
-cd FD_Lab1/
-cd FD\ 1D/
-ls
-cat main.py 
-cd ..
-cd ..
-cd NUMMEFELab2020-2021/
-vim pylog 
-ls
-cat pylog 
-vim .local/bin/compiler 
-cd Test/
-vim test.py
-cd Downloads/code\ -\ Copy/
-vim KomarovaModel_Jac.m 
-vim testKomarova.m 
-octave-cli
-vim testKomarova.m 
-octave-cli
-vim testKomarova.m 
-exit
-alemo
-vim solveNR.m 
-exit
-alemo
-octave-cli
-exit
-numme 
-vim Report.ms 
-git status
-git add .vim/
-git status
-git add --all
-git status
-git add Study/NUMME/NUMMEFELab2020-2021/Report.ms 
-git add Study/NUMME/NUMMEFELab2020-2021/Report.ms -f
-git add Study/NUMME/NUMMEFELab2020-2021/tri3ThermalDirect.py -f
-git add Study/NUMME/NUMMEFELab2020-2021/checkFE.py -f
-git add Study/NUMME/NUMMEFELab2020-2021/testFE.py -f
-git status
-cat .gitREADME 
-git commit -m "Config changes and backedup NUMME work"
-git status
-git push -u origin master
-clear
-sudo pacman -Syy
-sudo pacman -Syu
-clear
-vim .gitREADME 
-ffrecord DIFF_TD_GRPA
-exit
-numme
-vim testFE.py 
-vim testFE.py 
-numme
-vim checkFE.py 
-ls -l
-ls -lh
-clear
-ls -l
-ls | grep *.py > pyfiles
-cat pyfiles 
-ls | grep *.py 
-ls 
-ls | grep .py
-ls | grep .msh
-ls | grep *.msh
-ls | grep "*.msh"
-ls *.msh
-clear
-ls *.msh > meshfiles
-cat meshfiles 
-vim meshfiles 
-sed "s/$/,/g" meshfiles 
-ls *.msh > meshfiles
-cat meshfiles 
-awk '{ print "\""$0"\""}' meshfiles 
-sed "s/$/,/g" meshfiles 
-cat meshfiles 
-awk '{ print "\""$0"\""}' meshfiles 
-cat meshfiles 
-awk '{ print "\""$0"\""}' meshfiles > meshfiles
-cat meshfiles 
-ls *.msh > meshfiles
-cat meshfiles 
-awk '{ print "\""$0"\""}' meshfiles
-cat meshfiles 
-awk '{ print "\""$0"\""}' meshfiles > test
-cat test
-sed "s/$/,/g" test
-vim test
-sed "s/$/,/g" test
-vim checkFE.py 
-vim checkFE.py 
-wq
-mogrify -format eps *square*.png
-ls *eps
-ls -l
-ls -d
-ls -d *
-clear
-ls -d $PWD/*
-ls -d $PWD/*.eps
-ls -l $PWD/*.eps
-numme
-vim Report.ms 
-ffrecord COMEC_TD
-numme
-git add --all
-git status
-cd .config/
-vim .gitignore 
-echo baloofileinformationrc >> .gitignore 
-echo kconf_updaterc >> .gitignore 
-cat .gitignore 
-clear
-git status
-cd ~
-git reset
-git status
-git add --all
-git status
-git commit -m "Updates to NUMME report"
-cat .gitREADME 
-git push -u origin master
-clear
-numme
-ls *.png
-rm Fig.png 
-mogrify -format png *.eps
-mogrify -format eps *.png
-ls *.eps
-ls $PWD/*.eps
-ls -l $PWD/*.eps
-numme
-ls *.eps
-rm Exact-vs-Approx_r\=1..eps 
-numme
-cd outputs/
-mogrify -format eps *.png
-echo "mogrify -format eps *.png" > epsConvert
-cat epsConvert 
-chmod +x epsConvert 
-./epsConvert 
-clear
 numme
 cd outputs/
 vim epsConvert 
@@ -498,3 +301,200 @@ vim test.ms
 alemo
 ls
 feh file.eps 
+yay -Ss libgl2ps
+yay -Ss libgl
+yay -Ss libgl2
+yay -Ss libglps
+sudo pacman -Syy
+sudo pacman -S libgl
+clear
+ ffmpeg -i COMEC_TD_\(18-Dec-20\ 14-51-10\).wmv -vcodec libx265 -crf 28 COMEC_TD_2020-12-18.mp4
+git status
+alemo
+git add plotNormal.m -f
+git add --all
+git status
+git add Report.ms 
+git add Report.ms Report.pdf -f
+git status
+git commit -m "Rough Draft of ALEMO complete"
+git push -u origin master
+git status
+clear
+cd ~
+cd Test/
+vim test.m
+clear
+ls -1a $PWD/*
+exit
+alemo
+vim boneMass.m 
+vim checkRoot.m
+vim solveNR.m 
+vim plotNormal.m
+vim plotNormal.m
+vim convergenceStudy.m 
+mv convergenceStudy.m getInterpError.m
+vim getInterpError.m 
+ls -1a
+rm file.eps 
+cat sourceFile.m 
+wq
+clear
+vim convergenceStudy.m
+vim valueExist.m
+vim valueExist.m
+v valueExist.m dataExist.m
+mv valueExist.m dataExist.m
+vim dataExist.m 
+ls -1a
+vim boneMass.m 
+vim convergenceStudy.m 
+vim getInterpError.m 
+vim boneMass.m 
+vim convergenceStudy.m 
+vim getReference.m
+clear
+ls -1a
+vim convergenceStudy.m 
+cp plotNormal.m plotvsReference.m
+vim plotvsReference.m 
+alsmo
+alemo
+vim testKomarova.m 
+alemo
+octave-cli
+octave-cli
+exit
+find -iname "*groff*"
+alemo
+vim Report.ms 
+mogrify -format eps *.jpeg
+ls -1a $PWD/*.eps
+cd ..
+cd Folder/
+ls -1a $PWD/*.eps
+ls -1av $PWD/*.eps
+vim clues.ms
+cd ..
+find -iname "*equation*"
+alemo
+vim Report.ms 
+sudo pacman -Syy
+yay -Syy
+sudo pacman -Syu
+yay -Syu
+sudo pacman -Syu
+clear
+alemo
+vim testKomarova.m 
+alemo
+alemo
+octave-cli
+sudo vim /etc/ImageMagick-7/policy.xml 
+sudo vim /etc/ImageMagick-7/policy.xml 
+convert IMG_D500_N10000.eps test.png
+convert IMG_D500_N10000.eps test.png
+gs --version
+convert IMG_D500_N10000.eps test.png
+convert IMG_D500_N10000.eps test.png
+convert IMG_D500_N10000.eps test.png
+convert IMG_D500_N10000.eps test.png
+convert -density 150 -quality 100 IMG_D500_N10000.eps test.png
+convert -density 150 -quality 100 IMG_D500_N1000.eps test2.png
+cd /var/cache/pacman/
+ls
+cd pkg/
+ls
+sudo pacman -U octave-5.2.0-6-x86_64.pkg.tar.zst 
+cd ..
+du -sh pkg/
+sudo pacman -Syy
+sudo pacman -Syu
+yay -Ss epstool
+yay -S epstool
+clear
+sudo pacman -Ss octave
+ls
+ls -1av
+clear
+ls -1av
+cear
+clear
+ls -1av
+clear
+ls -1av
+clear
+ls -1av
+clear
+ls -1av
+sudo pacman -Ss octave
+yay -Ss epstool
+cat /etc/xdg/picom.conf 
+clear
+ls -1av $PWD/*
+killall picom
+ncdu
+ncdu -h
+ncdu --exclude ~/Windows/
+clear
+cd .config/rofi/
+ls
+cd ..
+cd polybar/
+ls
+vim user_modules.ini 
+vim modules.ini 
+ncdu --exclude /home/sudarson/Windows
+cd ~
+ncdu --exclude /home/sudarson/Windows
+nethogs 
+sudo pacman -Ss tilda
+sudo pacman -Syy
+alemo
+octave-cli
+octave-cli
+octave-cli
+alemo
+vim Report.ms 
+cd .config
+vim picom.conf 
+cp picom.conf picom.conf.old
+vim picom.conf 
+rm picom.conf.old 
+vim picom.conf 
+vim .config/i3/config
+xprop WM_CLASS
+killall picom
+killall picom
+killall picom
+octave-cli
+cd CM/
+clear
+ls
+pdfjoin *.pdf
+pdfjam -h
+pdfjam *.pdf
+alemo
+cd ~
+vim .config/i3/config
+alemo
+vim testKomarova.m 
+sudo pacman -S tilda
+tilda -h
+tilda 
+tilda 
+clear
+sudo pacman -Rns tilda
+clear
+alemo
+cd images/
+ls -1av $PWD/*
+clear
+ls -1av $PWD/*
+alemo
+cd images/
+ls -1av $PWD/*
+clear
+ls -1av $PWD/*
+exit

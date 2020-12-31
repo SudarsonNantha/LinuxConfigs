@@ -18,23 +18,28 @@ y = zeros(size(y1,1),numel(t));
 % Set initial condition
 y(:,1)= y1;
 
+p = int32(numel(t)/10);
+
 #for i = 2:numel(t)
 for i = 1:numel(t)-1
     % compute Delta t
     dt = t(i+1) - t(i);
     % set g fun
-    gfun = @(z) (z - y(:,i) - dt*ffun(t(i),z));
+    gfun = @(z) (z - y(:,i) - dt*ffun(t(i+1),z));
     % Set L
-    Lfun = @(z) (eye(2) - dt*Jfun(t(i),z));
+    Lfun = @(z) (eye(2) - dt*Jfun(t(i+1),z));
     % solve nonlinear problem using the solution at previous time step as
     % initial guess
     y(:,i+1) = solveNR(gfun,Lfun,y(:,i));
 
     #gfun(y(:,i+1))
     %Display message
-#    fprintf('Solved time step %d of %d\n',i,numel(time))
+    if rem(i,p) == 0
+        fprintf('%i%%...',int32(i*100/numel(t)));
+    endif
+#        fprintf('Solved time step %d of %d\n',i,numel(time))
 endfor
-
+printf("\n");
 
 endfunction
 

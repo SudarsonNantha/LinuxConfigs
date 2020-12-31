@@ -4,20 +4,19 @@ function plotNormal(y,time,Nt,days)
     o1 = y(1,:);
     o2 = y(2,:);
     [ax,l1,l2] = plotyy (time, o1, time, o2);
-    set(l1, 'linestyle', '--', 'LineWidth', 1);
+#    set(l1, 'linestyle', '--', 'LineWidth', 1);
 #    set(l2, 'marker', 'o', 'MarkerSize',10, 'LineWidth', 1);
     legend("Osteoclasts","Osteoblasts");
     xlabel('Time [days]');
     ylabel(ax(1), 'Cell Count  [OC]');
     ylabel(ax(2), 'Cell Count  [OB]');
 
-    titleName = strcat("Osteoclast and  Osteoblast count over",{" "},num2str(days)," days");
+    titleName = strcat("Osteoclast and Osteoblast count for",{" "},num2str(days)," days over",{" "},num2str(Nt)," time steps");
     title(titleName);
     set(ax,'FontSize',14);
     set(ax,'LineWidth',1.5);
+    grid minor;
     str = sprintf("print -depsc %s",imageName);
     eval(str);
-
-
 
 endfunction
