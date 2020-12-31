@@ -394,13 +394,99 @@ and its corresponding
 were saved as a matlab ".mat file". If the values of
 .I "y"
 needed to be calculated using Backward Euler method, a function
-.I "dataExist()"
+.BI "dataExist()"
+.I "(Appendix 12.1)"
 was written to check if those values had already been computed. If the values existed, they were loaded into the script to be used. Otherwise, the cell count was computed using the Backward Euler method.
+
+
+
+.DS C
+.ps 12
+.BI "The results for Nt = 1000, 10000, 100000 are plotted below:"
+.DE
+.PSPIC -C /home/sudarson/Study/ALEMO/Project/images/IMG_D500_N1000.eps 5
+\#.PSPIC -C /home/sudarson/Study/ALEMO/Project/images/IMG_D500_N2000.eps 5
+.PSPIC -C /home/sudarson/Study/ALEMO/Project/images/IMG_D500_N10000.eps 5
+\#.PSPIC -C /home/sudarson/Study/ALEMO/Project/images/IMG_D500_N20000.eps 5
+\#.PSPIC -C /home/sudarson/Study/ALEMO/Project/images/IMG_D500_N50000.eps 5
+.PSPIC -C /home/sudarson/Study/ALEMO/Project/images/IMG_D500_N100000.eps 5
+.bp
+.NH
+Plot solutions on the same graph while increasing the time step
+.LP
+Comparisons were made using time steps for
+.I "Nt = 1000, 4000, 9000, 16000, and 25000 "
+with the reference of 0.5 million time steps. The reference plot in both the osteoclast figure and the osteoblast figure are represented by a dash-dotted line.
+.B "As the number of time steps increases, the solutions start to get plotted closer and closer to each other."
+This means that the solution starts to
+.B "converge"
+as the number of time steps increases, and this can be seen clearly because the solution for the highest number of time steps in these plots
+.I "(Nt = 25000)"
+is very close to the exact/reference solution
+.I "(Appendix 12.2)".
+
+.PSPIC -C /home/sudarson/Study/ALEMO/Project/images/IMG_OB_Comparison_500_N1000-N25000.eps 7
+.PSPIC -C /home/sudarson/Study/ALEMO/Project/images/IMG_OC_Comparison_500_N1000-N25000.eps 7
+.bp
+.NH
+Plot error against reference solution
+.NH 2
+Interpolating approximate solution and compute the error
+.LP
+The inbuilt function
+.I "interp1()"
+was used to find the interpolation of approximate solution with the exact solution. A user-defined function called
+.BI "getInterpError()"
+.I "(Appendix 12.4)"
+returned the interpolation error when provided with data for the approximate time step. Error for Osteoclast and Osteoblast count was caclulated as the difference of the norm of the reference values and the interpolated values.
+
+.NH 2
+Increase number of points in time stepping vector and plot the error
+.LP
+In order to plot the evolution of error with increase in number of time steps, a doubling time step was chosen where
+.I "Nt = 2000, 4000, 8000, 16000, 32000, 64000, 128000, 256000."
+This computation was done in a user-defined function
+.BI "convergenceStudy()"
+.I "(Appendix 12.3)"
+which called the previously mentioned
+.BI "getInterpError()"
+function.
+
+.PSPIC -C /home/sudarson/Study/ALEMO/Project/images/IMG_D500_ErrorPlot.eps
+.bp
+.NH
+Compute bone mass density and plot M(t) vs Time
+.LP
+For a time period of 500 days, the error between approximate solution and reference solution is suitably small for
+.I "Nt = 100000."
+This is demonstrated with the following graph, where the approximate solution and reference solution are nearly indistinguishable
+.I "(Appendix 12.5)."
+
+.PSPIC -C /home/sudarson/Study/ALEMO/Project/images/IMG_D500_N100000_vs_Reference.eps
+.bp
+The bone mass density
+.I "M(t)"
+was calculated by integrating the following equation using the trapezoidal rule:
+.EQ C
+M(t)~=~ int from 0 to t k sub 1 x sub 1 ( tau ) + k sub 2 x sub 2 ( tau )~~d tau
+.EN
+.EQ C
+x sub i ( tau )~=~max( y sub i - y sub ss , 0)~~~i = 1,2
+.EN
+
+.PSPIC -C /home/sudarson/Study/ALEMO/Project/images/IMG_BMi_D500_N100000.eps
+.bp
+
+\#.nr H1 0
+.bp
+.NH
+Appendix
+.NH 2
+dataExist()
 
 .ft CW
 .B1
  function [y, time] = dataExist(days,Nt,ffun,Jfun,y0)
-
      fileName = strcat("vectorData/data_D",
                 num2str(days),"_N",num2str(Nt),".mat");
 
@@ -422,56 +508,63 @@ was written to check if those values had already been computed. If the values ex
 
 .B2
 .ft
-.bp
-.DS C
-.ps 12
-.BI "The results for Nt = 1000, 10000, 50000, 100000 are plotted below:"
-.DE
-
-\#.PSPIC -C /home/sudarson/Study/ALEMO/Project/images/IMG_D500_N1000.eps 5
-\#\#.PSPIC -C /home/sudarson/Study/ALEMO/Project/images/IMG_D500_N2000.eps 5
-\#.PSPIC -C /home/sudarson/Study/ALEMO/Project/images/IMG_D500_N10000.eps 5
-\#\#.PSPIC -C /home/sudarson/Study/ALEMO/Project/images/IMG_D500_N20000.eps 5
-\#.PSPIC -C /home/sudarson/Study/ALEMO/Project/images/IMG_D500_N50000.eps 5
-\#.PSPIC -C /home/sudarson/Study/ALEMO/Project/images/IMG_D500_N100000.eps 5
-.bp
-.NH
-Plot solutions on the same graph while increasing the time step
-.LP
-Comparisons were made using time steps for
-.I "Nt = 1000, 4000, 9000, 16000, and 25000 "
-with the reference of 0.5 million time steps. The reference plot in both the osteoclast figure and the osteoblast figure are represented by a dash-dotted line.
-.B "As the number of time steps increases, the solutions start to get plotted closer and closer to each other."
-This means that the solution starts to
-.B "converge"
-as the number of time steps increases, and this can be seen clearly because the solution for the highest number of time steps in these plots
-.I "(Nt = 25000)"
-is very close to the exact/reference solution.
-
-\#.PSPIC -C /home/sudarson/Study/ALEMO/Project/images/IMG_OB_Comparison_500_N1000-N25000.eps 7
-\#.PSPIC -C /home/sudarson/Study/ALEMO/Project/images/IMG_OC_Comparison_500_N1000-N25000.eps 7
-.sp 4
-.NH
-Plot error against reference solution
-.NH 2
-Interpolating approximate solution and compute the error
-.LP
-The inbuilt function
-.I "interp1()"
-was used to find the interpolation of approximate solution with the exact solution. A user-defined function called
-.I "getInterpError()"
-returned the interpolation error when provided with data for the approximate time step. Error for Osteoclast and Osteoblast count was caclulated as the difference of the norm of the reference values and the interpolated values.
 
 .NH 2
-Increase number of points in time stepping vector and plot the error
-.LP
-In order to plot the evolution of error with increase in number of time steps, a doubling time step was chosen where
-.I "Nt = 2000, 4000, 8000, 16000, 32000, 64000, 128000, 256000."
-This computation was done in a user-defined function
-.I "convergenceStudy()"
-which called the previously mentioned
-.I "getInterpError()"
-function.
+Plot overlaps for different time steps
+
+.ft CW
+.B1
+ if plotOverlap == 1
+     for i=1:5
+         N(i) = i*i*1000;
+     endfor
+     N
+     leg = cell(length(N)+1,1);
+     for c=1:2
+         for i=1:length(N)
+             Nt = N(i);
+             [y, time] = dataExist(days,Nt,ffun,Jfun,y0);
+             individualPlot(y,time,Nt,days,c);
+             leg(i) = strcat("Nt = ",{" "},num2str(Nt));
+             hold on;
+         endfor
+         [yex, nex, dex, tex] = getReference();
+         ax = individualPlot(yex,tex,nex,dex,c);
+         set(ax, "linewidth", 2, "linestyle", "-.")
+         leg(length(N)+1) = "Reference";
+         legend(leg);
+
+.B2
+.bp
+.B1
+
+         if c ==1
+             ost = "Osteoclast";
+             os = "OC";
+         else
+             ost = "Osteoblast";
+             os = "OB";
+         endif
+         titleName = strcat(ost," comparison for different Nt");
+         title(titleName);
+         xlabel('Time [days]');
+         ylabel("Cell Count");
+         grid minor;
+         imageName = strcat("images/IMG_",os,
+                "_Comparison_",num2str(days),
+                "_N",num2str(N(1)),"-N",
+                num2str(N(length(N))),".eps");
+
+         str = sprintf("print -depsc %s", imageName);
+         eval(str);
+     endfor
+ endif
+
+.B2
+.ft
+
+.NH 2
+convergenceStudy()
 
 .ft CW
 .B1
@@ -497,14 +590,19 @@ function.
      xlabel("Time Discretization Nt");
      ylabel("Norm (ref - approx)");
      legend("Error 1", "Error 2");
-
-endfunction
+ endfunction
 
 .B2
-.sp 2
+.ft
+
+.NH 2
+getInterpError()
+
+.ft CW
 .B1
  function [err1, err2] = getInterpError(apx, d, t, N)
-     fileName = "vectorData/data_D500_N500000.mat";
+
+ fileName = "vectorData/data_D500_N500000.mat";
      cmd = sprintf("load %s",fileName);
      eval(cmd);
 
@@ -530,29 +628,10 @@ endfunction
 
 .B2
 .ft
-\#.PSPIC -C /home/sudarson/Study/ALEMO/Project/images/IMG_D500_ErrorPlot.eps
 .bp
-.NH
-Compute bone mass density and plot M(t) vs Time
-.LP
-For a time period of 500 days, the error between approximate solution and reference solution is suitably small for
-.I "Nt = 100000."
-This is demonstrated with the following graph, where the approximate solution and reference solution are nearly indistinguishable.
+.NH 2
+boneMass()
 
-\#.PSPIC -C /home/sudarson/Study/ALEMO/Project/images/IMG_D500_N100000_vs_Reference.eps
-.bp
-The bone mass density
-.I "M(t)"
-was calculated by integrating the following equation using the trapezoidal rule:
-.EQ C
-M(t)~=~ int from 0 to t k sub 1 x sub 1 ( tau ) + k sub 2 x sub 2 ( tau )~~d tau
-.EN
-.EQ C
-x sub i ( tau )~=~max( y sub i - y sub ss , 0)~~~i = 1,2
-.EN
-
-\#.PSPIC -C /home/sudarson/Study/ALEMO/Project/images/IMG_BMi_D500_N100000.eps
-.bp
 .ft CW
 .B1
 function M = boneMass(y,yss,t,days,Nt,k1,k2,BMi)
@@ -568,7 +647,6 @@ function M = boneMass(y,yss,t,days,Nt,k1,k2,BMi)
 
     M0 = BMi;
     M = (M0-M)/M0 * 100;
-
     plot(t,M);
     xlabel("Time [days]");
     ylabel("Bone Mass %");
@@ -577,7 +655,8 @@ function M = boneMass(y,yss,t,days,Nt,k1,k2,BMi)
     titleName = strcat("Bone Mass Density for",{" "},num2str(Nt)," time steps");
     title(titleName);
 
-    imageName = strcat("images/IMG_BMi_D",num2str(days),"_N",num2str(Nt),".eps");
+    imageName = strcat("images/IMG_BMi_D",num2str(days),
+                "_N",num2str(Nt),".eps");
     str = sprintf("print -depsc %s", imageName);
     eval(str);
 
@@ -585,19 +664,3 @@ endfunction
 
 .B2
 .ft
-
-\#.nr H1 0
-.bp
-.NH
-Appendix
-.NH 2
-dataExist()
-
-.NH 2
-convergenceStudy()
-
-.NH 2
-getInterpError()
-
-.NH
-boneMass()

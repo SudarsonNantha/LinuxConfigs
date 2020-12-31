@@ -31,8 +31,8 @@ Jfun = @(t,y)KomarovaModel_Jac(y,a1,a2,b1,b2,g11,g12,g21,g22);
 %% SOLUTION
 
 plotOutput = 0;
-plotOverlap = 0;
-plotConvergence = 1;
+plotOverlap = 1;
+plotConvergence = 0;
 plotBMi = 0;
 
 
@@ -64,7 +64,7 @@ if plotOverlap == 1
         endfor
         [yex, nex, dex, tex] = getReference();
         ax = individualPlot(yex,tex,nex,dex,c);
-        set(ax, "linewidth", 2, "linestyle", "-.")
+        set(ax, "linewidth", 1.5, "linestyle", "-.")
         leg(length(N)+1) = "Reference";
         legend(leg);
         if c ==1
