@@ -1,150 +1,3 @@
-numme
-cd outputs/
-vim epsConvert 
-./epsConvert 
-cp epsConvert ~/.local/bin/
-cd ..
-epsConvert 
-epsConvert 
-epsConvert 
-cd ..
-cd FD_Lab1/FD\ 2D/
-ls
-epsConvert 
-ls -1a $PWD/*.eps
-clear
-cp 2D_ErrorLog.eps ~/Study/NUMME/NUMMEFELab2020-2021/outputs/
-numme
-ls $PWD/*.eps
-ls -1a $PWD/*.eps
-cd ~
-get add --all
-git add --all
-git status
-git commit -m "Compared FD and FEM solutions"
-git status
-git push -u origin master
-clear
-cd Test/
-groff -ms -P-l -P-pA4 test.ms | ps2pdf - test1.pdf
-evince test1.pdf 
-vim .local/bin/compiler 
-numme
-cd outputs/
-gmsh temp-square2x2.pos {Print "file.png"; Exit;}
-gmsh temp-square2x2.pos Print "file.png"; Exit;
-ls
-cd ..
-cd outputs/
-vim gmshScript
-gmsh temp-square2x2.pos gmshScript 
-feh file.png 
-gmsh temp-circuit0.pos gmshScript 
-feh file.png 
-gmsh temp-squareBimat8.pos gmshScript 
-gmsh temp-squareHole30.pos gmshScript 
-feh file.png 
-rm gmshScript 
-clear
-cd ~
-cd Test/
-ls
-cat test.ms
-vim test.ms
-numme
-vim Report.ms 
-cd ~
-git add --all
-git status
-git commit -m "Finished Report"
-git push -u origin master
-numme
-vim checkFE.py 
-numme
-vim checkFE.py 
-numme
-cd ..
-cd FD_Lab1/FD\ 2D/
-ls
-vim main.py 
-vim main.py 
-vim main.py 
-numme
-epsConvert 
-rm 2D_ErrorLog.eps 
-ln -s ~/Study/NUMME/FD_Lab1/FD\ 2D/2D_ErrorLog.png 2D_ErrorLog.png
-ls -al
-clear
-ls *.png
-ls -l *.png
-epsConvert 
-feh 2D_ErrorLog.
-feh 2D_ErrorLog.eps 
-clear
-epsConvert 
-ls -1a *.eps
-ls -1a $PWD/*.eps
-cd outputs/
-epsConvert 
-epsConvert 
-epsConvert 
-cd ..
-ls $PWD/*.eps
-ls -1a $PWD/*.eps
-clear
-ls -1a $PWD/*.eps
-ls -1a $PWD/*.eps
-clear
-clear
-ls -1a $PWD/*.eps
-git add --all
-git status
-git push -u origin master
-git push -u origin master
-nummme
-numme
-vim Report.ms 
-numme
-vim testFE.py 
-sudo pacman -Syy
-sudo pacman -S zoom
-yay -Ss zoom
-yay -S zoom
-ls -1a $PWD/*.eps
-ls -1a *.eps
-$PWD
-numme
-ls -1a *.eps
-ls -1a $PWD/*.eps
-cd outputs/
-epsConvert 
-alemo
-cat testKomarova.m 
-exit
-numme
-vim checkFE.py 
-alemo
-vim testKomarova.m 
-vim convergenceStudy.m
-cat testKomarova.m 
-vim convergenceStudy.m
-cd Test/
-vim test.py
-clear
-alemo
-cat myfile.mat 
-cat BwdEuler.m 
-cat solveNR.m 
-clear
-cat solveNR.m 
-cd ..
-cd TP4/
-clear
-cat newton.m 
-cd ..
-cd Project/
-cd ..
-vim test.m
 alemo
 cat data 
 cat data 
@@ -498,3 +351,150 @@ ls -1av $PWD/*
 clear
 ls -1av $PWD/*
 exit
+git status
+git add ---all
+git add --all
+clear
+git add ---all
+git status
+git commit -m "Final draft ALEMO"
+git push -u origin master
+clear
+numme
+vim Report.ms 
+git status
+git add --all
+git commit -m "Moved Appendix to the end"
+git status
+git push -u origin master
+alemo
+octave-cli
+alemo
+vim Report.ms 
+vim Report.ms 
+alemo
+vim testKomarova.m 
+alemo
+sudo pacman -Ss compositer
+sudo pacman -Ss compton
+sudo pacman -S picom
+clear
+cd ~
+cd .config/
+vim picom.conf 
+picom --version
+clear
+vim picom.conf 
+alemo
+vim picom.conf 
+cd ~/.config/
+vim picom.conf 
+alelmo
+alemo
+clear
+vim plotNormal.m 
+cp plotNormal.m individualPlot.m
+vim individualPlot.m 
+vim overlapPlot.m
+rm overlapPlot.m 
+vim individualPlot.m 
+alemo
+cd images/
+ls -1av $PWD/*
+htop
+killall octave
+killall octave-cli
+killall firefox
+alemo
+vim boneMass.m 
+alemo
+octave-cli
+alemo
+octave-cli
+alemo
+vim BwdEuler.m 
+alemo
+vim convergenceStudy.m 
+alemo
+cd images/
+ls -1av
+alemo
+vim testKomarova.m 
+octave-ci
+octave-cli
+alemo
+:e convergenceStudy.m 
+vim convergenceStudy.m 
+alemo
+vim Report.ms 
+cp Report.pdf ALEMO_Project_Sudarson_NANTHACOUMARANE.pdf
+killall picom
+ncdu
+ncdu
+find -iname "*saif*"
+find -iname "*ashok*"
+rename -h
+rename 's/Ashok/AK/' *
+find -iname "*ashok*"
+find . -type f iname '*Ashok*' | while read FILE ; do newfile="$(echo ${FILE} | sed -e 's/Ashok/AK/g')" ; mv "${FILE}" "${newfile}" ; done
+find . -type f -iname '*Ashok*' | while read FILE ; do newfile="$(echo ${FILE} | sed -e 's/Ashok/AK/g')" ; mv "${FILE}" "${newfile}" ; done
+find -iname "*ashok*"
+find -name "*AK*"
+find . -type f -iname '*saif*' | while read FILE ; do newfile="$(echo ${FILE} | sed -e 's/Ashok/AK/g')" ; mv "${FILE}" "${newfile}" ; done
+find . -type f -iname '*saif*' | while read FILE ; do newfile="$(echo ${FILE} | sed -e 's/SAIF/SF/g')" ; mv "${FILE}" "${newfile}" ; done
+sudo pacman -Ss freecad
+sudo pacman -S freecad
+find -iname "*deepak("
+find -iname "*deepak*"
+cd ..
+find -iname "*deepak*"
+find -iname "*tarun*"
+find -iname "*depak*"
+whereis mplayer
+whereis mpv
+whereis baka-mplayer
+find -iname *mpv*
+cat .config/mpv/
+find -iname *mplayer*
+cat .config/bakamplayer.ini 
+cd /etc/
+find -iname *mplayer*
+sudo find -iname *mplayer*
+sudo find -iname *mpv*
+cd mpv/
+ls
+cd ..
+sudo find -iname *baka*
+cd ..
+ls
+clear
+ffrecord SampleTest
+rm ~/Study/SampleTest_2021-01-06.mp4 
+vim .config/i3/config
+vim test.mom
+rm test.mom 
+rm test.pdf 
+clear
+config
+cd .local/bin/
+vim i3config
+chmod +x i3config 
+cat i3Screenlocker 
+vim i3config
+i3config 
+clear
+pdfjam --angle==180 correctionBendingPlate.pdf 
+pdfjam --help
+pdf180 correctionBendingPlate.pdf 
+pdfjam --angle==180 
+clear
+pdfjam --angle==180 correctionBendingPlate.pdf 
+pdfjam --angle==180 correctionBendingPlate.pdf test.pdf
+clear
+man qpdf
+qpdf
+yay -Ss qpdf
+yay -S qpdf
+qpdf --rotate=270:1 correctionBendingPlate.pdf bendingPlate_Rotated.pdf
+qpdf --rotate=180 correctionBendingPlate.pdf bendingPlate_Rotated.pdf
+clear

@@ -8,8 +8,6 @@ function convergenceStudy(days,ffun,Jfun,y0)
         a = a * 2;
     endfor
 
-    #N(i+1) = 500000;
-
     for i = 1:length(N)
         Nt = N(i);
         [y, time] = dataExist(days,Nt,ffun,Jfun,y0);
@@ -22,7 +20,7 @@ function convergenceStudy(days,ffun,Jfun,y0)
     hold on
     ax2 = loglog(N,e2,'-o','MarkerSize',10,'LineWidth',1.5);
     xlabel("Time Discretization Nt");
-    ylabel("Norm (reference - approx)");
+    ylabel("Norm [(approx - ref) / approx]");
     legend("Osteoclast Error", "Osteoblast Error");
     set(gca, 'linewidth', 1.5, 'fontsize', 14);
     grid minor;

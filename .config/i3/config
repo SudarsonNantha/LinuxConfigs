@@ -4,7 +4,6 @@
 # Should you change your keyboard layout some time, delete
 # this file and re-run i3-config-wizard(1).
 #
-
 # i3 config file (v4)
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
@@ -71,6 +70,22 @@ client.focused_inactive $inactive-bg-color $inactive-bg-color $inactive-text-col
 client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color         #00ff00
 
 
+#####################################################
+#			             							#
+#   			User Key Bindings					#
+#				  									#
+#####################################################
+
+bindsym $mod2+f exec "firefox"
+bindsym $mod2+t exec "thunar"
+bindsym $mod2+p exec "killall picom"
+
+# Print Screen
+bindsym $mod2+Print --release exec "scrot /home/sudarson/Pictures/Screenclips/clip-$(date +%F_%T).png -s -e 'xclip -selection c -t image/png < $f'"
+bindsym Print exec "scrot /home/sudarson/Pictures/Screenshots/screenshot-$(date +%F_%T).png -e 'xclip -selection c -t image/png < $f'"
+
+bindsym $mod2+Shift+space 	floating toggle
+bindsym $mod2+space		focus mode_toggle
 
 #####################################################
 #			             							#
@@ -86,15 +101,8 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ to
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
 # Screen brightness controls with notification
-bindsym XF86MonBrightnessUp exec xbacklight -inc 10
-bindsym XF86MonBrightnessDown exec xbacklight -dec 10
-
-# Print Screen
-bindsym $mod2+Print --release exec "scrot /home/sudarson/Pictures/Screenclips/clip-$(date +%F_%T).png -s -e 'xclip -selection c -t image/png < $f'"
-bindsym Print exec "scrot /home/sudarson/Pictures/Screenshots/screenshot-$(date +%F_%T).png -e 'xclip -selection c -t image/png < $f'"
-
-bindsym $mod2+Shift+space 	floating toggle
-bindsym $mod2+space		focus mode_toggle
+bindsym XF86MonBrightnessUp exec xbacklight -inc 5
+bindsym XF86MonBrightnessDown exec xbacklight -dec 5
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod

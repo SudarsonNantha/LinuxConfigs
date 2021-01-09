@@ -1,8 +1,6 @@
 clear all
 close all
 clc
-cla
-clf
 
 %% MODEL PARAMETERS
 a1= 3;
@@ -18,10 +16,10 @@ k2= 0.0014;
 BMi = 92.123644277624891; % initial bone mass
 %% INITIAL CONDITIONS
 yss = [1.060660171777250 ; 2.121320343560527e+02];
-y0 = yss + [10;0]
+y0 = yss + [10;0];
 
 %% NUMERICAL PARAMETERS
-Nt = 100000;
+Nt = 128000;
 days = 500;
 time = linspace(0,days,Nt+1);
 %% HANDLE FUNCTIONS DEFINITION
@@ -31,14 +29,17 @@ Jfun = @(t,y)KomarovaModel_Jac(y,a1,a2,b1,b2,g11,g12,g21,g22);
 %% SOLUTION
 
 plotOutput = 0;
-plotOverlap = 1;
+plotOverlap = 0;
 plotConvergence = 0;
-plotBMi = 0;
+plotBMi = 1;
 
 
 tic
 
 #[y, time] = dataExist(days,Nt,ffun,Jfun,y0);
+
+#plot(time,y(1,:));
+#plot(time,y(2,:));
 #plotvsReference(y,time,Nt,days);
 #imageName = strcat("images/IMG_D",num2str(days),"_N",num2str(Nt),".eps");
 

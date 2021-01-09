@@ -137,12 +137,10 @@ y' sub i~=~{y sub i - y sub {i-1}} over {Delta t sub i-1}
 Where
 .I "y'\*<i\*>"
 is the slope at point
-.I "i"
-,
+.I "i, "
 .I "y\*<i\*>"
 is the value of the function y at point
-.I "i"
-,
+.I "i, "
 .I "y\*<i-1\*>"
 is the value of the function y at a point
 .I "i-1"
@@ -159,7 +157,7 @@ f (y sub i+1 )~=~{y sub i+1 - y sub {i}} over {Delta t sub i}
 .LP
 If we seperate
 .B "y"
-into y\*<1\*> and y\*<2\*> values, we can write their scalar forms as:
+into its scalar components y\*<1\*> and y\*<2\*>, we get the scalar form of the Backward Euler equations:
 .EQ I
 f (y sub {1,i+1})~~=~~a sub 1 y sub 1,i+1 sup {g sub 11} y sub 2,i+1 sup {g sub 21} - b sub 1 y sub 1,i+1
 ~~=~~{y sub {1,i+1} - y sub {1,i}} over {Delta t sub i}
@@ -178,7 +176,7 @@ f (y sub {2,i+1})~~=~~a sub 2 y sub 1,i+1 sup {g sub 12} y sub 2,i+1 sup {g sub 
 .NH
 Prove that y\*<i+i\*> is the root of g(z) = 0
 .LP
-The scalar forms of Backward Euler formula for Komarova's equation can be rewritten as a vector values function. Here we introduce a new variable
+The scalar forms of Backward Euler formula for Komarova's equation can be rewritten as a vector valued function. Here we introduce a new variable
 .I "z"
 which is equal to [z\*<1\*> ; z\*<2\*>], with
 .I "z\*<1\*> = y\*<1,i+i\*> "
@@ -239,7 +237,7 @@ The gradient of a function is the sum of of its partial derivatives. Since
 .B "g(z)"
 is a vector function, we require two sets of partial derivatives to describe it. Spliting up
 .B "g(z)"
-into its scalar components and differentiating, we obtain:
+into its scalar components, we obtain:
 .EQ I
 g(y sub 1,i+1 )~=~y sub 1,i+1 - y sub 1,i - Delta t sub i f( y sub 1,i+1 )
 ~~~~\[rA]~~~~
@@ -312,7 +310,7 @@ Here,
 .I "y\*<i+1\*>"
 indexing was used instead of
 .I "y\*<i\*>"
-indexing to make the code similar to teaching slides and the equations defined above.
+indexing to make the code similar to lecture slides and the equations defined above.
 
 .ft CW
 .B1
@@ -417,10 +415,9 @@ Plot solutions on the same graph while increasing the time step
 Comparisons were made using time steps for
 .I "Nt = 1000, 4000, 9000, 16000, and 25000 "
 with the reference of 0.5 million time steps. The reference plot in both the osteoclast figure and the osteoblast figure are represented by a dash-dotted line.
-.B "As the number of time steps increases, the solutions start to get plotted closer and closer to each other."
-This means that the solution starts to
-.B "converge"
-as the number of time steps increases, and this can be seen clearly because the solution for the highest number of time steps in these plots
+.BI "As the number of time steps increases, the solutions start to get plotted closer and closer to each other."
+.B "This means that the solution starts to converge as the number of time steps increases."
+This can be seen clearly because the solution for the highest number of time steps in these plots
 .I "(Nt = 25000)"
 is very close to the exact/reference solution
 .I "(Appendix 12.2)".
@@ -452,17 +449,24 @@ which called the previously mentioned
 .BI "getInterpError()"
 function.
 
+.PSPIC -C /home/sudarson/Study/ALEMO/Project/images/IMG_D500_ErrorPlotOG.eps
+.bp
+.LP
+However, dividing the norm of this difference by the norm of the interpolated solution gives us a clearer picture of the error. Here, an error of
+.I "less than 1%"
+is obtained after 128000 time steps.
 .PSPIC -C /home/sudarson/Study/ALEMO/Project/images/IMG_D500_ErrorPlot.eps
+
 .bp
 .NH
 Compute bone mass density and plot M(t) vs Time
 .LP
-For a time period of 500 days, the error between approximate solution and reference solution is suitably small for
-.I "Nt = 100000."
-This is demonstrated with the following graph, where the approximate solution and reference solution are nearly indistinguishable
+For a time period of 500 days, the error between approximate solution and reference solution is suitably small (less than 1%) for
+.BI "Nt = 128000."
+This was demonstrated by calculating the error of interpolated function using the norm of difference of the vectors. We can see in the following graph, that approximate solution and reference solution are nearly indistinguishable
 .I "(Appendix 12.5)."
 
-.PSPIC -C /home/sudarson/Study/ALEMO/Project/images/IMG_D500_N100000_vs_Reference.eps
+.PSPIC -C /home/sudarson/Study/ALEMO/Project/images/IMG_D500_N128000_vs_Reference.eps
 .bp
 The bone mass density
 .I "M(t)"
@@ -474,7 +478,11 @@ M(t)~=~ int from 0 to t k sub 1 x sub 1 ( tau ) + k sub 2 x sub 2 ( tau )~~d tau
 x sub i ( tau )~=~max( y sub i - y sub ss , 0)~~~i = 1,2
 .EN
 
-.PSPIC -C /home/sudarson/Study/ALEMO/Project/images/IMG_BMi_D500_N100000.eps
+.PSPIC -C /home/sudarson/Study/ALEMO/Project/images/IMG_BMiTotal_D500_N128000.eps
+.bp
+.LP
+The Bone Mass Density for the same was plotted as follows:
+.PSPIC -C /home/sudarson/Study/ALEMO/Project/images/IMG_BMi_D500_N128000.eps
 .bp
 
 \#.nr H1 0
@@ -621,8 +629,8 @@ getInterpError()
      b1 = interp1(t,a1,time,'spline');   # Interpolation y1
      b2 = interp1(t,a2,time,'spline');   # Interpolation y2
 
-     err1 = norm(r1-b1)  # Find error y1
-     err2 = norm(r2-b2)  # Find error y2
+     err1 = norm(r1-b1)/norm(b1)  # Find error y1
+     err2 = norm(r2-b2)/norm(b2)  # Find error y2
 
  endfunction
 
@@ -639,23 +647,22 @@ function M = boneMass(y,yss,t,days,Nt,k1,k2,BMi)
     x1 = max(y(1,:)-yss(1,:),0);
     x2 = max(y(2,:)-yss(2,:),0);
 
+    M(1) = BMi;
     for i = 2:Nt+1
         dt = t(i)-t(i-1);
         m = k1*(x1(i)+x1(i-1)) + k2*(x2(i)+x2(i-1));
-        M(i) = 0.5 * dt*m;
+        M(i) = M(i-1) + 0.5 * dt*m;
     endfor
 
-    M0 = BMi;
-    M = (M0-M)/M0 * 100;
     plot(t,M);
     xlabel("Time [days]");
-    ylabel("Bone Mass %");
+    ylabel("Bone Mass [g]");
     grid minor;
     set(gca, 'LineWidth', 1.5, 'FontSize', 14);
-    titleName = strcat("Bone Mass Density for",{" "},num2str(Nt)," time steps");
+    titleName = strcat("Bone Mass for",{" "},num2str(Nt)," time steps");
     title(titleName);
 
-    imageName = strcat("images/IMG_BMi_D",num2str(days),
+    imageName = strcat("images/IMG_BMiTotal_D",num2str(days),
                 "_N",num2str(Nt),".eps");
     str = sprintf("print -depsc %s", imageName);
     eval(str);
