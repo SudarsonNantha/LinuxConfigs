@@ -12,21 +12,14 @@ set expandtab
 let mapleader = ","
 
 
-let g:ale_linters = {
-      \   'python': ['flake8'],
-	\}
-
-let g:lightline = {
-      \ 'colorscheme': 'onedark',
-      \ }
-
-
-
 " Open corresponding.pdf
 	map <leader>p :!opout <c-r>%<CR><CR>
 
 " Compile document
 	map <leader>c :!compiler <c-r>%<CR>
+
+" Compile and run (Only scala support for now)
+    map <leader>r :!executer <c-r>%<CR>
 
 " Open File Explorer
 	map <leader>e :Ex<CR>
@@ -42,8 +35,10 @@ let g:lightline = {
 augroup filetypedetect
   au! BufRead,BufNewFile *.m,*.oct set filetype=octave		" Set file type to octave if *.m or *.oct
   au! BufRead,BufNewFile *.txt set spell spelllang=en_gb	" Turn on spell check for *.txt
-augroup END
 
+  " Curly backet completetion for scala
+  au BufRead,BufNewFile *.scala inoremap { {<CR>}<Esc>ko
+augroup END
 
 " Groff options
 	" Load template when creating a new file

@@ -1,0 +1,15 @@
+#!/bin/bash
+# create a temp file
+killall i3-nagbar
+img=/tmp/screenlock.png
+icon=/home/sudarson/.config/i3/lock.png
+scrot $img
+# Alternatively, blur the screenshot (slow!)
+convert $img -blur 5,8 $img
+# Add the lock image
+convert $img $icon -gravity center -composite $img
+# Run i3lock with custom background
+i3lock -i $img
+# Remove the tmp file
+rm $img
+

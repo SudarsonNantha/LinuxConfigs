@@ -1,0 +1,2 @@
+mogrify -format eps *.png
+ls -1a $PWD/*.eps
