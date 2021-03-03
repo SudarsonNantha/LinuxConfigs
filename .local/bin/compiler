@@ -44,7 +44,9 @@ case "$ext" in
 #		fi ; ;;
 #	mom) preconv "$file" | refer -PS -e | groff -mom -kept -T pdf > "$base".pdf ;;
 	mom) preconv "$file" | pdfmom -e -Tps > "$base".pdf ;;
-    ms) preconv "$file" | refer -PS -e | groff -me -ms -kept -Tps > "$base".ps && ps2pdf "$base".ps;;
+    ms) preconv "$file" | refer -PS -e | groff -e -me -ms -kept -Tps > "$base".ps && ps2pdf "$base".ps;;
+# Uncomment for ms landscape
+#    ms) preconv "$file" | refer -PS -e | groff -e -me -ms -kept -Tps -dpaper=a4l -P-pa4 -P-l > "$base".ps && ps2pdf "$base".ps;;
 	py) python "$file" ;;
     scala) scalac "$file" ;;
 #	[rR]md) Rscript -e "rmarkdown::render('$file', quiet=TRUE)" ;;

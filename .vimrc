@@ -11,7 +11,6 @@ set expandtab
 
 let mapleader = ","
 
-
 " Open corresponding.pdf
 	map <leader>p :!opout <c-r>%<CR><CR>
 
@@ -37,7 +36,7 @@ augroup filetypedetect
   au! BufRead,BufNewFile *.txt set spell spelllang=en_gb	" Turn on spell check for *.txt
 
   " Curly backet completetion for scala
-  au BufRead,BufNewFile *.scala inoremap { {<CR>}<Esc>ko
+  au BufRead,BufNewFile *.scala inoremap { {<CR>}<Esc>ko<tab>
 augroup END
 
 " Groff options
@@ -51,7 +50,8 @@ augroup END
 	" Insert matrix templates
 	autocmd FileType groff nnoremap <leader>m :-1read $HOME/.vim/templates/groff/matrix.ms<CR>/ccol {<CR>5l i
 
-
-
+" Colours and highlighting
+highlight nroffEquation ctermfg=red guifg=#00ffff
+highlight groffCode ctermfg=green guifg=#00ffff
 
 
