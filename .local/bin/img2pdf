@@ -1,0 +1,27 @@
+#!/bin/bash
+
+set -e
+if [ "$#" -lt 1 ]
+then
+    echo  "Please insert at least one argument"
+    exit
+else
+    echo -e "\c"
+fi
+
+
+for arg in "$@"
+do
+    file=$(readlink -f "$arg")
+    base="${file%.*}"
+    dir=${file%/*}
+    ext="${file##*.}"
+
+    epsfile="${base}.eps"
+    pdffile="${base}.pdf"
+
+    convert $file $epsfile
+    ps2pdf -dEPSCrop $epsfile
+    rm $epsfile
+    echo "$arg saved as $pdffile"
+done

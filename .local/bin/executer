@@ -16,6 +16,8 @@ dir=${file%/*}
 base="${file%.*}"
 ext="${file##*.}"
 
+fileObj=${1//.scala/}
+
 cd "$dir" || exit
 
 case "$ext" in
@@ -36,7 +38,9 @@ case "$ext" in
 #	mom) preconv "$file" | pdfmom -e -Tps > "$base".pdf ;;
 #    ms) preconv "$file" | refer -PS -e | groff -me -ms -kept -Tps > "$base".ps && ps2pdf "$base".ps;;
 #	py) python "$file" ;;
-    scala) scala "$file" ;;
+    scala)
+        scalac "$file"
+        scala "$fileObj" ;;
 #	[rR]md) Rscript -e "rmarkdown::render('$file', quiet=TRUE)" ;;
 #	rs) cargo build ;;
  #  sass) sassc -a "$file" "$base.css" ;;

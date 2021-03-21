@@ -1,3 +1,5 @@
+.nr HM 0.8i \" Set Header and footer margins
+.nr FM 0.8i
 \# This is a standard groff template.
 \#
 \# Use \# to comment the entire line
@@ -32,6 +34,12 @@
 .EQ
 delim $$
 .EN
+.ds CH
+.ds CF - % -
+.nr LL 6.3i
+\#.DS C
+\#.ps 12
+.PP
 .TL \" Title of the document
 My First Groff Document
 .AU \" Authoer of the document
@@ -40,17 +48,27 @@ Sudarson Nanthacoumarane
 Ecole Centrale de Nantes
 .NH
 First Section
+.XS
+First Section
+.XE
 .PP \" New indented paragraph
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras malesuada, lectus ac fermentum pharetra, odio mi condimentum arcu, in ultrices dolor est hendrerit massa. Vestibulum sed sagittis metus. Donec velit risus, ultrices vel pretium nec, commodo id nisi.
 \#
+.bp
 .LP \" New unindented paragraph
 Nunc lobortis mauris in semper eleifend. Sed tortor quam, pharetra vitae convallis quis, dignissim in nisl. Curabitur sed leo ac urna posuere pharetra quis eu sem. Curabitur molestie sapien ac felis ultricies varius. Nullam varius sapien eros, non imperdiet neque mattis pharetra. Nulla eleifend vel nisl sed sagittis. Donec eu dolor neque. Vivamus tempus commodo vestibulum. Mauris mattis quam ante.
 .NH
 Pythogoras Theorem
+.XS
+Pythogoras Theorem
+.XE
 .PP
 This theorem states that given a trianalge with sides $a$, $b$, and $c$ $\[rA]~~a sup 2 + b sup 2 = c sup 2$
 .NH
 Second Section
+.XS
+.pdfhref W -D www.google.com Second Section
+.XE
 \# .RS and .RE add indentation
 .RS
 .NH 2
@@ -94,4 +112,33 @@ def myfunction(arg):
 \# Image files MUST be saved as .eps
 \# Number at eol controls image size
 \# Arguments C, L, R, and I <n> are used for alignment
-.PSPIC -C /home/sudarson/.config/groff/pondy.eps 5
+.PDFPIC -C "/home/sudarson/.config/groff/pondy.pdf" 5
+
+\# TABLES
+.TS
+tab(;) allbox nospaces center;
+cBp+1 s s s
+ab ab ab ab
+a a a a.
+Yamaha DT 125 Carburetor Specifications;
+Bike Model; TZR;    DT 3DBI;    DT 3RN1 onward
+Make;       Mikuni; Mikuni;     Mikuni
+Type;       VM26SS; VM26SS;     VM26SS
+ID Mark;    2RH00;  3BN00;      3MB00
+Main Jet;   180;    125;        210
+Air Jet;    0.8;    0.8;        0.8
+Jet Needle; 406;    407;        5J25
+Needle clip position;4th;3rd;4th
+.T&
+a a s s.
+Float height - all models;20-21mm (0.787-0.827in)
+.TE
+
+\# Add hyperlinks
+.pdfhref W -D http://www.gnu.org/software/groff -A , the groff web site
+a great website!
+.sp
+.pdfhref W -D www.youtube.com Youtube
+is a great website for informational videos
+.ds CF
+.TC

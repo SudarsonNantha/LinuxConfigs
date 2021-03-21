@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =3
+let g:netrw_dirhistcnt =4
+let g:netrw_dirhist_4='/home/sudarson/Documents/Hackathon'
 let g:netrw_dirhist_3='/home/sudarson/Study'
 let g:netrw_dirhist_2='/home/sudarson/Study/ALEMO'
 let g:netrw_dirhist_1='/home/sudarson/Study/ALEMO/TP4'
@@ -9,4 +10,3 @@ let g:netrw_dirhist_8='/home/sudarson/Study/ALEMO'
 let g:netrw_dirhist_7='/home/sudarson/Study'
 let g:netrw_dirhist_6='/home/sudarson/Study/ALEMO'
 let g:netrw_dirhist_5='/home/sudarson/Study'
-let g:netrw_dirhist_4='/home/sudarson/Study/ALEMO'

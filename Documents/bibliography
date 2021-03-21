@@ -1,0 +1,78 @@
+%K test
+%T Test Title
+%A Author of Reference
+%D 1996
+%E Default Editor
+
+%K website
+%T Website Title
+%A Author of Reference
+%D 2010
+%I "https://www.gnu.org/software/groff/"
+
+%K pipe_magnet
+%T Global In-Pipe Inspection Robots Market
+%A RC
+%D 2020
+%I "https://www.mccourier.com/global-in-pipe-inspection-robots-market-significant-growth-with-leading-players-cues-redzone-robotics-inuktun-services-mistras-group-riezler-inspektions-systeme-forecast-2020-2028/"
+
+%K pipe_review
+%T A Review: Hybrid Locomotion of In-pipe Inspection Robot
+%A Nur Shahida Roslin
+%A Adzly Anuar*
+%A Muhammad Fairuz Abdul Jalal
+%A Khairul Salleh Mohamed Sahari
+%D 2012
+%J SciVerse ScienceDirect
+
+%K pipe_search
+%T Robotic Search and Resque through In-Pipe Movement
+%A By Atsushi Kakogawa
+%A Shugen Ma
+%B Unmanned Robotic Systems and Applications
+%D 2019
+%E Mahmut Reyhanglu
+%E Geert De Cubber
+
+%K pipe_hal
+%T A new inspection robot for pipelines with bends and junctions
+%A Swaminath Venkateswaran
+%A Damien Chablat
+%B Tadeusz Uhl. Advances in Mechanism and Machine Science
+%E Springer
+%E Cham
+%D 2019
+
+%K pipe_screw
+%T Design of a New In-Pipe Inspection Robot
+%A Ankit Nayak
+%A Sharad Pradhan
+%R 10.1016/j.proeng.2014.12.451
+%J ScienceDirect
+%D 2014
+
+%K pipe_6x
+%T Development of Pipeline Inspection Robot for the Standard Oil Pipeline of China National Petroleum Corporation
+%A Hui Li
+%A Ruiqin Li
+%A Jianwei Zhang
+%A Pengyu Zhang
+%J MDPI
+%D 2020
+
+%K pipe_snake
+%T Pipe Crawler - Ultrasonic Inspection Robots
+%D 2020
+%I "https://inspector-systems.com/pipe-crawler/ultrasonic-inspection-robots.html"
+
+%K pipe_caterpillar
+%T Design of a pipeline inspection robot with belt driven ridged cone shaped skate model
+%A F. Chang
+%A Lih-Tyng Hwang
+%A Chih-Feng Liu
+%A Wei-Sheng Wang
+%A Jeng-Nan Lee
+%A Shun-Min Wang
+%A Kai-Yi Cho
+%J IEEE
+%D 2015

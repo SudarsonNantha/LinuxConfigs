@@ -1,0 +1,2 @@
+groff -Tpdf -U -t -e -ms -mpdfmark newgroff.ms > newgroff.pdf
+refer -e -p ~/Documents/bibliography newgroff.ms | groff -U -e -t -ms -T pdf > newgroff.pdf
