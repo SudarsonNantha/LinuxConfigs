@@ -37,6 +37,7 @@ case "$ext" in
 #	mom) preconv "$file" | refer -PS -e | groff -mom -kept -T pdf > "$base".pdf ;;
 #	mom) preconv "$file" | pdfmom -e -Tps > "$base".pdf ;;
 #    ms) preconv "$file" | refer -PS -e | groff -me -ms -kept -Tps > "$base".ps && ps2pdf "$base".ps;;
+    ms) refer -e -p ~/Documents/bibliography "$file" | pdfroff -U -t -e -mpdfmark -mspdf > "$base".pdf;;
 #	py) python "$file" ;;
     scala)
         scalac "$file"

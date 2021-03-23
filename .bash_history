@@ -1,243 +1,3 @@
-sensors
-ffrecord test
-ffrecord test
-cd Downloads/
-ls -a *.ipynb
-ls -a1 *.ipynb
-mkdir ~/Study/ENGMA/Python_Assignements
-cp *.ipynb ~/Study/ENGMA/Python_Assignements/
-cd ~/Study/ENGMA/Python_Assignements
-ls
-cd ..
-cp *.ipynb Python_Assignements/
-ls
-cd Python_Assignements/
-ls
-jupyter notebook 
-mkdir OG_Files
-clear
-ls
-cp * OG_Files/
-ls OG_Files/
-ls
-jupyter notebook 
-ls -v
-ls -d $PWD/*
-cd Study/ENGMA/Python_Assignements/
-ls
-jupyter notebook 
-cd Downloads/
-baka-mplayer GMT20210301_Part1_CM_M1_M_EN_1920x1080.mp4 
-sudo pacman -Ss intel-undervolt
-sudo pacman -S intel-undervolt
-intel-undervolt read
-intel-undervolt read
-sudo intel-undervolt read
-cat /etc/intel-undervolt.conf
-sudo vim /etc/intel-undervolt.conf
-sudo intel-undervolt apply
-sudo vim /etc/intel-undervolt.conf
-sudo intel-undervolt apply
-sudo pacman -Rns intel-undervolt
-cd Study/ENGMA/
-jupyter notebook 
-cd Study/ENGMA/Python_Assignements/
-jupyterno
-jupyter notebook 
-cat Mazar.m 
-cat Mazar_tension.m 
-clear
-vim Mazar.m 
-octave-cli
-vim Mazar.m 
-sensors
-sensors
-yay -Ss cv2
-cd Test/
-groff -mpdfmark test.ms > test.ps && ps2pdf test.ps
-groff -mpdfmark test.ms > test.ps && ps2pdf test.ps
-groff -mpdfmark test.ms > test.ps && ps2pdf test.ps
-yay -Ss mpdfmark
-yay -Ss pdfmark
-sudo pacman -Ss groff
-yay -Ss groff
-sudo pacman -Rns groff
-yay -S groff-git
-yay -Syu
-yay -Syy
-yay -S groff-git
-gcc --version
-sudo pacman -Syu
-sudo pacman -Rns python-dbus
-clear
-sudo pacman -Syu
-sudo pacman -Syu --exclude octave
-sudo pacman -Syu --ignore octave
-yay -S groff-git
-pacman -Ss groff-git
-pacman -Ss groff
-sudo pacman -Sf gcc
-sudo pacman -Rns gcc
-rm gcc* binutils* glibc* /var/cache/pacman/pkg
-sudo pacman -Rdd gcc
-sudo pacman -Syy
-sudo pacman -Syu
-sudo pacman -S gcc
-yay -S groff-git
-sudo pacman -Rdd groff
-yay -S groff-git
-sudo pacman -Ss base-devel
-sudo pacman -S base-devel gcc
-yay -S groff-git
-sudo pacman -Ss gcc
-cd Test/
-ls
-vim test.ms 
-jupyter notebook 
-yay -Ss groff-git
-yay -S groff-git
-mkdir Packages
-cd Packages/
-git clone https://aur.archlinux.org/groff-git.git
-ls
-cd groff-git/
-makepkg -si
-ls
-find -iname config.log
-vim src/groff-git/build/config.log 
-cd ..
-ls
-cd groff-git/
-makepkg -si
-sudo pacman -Rdd groff
-makepkg -si
-yay -Ss poppler-utils
-yay -Ss pdfinfo
-yay -Ss pdftops
-yay -Ss pdftops
-cat .local/bin/compiler 
-clear
-vim .local/bin/compiler 
-vim Test/temp.ms 
-vim .config/groff/ms_template.ms 
-clear
-cd Packages/groff-git/
-ls
-cd ..
-yay -Ss groff-git
-yay -Ss groff
-sudo pacman -Ss grap
-clear
-cd ~
-vim .local/bin/executer 
-vim .local/bin/epsConvert 
-vim .local/bin/opout 
-ls /usr/share/doc/groff-1.23.0/
-cd /usr/share/doc/groff-1.23.0/
-cd pdf/
-ls
-evince pdfmark.pdf 
-cd Packages/groff-git/
-ls
-cat PKGBUILD 
-yay -Ss clang
-sudo pacman -Ss clang
-sudo pacman -S clang
-cd Test/
-vim test.ms 
-vim newgroff.ms 
-cd Test/
-groff -ms -pdfmark test.ms > test.ps && ps2pdf test.ps
-groff -ms -mpdfmark test.ms > test.ps && ps2pdf test.ps
-groff -ms -pdfmark test.ms > test.ps && ps2pdf test.ps
-groff -Tpdf -m pdfmark test.ms > test.pdf
-groff -Tps -m pdfmark test.ms > test.ps && ps2pdf test.ps
-groff -Tpdf -m pdfmark test.ms > test.pdf
-vim newgroff.ms
-groff -Tpdf -m pdfmark newgroff.ms > test.pdf
-groff -Tpdf -me -ms pdfmark newgroff.ms > test.pdf
-groff -Tpdf -me -ms -m pdfmark newgroff.ms > test.pdf
-groff -Tpdf -me -tbl -ms -m pdfmark newgroff.ms > test.pdf
-groff -Tpdf -eqn -tbl -ms -m pdfmark newgroff.ms > test.pdf
-groff -Tpdf -m eqn -tbl -ms -m pdfmark newgroff.ms > test.pdf
-groff -Tpdf -me -tbl -ms -m pdfmark newgroff.ms > test.pdf
-groff -Tpdf -e -tbl -ms -m pdfmark newgroff.ms > test.pdf
-groff -Tpdf -e -tbl -ms -m pdfmark newgroff.ms > test.pdf
-groff -Tpdf -e -tbl -ms -m pdfmark -U newgroff.ms > test.pdf
-groff -Tpdf -e -tbl -ms -m pdfmark -U newgroff.ms > test.pdf
-groff -Tpdf -e -tbl -ms -m pdfmark -U newgroff.ms > test.pdf
-groff -Tpdf -e -tbl -ms -m pdfmark -U newgroff.ms > test.pdf
-groff -U -Tpdf -e -tbl -ms -m pdfmark newgroff.ms > test.pdf
-groff -Tps -e -tbl -ms -m pdfmark newgroff.ms > test.ps
-groff -Tps -e -tbl -ms -m pdfmark newgroff.ms > test.ps && ps2pdf test.pdf
-groff -e -tbl -ms -m pdfmark newgroff.ms > test.ps && ps2pdf test.pdf
-groff -ms -m pdfmark newgroff.ms > test.ps && ps2pdf test.pdf
-groff -ms -pdfmark test.ms > test.ps && ps2pdf test.ps
-groff -ms -pdfmark newgroff.ms > test.ps && ps2pdf test.ps
-groff -e -tbl -ms -pdfmark newgroff.ms > test.ps && ps2pdf test.ps
-groff -ms -pdfmark -e newgroff.ms > test.ps && ps2pdf test.ps
-groff -ms -pdfmark -e -tbl newgroff.ms > test.ps && ps2pdf test.ps
-groff -ms -pdfmark -e -tbl -Tps newgroff.ms > test.ps && ps2pdf test.ps
-groff -ms -pdfmark -e -Tps newgroff.ms > test.ps && ps2pdf test.ps
-groff -ms -pdfmark -e newgroff.ms > test.pdf
-groff -Tpdf -ms -pdfmark -e newgroff.ms > test.pdf
-groff -Tpdf -ms -pdfmark -e -tbl newgroff.ms > test.pdf
-groff -Tpdf -ms -pdfmark -e -tbl newgroff.ms > test.pdf
-groff -Tpdf -ms -pdfmark -e -tbl newgroff.ms > test.pdf
-groff -Tpdf -ms -pdfmark -e -tbl newgroff.ms > test.pdf
-groff -Tpdf -ms -pdfmark -e -tbl newgroff.ms > test.pdf
-groff -Tpdf -ms -pdfmark -e -tbl newgroff.ms > test.pdf
-groff -Tpdf -ms -pdfmark -e -tbl newgroff.ms > test.pdf
-groff -Tpdf -ms -pdfmark -e -tbl newgroff.ms > test.pdf
-groff -Tps -ms -pdfmark -e -tbl newgroff.ms > newgroff.ps && ps2pdf newgroff.ps
-groff -Tps -ms -pdfmark -e newgroff.ms > newgroff.ps && ps2pdf newgroff.ps
-groff -Tps -ms -pdfmark -e -tbl newgroff.ms > newgroff.ps && ps2pdf newgroff.ps
-groff -Tpdf -ms -pdfmark -e -tbl newgroff.ms > test.pdf
-groff -Tpdf -ms -pdfmark -e -tbl newgroff.ms > newgroff.pdf
-groff -ms -pdfmark -e -tbl newgroff.ms > newgroff.ps && ps2pdf newgroff.ps
-groff -ms -pdfmark -e -tbl newgroff.ms > newgroff.ps && ps2pdf newgroff.ps
-groff -Tpdf -ms -pdfmark -e -tbl newgroff.ms > newgroff.pdf
-groff -Tpdf -ms -pdfmark -e -tbl newgroff.ms > newgroff.pdf
-groff -U -Tpdf -ms -pdfmark -e -tbl newgroff.ms > newgroff.pdf
-groff -U -Tpdf -ms -pdfmark -e -tbl newgroff.ms > newgroff.pdf
-groff -U -Tpdf -ms -pdfmark -e -tbl newgroff.ms > newgroff.pdf
-groff -U -Tpdf -ms -pdfmark -e -tbl newgroff.ms > newgroff.pdf
-groff -U -Tpdf -ms -pdfmark -e -tbl newgroff.ms > newgroff.pdf
-groff -U -Tpdf -ms -pdfmark -e -tbl newgroff.ms > newgroff.pdf
-groff -U -Tpdf -ms -pdfmark -e -tbl newgroff.ms > newgroff.pdf
-groff -Tpdf -ms -pdfmark -e -tbl newgroff.ms > newgroff.pdf
-groff -Tpdf -ms -pdfmark -e -tbl newgroff.ms > newgroff.pdf
-groff -Tpdf -ms -pdfmark -e -tbl newgroff.ms > newgroff.pdf
-groff -T ps -ms -pdfmark -e -tbl newgroff.ms > newgroff.ps && ps2pdf newgroff.ps
-pdfroff -ms -pdfmark -e -tbl newgroff.ms > newgroff.pdf 
-pdfroff -ms -pdfmark -e -tbl newgroff.ms > newgroff.pdf 
-pdfroff -U -ms -pdfmark -e newgroff.ms > newgroff.pdf 
-pdfroff -U newgroff.ms -m ms -m spdf -jekGt --pdf-output=newgroff.pdf
-pdfroff -U newgroff.ms -m ms -jekGt --pdf-output=newgroff.pdf
-pdfroff -U newgroff.ms -m ms --pdf-output=newgroff.pdf
-pdfroff -U -ms -pdfmark -e newgroff.ms > newgroff.pdf 
-pdfroff -mspdf newgroff.ms > newgroff.pdf 
-pdfroff -U -mspdf newgroff.ms > newgroff.pdf 
-pdfroff -U -mspdf -e -tbl newgroff.ms > newgroff.pdf 
-pdfroff -U -mspdf -e newgroff.ms > newgroff.pdf 
-pdfroff -U -mspdf -e --no-toc-relocation newgroff.ms > newgroff.pdf 
-pdfroff -U -mspdf -e --no-toc-relocation newgroff.ms > newgroff.pdf 
-pdfroff -U -mspdf -e newgroff.ms > newgroff.pdf 
-groff -k -Dutf8 -t -ms -mpdfmark newgroff.ms > newgroff.ps && ps2pdf newgroff.ps
-groff -k -Dutf8 -t -e -ms -mpdfmark newgroff.ms > newgroff.ps && ps2pdf newgroff.ps
-groff -k -Dutf8 -t -e -ms -mpdfmark newgroff.ms > newgroff.pdf
-groff -k -Dutf8 -t -e -ms -mpdfmark newgroff.ms > newgroff.pdf
-groff -Tpdf -U -k -Dutf8 -t -e -ms -mpdfmark newgroff.ms > newgroff.pdf
-groff -Tpdf -U -k -Dutf8 -tbl -e -ms -mpdfmark newgroff.ms > newgroff.pdf
-groff -Tpdf -U -t -e -ms -mpdfmark newgroff.ms > newgroff.pdf
-groff -Tpdf -U -t -e -ms -mpdfmark newgroff.ms > newgroff.pdf
-groff -Tpdf -U -t -e -ms -mpdfmark newgroff.ms > newgroff.pdf
-groff -Tpdf -U -t -e -ms -mpdfmark newgroff.ms > newgroff.pdf
-groff -Tpdf -U -t -e -ms -mpdfmark newgroff.ms > newgroff.pdf
-groff -Tpdf -U -t -e -ms -mpdfmark newgroff.ms > newgroff.pdf
-groff -Tpdf -U -t -e -ms -mpdfmark newgroff.ms > newgroff.pdf
-groff -Tpdf -U -t -e -ms -mpdfmark newgroff.ms > newgroff.pdf
-groff -Tpdf -U -t -e -ms -mpdfmark newgroff.ms > newgroff.pdf
 groff -Tpdf -U -t -e -ms -mpdfmark newgroff.ms > newgroff.pdf
 groff -Tpdf -U -t -e -ms -mpdfmark newgroff.ms > newgroff.pdf
 groff -Tpdf -U -t -e -ms -mpdfmark newgroff.ms > newgroff.pdf
@@ -498,3 +258,243 @@ yay -S img2pdf-git
 yay -Ss graphicsmagick
 yay -Ss pdftocairo
 yay -Ss pdfto
+cd .config/groff/
+groff -e -t -Tps -ms ms_template.ms > ms_template.ps && ps2pdf ms_template.ps 
+ls
+convert pondy.jpg pondy.eps
+groff -e -t -Tps -ms ms_template.ms > ms_template.ps && ps2pdf ms_template.ps 
+groff -e -t -Tps -ms ms_template.ms > ms_template.ps && ps2pdf ms_template.ps 
+groff -e -t -Tps -ms ms_template.ms > ms_template.ps && ps2pdf ms_template.ps 
+groff -e -t -Tps -ms ms_template.ms > ms_template.ps && ps2pdf ms_template.ps 
+exit
+cat groffcommand 
+cd Test/
+refer -e -p ~/Documents/bibliography newgroff.ms | groff -U -e -t -ms -T pdf > newgroff.pdf
+refer -e -p ~/Documents/bibliography newgroff.ms | groff -U -e -t -ms -T pdf > newgroff.pdf
+refer -e -p ~/Documents/bibliography newgroff.ms | groff -U -e -t -ms -T pdf > newgroff.pdf
+refer -e -p ~/Documents/bibliography newgroff.ms | groff -U -e -t -ms -T pdf > newgroff.pdf
+refer -e -p ~/Documents/bibliography newgroff.ms | groff -U -e -t -ms -T pdf > newgroff.pdf
+refer -e -p ~/Documents/bibliography newgroff.ms | groff -U -e -t -ms -T pdf > newgroff.pdf
+refer -e -p ~/Documents/bibliography newgroff.ms | groff -U -e -t -ms -T pdf > newgroff.pdf
+refer -e -p ~/Documents/bibliography newgroff.ms | groff -U -e -t -ms -T pdf > newgroff.pdf
+refer -e -p ~/Documents/bibliography newgroff.ms | groff -U -e -t -ms -T pdf > newgroff.pdf
+refer -e -p ~/Documents/bibliography newgroff.ms | groff -U -e -t -ms -T pdf > newgroff.pdf
+refer -e -p ~/Documents/bibliography newgroff.ms | groff -U -e -t -ms -T pdf > newgroff.pdf
+refer -e -p ~/Documents/bibliography newgroff.ms | groff -U -e -t -ms -T pdf > newgroff.pdf
+cd ~
+git add Documents/bibliography 
+git add Documents/bibliography -f
+git status
+rm *.pdf
+rm test1.mp4 
+echo ".vnc/" >> test
+echo ".vnc/" >> test
+cat test 
+echo ".vnc/" >> .gitignore 
+echo ".vscode-oss/" >> .gitignore 
+git status
+rm hack.mp3 
+vim test 
+rm test 
+echo ".jupyter/" >> .gitignore 
+cd .config/
+cat .gitignore 
+clear
+git status
+echo "Code - OSS
+GottCode/
+Signal/
+baloofile
+freerdp/
+remmina/
+"
+echo "Code - OSS
+GottCode/
+Signal/
+baloofile
+freerdp/
+remmina/
+"
+cd ..
+echo "Code - OSS
+GottCode/
+Signal/
+baloofile
+freerdp/
+remmina/
+" >> .gitignore 
+git status
+echo ".local/share/
+Packages/
+" >> .gitignore 
+git status
+echo ".config/baloofile" >> .gitignore 
+git add -all
+git add --all
+git status
+git add Study/Sem1/NUMME/NUMMEFELab2020-2021/*.ms
+git add Study/Sem1/NUMME/NUMMEFELab2020-2021/*.ms -f
+git status
+git add Study/Sem1/ALEMO/Project/*.m -f
+git add Study/Sem1/ALEMO/Project/*.ms -f
+git status
+git add .local/bin/
+git add .local/bin/ -f
+git status
+git status
+get reset
+git reset
+git status 
+git add .local/bin/ -f
+git add Study/Sem1/NUMME/NUMMEFELab2020-2021/*.ms
+git add Study/Sem1/NUMME/NUMMEFELab2020-2021/*.ms -f
+git add Study/Sem1/ALEMO/Project/*.ms -f
+git add Study/Sem1/ALEMO/Project/*.m -f
+git add --all
+git status
+git rm .config/groff/ms_template.ps 
+git status 
+git add Documents/bibliography 
+git add Documents/bibliography -f
+git commit -m "Hyperlinks to groff and compiler changes"
+git push -u master
+clear
+cat .gitREADME 
+git push -u origin master
+cd Test/
+vim test.ms 
+vim temp.ms 
+cd Test/
+vim newgroff.ms 
+cd Study/Sem1/
+ncdu
+cd Study/ENGMA/Python_Assignements/
+jupyter notebook 
+clear
+cd ~
+cd Test/
+vim newgroff.ms 
+mv newgroff.ms ~/.config/groff/ms_template.ms 
+cd ~
+vim .config/groff/ms_template.ms 
+cd Study/Sem1/NUMME/NUMMEFELab2020-2021/
+ls
+vim Report.ms 
+cd ~
+vim Documents/bibliography 
+cd Study/ENGMA/Python_Assignements/
+jupyter notebook 
+redshift -O 3250
+exit
+killall remmina
+ffrecord ENGMA
+ffrecord ENGMA_Pt2
+ls -l /bin/sh
+cd Test/
+pdfroff test.ms -mspdf > test.pdf
+pdfroff test.ms -mspdf > test.pdf
+groff -mspdf -Tpdf test.ms > test.pdf
+cd Test/
+pdfroff -U -t -e -mspdf -mpdfmark test.ms > test.pdf
+yay -Ss hdtbl
+vim .local/bin/compiler 
+vim Test/newgroff.
+vim Test/newgroff.ms 
+clear
+nmcli connections show
+nmcli connection show
+vim Documents/bibliography 
+cd Test/
+cd ~
+cd Study/MEDET/
+ls
+refer -PS -e ~/Documents/bibliography | groff -Tpdf -U -t -e -mpdfmark -mspdf Pipe_Inspection_Robot.ms > Pipe_Inspection_Robot.pdf 
+refer -PS -e ~/Documents/bibliography | groff -Tpdf -U -t -e -mpdfmark -mspdf Pipe_Inspection_Robot.ms > Pipe_Inspection_Robot.pdf 
+refer -PS -e ~/Documents/bibliography | groff -Tpdf -U -t -e -mpdfmark -mspdf Pipe_Inspection_Robot.ms > Pipe_Inspection_Robot.pdf 
+ls
+refer -e ~/Documents/bibliography | groff -Tpdf -U -t -e -mpdfmark -mspdf Pipe_Inspection_Robot.ms > Pipe_Inspection_Robot.pdf 
+refer -e ~/Documents/bibliography | groff -Tpdf -U -t -e -mpdfmark -mspdf Pipe_Inspection_Robot.ms > Pipe_Inspection_Robot.pdf 
+vim test.ms
+refer -e ~/Documents/bibliography | groff -Tpdf -U -t -e -mpdfmark -mspdf test.ms > test.pdf
+refer -e ~/Documents/bibliography | groff -Tpdf -ms test.ms > test.pdf
+refer -e ~/Documents/bibliography | groff -Tpdf -ms test.ms > test.pdf
+refer -PS -e ~/Documents/bibliography | groff -Tpdf -ms test.ms > test.pdf
+refer -PS -e ~/Documents/bibliography | groff -Tpdf -ms test.ms > test.pdf
+cat ~/Documents/bibliography 
+clear
+cat ~/Documents/bibliography 
+vim
+vim test.
+vim test.ms 
+refer -PS -e ~/Documents/bibliography | groff -Tpdf -ms test.ms > test.pdf
+refer -PS -e ~/Documents/bibliography test.ms | groff -Tpdf -ms w> test.pdf
+refer -PS -e ~/Documents/bibliography test.ms | groff -Tpdf -ms > test.pdf
+refer -PS -e -p ~/Documents/bibliography test.ms | groff -Tpdf -ms > test.pdf
+refer -e -p ~/Documents/bibliography test.ms | groff -Tpdf -ms > test.pdf
+refer -e -p ~/Documents/bibliography Pipe_Inspection_Robot.ms | groff -Tpdf -U -t -e -mpdfmark -mspdf > Pipe_Inspection_Robot.pdf 
+refer -e -p ~/Documents/bibliography Pipe_Inspection_Robot.ms | groff -Tpdf -U -t -e -mpdfmark -mspdf > Pipe_Inspection_Robot.pdf 
+vim .local/bin/compiler 
+echo "The Super Saiyan robot achieved the highest score in our comparison and was chosen as the best concept. Though this concept is projected to be quite complex and expensive compared to the other concepts, the benefits of using this design easily outweigh the drawbacks. Not only does it have the best traction out of all the rubber based tyre materials, the caterpillar tracks can also be easily magnetized to provide even more traction. The multi-body design of the robot allows it to navigate easily through bends, something which the “Belt Driven and Cone Shaped robot” had difficulty with. Using a modular body design, more than one of these robots could even be attached end-to-end and used similar to The Serpent concept. 
+Most importantly, the Super Saiyan meets all the Functional Requirements set at the beginning of this project. With an adjustable “scissor-lift” mechanic, the height of the tracks is adjustable, allowing the robot to travel easily through pipes ranging from 100mm to 175mm in diameter. Articulation through bends is made easy through the multi-body design where each body of the robot is joined together by a rotating universal joint. This robot also supports cameras, lights, UV sensors, and infrared sensors to carry out pipe inspection as thoroughly as possible. Being powered by wire, it has incredible range and can travel deep into pipelines. The weight of the cables trailing behind the robot are much less of a problem for the Super Saiyan because of how good the traction is."
+cd Study/MEDET/
+ls
+cp Pipe_Inspection_Robot.ms Backup.ms
+refer -e -p ~/Documents/bibliography Pipe_Inspection_Robot.ms | pdfroff -U -t -e -mpdfmark -mspdf > Pipe_Inspection_Robot..pdf
+pdfroff -U -t -e -mpdfmark -mspdf Pipe_Inspection_Robot.ms > Pipe_Inspection_Robot..pdf
+pdfroff -U -t -e -mpdfmark -mspdf Pipe_Inspection_Robot.ms > Pipe_Inspection_Robot.pdf
+rm Pipe_Inspection_Robot..pdf 
+cd Test/
+vim test.ms 
+vim temp.ms 
+rm test.ms 
+vim test.ms
+rm test.ms 
+vim test.ms
+im2pdf *
+img2pdf *
+img2pdf *
+ls -1av *
+ls -1v *
+ls -1 *
+clear
+ls -d -1 "$PWD/"**/
+ls -d -1 "$PWD/"
+ls -d -1 "$PWD/*"
+ls -d -1 "$PWD/"**
+ls -d -1 "$PWD/"** -X (later --sort=extension)
+ls -d -1 -X (later --sort=extension) "$PWD/"**
+ls -d -1 "$PWD/"**
+ls -d -1 "$PWD/"*.pdf
+img2pdf Centrale_Nantes_Logo.png 
+ls -d -1 "$PWD/"*.pdf
+img2pdf comparison.png 
+ls -d -1 \$PWD/comparison.p.pdf
+ls -d -1 "$PWD/"*.pdf
+img2pdf comparison.png 
+img2pdf Super_Saiyan_Assy_*
+ls -d -1 "$PWD/"*Super*.pdf
+img2pdf Super_Saiyan_Assy_*
+rm Super_Saiyan_Assy_*.pdf
+img2pdf Super_Saiyan_Assy_*
+ls -d -1 "$PWD/"*Super*.pdf
+img2pdf Super_Saiyan_Assy_*.PNG
+img2pdf FRDP.png 
+img2pdf FRDP.png 
+nmcli device wifi rescan
+nmcli device wifi list
+nmcli device wifi connect SmartCampus
+cd Study/MEDET/
+ls
+vim Pipe_Inspection_Robot.ms
+rm Pipe_Inspection_Robot.
+rm Pipe_Inspection_Robot.ms 
+vim Pipe_Inspection_Robot.ms
+nmcli connections show
+nmcli connection show
+nmcli -h
+nmcli c
+nmcli c SmartCampus
+vim .bash_history 
+vim .bash_history 
+vim .local/bin/compiler 
+vim .local/bin/executer 
