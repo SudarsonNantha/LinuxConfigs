@@ -9,7 +9,7 @@ else
     echo -e "\c"
 fi
 
-
+echo "Files saved as:"
 for arg in "$@"
 do
     file=$(readlink -f "$arg")
@@ -23,5 +23,5 @@ do
     convert $file $epsfile
     ps2pdf -dEPSCrop $epsfile
     rm $epsfile
-    echo "$arg saved as $pdffile"
+    echo "$pdffile"
 done

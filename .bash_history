@@ -1,243 +1,3 @@
-groff -Tpdf -U -t -e -ms -mpdfmark newgroff.ms > newgroff.pdf
-groff -Tpdf -U -t -e -ms -mpdfmark newgroff.ms > newgroff.pdf
-groff -Tpdf -U -t -e -ms -mpdfmark newgroff.ms > newgroff.pdf
-vim groffcommand
-cat groffcommand 
-cd Test/
-vim groff.ms
-convert pondy.tiff pondy.pdf 
-convert pondy.tiff pondy.eps 
-ps2pdf pondy.eps 
-convert pondy.jpg pondy.pdf 
-convert -h
-clear
-sudo pacman -Syy
-sudo pacman -Syu
-sudo pacman -Syu --ignore octave
-convert pondy.jpg pondy.pdf 
-convert pondy.jpg pondy.pdf 
-img2pdf pondy.pdf pondy.jpg 
-gm convert pondy.jpg pondy.pdf 
-convert dragon.png dragon.pdf
-gm convert dragon.png dragon.pdf
-gs  -dNOSAFER  -sDEVICE=pdfwrite  -o pondy.pdf   /usr/local/share/ghostscript/8.71/lib/viewjpeg.ps  -c \(pondy.jpg\) viewJPEG
-clear
-convert pondy.jpg pondy.pdf 
-convert dragon.png dragon.pdf 
-tiff2pdf -h
-convert dragon.png dragon.tiff
-tiff2pdf dragon.tiff 
-tiff2ps dragon.tiff 
-tiff2ps dragon.tiff > tiff.ps 
-tiff2ps dragon.tiff > tiff.eps
-tiff2ps dragon.tiff > dragon.eps && ps2pdf dragon.eps
-tiff2ps dragon.tiff > dragon.eps && ps2pdf -dEPSCrop dragon.eps
-tiff2ps pondy.tiff > tiff.eps && ps2pdf -dEPSCrop pondy.eps
-convert dragon.png dragon.eps && ps2pdf -sEPSCrop dragon.eps
-convert pondy.jpg pondy.eps && ps2pdf -sEPSCrop pondy.eps 
-convert pondy.jpg pondy.eps && ps2pdf -dEPSCrop pondy.eps 
-img2pdf pondy.jpg 
-yay -Ss img2pdf
-cd .config/groff/
-pdfconvert pondy.jpg 
-ls
-cat groffcommand 
-cd Test/
-groff -Tpdf -U -t -e -ms -mpdfmark newgroff.ms > newgroff.pdf
-groff -Tpdf -U -t -e -ms -mpdfmark newgroff.ms > newgroff.pdf
-groff -Tpdf -U -t -e -ms -mpdfmark newgroff.ms > newgroff.pdf
-groff -Tpdf -U -t -e -ms -mpdfmark newgroff.ms > newgroff.pdf
-groff -Tpdf -U -t -e -ms -mpdfmark newgroff.ms > newgroff.pdf
-groff -Tpdf -U -t -e -ms -mpdfmark newgroff.ms > newgroff.pdf
-groff -Tpdf -t -e -ms newgroff.ms > newgroff.pdf
-groff -Tpdf -t -e -ms newgroff.ms > newgroff.pdf
-groff -Tpdf -ms newgroff.ms > newgroff.pdf
-groff -Tpdf -t -e -ms newgroff.ms > newgroff.pdf
-
-groff -Tpdf -t -e -ms newgroff.ms > newgroff.pdf
-groff -Tps -t -e -ms newgroff.ms > newgroff.ps && ps2pdf newgroff.ps
-groff -Tpdf -t -e -ms newgroff.ms > newgroff.pdf
-groff -Tpdf -t -e -ms newgroff.ms > newgroff.pdf
-groff -Tpdf -U -t -e -ms -mpdfmark newgroff.ms > newgroff.pdf
-groff -Tpdf -U -t -e -ms -mpdfmark newgroff.ms > newgroff.pdf
-groff -Tpdf -U -t -e -ms -mpdfmark newgroff.ms > newgroff.pdf
-groff -Tps -t -e -ms -mpdfmark newgroff.ms > newgroff.ps
-ps2pdf -dPrinted=false newgroff.ps 
-groff -Tps -Tpdf -t -e -ms -mpdfmark newgroff.ms > newgroff.pdf
-groff -T ps -T pdf -t -e -ms -mpdfmark newgroff.ms > newgroff.pdf
-groff -T pdf -t -e -ms -mpdfmark newgroff.ms > newgroff.pdf
-groff -T pdf -t -e -ms -mpdfmark newgroff.ms > newgroff.pdf
-groff -T pdf -U -t -e -ms -mpdfmark newgroff.ms > newgroff.pdf
-groff -T pdf -U -t -e -ms -mpdfmark newgroff.ms > newgroff.pdf
-groff -T pdf -U -t -e -ms -mpdfmark newgroff.ms > newgroff.pdf
-groff -Tps -t -e -ms -m pdfmark newgroff.ms > newgroff.ps
-groff -Tps -t -e -ms -m pdfmark newgroff.ms > newgroff.ps
-pdfroff -e -t -m pdfmark newgroff.ms > newgroff.pdf 
-pdfroff -e -t -m pdfmark -ms newgroff.ms > newgroff.pdf 
-pdfroff -e -t -m pdfmark -ms newgroff.ms > newgroff.pdf 
-pdfroff -U -e -t -m pdfmark -ms newgroff.ms > newgroff.pdf 
-pdfroff -e -t -m pdfmark -ms newgroff.ms > newgroff.pdf 
-pdfroff -e -t -m pdfmark -ms newgroff.ms > newgroff.pdf 
-pdfroff -e -t -m pdfmark -ms newgroff.ms > newgroff.pdf 
-groff -T pdf -U -t -e -ms -mpdfmark newgroff.ms > newgroff.pdf
-
-groff -T pdf -U -t -e -ms -mpdfmark newgroff.ms > newgroff.pdf
-groff -T pdf -U -t -e -ms -mpdfmark newgroff.ms > newgroff.pdf
-groff -T pdf -U -t -e -ms -mpdfmark newgroff.ms > newgroff.pdf
-groff -T pdf -U -t -e -ms -mpdfmark newgroff.ms > newgroff.pdf
-groff -T pdf -U -t -e -ms -mpdfmark newgroff.ms > newgroff.pdf
-groff -T pdf -U -t -e -ms -mpdfmark newgroff.ms > newgroff.pdf
-groff -T pdf -U -t -e -ms -mpdfmark newgroff.ms > newgroff.pdf
-groff -T pdf -U -t -e -ms -mpdfmark newgroff.ms > newgroff.pdf
-groff -T pdf -U -t -e -ms -mpdfmark newgroff.ms > newgroff.pdf
-groff -T pdf -U -t -e -ms -mpdfmark newgroff.ms > newgroff.pdf
-groff -Tpdf -U -t -e -ms -mpdfmark newgroff.ms > newgroff.pdf
-groff -Tpdf -U -t -e -ms -mpdfmark newgroff.ms > newgroff.pdf
-groff -Tpdf -U -t -e -ms -mpdfmark newgroff.ms > newgroff.pdf
-groff -Tpdf -U -t -e -ms -mpdfmark newgroff.ms > newgroff.pdf
-groff -Tpdf -U -t -e -ms -mpdfmark newgroff.ms > newgroff.pdf
-groff -Tpdf -U -t -e -ms -mpdfmark newgroff.ms > newgroff.pdf
-groff -Tpdf -U -t -e -ms -mpdfmark newgroff.ms > newgroff.pdf
-groff -Tpdf -U -t -e -ms -mpdfmark newgroff.ms > newgroff.pdf
-groff -Tpdf -U -t -e -ms -mpdfmark newgroff.ms > newgroff.pdf
-groff -Tpdf -U -t -e -ms -mpdfmark newgroff.ms > newgroff.pdf
-groff -Tpdf -U -t -e -ms -mpdfmark newgroff.ms > newgroff.pdf
-groff -Tpdf -U -t -e -ms -mpdfmark newgroff.ms > newgroff.pdf
-groff -Tpdf -U -t -e -ms -mpdfmark newgroff.ms > newgroff.pdf
-groff -Tpdf -U -t -e -ms -mpdfmark newgroff.ms > newgroff.pdf
-groff -Tpdf -U -t -e -ms -mpdfmark newgroff.ms > newgroff.pdf
-groff -Tpdf -U -t -e -ms -mpdfmark newgroff.ms > newgroff.pdf
-groff -Tpdf -U -t -e -ms -mpdfmark newgroff.ms > newgroff.pdf
-groff -Tpdf -U -t -e -ms -mpdfmark newgroff.ms > newgroff.pdf
-groff -Tpdf -U -t -e -ms -mpdfmark newgroff.ms > newgroff.pdf
-groff -Tpdf -U -t -e -ms -mpdfmark newgroff.ms > newgroff.pdf
-groff -Tpdf -U -t -e -ms -mpdfmark newgroff.ms > newgroff.pdf
-groff -Tpdf -U -t -e -ms -mpdfmark newgroff.ms > newgroff.pdf
-groff -Tpdf -U -t -e -ms -mpdfmark newgroff.ms > newgroff.pdf
-groff -Tpdf -U -t -e -ms -mpdfmark newgroff.ms > newgroff.pdf
-groff -Tpdf -U -t -e -ms -mpdfmark newgroff.ms > newgroff.pdf
-groff -Tpdf -U -t -e -ms -mpdfmark newgroff.ms > newgroff.pdf
-groff -Tpdf -U -t -e -ms -mpdfmark newgroff.ms > newgroff.pdf
-groff -Tpdf -U -t -e -ms -mpdfmark newgroff.ms > newgroff.pdf
-groff -Tpdf -U -t -e -ms -mpdfmark newgroff.ms > newgroff.pdf
-groff -Tpdf -U -t -e -ms -mpdfmark newgroff.ms > newgroff.pdf
-groff -Tpdf -U -t -e -ms -mpdfmark newgroff.ms > newgroff.pdf
-groff -Tpdf -U -t -e -ms -mpdfmark newgroff.ms > newgroff.pdf
-groff -Tpdf -U -t -e -ms -mpdfmark newgroff.ms > newgroff.pdf
-groff -Tpdf -U -t -e -ms -mpdfmark newgroff.ms > newgroff.pdf
-groff -Tpdf -U -t -e -ms -mpdfmark newgroff.ms > newgroff.pdf
-groff -Tpdf -U -t -e -ms -mpdfmark newgroff.ms > newgroff.pdf
-groff -Tpdf -U -t -e -ms -mpdfmark newgroff.ms > newgroff.pdf
-groff -Tpdf -U -t -e -ms -mpdfmark newgroff.ms > newgroff.pdf
-groff -Tpdf -U -t -e -ms -mpdfmark newgroff.ms > newgroff.pdf
-groff -Tpdf -U -t -e -ms -mpdfmark newgroff.ms > newgroff.pdf
-groff -Tpdf -U -t -e -ms -mpdfmark newgroff.ms > newgroff.pdf
-exit
-cd Test/
-groff -ms -Tpdf groff.ms > groff.pdf
-groff -ms -Tpdf groff.ms > groff.pdf
-groff -ms groff.ms > groff.pdf
-groff -ms groff.ms > groff.pdf
-pdfroff -ms groff.ms > groff.pdf
-troff -Tpdf groff.ms > groff.pdf 
-troff -Tpdf groff.ms > groff.pdf 
-clear
-groff -ms groff.ms > groff.pdf
-groff -ms -T pdf groff.ms > groff.pdf
-cd ~
-cd .local/bin/
-ls
-sudo pacman -Rns img2pdf
-sudo pacman -Rns img2pdf-git
-clear
-vim img2pdf
-ls
-chmod +x img2pdf 
-img2pdf pondy.jpg 
-img2pdf pondy.jpg 
-img2pdf pondy.jpg 
-cat ffrecord 
-vim ffrecord 
-img2pdf pondy.jpg 
-img2pdf pondy.jpg 
-vim ffrecord 
-img2pdf pondy.jpg 
-img2pdf pondy.jpg 
-img2pdf pondy.jpg 
-img2pdf pondy.jpg 
-$PATH
-pdfconvert pondy.jpg 
-pdfconvert pondy.jpg 
-img2pdf pondy.jpg 
-img2pdf pondy.jpg 
-img2pdf pondy.jpg 
-img2pdf pondy.jpg 
-img2pdf pondy.jpg 
-img2pdf 
-img2pdf 
-cd .local/bin/
-vim img2pdf 
-vim img2pdf 
-mv img2pdf pdfconvert
-mv pdfconvert img2pdf
-vim img2pdf 
-img2pdf pondy.jpg 
-img2pdf dragon.png 
-img2pdf dragon.png 
-convert dragon.png dragon.jpg
-img2pdf *.jpg
-ls
-img2pdf *.jpg
-img2pdf *.jpg
-img2pdf *.jpg
-img2pdf *.jpg
-img2pdf *.jpg
-img2pdf *.jpg
-img2pdf grub.png 
-vim /usr/dict/papers/Ind
-sudo vim /usr/dict/papers/Ind
-cd Documents/
-ls
-vim bibliography
-cd ..
-cd Test/
-vim newgroff.ms
-refer -PS -e -p ~/Documents/bibliography newgroff.ms | groff -ms -T pdf > newgroff.pdf 
-refer -PS -e -p ~/Documents/bibliography newgroff.ms | groff -U -e -t -ms -T pdf > newgroff.pdf 
-refer -e -p ~/Documents/bibliography newgroff.ms | groff -U -e -t -ms -T pdf > newgroff.pdf 
-vim newgroff.ms
-refer -e -p ~/Documents/bibliography newgroff.ms | groff -U -e -t -ms -T pdf > newgroff.pdf 
-refer -e -p ~/Documents/bibliography newgroff.ms | groff -U -e -t -ms -T pdf > newgroff.pdf 
-refer -e -p ~/Documents/bibliography newgroff.ms | groff -U -e -t -ms -T pdf > newgroff.pdf 
-refer -e -p ~/Documents/bibliography newgroff.ms | groff -U -e -t -ms -T pdf > newgroff.pdf 
-refer -e -p ~/Documents/bibliography newgroff.ms | groff -U -e -t -ms -T pdf > newgroff.pdf 
-refer -e -p ~/Documents/bibliography newgroff.ms | groff -U -e -t -ms -T pdf > newgroff.pdf 
-refer -e -p ~/Documents/bibliography newgroff.ms | groff -U -e -t -ms -T pdf > newgroff.pdf 
-refer -e -p ~/Documents/bibliography newgroff.ms | groff -U -e -t -ms -T pdf > newgroff.pdf 
-refer -e -p ~/Documents/bibliography newgroff.ms | groff -U -e -t -ms -T pdf > newgroff.pdf 
-refer -e -p ~/Documents/bibliography newgroff.ms | groff -U -e -t -ms -T pdf > newgroff.pdf 
-refer -e -p ~/Documents/bibliography newgroff.ms | groff -U -e -t -ms -T pdf > newgroff.pdf 
-refer -e -p ~/Documents/bibliography newgroff.ms | groff -U -e -t -ms -T pdf > newgroff.pdf 
-refer -e -p ~/Documents/bibliography newgroff.ms | groff -U -e -t -ms -T pdf > newgroff.pdf 
-refer -e -p ~/Documents/bibliography newgroff.ms | groff -U -e -t -ms -T pdf > newgroff.pdf 
-refer -e -p ~/Documents/bibliography newgroff.ms | groff -U -e -t -ms -T pdf > newgroff.pdf 
-refer -e -p ~/Documents/bibliography newgroff.ms | groff -U -e -t -ms -T pdf > newgroff.pdf 
-refer -e -p ~/Documents/bibliography newgroff.ms | groff -U -e -t -ms -T pdf > newgroff.pdf 
-refer -e -p ~/Documents/bibliography newgroff.ms | groff -U -e -t -ms -T pdf > newgroff.pdf 
-refer -e -p ~/Documents/bibliography newgroff.ms | groff -U -e -t -ms -T pdf > newgroff.pdf 
-refer -e -p ~/Documents/bibliography newgroff.ms | groff -U -e -t -ms -T pdf > newgroff.pdf 
-refer -e -p ~/Documents/bibliography newgroff.ms | groff -U -e -t -ms -T pdf > newgroff.pdf 
-refer -e -p ~/Documents/bibliography newgroff.ms | groff -U -e -t -ms -T pdf > newgroff.pdf 
-refer -e -p ~/Documents/bibliography newgroff.ms | groff -U -e -t -ms -T pdf > newgroff.pdf 
-refer -e -p ~/Documents/bibliography newgroff.ms | groff -U -e -t -ms -T pdf > newgroff.pdf 
-refer -e -p ~/Documents/bibliography newgroff.ms | groff -U -e -t -ms -T pdf > newgroff.pdf 
-refer -e -p ~/Documents/bibliography newgroff.ms | groff -U -e -t -ms -T pdf > newgroff.pdf 
-refer -e -p ~/Documents/bibliography newgroff.ms | groff -U -e -t -ms -T pdf > newgroff.pdf 
-refer -e -p ~/Documents/bibliography newgroff.ms | groff -U -e -t -ms -T pdf > newgroff.pdf 
-refer -e -p ~/Documents/bibliography newgroff.ms | groff -U -e -t -ms -T pdf > newgroff.pdf 
-cd ~
-vim groffcommand 
-vim .local/bin/compiler 
 cd .config/groff/
 ls
 convert pondy.eps pondy.tiff
@@ -498,3 +258,243 @@ vim .bash_history
 vim .bash_history 
 vim .local/bin/compiler 
 vim .local/bin/executer 
+git add Study/MEDET/Pipe_Inspection_Robot.ms -f
+git status
+git add --all
+git commit -m "Groff command changes and MEDET project"
+cat .gitREADME 
+git push -u origin master
+git pull
+git config pull.rebase false
+git status
+git push -u origin master
+git status
+clear
+vim Study/MEDET/Pipe_Inspection_Robot.ms 
+killall zoom
+killall zoom
+vim .config/groff/ms_template.ms 
+git status
+vim Documents/bibliography 
+redshift -o 3500
+redshift -O 3500
+nmcli c
+nmcli device connect vpn.ec-nantes.fr
+nmcli device wifi connect vpn.ec-nantes.fr
+nmcli con up id vpn.ec-nantes.fr
+nmcli con down id vpn.ec-nantes.fr
+nmcli c
+cd Study/MEDET/
+cd Images/
+ls
+img2pdf *.PNG
+ls *.PNG
+ls -1 *.PNG
+mv Single\ Assy_Magnetic.PNG Single_Assy_Magnetic.PNG
+mv Single\ Assy.PNG Single_Assy.PNG
+ls -1 *.PNG
+img2pdf *.PNG
+redshift -O 3250
+killall redshift
+vim Documents/bibliography 
+redshift -O 3500
+cd Study/MEDET/
+cp Pipe_Inspection_Robot.pdf input.pdf
+ls
+pdfjam input.pdf '1-2,25' out.pdf
+pdfjam input.pdf '1-2,25' -o out.pdf
+pdfjam input.pdf 1-2 -o out.pdf
+
+pdfjam input.pdf '1-2' -o out.pdf
+clear
+evince out.pdf &
+pdfjam input.pdf '1-2,21' -o out.pdf
+pdfjam input.pdf '1-2,21,3-20,22' -o out.pdf
+pdfjam input.pdf '1-2,21,3-20,22' --paper a4paper -o out.pdf
+pdfinfo out.pdf 
+cd Study/MEDET/
+vim Pipe_Inspection_Robot.ms 
+cp Pipe_Inspection_Robot.pdf input.pdf 
+pdfjam input.pdf '1-2,22,3-21,23' --paper a4paper -o out.pdf
+exit
+vim Test/test.ms 
+vim Study/MEDET/Pipe_Inspection_Robot.ms 
+cd Test/
+vim test.ms 
+groff -U -te -mpdfmark -mom -Tpdf test.ms > test.pdf
+groff -U -te -mpdfmark -mom -Tpdf test.ms > test.pdf
+groff -U -te -mpdfmark -mom -Tpdf test.ms > test.pdf
+vim Study/MEDET/Pipe_Inspection_Robot.ms 
+cd Te
+cd Test/
+ls
+vim groff.ms 
+mv groff.ms test_eqns.ms
+groff -rrun1=1 -e -ms -z -Tpdf test_eqns.ms >/dev/null
+groff -e -ms -Tpdf test_eqns.ms > output.pdf
+mv groff.ms test_eqns.ms
+vim test_eqns.ms 
+groff -rrun1=1 -e -ms -z -Tpdf test_eqns.ms >/dev/null
+groff -rrun1=1 -e -ms -z -Tpdf -U test_eqns.ms >/dev/null
+groff -e -ms -Tpdf test_eqns.ms > groff.pdf
+vim test_eqns.ms 
+vim ~/.config/groff/macros 
+vim test_eqns.ms 
+cat ~/.config/groff/macros 
+cat ~/.config/groff/macros 
+vim ~/.config/groff/macros 
+vim test_eqns.ms 
+groff -rrun1=1 -e -ms -z -Tpdf test_eqns.ms >/dev/null
+groff -rrun1=1 -e -ms -z -Tpdf -U test_eqns.ms >/dev/null
+groff -e -ms -Tpdf -U test_eqns.ms > output.pdf
+groff -e -ms -Tpdf -U test_eqns.ms > test_eqns.pdf 
+vim test_eqns.ms 
+ls
+vim xrefs.troff 
+rm xrefs.troff 
+groff -rrun1=1 -e -ms -z -Tpdf -U test_eqns.ms >/dev/null
+groff -e -ms -Tpdf -U test_eqns.ms > test_eqns.pdf 
+vim test_eqns.ms 
+vim .local/bin/compiler 
+cd Study/MEDET/Images/
+img2pdf flowchart.png 
+cd ~
+cat .bash_history | grep *pdfjam*
+< file grep *pdfjam*
+< .bash_history grep *pdfjam*
+< .bash_history grep pdfjam*
+cat .bash_history | grep pdfjam*
+ffrecord MEDET
+man groff
+whereis groff_ms
+clear
+cd /usr/
+find -iname *ms*
+find -iname groff_ms
+find -iname groff*
+ls
+cat bin/groff
+vim bin/groff
+ffrecord rapid
+cd Test/
+groff -rrun1=1 -e -ms -z -Tpdf -U test_eqns.ms >/dev/null
+groff -e -ms -Tpdf test_eqns.ms > output.pdf
+groff -e -ms -Tpdf -U test_eqns.ms > output.pdf
+cat xrefs.troff 
+rm xrefs.troff 
+groff -rrun1=1 -e -ms -z -Tpdf -U test_eqns.ms >/dev/null
+groff -e -ms -Tpdf -U test_eqns.ms > output.pdf
+cat xrefs.troff 
+groff -rrun1=1 -e -ms -z -Tpdf -U test_eqns.ms >/dev/null
+groff -e -ms -Tpdf -U test_eqns.ms > output.pdf
+cat xrefs.troff 
+troff -Tpdf -ms test_eqns.ms > output.pdf 
+troff -Tpdf -ms -U test_eqns.ms > output.pdf 
+troff -Tpdf -ms -U test_eqns.ms > output.pdf 
+vim test
+groff -ms test 
+groff -ms test | grep NH
+groff -ms test | grep *NH*
+clear
+vim test
+rm test 
+vim test.ms
+rm test.*
+clear
+cd Study/Sem1/NUMME/NUMMEFELab2020-2021/
+cp Report.ms test.ms
+vim test.ms
+pwd
+vim test.ms
+ls *.ms
+vim testReport.ms 
+ls *.PDF
+ls *.pdf
+cd ..
+ls
+cd UploadFiles/
+ls
+vim MENUM_FE_A-03_Sudarson_Tiffany.ms 
+cm MENUM_FE_A-03_Sudarson_Tiffany.ms test.ms
+cp MENUM_FE_A-03_Sudarson_Tiffany.ms test.ms
+vim test.ms 
+vim test.ms 
+cd Study/Sem1/NUMME/NUMMEFELab2020-2021/
+cd outputs/
+ls
+cat ~/.config/groff/macros 
+vim ~/.config/groff/macros 
+vim ~/.config/groff/macros 
+vim ~/.local/bin/compiler 
+cd Test/
+ls
+vim test_eqns.ms 
+vim test_eqns.ms 
+vim .local/bin/compiler 
+vim .local/bin/compiler 
+which groff
+vim /usr/bin/groff
+pacman -Qe
+whereis groff
+vim /usr/share/groff/1.22.4/tmac/ms.tmac 
+vim /usr/share/groff/1.22.4/tmac/mse.tmac 
+vim /usr/share/groff/1.22.4/tmac/ms.tmac 
+vim /usr/share/groff/1.22.4/tmac/s.tmac 
+vim .local/bin/compiler 
+vim /usr/share/groff/1.22.4/tmac/s.tmac 
+vim /usr/share/groff/1.22.4/tmac/refer-ms.tmac 
+cd Test/
+vim test.ms 
+cd ..
+cd Test/
+ls
+vim test_eqns.ms 
+vim Study/MEDET/Pipe_Inspection_Robot.ms 
+cd Test/
+groff -Tpdf -ms -te test_eqns.ms >> test_eqns.pdf
+groff -Tpdf -U -ms -te test_eqns.ms >> test_eqns.pdf
+groff -Tpdf -U -ms -te test_eqns.ms > test_eqns.pdf
+vim /usr/share/groff/1.22.4/tmac/s.tmac 
+vim /usr/share/groff/1.22.4/tmac/s.tmac 
+cd /usr/share/groff/1.22.4/pic/
+ls
+cat chem.pic 
+cd ..
+cd tmac/
+ls
+clear
+cd mdoc/
+ls
+vim doc-common 
+cd ..
+ls
+cat * | grep -c toc
+vim Study/Sem1/NUMME/UploadFiles/
+cd Study/Sem1/NUMME/UploadFiles/
+sl
+ls
+cd ..
+cd UploadFiles/FE_Lab_Scripts/outputs/
+ls
+vim ~/.local/bin/img2pdf 
+img2pdf *.png
+cd ..
+cd ..
+vim test.ms 
+cd ..
+ls
+cd NUMMEFELab2020-2021/
+ls
+img2pdf *.png
+img2pdf *.png
+img2pdf *.PNG
+ls
+img2pdf *.png
+img2pdf Exact-vs-Approx_r\=1.png 
+img2pdf Exact-vs-Approx_r\=0.png 
+cd ..
+cd UploadFiles/
+ls
+vim test.ms 
+vim test.ms 
+cp test.ms copy.ms

@@ -47,7 +47,7 @@ case "$ext" in
 #    ms) preconv "$file" | refer -PS -e | groff -e -me -tbl -ms -kept -Tps > "$base".ps && ps2pdf "$base".ps;;
 #    ms) groff -ms "$file" -e -tbl -Tps > "$base".ps && ps2pdf "$base".ps;;
 #    ms) groff -Tpdf -U -t -e -mpdfmark -mspdf "$file" > "$base".pdf;;
-    ms) refer -e -p ~/Documents/bibliography "$file" | groff -Tpdf -U -t -e -mpdfmark -mspdf > "$base".pdf;;
+    ms) refer -e -p ~/Documents/bibliography "$file" | groff -Tpdf -U -te -mpdfmark -mspdf > "$base".pdf;;
 # Uncomment for ms landscape
 #    ms) preconv "$file" | refer -PS -e | groff -e -me -ms -kept -Tps -dpaper=a4l -P-pa4 -P-l > "$base".ps && ps2pdf "$base".ps;;
 	py) python "$file" ;;

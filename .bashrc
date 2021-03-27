@@ -57,7 +57,7 @@ shopt -s autocd		# Auto change directory
 # alias ef='_open_files_for_editing'     # 'ef' opens given file(s) for editing
 
 alias ls="ls -hN --color=auto --group-directories-first"
-alias cat="echo 'This is actually highlight, check .bashrc aliases for cat' && echo && highlight --out-format=ansi"
+#alias cat="echo 'This is actually highlight, check .bashrc aliases for cat' && echo && highlight --out-format=ansi"
 alias mkdir="mkdir -pv"
 
 # Paths for executable files
