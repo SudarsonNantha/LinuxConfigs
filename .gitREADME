@@ -9,3 +9,6 @@ git add --all                   # add all updated files to commit
 git commit -m "Commit message"  # commit changes with a meaningful message
 git status                      # get the status of files to be changed
 git push -u origin master       # push changes to github with upstream reference
+
+Personal Access Token:
+3bcf187a6d03df62373e273a9c4153990bb9d45d
