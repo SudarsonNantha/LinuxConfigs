@@ -59,10 +59,21 @@
 
 \# Modification of Equation macros
 \# .EQ macro
+
 .rn @EQ EQog
 .de EQ
-.EQog \\$* \\*[nn]
+.ie (\B'\\$1')
+.   if (\\$1 == 0) \{\
+.       shift 1
+.       ds args \\$*
+.\}
+.el \{\
+.   shift 0
+.   ds args \\$* \\*[nn]
+.\}
+.EQog \\*[args]
 ..
+
 \# .EN macro
 \# Stores entries in a seperate file
 .nr estep 0 1
@@ -89,29 +100,52 @@
 \# This macro also stores entries in a seprate file
 .nr fstep 0 1
 .de PIC
-.ie (\\n[.$] < 4) \{\
+.ds cap "
+.ds figname Figure \\*[fn]
+.nr addentry 1
+.nr nocap 0
+.if (\\n[.$] == 3) \{\
 .   ds cap "
-.   ds file \\$1
-.   ds indent \\$2
-.   nr size \\$3
-\}
-.el \{\
-.   ds cap \\$1
-.   ds file \\$2
-.   ds indent \\$3
-.   nr size \\$4
-\}
-.PDFPIC -\\*[indent] \\*[file] \\n[size]
+.   nr nocap 1
+.\}
+.if (\\n[.$] == 4) \{\
+.  ie (\B'\\$1') \{\
+.       if (\\$1 == 0) \{\
+.           nr addentry 0
+.           nr nocap 1
+.           ds cap "
+.           ds figname "
+.           shift 1
+.       \}
+.   \}
+.   el \{\
+.       ds cap \\$1
+.       shift 1
+.   \}
+.\}
+.if (\\n[.$] == 5) \{\
+.   if (\B'\\$1' == 0) \{\
+.       nr addentry 0
+.       shift 1
+.       ds cap \\$1
+.       shift 1
+.   \}
+.\}
+.PDFPIC -\\$2 \\$1 \\$3
 .ad c
-.B "Fig \\*[fn]"
-.I "\\*[cap]"
+.B "\\*[figname]"
+.I " \\*[cap]"
 .sp
 .ad n
-.ds figname Figure \\*[fnow]
-.if (\\n[.$] == 4) .ds figname \\*[cap] (Fig. \\*[fnow])
-.write figstream ".ds entry \\n+[fstep]. \\*[figname] \\\\t . . . \\n[%]
-.write figstream "\\\\*[entry]
-.write figstream ".br
+.if (\\n[addentry] == 1) \{\
+.   ie (\\n[nocap] == 0)
+.       ds figname \\*[cap] (Fig. \\*[fnow])
+.   el
+.       ds figname Figure \\*[fnow]
+.   write figstream ".ds entry \\n+[fstep]. \\*[figname] \\\\t . . . \\n[%]
+.   write figstream "\\\\*[entry]
+.   write figstream ".br
+.\}
 ..
 
 \# Macro to name and number tables
