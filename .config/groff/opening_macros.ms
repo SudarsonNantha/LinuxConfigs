@@ -22,12 +22,24 @@
 .nr f 0 1                   \" Figure counter register
 .nr t 0 1                   \" Table counter register
 .
-.ds nn (\\*[SN]\\n+[s])     \" Store and increment equation number
-.ds fn \\*[SN]\\n+[f]       \" Store and increment figure number
-.ds tn \\*[SN]\\n+[t]       \" Store and increment table number
-.ds nnow (\\*[SN]\\n[s])    \" Store equation number
-.ds fnow \\*[SN]\\n[f]      \" Store figure number
-.ds tnow \\*[SN]\\n[t]      \" Store table number
+.ie (\n[no-head-numbering] == 1) \{\
+.   ds nn (\\n+[s])     \" Store and increment equation number
+.   ds fn \\n+[f]       \" Store and increment figure number
+.   ds tn \\n+[t]       \" Store and increment table number
+\#                             Store equation, figure, and table numbers
+.   ds nnow (\\n[s])
+.   ds fnow \\n[f]
+.   ds tnow \\n[t]
+.\}
+.el \{\
+.   ds nn (\\*[SN]\\n+[s])     \" Store and increment equation number
+.   ds fn \\*[SN]\\n+[f]       \" Store and increment figure number
+.   ds tn \\*[SN]\\n+[t]       \" Store and increment table number
+\#                             Store equation, figure, and table numbers
+.   ds nnow (\\*[SN]\\n[s])
+.   ds fnow \\*[SN]\\n[f]
+.   ds tnow \\*[SN]\\n[t]
+.\}
 .
 \# Define a new macro for Numbered Headings
 \# This macro helps with automatic numbering of
@@ -41,16 +53,16 @@
 \#
 .nr old 1               \" Original heading level
 .de head
-.ie (\B'\\$1') \{\      \" Assigns heading level if
-.   nr arg \\$1         \" it is a valid integer
+.ie (\B'\\$1') \{\
+.   nr arg \\$1         \" Assigns heading level if it is a valid integer
 .   ds title \\$2
 \}
-.el \{\                 \" Heading level defaults to 1
-.   nr arg 1            \" if no heading level is passed
+.el \{\
+.   nr arg 1            \" Heading level defaults to 1 if no heading level is passed
 .   ds title \\$1
 \}
-.if ((\\n[arg] > 1):(\\n[arg] <= \\n[old])) \{\     \" Resets counter when new heading is made
-.   nr s 0
+.if ((\\n[arg] > 1):(\\n[arg] <= \\n[old])) \{\
+.   nr s 0              \" Resets counter when new heading is made
 .   nr f 0
 .   nr t 0
 \}
@@ -77,15 +89,16 @@
 \#
 .rn @EQ EQog                \" Renames .EQ macro
 .de EQ                      \" Redefines .EQ macro
-.ie (\B'\\$1')
-.   if (\\$1 == 0) \{\      \" Checks if optional 0 is passed
-.       shift 1
+.ie (\B'\\$1') \{\
+.   if (\\$1 == 0) \{\
+.       shift 1             \" Ignores numbering if optional 0 is passed
 .       ds args \\$*
+.   \}
 .\}
-.el \{\                     \" Numbers the equation if
-.   ds args \\$* \\*[nn]    \" 0 is not passed
+.el \{\
+.   ds args \\$* \\*[nn]
 .\}
-.EQog \\*[args]             \" Invokes original .EQ macro
+.EQog \\*[args]
 ..
 .
 \# Modification of the .EN macro
@@ -102,15 +115,15 @@
 .ENog
 .nr addentry 1
 .ds eqname Equation
-.ie (\B'\\$1') \{\      \" Checks if optional 0 is passed
+.ie (\B'\\$1') \{\
 .   if (\\$1 == 0) \{\
-.       nr addentry 0
+.       nr addentry 0   \" Checks if optional 0 is passed
 .       ds eqname "
 .   \}
 .\}
 .if (\\n[.$] > 0)
 .   ds eqname \\$1
-.if (\\n[addentry] == 1) \{\        \" Write to stream
+.if (\\n[addentry] == 1) \{\
 .   write eqstream ".ds entry \\n+[estep]. \\*[eqname] \\*[nnow] \\\\t . . . \\n[%]
 .   write eqstream "\\\\*[entry]
 .   write eqstream ".br
@@ -132,30 +145,31 @@
 .ds figname Figure \\*[fn]
 .nr addentry 1
 .nr nocap 0
-.if (\\n[.$] == 3) \{\      \" Checks number of arguments
-.   ds cap "                \" If value = 3, only file name, alignment, and size are specified
-.   nr nocap 1
+.if (\\n[.$] == 3) \{\
+.   ds cap "
+.   nr nocap 1              \" If only file name, alignment, and size are specified
 .\}
 .if (\\n[.$] == 4) \{\
-.  ie (\B'\\$1') \{\        \" Checks for 0 + no caption
+.  ie (\B'\\$1') \{\
 .       if (\\$1 == 0) \{\
-.           nr addentry 0
+.           nr addentry 0   \" Checks for 0 + no captio
 .           nr nocap 1
 .           ds cap "
 .           ds figname "
 .           shift 1
 .       \}
 .   \}
-.   el \{\                  \" Checks for non-zero + caption
-.       ds cap \\$1         \" This is the ideal case
-.       shift 1
+.   el \{\
+.       ds cap \\$1
+.       shift 1             \" Checks for non-zero + caption. This is the idea case.
 .   \}
 .\}
-.if (\\n[.$] == 5) \{\      \" Checks for 0 + caption
-.   if (\B'\\$1' == 0) \{\
-.       nr addentry 0
+.if (\\n[.$] == 5) \{\
+.   if ((\B'\\$1' == 1)&(\\$1 == 0)) \{\
+.       nr addentry 0       \" Checks for 0 + caption
 .       shift 1
 .       ds cap \\$1
+.       ds figname "
 .       shift 1
 .   \}
 .\}
@@ -165,7 +179,7 @@
 .I " \\*[cap]"
 .sp
 .ad n
-.if (\\n[addentry] == 1) \{\    \" Writes figure names into stream
+.if (\\n[addentry] == 1) \{\
 .   ie (\\n[nocap] == 0)
 .       ds figname \\*[cap] (Fig. \\*[fnow])
 .   el
@@ -193,10 +207,10 @@
 .ds cap "
 .ds tablename Table \\*[tn]
 .ie (\B'\\$1') \{\
-.   if (\\$1 == 0) \{\      \" Checks for optional 0 argument
+.   if (\\$1 == 0) \{\
 .       ds tablename "
 .       ds cap \\$2
-.       nr addentry 0
+.       nr addentry 0       \" Does not add entry if optional zero
 .    \}
 .\}
 .el \{\
@@ -210,7 +224,7 @@
 .I "\\*[cap]"
 .br
 .ad n
-.if (\\n[addentry] == 1) \{\    \" Writes table names into stream
+.if (\\n[addentry] == 1) \{\
 .   if (\\n[.$] == 1)
 .       ds tablename \\*[cap] (\\*[tablename])
 .   write tablestream ".ds entry \\n+[tstep]. \\*[tablename] \\\\t . . . \\n[%]
@@ -218,7 +232,7 @@
 .   write tablestream ".br
 .\}
 ..
-
+.
 \# Opens stream to write data into  Equations, Figures, and Tables file
 \# These files are processed by groff in closing_macros.ms
 \#
@@ -228,8 +242,8 @@
 .open eqstream equations.ms
 .open figstream figures.ms
 .open tablestream tables.ms
-
-.write eqstream ".nr PO 1.5i
+.
+.write eqstream ".nr PO 1i
 .write eqstream ".ds CH
 .write eqstream ".ds CF
 .write eqstream ".CD
@@ -240,12 +254,12 @@
 .write eqstream ".sp 1
 .write eqstream ".ps 12
 .write eqstream ".vs 20
-.write eqstream ".ll 5.3i
-.write eqstream ".ta 0i 5.3iR
+.write eqstream ".ll 6i
+.write eqstream ".ta 0i 6iR
 .write eqstream ".ds eqtitle Equation Number \t Page No.
 .write eqstream ".B "\\\\*[eqtitle]"
 .write eqstream ".br
-.write figstream ".nr PO 1.5i
+.write figstream ".nr PO 1i
 .write figstream ".ds CH
 .write figstream ".ds CF
 .write figstream ".CD
@@ -256,12 +270,12 @@
 .write figstream ".sp 1
 .write figstream ".ps 12
 .write figstream ".vs 20
-.write figstream ".ll 5.3i
-.write figstream ".ta 0i 5.3iR
+.write figstream ".ll 6i
+.write figstream ".ta 0i 6iR
 .write figstream ".ds figtitle Figure Number \t Page No.
 .write figstream ".B "\\\\*[figtitle]"
 .write figstream ".br
-.write tablestream ".nr PO 1.5i
+.write tablestream ".nr PO 1i
 .write tablestream ".ds CH
 .write tablestream ".ds CF
 .write tablestream ".CD
@@ -272,8 +286,8 @@
 .write tablestream ".sp 1
 .write tablestream ".ps 12
 .write tablestream ".vs 20
-.write tablestream ".ll 5.3i
-.write tablestream ".ta 0i 5.3iR
+.write tablestream ".ll 6i
+.write tablestream ".ta 0i 6iR
 .write tablestream ".ds tabletitle Table \t Page No.
 .write tablestream ".B "\\\\*[tabletitle]"
 .write tablestream ".br
