@@ -1,3 +1,5 @@
-#groff -e -ms test.ms -Tps > psfile.ps && ps2pdf psfile.ps
+groff -Tpdf -U -tepjR -mspdf -mpdfmark newgroff.ms > newgroff.pdf
 
-refer -e -p ~/Documents/bibliography groff_file.ms | groff -Tpdf -U -te -mpdfmark -mspdf > groff_file.pdf;;
+refer -e -p ~/Documents/bibliography newgroff.ms | pic | groff -Tpdf -U -te -mspdf -mpdfmark > newgroff.pdf
+
+
