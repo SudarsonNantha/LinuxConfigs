@@ -140,7 +140,7 @@ where you can find documentation for groff.
 is a great website for informational videos
 .ds CF
 .ds RH
-.nr combine 1   \" Uncomment to combine equation/figures/table files
+.nr combine 0   \" Uncomment to combine equation/figures/table files
 .so /home/sudarson/.config/groff/closing_macros.ms
 .TC
 .bp

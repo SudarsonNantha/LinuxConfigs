@@ -26,7 +26,7 @@
 .   ds nn (\\n+[s])     \" Store and increment equation number
 .   ds fn \\n+[f]       \" Store and increment figure number
 .   ds tn \\n+[t]       \" Store and increment table number
-\#                             Store equation, figure, and table numbers
+\#                         Store equation, figure, and table numbers
 .   ds nnow (\\n[s])
 .   ds fnow \\n[f]
 .   ds tnow \\n[t]
@@ -35,7 +35,7 @@
 .   ds nn (\\*[SN]\\n+[s])     \" Store and increment equation number
 .   ds fn \\*[SN]\\n+[f]       \" Store and increment figure number
 .   ds tn \\*[SN]\\n+[t]       \" Store and increment table number
-\#                             Store equation, figure, and table numbers
+\#                                Store equation, figure, and table numbers
 .   ds nnow (\\*[SN]\\n[s])
 .   ds fnow \\*[SN]\\n[f]
 .   ds tnow \\*[SN]\\n[t]
@@ -61,10 +61,12 @@
 .   nr arg 1            \" Heading level defaults to 1 if no heading level is passed
 .   ds title \\$1
 \}
-.if ((\\n[arg] > 1):(\\n[arg] <= \\n[old])) \{\
-.   nr s 0              \" Resets counter when new heading is made
-.   nr f 0
-.   nr t 0
+.if (\n[no-head-numbering] == 0) \{\
+.   if ((\\n[arg] > 1):(\\n[arg] <= \\n[old])) \{\
+.       nr s 0              \" Resets counter when new heading is made
+.       nr f 0
+.       nr t 0
+.   \}
 \}
 .nr old \\n[arg]        \" Stores the value of heading level
 .                       \" for comparison next time .head is called

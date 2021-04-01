@@ -1,4 +1,5 @@
-.PDFPIC -C /home/sudarson/Study/MEDET/Images/Centrale_Nantes_Logo.pdf 4
+.PDFPIC -C /home/sudarson/Study/MEDET/genericlogo.pdf 5
+.defcolor sea rgb #1D7E74
 .nr HM 0.8i \" Set Header and footer margins
 .nr FM 0.8i
 .so /home/sudarson/.config/groff/macros.ms
@@ -10,14 +11,14 @@ bracket-label \*([.[ ]\*(.] ", "
 \# *** VERY IMPORTANT ***
 \# Use "$ equation $" within text to include math in paragraphs
 \#
-.EQ 0
+.EQ
 delim $$
 .EN
 .ds CH
 .ds CF
 .nr LL 6.2i     \" Line width
-\#.DS C         \" Center the text below this
-\#.ps 12        \" Change font size
+.
+.
 .CD
 .sp 0
 .ps 28
@@ -26,17 +27,24 @@ delim $$
 .ps 14
 .I "Sudarson NANTHACOUMARANE"
 .sp 0.1i
-.I "Aditya BIJU"
-.sp 0.15i
 (2020 - 2021)
 .sp 4
 .ps 20
 Mechanical Design Project
+.sp 0.2i
+.ps 24
+.pdfhref W -D https://www.gnu.org/software/groff/ Generic University
 .sp
 .ps 14
 .I "24th March, 2021"
 .DE
-
+.
+.
+.ad c
+Here is
+some uninteresting text
+.br
+.ad n
 .bp
 .sv 15
 .CD
@@ -45,21 +53,24 @@ Mechanical Design Project
 .UL "Abstract"
 .DE
 .nr PS 12
-.nr VS 15*1200/1000
+.nr VS 17
 .PP
 The deterioration occurring over time is the main reason for the regular inspection for pipelines. A lot of reasons factor in for the cause of this deterioration ranging from normal corrosion, leaks to cracks and punctures that may result in blowbacks and end up damaging the operator and its environment. Human inspection of pipelines is labour intensive and hazardous in cases where the pipes carry toxic fluids. In order to prevent risking human health and to explore inaccessible environments, autonomous inspection of pipelines are becoming more and more reliable with the use of robots. Piping inspection robots find their applications for industries such as nuclear, chemical and sewage. The major challenge in the design of these robots lies in the choice of an appropriate locomotion principle and articulation unit owing to factors like cable management, passage through complex pipe bends and having a continuous contact with pipeline walls. The main focus of this project is to study existing robotic piping inspection methods and to develop innovative and effective designs which can have vertical, horizontal and curved profiles.
+.
+.
 .pn -1 \" Manipulate Page Numbering
-
 .bp
 .ds CH          \" Empty header (centred)
 .ds CF - % -    \" Foooter with page number (centred)
-\#.ds CF -\\n[PN]-
 .nr PS 16
 .NH
 .nr PS  12
 .XN "Introduction"
 .PP
 Since the advent of the industrial age, maintenance has been vital to ensure progress. Pipe systems have been at the heart of almost all industries, especially, chemical, nuclear and petroleum. Regular and periodic inspection of pipelines have always been a high priority to prevent pipeline bursts, puncture, fracture and buckling. Time and time again, manual inspection has proven to be not only error prone and time consuming but also to pose a threat to human health and can lead to long term effects of radiation. For these reasons, pipe inspection by robots is becoming increasingly popular. Several scientific research communities are dedicating their time and effort to improve the design of such robots.
+.[
+robot_market2
+.]
 .PP
 In China, the natural petroleum energy sector has become a billion dollar investment with an ardent focus on the management of refinement, storage and transportation of oil products. For the continued success of such a humongous business, it has been absolutely crucial to conduct regular maintenance and repair of the oil pipelines which serves as an important component connecting all facilities. Owing to the vast distances covered by these pipelines, periodic human inspection has become very expensive as well as time consuming. Therefore, in recent years there has been a skyrocketing demand to obtain an effective method of autonomous inspection using the robot technologies. These robots are expected to easily maneuver in pipelines of varying sizes and have the capability to thoroughly inspect the pipes for any damage or blockage.
 .sp
@@ -68,7 +79,7 @@ In China, the natural petroleum energy sector has become a billion dollar invest
 .nr PS 12
 .XN "Functional Requirements and Design Parameters"
 .PDFPIC -C /home/sudarson/Study/MEDET/Images/FRDP.pdf 6.5
-
+.
 .bp
 .nr PS 16
 .NH
@@ -97,7 +108,7 @@ The top global Key players in the Pipe Inspection Robot Market are: GE Inspectio
 .[
 robot_market5
 .]
-
+.
 .bp
 .nr PS 16
 .NH
