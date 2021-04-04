@@ -1,96 +1,145 @@
-.so /home/sudarson/.config/groff/opening_macros.ms
-.nr HM 0.8i \" Set Header and footer margins
-.nr FM 0.8i
-\# This is a standard groff template.
-\#
-\# Use \# to comment the entire line
-\# Use \" to add comment after some text
-\#
-\# Some standard functions:
-\# .NH <x> for a numbered section - x denotes the level of the section, value is 0 by default
-\# .SH unnumbered section
-\# .RS and .RE for extra indentations
-\# .B for bold
-\# .I for italics
-\# .BI for bold italics
-\# .UL for underlining
-\# .BX for encapsulating text in a box
-\# .sp <n> to add blank lines
-\# .B1, B2 to enclose text in a box
-\# .b1, .b2 to enclose constant width text in a box (Use for code)
-\#
-\# Text between .EQ <x> and .EN is considered as an equation
-\# Equations are automatically indented, use ~ to add space
-\# x = C by default (centred), I (indented), L (left aligned)
-\#
-\# If compiling with -Tps add images using .PSPIC, all images must be in .eps format
-\# If compiling with -U -Tpdf add images using .PDFPIC, all images must be in .pdf format
-\# Remember to use img2pdf command (Imagemagick throws errors when converting images to pdf)
-\#
-\# Import custom macros
-\# .BL creates a bulleted list
-.so /home/sudarson/.config/groff/macros
-\#
+.ig
+  ------------------------------------------------------
+ |      Compile this document with the command:         |
+ |    groff -Tpdf -U -tepR -mspdf file.ms > file.pdf    |
+ |                                                      |
+ |                *** IMPORTANT ***                     |
+ | This document requires the files opening_macros.ms   |
+ | and closing_macros.ms to work properly. Read these   |
+ | files using the .so macro                            |
+ |                                                      |
+  ------------------------------------------------------
+
+ This is a Groff Template written by Sudarson Nantha
+
+ List of custom macros
+     1) .head - .NH with more features
+     2) .EQ   - Automatically increments equations
+     3) .EN   - Adds names to equations and saves in an external file
+     4) .TE   - Adds names to tables and saves in an external file
+     5) .PIC  - Displays images (in PDF format) and saves in an external file
+                Remember to use img2pdf command
+                (Imagemagick throws errors when converting images to pdf)
+     6) .b1 and .b2 should be used for code
+
+     [ See opening_macros.ms and closing_macros.ms for more information ]
+
+..
 \# *** VERY IMPORTANT ***
 \# Use "$ equation $" within text to include math in paragraphs
 \#
-.EQ
+.EQ 0
 delim $$
-.EN
+.EN 0
+\# .nr no-head-numbering 1  \" Uncomment to disable equation/figure/table numbering based on heading
+.so /home/sudarson/.config/groff/opening_macros.ms
+\#.so /home/sudarson/.config/groff/macros.ms
+.
+.nr HM 0.8i \" Set Header and footer margins
+.nr FM 0.8i
+.
+.bp
+\# Accumulate references at the end of document
+\# and surround reference numbers with square brackets []
+.R1
+accumulate
+bracket-label \*([.[ ]\*(.] ", "
+.R2
+.
+.if '\*[.T]'pdf' \X'pdf: pagename here'
+.ds RH This is a sample header  \" Right aligned header
 .ds CH          \" Empty header (centred)
 .ds CF - % -    \" Foooter with page number (centred)
-.nr LL 6.3i     \" Line width
-\#.DS C         \" Center the text below this
-\#.ps 12        \" Change font size
-.TL \" Title of the document
-My First Groff Document
-.AU \" Author of the document
-Sudarson NANTHACOUMARANE
-.AU
-Aditya BIJU
-.AI \" Article institution
-Ecole Centrale de Nantes
-.NH
-First Section
-.XS             \" Text between .XS and .XN is automatically numbered and added to TOC
-First Section   \" This is the text that will appear in TOC
-.XE
-.PP \" New indented paragraph
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras malesuada, lectus ac fermentum pharetra, odio mi condimentum arcu, in ultrices dolor est hendrerit massa. Vestibulum sed sagittis metus. Donec velit risus, ultrices vel pretium nec, commodo id nisi.
-
+.
+.
+.po 0.8i        \" Page offset
+.ll 6.7i        \" Line length
+\l'6.6i'        \" Draw horizontal line (Make sure it is a little smaller than line length)
+.br             \" Break line
+.po 1i          \" Change page offset (to default)
+.ll 6.3i        \" Change line length (to default)
+.sp -0.8        \" More up because there is too much spacing
+.ad c           \" Center align
+.PS             \" Invoke GNU Pic
+box rad 0.1 ht 1 wid 4.2 at (0,0) fill 0.1 outline "white"
+.PE
+.po 1.2i
+.sp -5.5
+.ps 16          \" Set font point size
+.pdfhref W -D http://www.gnu.org/software/groff Welcome to Groff    \" A hyperlink
+.br
+.ps 10
+.sp 0.2
+GNU troff (groff) - a GNU project
+.br
+.sp 0.5
+Ms macros template by
+.I
+.pdfhref W -D https://github.com/SudarsonNantha/LinuxConfigs/tree/master/.config/groff Sudarson Nantha
+.br
+.ad n           \" Normal/Justify alignment
+.po 0.8i
+.ll 6.7i
+.sp -0.95i
+.PDFPIC -L /home/sudarson/.config/groff/gnu.pdf 1
+.sp -1.18i
+.PDFPIC -R /home/sudarson/.config/groff/tux.pdf 0.9
+.sp -0.8
+\D't 1.5p'      \" Change line thickness
+\l'6.6i'        \" Draw a horizontal line
+\D't 0.5p'      \" Change line thickness (to default)
+.br
+.po 1i          \" Change page offset (to default)
+.nr LL 6.3i     \" Change line length (to default)
+.
+.sp -1
+.head "First Section"       \" Numbered heading
+This starts an indented paragraph. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras malesuada, lectus ac fermentum pharetra, odio mi condimentum arcu, in ultrices dolor est hendrerit massa. Vestibulum sed sagittis metus. Donec velit risus, ultrices vel pretium nec, commodo id nisi. References can be added.
+\# Invoke references between .[ and ].
+.[
+pipe simple
+.]
+.nr PS 11   \" Change font point size
+.nr VS 15   \" Change vertical spacing **IMPORTANT**
 .LP \" New unindented paragraph
-Nunc lobortis mauris in semper eleifend. Sed tortor quam, pharetra vitae convallis quis, dignissim in nisl. Curabitur sed leo ac urna posuere pharetra quis eu sem. Curabitur molestie sapien ac felis ultricies varius. Nullam varius sapien eros, non imperdiet neque mattis pharetra. Nulla eleifend vel nisl sed sagittis. Donec eu dolor neque. Vivamus tempus commodo vestibulum. Mauris mattis quam ante.
-.NH
-Pythogoras Theorem
-.XS
-Pythogoras Theorem
-.XE
+This starts an unindented paragraph. Nunc lobortis mauris in semper eleifend. Sed tortor quam, pharetra vitae convallis quis, dignissim in nisl. Curabitur sed leo ac urna posuere pharetra quis eu sem. Curabitur molestie sapien ac felis ultricies varius. Nullam varius sapien eros, non imperdiet neque mattis pharetra. Nulla eleifend vel nisl sed sagittis. Donec eu dolor neque. Vivamus tempus commodo vestibulum. Mauris mattis quam ante.
+.LP
+.B "Here is proof that forward referencing works."
+.pdfhref L -D fig2.1.1 Figure 2.1.1
+shows an old monument in Bharathi Park, Pondicherry.
+.
+.ps 10      \" Change font point size (to default)
+.nr VS 12   \" Change font vertical spacing (to default)
+.head 2 "Pythogoram Theorem"
 .PP
-This theorem states that given a trianalge with sides $a$, $b$, and $c$ $\[rA]~~a sup 2 + b sup 2 = c sup 2$
-.NH
-Second Section
-.XS
-.pdfhref W -D www.google.com Second Section
-.XE
-\# .RS and .RE add indentation
+This theorem states that given a triangle with sides $a$, $b$, and $c$ $\[rA]~~a sup 2 + b sup 2 = c sup 2$
+.
+.head "Second Section"
+.LP
+Here, we take a look at indentation
+.[
+simple
+.]
 .RS
-.NH 2
-Subsection
+.head 2 "Subsection"
+\# .RS and .RE add indentation
 .BL
 Bullet point 1
 .BL
 Bullet point 2
 .RE
+.
+.
 \# Example equations and matrices
 .EQ
 f(x) = 5x + 3
-.EN
+.EN "A linear equation"
 .EQ I
 e sup (i theta ) = mark 1 + e sup (i theta ) + 1 smallover 2! (i theta ) sup 2...
-.EN
-.EQ I
+.EN "A long mathematical series"
+.EQ 0 I
 lineup + 1 smallover {N-1} (i theta ) sup {N-1} + 1 smallover N (i theta ) sup N
-.EN
+.EN 0
 .EQ I
 K sub e = int from {T sub e} K~~
 left [ matrix{
@@ -99,32 +148,80 @@ ccol { x sub k above x sub l above x sub m }
 ccol { y sub k above y sub l above y sub m }
 } right ]
 ~~d OMEGA
-.EN
-
+.EN "Example matrix equation"
+.
+.
 \# Code can be put in a box by putting it between .b1 and .b2
 .b1
 def myfunction(arg):
     arg = arg**2 - arg + 1
     return int(arg)
 .b2
-\#
+.
+.
 \# Break page
 .bp
-\#
-\# Image files MUST be saved as .eps or .PDF
-\# Number at eol controls image size
-\# Arguments C, L, R, and I <n> are used for alignment (n = indent spaces)
-\#.PSPIC -C /home/sudarson/.config/groff/pondy.eps 2
-.PDFPIC -C "/home/sudarson/.config/groff/pondy.pdf" 5
+.
+.
+\# Arguments C, L, and R are used for alignment
+\# Usage: .PIC [0 if no numbering] [caption] [file path] [alignement] [size]
+.PIC "This is a nice caption" "/home/sudarson/.config/groff/pondy.pdf" C 4
+.PIC  0 "This logo won't have a figure number" "/home/sudarson/.config/groff/dragon.pdf" C 2
+.PIC  "/home/sudarson/.config/groff/dragon.pdf" C 2
+.bp
+.
+.
+.head "Last Section"
+.LP
+In this section, we will look at tables and PDF links.
+.[
+search
+.]
+.head 2 "Links using .pdfhref"
+.sp -1.5
+.RS
+.head 3 "Internet Hyperlinks"
+\# Add hyperlinks
+.LP
+Here is an internet hyperlink to
+.pdfhref W -D https://www.gnu.org/software/groff/manual/groff.html the Groff Manual
+where you can find documentation for groff.
+.br
+.pdfhref W -D www.youtube.com Youtube
+is a great website for informational videos
+.head 3 "PDF links"
+.LP
+.ig
+ Look at opening_macros.ms to see how equations, figures,
+ and tables are named. Their number will be prefixed by
+ 'eq' , 'fig' , or 'tab'. This is the reference name.
+ After the reference name, the affixed text to the link
+ is displayed.
+..
+.pdfhref L -D eq2.1.1 Affixed text to Equation (2.1.1)
+is the first equation
+.br
+.pdfhref L -D fig2.1.3 Fig(2.1.3)
+is the MSI logo
+.br
+.pdfhref L -D tab3.2.1 Table(3.2.1)
+contains the specs for carburetors found in Yamaha DT 125 motorcycle.
+.br
+.B
+Notice that this does forward referencing.
+.RE
+.head 2 "Table example"
+.ig
 
-\# TABLES
-\# Cannot put comments inside .TS and .TE for some reason...
-\# Line1: Table properties - uses ; as delimiter
-\# Line2: Layout of first row
-\# Line3 Layout of second row
-\# Line4: Layout of subsequent rows
-\# .T& signifies continuation of table
-\# The next line shows the row layout
+ TABLES
+ Cannot put comments inside .TS and .TE for some reason...
+ Line1: Table properties - uses ; as delimiter
+ Line2: Layout of first row
+ Line3 Layout of second row
+ Line4: Layout of subsequent rows
+ .T& signifies continuation of table
+ The next line is new row layout
+..
 .TS
 tab(;) allbox nospaces center;
 cBp+1 s s s
@@ -142,14 +239,16 @@ Needle clip position;4th;3rd;4th
 .T&
 a a s s.
 Float height - all models;20-21mm (0.787-0.827in)
-.TE
-
-\# Add hyperlinks
-.pdfhref W -D http://www.gnu.org/software/groff -A , the groff web site
-a great website!
-.sp
-.pdfhref W -D www.youtube.com Youtube
-is a great website for informational videos
-.ds CF
+.TE "Carburetor specifications for Yamaha DT 125"
+.
+\# No headers or footers on TOC page
+.list-equations
+.list-figures
+.list-tables
+.bp     \" Page break necessary for references on a separate page
 .so /home/sudarson/.config/groff/closing_macros.ms
+.ds CH
+.ds CF
+.if '\*[.T]'pdf' \X'pdf: switchtopage before here'
 .TC
+.bp

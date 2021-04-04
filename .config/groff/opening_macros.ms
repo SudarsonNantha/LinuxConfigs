@@ -1,3 +1,8 @@
+\# These lines set link text and border colours
+.ds PDFHREF.COLOUR #193be5
+.defcolor pdf:href.colour rgb \*[PDFHREF.COLOUR]
+.ds PDFHREF.TEXT.COLOUR pdf:href.colour
+\#
 \# Bullet points
 .de BL
 .IP \(bu 2
@@ -125,9 +130,20 @@
 .\}
 .if (\\n[.$] > 0)
 .   ds eqname \\$1
+.
+\# Remove parenthesis around equation numbering
+.ds eqnum \\*[nnow]
+.substring eqnum 1 -1
+.chop eqnum
+.ds eqnum eq\\*[eqnum]
+.sp -7
+.
+\# Create a pdf reference
+.pdfhref M -N \\*[eqnum] -X \\*[eqname]
+.sp 7
 .if (\\n[addentry] == 1) \{\
-.   write eqstream ".ds entry \\n+[estep]. \\*[eqname] \\*[nnow] \\\\t . . . \\n[%]
-.   write eqstream "\\\\*[entry]
+.   write eqstream ".ds entry \\n+[estep]. \\*[eqname] \\*[nnow] \\\\t . . .\\n[%]
+.   write eqstream ".pdfhref L -D \\*[eqnum] \\\\*[entry]
 .   write eqstream ".br
 .\}
 ..
@@ -181,13 +197,20 @@
 .I " \\*[cap]"
 .sp
 .ad n
+.
+.sp -15
+.ds fignum fig\\*[fnow]
+\# Create a pdf reference
+.pdfhref M -N \\*[fignum] -X \\*[figname]
+.sp 15
+.
 .if (\\n[addentry] == 1) \{\
 .   ie (\\n[nocap] == 0)
 .       ds figname \\*[cap] (Fig. \\*[fnow])
 .   el
 .       ds figname Figure \\*[fnow]
 .   write figstream ".ds entry \\n+[fstep]. \\*[figname] \\\\t . . . \\n[%]
-.   write figstream "\\\\*[entry]
+.   write figstream ".pdfhref L -D \\*[fignum] \\\\*[entry]
 .   write figstream ".br
 .\}
 ..
@@ -226,11 +249,18 @@
 .I "\\*[cap]"
 .br
 .ad n
+.
+.ds tabnum tab\\*[tnow]
+.sp -15
+\# Create a pdf reference
+.pdfhref M -N \\*[tabnum] -X \\*[tablename]
+.sp 15
+.
 .if (\\n[addentry] == 1) \{\
 .   if (\\n[.$] == 1)
 .       ds tablename \\*[cap] (\\*[tablename])
 .   write tablestream ".ds entry \\n+[tstep]. \\*[tablename] \\\\t . . . \\n[%]
-.   write tablestream "\\\\*[entry]
+.   write tablestream ".pdfhref L -D \\*[tabnum] \\\\*[entry]
 .   write tablestream ".br
 .\}
 ..
@@ -245,51 +275,94 @@
 .open figstream figures.ms
 .open tablestream tables.ms
 .
+.write eqstream ".bp
 .write eqstream ".nr PO 1i
+.write eqstream ".ds RH
+.write eqstream ".ds LH
 .write eqstream ".ds CH
-.write eqstream ".ds CF
+.write eqstream ".ds CF - % -
 .write eqstream ".CD
 .write eqstream ".ps 14
 .write eqstream ".B "List of Equations"
 .write eqstream ".sp
 .write eqstream ".DE
+.write eqstream ".XS
+.write eqstream ".sp 0.5
+.write eqstream "List of Equations
+.write eqstream ".XE
 .write eqstream ".sp 1
 .write eqstream ".ps 12
 .write eqstream ".vs 20
+.write eqstream ".po 1.1i
 .write eqstream ".ll 6i
 .write eqstream ".ta 0i 6iR
 .write eqstream ".ds eqtitle Equation Number \t Page No.
 .write eqstream ".B "\\\\*[eqtitle]"
 .write eqstream ".br
+.
+.
+.write figstream ".bp
 .write figstream ".nr PO 1i
 .write figstream ".ds CH
-.write figstream ".ds CF
+.write figstream ".ds RH
+.write figstream ".ds LH
+.write figstream ".ds CF - % -
 .write figstream ".CD
 .write figstream ".ps 14
 .write figstream ".B "List of Figures"
 .write figstream ".sp
 .write figstream ".DE
+.write figstream ".XS
+.write figstream ".sp 0.5
+.write figstream "List of Figures
+.write figstream ".XE
 .write figstream ".sp 1
 .write figstream ".ps 12
 .write figstream ".vs 20
+.write figstream ".po 1.1i
 .write figstream ".ll 6i
 .write figstream ".ta 0i 6iR
 .write figstream ".ds figtitle Figure Number \t Page No.
 .write figstream ".B "\\\\*[figtitle]"
 .write figstream ".br
+.
+.
+.write tablestream ".bp
 .write tablestream ".nr PO 1i
 .write tablestream ".ds CH
-.write tablestream ".ds CF
+.write tablestream ".ds RH
+.write tablestream ".ds LH
+.write tablestream ".ds CF - % -
 .write tablestream ".CD
 .write tablestream ".ps 14
 .write tablestream ".B "List of Tables"
 .write tablestream ".sp
 .write tablestream ".DE
+.write tablestream ".XS
+.write tablestream ".sp 0.5
+.write tablestream "List of Tables
+.write tablestream ".XE
 .write tablestream ".sp 1
 .write tablestream ".ps 12
 .write tablestream ".vs 20
+.write tablestream ".po 1.1i
 .write tablestream ".ll 6i
 .write tablestream ".ta 0i 6iR
 .write tablestream ".ds tabletitle Table \t Page No.
 .write tablestream ".B "\\\\*[tabletitle]"
 .write tablestream ".br
+.
+.
+.de list-equations
+.nr show-equations-list 1
+..
+.de list-figures
+.nr show-figures-list 1
+..
+.de list-tables
+.nr show-tables-list 1
+..
+.nr show-equations-list 0
+.nr show-figures-list 0
+.nr show-tables-list 0
+
