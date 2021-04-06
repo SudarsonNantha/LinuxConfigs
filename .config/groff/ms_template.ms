@@ -219,7 +219,7 @@ is a great website for informational videos
 .pdfhref L -D eq2.1.1 Affixed text to Equation (2.1.1)
 is the first equation
 .br
-.pdfhref L -D fig2.1.3 Fig(2.1.3)
+.pdfhref L -D fig2.1.2 Fig(2.1.2)
 is the MSI logo
 .br
 .pdfhref L -D tab3.2.1 Table(3.2.1)
