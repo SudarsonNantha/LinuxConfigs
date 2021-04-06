@@ -25,7 +25,7 @@ List of Figures
 .ds entry 1. This is a nice caption (Fig. 2.1.1) \t . . . 3
 .pdfhref L -D fig2.1.1 \*[entry]
 .br
-.ds entry 2. Figure 2.1.3 \t . . . 3
-.pdfhref L -D fig2.1.3 \*[entry]
+.ds entry 2. Figure 2.1.2 \t . . . 3
+.pdfhref L -D fig2.1.2 \*[entry]
 .br
 .bp

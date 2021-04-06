@@ -1,20 +1,27 @@
 .ig
-  ------------------------------------------------------
- |      Compile this document with the command:         |
- |    groff -Tpdf -U -tepR -mspdf file.ms > file.pdf    |
- |                                                      |
- |                *** IMPORTANT ***                     |
- | This document requires the files opening_macros.ms   |
- | and closing_macros.ms to work properly. Read these   |
- | files using the .so macro                            |
- |                                                      |
-  ------------------------------------------------------
+  -------------------------------------------------------------
+ |            Compile this document with the command(s):        |
+ |   refer "$file" > temp.ms && echo ".ds CH                    |
+ |   .ds CF                                                     |
+ |   .if '\*[.T]'pdf' \X'pdf: switchtopage before here'         |
+ |   .TC" >> temp.ms &&                                         |
+ |   groff -Tpdf -U -tep -mspdf temp.ms > "$base".pdf           |
+ |   && rm temp.ms                                              |
+ |                                                              |
+ |              If not relocating TOC then use:                 |
+ | groff -Tpdf -U -tepR -mspdf ms_template.ms > ms_template.pdf |
+ |                                                              |
+ |                      *** IMPORTANT ***                       |
+ |   This document requires the files opening_macros.ms and     |
+ |   closing_macros.ms to work properly.                        |
+ |                                                              |
+  -------------------------------------------------------------
 
  This is a Groff Template written by Sudarson Nantha
 
  List of custom macros
      1) .head - .NH with more features
-     2) .EQ   - Automatically increments equations
+     2) .EQ   - Automatically increment equations numbering
      3) .EN   - Adds names to equations and saves in an external file
      4) .TE   - Adds names to tables and saves in an external file
      5) .PIC  - Displays images (in PDF format) and saves in an external file
@@ -31,14 +38,22 @@
 .EQ 0
 delim $$
 .EN 0
-\# .nr no-head-numbering 1  \" Uncomment to disable equation/figure/table numbering based on heading
+\#.nr no-head-numbering 1  \" Uncomment to disable equation/figure/table numbering based on heading
 .so /home/sudarson/.config/groff/opening_macros.ms
 \#.so /home/sudarson/.config/groff/macros.ms
 .
 .nr HM 0.8i \" Set Header and footer margins
 .nr FM 0.8i
 .
+\#  -------------------------------------------------------
+\# |                 *** MOVES TOC HERE ***                |
+\# | Always include in document when adding \X'pdf' to eof |
+\# |                                                       |
+\#  -------------------------------------------------------
 .if '\*[.T]'pdf' \X'pdf: pagename here'
+\#
+.
+.
 \# Accumulate references at the end of document
 \# and surround reference numbers with square brackets []
 .R1
@@ -91,6 +106,10 @@ Ms macros template by
 .po 1i          \" Change page offset (to default)
 .nr LL 6.3i     \" Change line length (to default)
 .
+.PP
+.EQ
+E = m c sup 2
+.EN
 .sp -1
 .head "First Section"       \" Numbered heading
 This starts an indented paragraph. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras malesuada, lectus ac fermentum pharetra, odio mi condimentum arcu, in ultrices dolor est hendrerit massa. Vestibulum sed sagittis metus. Donec velit risus, ultrices vel pretium nec, commodo id nisi. References can be added.
@@ -133,7 +152,7 @@ Bullet point 2
 .EQ
 f(x) = 5x + 3
 .EN "A linear equation"
-.EQ I
+.EQ  I
 e sup (i theta ) = mark 1 + e sup (i theta ) + 1 smallover 2! (i theta ) sup 2...
 .EN "A long mathematical series"
 .EQ 0 I

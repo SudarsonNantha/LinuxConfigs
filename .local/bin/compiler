@@ -49,11 +49,14 @@ case "$ext" in
 #    ms) groff -Tpdf -U -t -e -mpdfmark -mspdf "$file" > "$base".pdf;;
 #    ms) refer -e -p ~/Documents/bibliography "$file" | groff -Tpdf -U -tep -mspdf > "$base".pdf;;
 #    ms) groff -Tpdf -U -tepR -mspdf "$file" > "$base".pdf;;
+#
+#
     ms) refer "$file" > temp.ms && echo ".ds CH
 .ds CF
 .if '\*[.T]'pdf' \X'pdf: switchtopage before here'
 .TC" >> temp.ms && groff -Tpdf -U -tep -mspdf temp.ms > "$base".pdf && rm temp.ms;;
-
+#
+#
 # Uncomment for ms landscape
 #    ms) preconv "$file" | refer -PS -e | groff -e -me -ms -kept -Tps -dpaper=a4l -P-pa4 -P-l > "$base".ps && ps2pdf "$base".ps;;
 	py) python "$file" ;;

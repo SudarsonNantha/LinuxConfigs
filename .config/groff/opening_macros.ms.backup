@@ -68,7 +68,7 @@
 \}
 .if (\n[no-head-numbering] == 0) \{\
 .   if ((\\n[arg] > 1):(\\n[arg] <= \\n[old])) \{\
-.       nr s 0              \" Resets counter when heading level is reduced
+.       nr s 0              \" Resets counter when new heading is made
 .       nr f 0
 .       nr t 0
 .   \}
@@ -137,6 +137,7 @@
 .chop eqnum
 .ds eqnum eq\\*[eqnum]
 .sp -7
+.
 \# Create a pdf reference
 .pdfhref M -N \\*[eqnum] -X \\*[eqname]
 .sp 7
@@ -170,7 +171,7 @@
 .if (\\n[.$] == 4) \{\
 .  ie (\B'\\$1') \{\
 .       if (\\$1 == 0) \{\
-.           nr addentry 0   \" Checks for 0 + no caption
+.           nr addentry 0   \" Checks for 0 + no captio
 .           nr f -1         \" Skips numbering for this figure
 .           nr nocap 1
 .           ds cap "

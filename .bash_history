@@ -1,258 +1,3 @@
-cd ~/Videos/groff-video/
-ls
-vim test.ms 
-mv test.ms FiniteElements.ms
-mv groff_normal.ms PipeInspection.ms
-clear
-vim point.sent 
-cat ~/groffcommand 
-mv ~/groffcommand .
-cat groffcommand 
-vim groffcommand 
-cat groffcommand 
-vim groffcommand 
-vim example.ms
-ls
-cp ~/Test/videopoints.ms .
-vim videopoints.ms 
-clear
-vim test.ms
-pic test.ms | groff -Tpdf > test.pdf
-vim test.ms
-pic test.ms | groff -Tpdf > test.pdf
-zathura test.pdf 
-zathura test.pdf &
-pic test.ms | groff -Tpdf > test.pdf
-pic test.ms | groff -Tpdf > test.pdf
-pic test.ms | groff -Tpdf > test.pdf
-pic test.ms | groff -Tpdf > test.pdf
-pic test.ms | groff -Tpdf > test.pdf
-[A
-pic test.ms | groff -Tpdf > test.pdf
-pic test.ms | groff -Tpdf > test.pdf
-groff -Tpdf -mpic > test.pdf
-groff -Tpdf -mpic test.ms > test.pdf
-pic test.ms | groff -Tpdf > test.pdf
-pic test.ms | groff -Tpdf > test.pdf
-pic test.ms | groff -Tpdf > test.pdf
-pic test.ms | groff -Tpdf > test.pdf
-pic test.ms | groff -Tpdf > test.pdf
-pic test.ms | groff -Tpdf > test.pdf
-pic test.ms | groff -Tpdf > test.pdf
-pic test.ms | groff -Tpdf > test.pdf
-pic test.ms | groff -Tpdf > test.pdf
-[B
-pic test.ms | groff -Tpdf > test.pdf
-pic test.ms | groff -Tpdf > test.pdf
-pic test.ms | groff -Tpdf > test.pdf
-pic test.ms | groff -Tpdf > test.pdf
-pic test.ms | groff -Tpdf > test.pdf
-pic test.ms | groff -Tpdf > test.pdf
-pic test.ms | groff -Tpdf > test.pdf
-pic test.ms | groff -Tpdf > test.pdf
-pic test.ms | groff -Tpdf > test.pdf
-pic test.ms | groff -Tpdf > test.pdf
-pic test.ms | groff -Tpdf > test.pdf
-pic test.ms | groff -Tpdf > test.pdf
-[A
-pic test.ms | groff -Tpdf > test.pdf
-pic test.ms | groff -Tpdf > test.pdf
-pic test.ms | groff -Tpdf > test.pdf
-pic test.ms | groff -Tpdf > test.pdf
-pic test.ms | groff -Tpdf > test.pdf
-pic test.ms | groff -Tpdf > test.pdf
-pic test.ms | groff -Tpdf > test.pdf
-pic test.ms | groff -Tpdf > test.pdf
-pic test.ms | groff -Tpdf > test.pdf
-pic test.ms | groff -Tpdf > test.pdf
-pic test.ms | groff -Tpdf > test.pdf
-pic test.ms | groff -Tpdf > test.pdf
-pic test.ms | groff -Tpdf > test.pdf
-pic test.ms | groff -Tpdf > test.pdf
-pic test.ms | groff -Tpdf > test.pdf
-pic test.ms | groff -Tpdf > test.pdf
-pic test.ms | groff -Tpdf > test.pdf
-pic test.ms | groff -Tpdf > test.pdf
-pic test.ms | groff -Tpdf > test.pdf
-pic test.ms | groff -Tpdf > test.pdf
-pic test.ms | groff -Tpdf > test.pdf
-pic test.ms | groff -Tpdf > test.pdf
-pic test.ms | groff -Tpdf > test.pdf
-pic test.ms | groff -Tpdf > test.pdf
-pic test.ms | groff -Tpdf > test.pdf
-[A
-pic test.ms | groff -Tpdf > test.pdf
-pic test.ms | groff -Tpdf > test.pdf
-pic test.ms | groff -Tpdf > test.pdf
-pic test.ms | groff -Tpdf > test.pdf
-pic test.ms | groff -Tpdf > test.pdf
-pic test.ms | groff -Tpdf > test.pdf
-pic test.ms | groff -Tpdf > test.pdf
-pic test.ms | groff -Tpdf > test.pdf
-pic test.ms | groff -Tpdf > test.pdf
-pic test.ms | groff -Tpdf > test.pdf
-pic test.ms | groff -Tpdf > test.pdf
-pic test.ms | groff -Tpdf > test.pdf
-pic test.ms | groff -Tpdf > test.pdf
-pic test.ms | groff -Tpdf > test.pdf
-pic test.ms | groff -Tpdf > test.pdf
-pic test.ms | groff -Tpdf > test.pdf
-[A
-pic test.ms | groff -Tpdf > test.pdf
-pic test.ms | groff -Tpdf > test.pdf
-pic test.ms | groff -Tpdf > test.pdf
-pic test.ms | groff -Tpdf > test.pdf
-pic test.ms | groff -Tpdf > test.pdf
-pic test.ms | groff -Tpdf > test.pdf
-pic test.ms | groff -Tpdf > test.pdf
-pic test.ms | groff -Tpdf > test.pdf
-pic test.ms | groff -Tpdf > test.pdf
-pic test.ms | groff -Tpdf > test.pdf
-pic test.ms | groff -Tpdf > test.pdf
-pic test.ms | groff -Tpdf > test.pdf
-pic test.ms | groff -Tpdf > test.pdf
-pic test.ms | groff -Tpdf > test.pdf
-evince test.pdf &
-evince test.pdf &
-evince test.pdf &
-zathura test.pdf 
-zathura test.pdf &
-evince test.pdf &
-pic test.ms | groff -Tpdf > test.pdf
-pic test.ms | groff -Tpdf > test.pdf
-pic test.ms | groff -Tpdf > test.pdf
-pic test.ms | groff -Tpdf > test.pdf
-pic test.ms | groff -Tpdf > test.pdf
-pic test.ms | groff -Tpdf > test.pdf
-pic test.ms | groff -Tpdf > test.pdf
-pic test.ms | groff -Tpdf > test.pdf
-pic test.ms | groff -Tpdf > test.pdf
-pic test.ms | groff -Tpdf > test.pdf
-pic test.ms | groff -Tpdf > test.pdf
-pic test.ms | groff -Tpdf > test.pdf
-pic test.ms | groff -Tpdf > test.pdf
-pic test.ms | groff -Tpdf > test.pdf
-pic test.ms | groff -Tpdf > test.pdf
-pic test.ms | groff -Tpdf > test.pdf
-pic test.ms | groff -Tpdf > test.pdf
-pic test.ms | groff -Tpdf > test.pdf
-pic test.ms | groff -Tpdf -e > test.pdf
-[A
-pic test.ms | groff -Tpdf -e > test.pdf
-pic test.ms | groff -Tpdf -e > test.pdf
-pic test.ms | groff -Tpdf -e > test.pdf
-pic test.ms | groff -Tpdf -e > test.pdf
-pic test.ms | groff -Tpdf -e > test.pdf
-pic test.ms | groff -Tpdf -e > test.pdf
-pic test.ms | groff -Tpdf -e > test.pdf
-pic test.ms | groff -Tpdf -e > test.pdf
-pic test.ms | groff -Tpdf -e > test.pdf
-pic test.ms | groff -Tpdf -e > test.pdf
-pic test.ms | groff -Tpdf -e > test.pdf
-pic test.ms | groff -Tpdf -e > test.pdf
-pic test.ms | groff -Tpdf -e > test.pdf
-pic test.ms | groff -Tpdf -e > test.pdf
-pic test.ms | groff -Tpdf -e > test.pdf
-pic test.ms | groff -Tpdf -e > test.pdf
-pic test.ms | groff -Tpdf -e > test.pdf
-pic test.ms | groff -Tpdf -e > test.pdf
-pic test.ms | groff -Tpdf -e > test.pdf
-pic test.ms | groff -Tpdf -e > test.pdf
-pic test.ms | groff -Tpdf -e > test.pdf
-pic test.ms | groff -Tpdf -e > test.pdf
-pic test.ms | groff -Tpdf -e > test.pdf
-pic test.ms | groff -Tpdf -e > test.pdf
-pic test.ms | groff -Tpdf -e > test.pdf
-pic test.ms | groff -Tpdf -e > test.pdf
-pic test.ms | groff -Tpdf -e > test.pdf
-pic test.ms | groff -Tpdf -e > test.pdf
-pic test.ms | groff -Tpdf -e > test.pdf
-refer -e -p ~/Documents/bibliography | pic | groff -Tpdf -e > test.pdf
-refer -e -p ~/Documents/bibliography test.ms | pic | groff -Tpdf -e > test.pdf
-refer -e -p ~/Documents/bibliography test.ms | pic | groff -Tpdf -e > test.pdf
-pic test.ms | refer -e -p ~/Documents/bibliography | groff -Tpdf -e > test.pdf
-refer -e -p ~/Documents/bibliography | groff -Tpdf -e > test.pdf
-refer -e -p ~/Documents/bibliography test.ms | groff -Tpdf -e > test.pdf
-refer -e -p ~/Documents/bibliography test.ms | groff -Tpdf -e -ms > test.pdf
-refer -e -p ~/Documents/bibliography test.ms | pic | groff -Tpdf -e -ms > test.pdf
-refer -e -p ~/Documents/bibliography test.ms | groff -Tpdf -ep -ms > test.pdf
-groff -Tpdf -epR -ms > test.pdf
-groff -Tpdf -ep -R -ms > test.pdf
-groff -Tpdf -epR -ms teat.ms > test.pdf
-groff -Tpdf -epR -ms test.ms > test.pdf
-groff -Tpdf -epR -ms test.ms > test.pdf
-groff -Tpdf -epR -ms test.ms > test.pdf
-groff -Tpdf -epR -ms test.ms > test.pdf
-groff -Tpdf -epR -ms test.ms > test.pdf
-ls
-zathura PipeInspection.pdf 
-groff -Tpdf -epR -ms test.ms > test.pdf
-groff -Tpdf -epR -ms test.ms > test.pdf
-groff -Tpdf -epR -ms test.ms > test.pdf
-groff -Tpdf -epR -ms test.ms > test.pdf
-groff -Tpdf -epR -ms test.ms > test.pdf
-groff -Tpdf -epR -ms test.ms > test.pdf
-groff -Tpdf -epR -ms test.ms > test.pdf
-groff -Tpdf -epR -ms test.ms > test.pdf
-cd Videos/groff-video/
-vim test.ms 
-vim Packages/groff-git/src/groff-git/tmac/pic.tmac 
-pacman -Ss pic
-pacman -Ss "pip"
-pacman -Ss "pic"
-clear
-vim .local/bin/compiler 
-vim test
-chem test | groff -Tpdf -ms > test.pdf
-
-chem test | groff -Tpdf -p -ms > test.pdf
-groff -Tpdf -p -ms test > test.pdf
-chem test | groff -Tpdf -p -ms > test.pdf
-pacman -Ss | grep "^pic$"
-pacman -Ss | grep "pic"
-clear
-whereis pic
-whereis groff
-cp /usr/share/man/man1/pic.1.gz ~/Test/
-cd Test/
-
-man groff
-man refer
-
-sudo touch /usr/dict/papers/Ind
-sudo mkdir /usr/dict/papers/Ind
-sudo mkdir /usr/dict/papers/
-sudo mkdir /usr/dict/
-sudo mkdir /usr/dict/papers/
-sudo touch /usr/dict/papers/Ind
-sudo ln -s /usr/dict/papers/Ind ~/Documents/bibliography 
-cp ~/Documents/bibliography ~/Documents/bibliography.backup
-sudo ln -s ~/Documents/bibliography /usr/dict/papers/Ind 
-sudo rm /usr/dict/papers/Ind 
-sudo ln -s ~/Documents/bibliography /usr/dict/papers/Ind 
-ls /usr/dict/papers/Ind 
-ls -a /usr/dict/papers/Ind 
-ls -l /usr/dict/papers/Ind 
-vim .local/bin/compiler 
-cd .local/bin/
-vim opout 
-whereis pic
-vim /usr/bin/pic
-vim /usr/share/groff/1.22.4/pic/chem.pic 
-cd /usr/
-find -iname *pic*
-clear
-find -iname pic*
-cd ..
-find -iname pic*
-clear
-vim /usr/share/groff/current/pic/chem.pic 
-vim /usr/share/groff/current/tmac/pic.tmac 
-vim /usr/share/groff/1.22.4/tmac/pic.tmac 
-sudo find -iname pic.tmac
-ls /usr/local/share/
-vim /usr/share/groff/current/tmac/pspic.tmac 
-vim /usr/share/groff/current/tmac/ps.tmac 
 vim /usr/share/groff/current/tmac/s.tmac 
 cd Videos/groff-video/
 groff -Tpdf -ms videopoints.ms > videopoints.pdf 
@@ -498,3 +243,258 @@ pdfroff FiniteElements.ms -mspdf > output.pdf
 pdfroff -tepR -mspdf FiniteElements.ms > output.pdf
 pdfroff -U -tepR -mspdf FiniteElements.ms > output.pdf
 clear
+vim .vimrc 
+cd .config/groff/Examples/
+vim FiniteElements.ms 
+cd ...
+cd ..
+vm ms_template.ms 
+vim ms_template.ms 
+pdftk ms_template.pdf cat 8 1-7 end output ms_template.pdf 
+pdftk ms_template.pdf cat 8 1-7 end output output.pdf
+
+groff -Tpdf -U -tepR -mspdf ms_template.ms > input.pdf
+pdftk input.pdf cat 8 1-7 end output ms_template.pdf 
+vim ms_template.ms 
+cp ms_template.ms backup.ms 
+vim ms_template.ms 
+groff -Tpdf -U -tep test.ms > ms_template.pdf 
+rm test.ms 
+vim ms_template.ms 
+groff -Tpdf -tep -mspdf test.ms > ms_template.pdf 
+groff -Tpdf -U -tep -mspdf test.ms > ms_template.pdf 
+clear
+refer ms_template.ms > test.ms 
+echo ".ds CH
+.ds CF
+.if '\*[.T]'pdf' \X'pdf: switchtopage after here'
+.TC" >> test.ms
+groff -Tpdf -U -tep -mspdf test.ms > ms_template.pdf 
+refer ms_template.ms > test.ms 
+echo ".ds CH
+.ds CF
+.if '\*[.T]'pdf' \X'pdf: switchtopage before here'
+.TC" >> test.ms
+groff -Tpdf -U -tep -mspdf test.ms > ms_template.pdf 
+refer ms_template.ms > test.ms 
+echo ".ds CH
+.ds CF
+.if '\*[.T]'pdf' \X'pdf: switchtopage before here'
+.TC" >> test.ms
+groff -Tpdf -U -tep -mspdf test.ms > ms_template.pdf 
+refer ms_template.ms > test.ms 
+echo ".ds CH
+.ds CF
+.if '\*[.T]'pdf' \X'pdf: switchtopage before here'
+.TC" >> test.ms
+groff -Tpdf -U -tep -mspdf test.ms > ms_template.pdf 
+refer ms_template.ms > test.ms 
+echo ".ds CH
+.ds CF
+.if '\*[.T]'pdf' \X'pdf: switchtopage after here'
+.TC" >> test.ms
+groff -Tpdf -U -tep -mspdf test.ms > ms_template.pdf 
+refer ms_template.ms > test.ms 
+echo ".ds CH
+.ds CF
+.if '\*[.T]'pdf' \X'pdf: switchtopage after here'
+.TC" >> test.ms
+groff -Tpdf -U -tep -mspdf test.ms > ms_template.pdf 
+refer ms_template.ms > test.ms 
+echo ".ds CH
+.ds CF
+.if '\*[.T]'pdf' \X'pdf: switchtopage after here'
+.TC" >> test.ms
+groff -Tpdf -U -tep -mspdf test.ms > ms_template.pdf 
+echo ".ds CH
+.ds CF
+.if '\*[.T]'pdf' \X'pdf: switchtopage after here'
+.TC" >> test.msclear
+clear
+ln -l /usr/dict/papers/Ind 
+ls -l /usr/dict/papers/Ind 
+clear
+ls -l /usr/dict/papers/Ind 
+man refer
+cd Videos/groff-video/
+vim point.sent 
+cd Study/
+cd INTIR/
+ls
+vim report.ms
+vim .local/bin/compiler 
+vim Videos/groff-video/groff_normal.ms 
+vim .local/bin/compiler 
+vim Videos/groff-video/groff_normal.ms 
+vim /usr/share/groff/current/tmac/m.tmac 
+vim Videos/groff-video/FiniteElements.ms 
+cp Test/Gnu.pdf .config/groff/
+cp Test/299px-Tux.svg.pdf .config/groff/tux.pdf
+mv .config/groff/Gnu.pdf .config/groff/gnu.pdf
+w
+w
+c;ear
+clear
+cd .config/groff/
+ls
+cd ~
+cd Videos/groff-video/
+vim groff_normal.ms 
+vim ~/.local/bin/compiler 
+cd ~
+cd .local/bin/
+vim compiler 
+clear
+cd ~
+cd Videos/groff-video/
+vim videopoints.ms 
+cd Videos/groff-video/
+groff -Tpdf -U -tep -mspdf videopoints.ms > videopoints.pdf
+lear
+clear
+groff -Tps -te -ms videopoints.ms > videopoints.ps && ps2pdf videopoints.ps 
+groff -Tps -te -ms videopoints.ms > videopoints.ps && ps2pdf videopoints.ps 
+groff -Tps -te -ms videopoints.ms > videopoints.ps && ps2pdf videopoints.ps 
+groff -Tps -te -mspdf videopoints.ms > videopoints.ps && ps2pdf videopoints.ps 
+groff -Tps -tepR -mspdf videopoints.ms > videopoints.ps && ps2pdf videopoints.ps 
+groff -Tps -ms videopoints.ms > videopoints.ps && ps2pdf videopoints.ps 
+groff -Tps -tepR -mspdf videopoints.ms > videopoints.ps && ps2pdf videopoints.ps 
+groff -Tps -tepR -mspdf videopoints.ms > videopoints.ps && ps2pdf videopoints.ps 
+groff -Tps -tepR -mspdf videopoints.ms > videopoints.ps && ps2pdf videopoints.ps 
+groff -Tps -tepR -mspdf videopoints.ms > videopoints.ps && ps2pdf videopoints.ps 
+groff -Tps -e -ms videopoints.ms > videopoints.ps && ps2pdf videopoints.ps 
+groff -Tps -e -mspdf videopoints.ms > videopoints.ps && ps2pdf videopoints.ps 
+groff -Tpdf -e -mspdf videopoints.ms > videopoints.pdf
+groff -Tpdf -U -e -mspdf videopoints.ms > videopoints.pdf
+cd .config/groff/
+pdfroff -U -tepR -mspdf --report ms_template.ms > ms_template.pdf 
+pdfroff -U -tepR -mspdf --report ms_template.ms > ms_template.pdf 
+pdfroff -U -tepR -mspdf --report ms_template.ms > ms_template.pdf 
+pdfroff -U -tepR -mspdf --report ms_template.ms > ms_template.pdf 
+pdfroff -U -tepR -mspdf --report ms_template.ms > ms_template.pdf 
+pdfroff -U -tepR -mspdf  ms_template.ms > ms_template.pdf 
+pdfroff -U -tepR -mspdf  ms_template.ms > ms_template.pdf 
+pdfroff -tepR -mspdf  ms_template.ms > ms_template.pdf 
+pdfroff -U -tepR -mspdf  ms_template.ms > ms_template.pdf 
+pdfroff -U -tepR -mspdf  ms_template.ms > ms_template.pdf 
+pdfroff -tepR -mspdf  ms_template.ms > ms_template.pdf 
+groff -pt -Tpdf -ms -m spdf -dPDF.EXPORT=1 -z ms_template.ms 2>&1 | grep '^.ds' | groff -pt -Tpdf -ms -m spdf ms_template.ms > ms_template.pdf 
+clear
+vim groff.toc 
+groff -tepR -mspdf ms_template.ms > ms_template.pdf 
+groff -Tpdf -tepR -mspdf ms_template.ms > ms_template.pdf 
+groff -Tpdf -U -tepR -mspdf ms_template.ms > ms_template.pdf 
+refer -e -p ~/Documents/bibliography ms_template.ms 
+refer -e -p ~/Documents/bibliography ms_template.ms > test.ms
+vim test.ms 
+clear
+refer ms_template.ms > test.ms
+vim test.ms 
+ls -1
+vim ~/Videos/groff-video/FiniteElements.ms 
+vim ms_template.ms 
+cd Test/Mazar/
+ls
+vim Mazar_General.m 
+cp Mazar_General.m Mazar_General_backup.m
+vim Mazar_General.m 
+clear
+cp Mazar_General.m Mazar_3D_v1.m
+mv Mazar_3D_v1.m Mazar_3D_v2.m 
+cp Mazar_General_backup.m Mazar_3D_v1.m
+octave-cli
+cd Test/Mazar/
+vim Mazar_3D_v1.m 
+cp Mazar_General_backup.m Mazar_3D_v1.m 
+cd Test/Mazar/
+octave-cli
+cd .config/groff/
+vim opening_macros.ms 
+vim closing_macros.ms 
+vim closing_macros.ms 
+vim macros.ms 
+vim toc.ms
+rm toc.ms 
+clear
+cd Examples/
+vim FiniteElements.ms 
+cd ..
+vim opening_macros.ms 
+vim closing_macros.ms 
+vim ms_template.ms 
+clear
+rm -r Examples/
+ls
+vim compileCommands 
+rm equations.ms 
+rm figures.ms 
+rm tables.ms 
+vim test.ms
+rm test.ms
+rm test.msclear 
+clear
+ls -1
+rm opening_macros.pdf 
+rm equations.pdf 
+ls -1
+clear
+ls -1
+rm closing_macros.pdf 
+rm figures.pdf 
+rm tables.pdf 
+clear
+ls -1
+git status
+cd ~
+clear
+git status
+rm -r .config/LosslessCut/
+rm test.pdf 
+mv FrenchOral02-04.docx Study/
+rm test.pdf 
+git status
+clear
+git add --all
+git status
+git commit -m "Groff modifications"
+cat Backup/.gitREADME 
+git pus -u origin master
+git push -u origin master
+clear
+cd .local/bin/
+ls
+vim executer 
+cd ~
+cp Videos/groff-video/drawing.ms ~/.config/groff/
+cd .config/groff/
+vim drawing.ms 
+vim drawing.ms 
+clear
+vim drawing.ms 
+cd .config/groff/
+vim ms_template.ms 
+vim .local/bin/executer 
+redshift -O 500
+redshift -O 3250
+clear
+cd .config/groff/
+vim ms_template.ms 
+cp opening_macros.ms opening_macros.ms.backup
+vim opening_macros.ms
+vim opening_macros.ms
+man groff
+cat .local/bin/compiler 
+cat .local/bin/ffrecord 
+cd Videos/ms/
+ls
+ffmpeg -fflags +igndts -f x11grab -video_size 1920x1080 -framerate 25 -i $DISPLAY -f alsa -i default -c:v libx265 -crf 28 -preset veryfast -c:a aac capture4.mp4
+cd .config/groff/
+vim ms_template.ms 
+cd .config/groff/
+vim drawing.
+vim drawing.ms 
+ffmpeg -i capture4.mp4 -c copy -an 4_noaudio.mp4
+clear
+ffmpeg -i 4_noaudio.mp4 -i My\ recording\ 28.wav -c:v copy -c:a aac Video4.mp4
+sudo reboot
+redshift -O 3250

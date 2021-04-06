@@ -17,8 +17,8 @@ let mapleader = ","
 " Compile document
 	map <leader>c :!compiler <c-r>%<CR>
 
-" Compile and run (Only scala support for now)
-    map <leader>r :!executer <c-r>%<CR>
+" Alternate compiler
+    map <leader>x :!executer <c-r>%<CR>
 
 " Open File Explorer
 	map <leader>e :Ex<CR>
