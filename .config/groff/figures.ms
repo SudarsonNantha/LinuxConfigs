@@ -1,9 +1,5 @@
 .bp
 .nr PO 1i
-.ds CH
-.ds RH
-.ds LH
-.ds CF - % -
 .CD
 .ps 14
 .B "List of Figures"
@@ -22,10 +18,10 @@ List of Figures
 .ds figtitle Figure Number 	 Page No.
 .B "\\*[figtitle]"
 .br
-.ds entry 1. This is a nice caption (Fig. 2.1.1) \t . . . 3
+.ds entry 1. This is a nice caption (Fig. 2.1.1) \t . . . 2
 .pdfhref L -D fig2.1.1 \*[entry]
 .br
-.ds entry 2. Figure 2.1.2 \t . . . 3
+.ds entry 2. Figure 2.1.2 \t . . . 2
 .pdfhref L -D fig2.1.2 \*[entry]
 .br
 .bp

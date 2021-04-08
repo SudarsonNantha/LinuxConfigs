@@ -1,9 +1,5 @@
 .bp
 .nr PO 1i
-.ds CH
-.ds RH
-.ds LH
-.ds CF - % -
 .CD
 .ps 14
 .B "List of Tables"
@@ -22,7 +18,7 @@ List of Tables
 .ds tabletitle Table 	 Page No.
 .B "\\*[tabletitle]"
 .br
-.ds entry 1. Carburetor specifications for Yamaha DT 125 (Table 3.2.1) \t . . . 4
+.ds entry 1. Carburetor specifications for Yamaha DT 125 (Table 3.2.1) \t . . . 3
 .pdfhref L -D tab3.2.1 \*[entry]
 .br
 .bp

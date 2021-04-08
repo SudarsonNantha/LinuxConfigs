@@ -1,20 +1,27 @@
 .ig
-  ------------------------------------------------------
- |      Compile this document with the command:         |
- |    groff -Tpdf -U -tepR -mspdf file.ms > file.pdf    |
- |                                                      |
- |                *** IMPORTANT ***                     |
- | This document requires the files opening_macros.ms   |
- | and closing_macros.ms to work properly. Read these   |
- | files using the .so macro                            |
- |                                                      |
-  ------------------------------------------------------
+  -------------------------------------------------------------
+ |            Compile this document with the command(s):        |
+ |   refer "$file" > temp.ms && echo ".ds CH                    |
+ |   .ds CF                                                     |
+ |   .if '\*[.T]'pdf' \X'pdf: switchtopage before here'         |
+ |   .TC" >> temp.ms &&                                         |
+ |   groff -Tpdf -U -tep -mspdf temp.ms > "$base".pdf           |
+ |   && rm temp.ms                                              |
+ |                                                              |
+ |              If not relocating TOC then use:                 |
+ | groff -Tpdf -U -tepR -mspdf ms_template.ms > ms_template.pdf |
+ |                                                              |
+ |                      *** IMPORTANT ***                       |
+ |   This document requires the files opening_macros.ms and     |
+ |   closing_macros.ms to work properly.                        |
+ |                                                              |
+  -------------------------------------------------------------
 
  This is a Groff Template written by Sudarson Nantha
 
  List of custom macros
      1) .head - .NH with more features
-     2) .EQ   - Automatically increments equations
+     2) .EQ   - Automatically increment equations numbering
      3) .EN   - Adds names to equations and saves in an external file
      4) .TE   - Adds names to tables and saves in an external file
      5) .PIC  - Displays images (in PDF format) and saves in an external file
@@ -31,14 +38,25 @@
 .EQ 0
 delim $$
 .EN 0
-\# .nr no-head-numbering 1  \" Uncomment to disable equation/figure/table numbering based on heading
+.nr HM 0.2i \" Set Header and footer margins
+.nr FM 0.5i
+.ds CH          \" Empty header (centred)
+.ds LH \v'1'\l'6.25i'\v'-0.5'\h'-6.25i'This is a sample header
+.ds LF \l'6.25i'\v'1.5'\h'-3.125i'- % -
+\#.nr no-head-numbering 1  \" Uncomment to disable equation/figure/table numbering based on heading
 .so /home/sudarson/.config/groff/opening_macros.ms
 \#.so /home/sudarson/.config/groff/macros.ms
 .
-.nr HM 0.8i \" Set Header and footer margins
-.nr FM 0.8i
 .
-.bp
+\#  -------------------------------------------------------
+\# |                 *** MOVES TOC HERE ***                |
+\# | Always include in document when adding \X'pdf' to eof |
+\# |                                                       |
+\#  -------------------------------------------------------
+.if '\*[.T]'pdf' \X'pdf: pagename here'
+\#
+.
+.
 \# Accumulate references at the end of document
 \# and surround reference numbers with square brackets []
 .R1
@@ -46,18 +64,12 @@ accumulate
 bracket-label \*([.[ ]\*(.] ", "
 .R2
 .
-.if '\*[.T]'pdf' \X'pdf: pagename here'
-.ds RH This is a sample header  \" Right aligned header
-.ds CH          \" Empty header (centred)
-.ds CF - % -    \" Foooter with page number (centred)
-.
-.
 .po 0.8i        \" Page offset
 .ll 6.7i        \" Line length
 \l'6.6i'        \" Draw horizontal line (Make sure it is a little smaller than line length)
 .br             \" Break line
 .po 1i          \" Change page offset (to default)
-.ll 6.3i        \" Change line length (to default)
+.ll 6.25i        \" Change line length (to default)
 .sp -0.8        \" More up because there is too much spacing
 .ad c           \" Center align
 .PS             \" Invoke GNU Pic
@@ -90,9 +102,12 @@ Ms macros template by
 \D't 0.5p'      \" Change line thickness (to default)
 .br
 .po 1i          \" Change page offset (to default)
-.nr LL 6.3i     \" Change line length (to default)
+.nr LL 6.25i     \" Change line length (to default)
 .
-.sp -1
+.PP
+\#.EQ
+\#E = m c sup 2
+\#.EN
 .head "First Section"       \" Numbered heading
 This starts an indented paragraph. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras malesuada, lectus ac fermentum pharetra, odio mi condimentum arcu, in ultrices dolor est hendrerit massa. Vestibulum sed sagittis metus. Donec velit risus, ultrices vel pretium nec, commodo id nisi. References can be added.
 \# Invoke references between .[ and ].
@@ -134,7 +149,7 @@ Bullet point 2
 .EQ
 f(x) = 5x + 3
 .EN "A linear equation"
-.EQ I
+.EQ  I
 e sup (i theta ) = mark 1 + e sup (i theta ) + 1 smallover 2! (i theta ) sup 2...
 .EN "A long mathematical series"
 .EQ 0 I
@@ -159,9 +174,9 @@ def myfunction(arg):
 .b2
 .
 .
+.nr HM 1.1i
 \# Break page
 .bp
-.
 .
 \# Arguments C, L, and R are used for alignment
 \# Usage: .PIC [0 if no numbering] [caption] [file path] [alignement] [size]
@@ -169,8 +184,6 @@ def myfunction(arg):
 .PIC  0 "This logo won't have a figure number" "/home/sudarson/.config/groff/dragon.pdf" C 2
 .PIC  "/home/sudarson/.config/groff/dragon.pdf" C 2
 .bp
-.
-.
 .head "Last Section"
 .LP
 In this section, we will look at tables and PDF links.
@@ -178,7 +191,6 @@ In this section, we will look at tables and PDF links.
 search
 .]
 .head 2 "Links using .pdfhref"
-.sp -1.5
 .RS
 .head 3 "Internet Hyperlinks"
 \# Add hyperlinks
@@ -201,7 +213,7 @@ is a great website for informational videos
 .pdfhref L -D eq2.1.1 Affixed text to Equation (2.1.1)
 is the first equation
 .br
-.pdfhref L -D fig2.1.3 Fig(2.1.3)
+.pdfhref L -D fig2.1.2 Fig(2.1.2)
 is the MSI logo
 .br
 .pdfhref L -D tab3.2.1 Table(3.2.1)
@@ -247,8 +259,10 @@ Float height - all models;20-21mm (0.787-0.827in)
 .list-tables
 .bp     \" Page break necessary for references on a separate page
 .so /home/sudarson/.config/groff/closing_macros.ms
-.ds CH
-.ds CF
-.if '\*[.T]'pdf' \X'pdf: switchtopage before here'
-.TC
-.bp
+.br
+.ds LH
+.ds LF
+\#.if '\*[.T]'pdf' \{\
+\#\X'pdf: switchtopage after here'
+\#.TC
+\#\}

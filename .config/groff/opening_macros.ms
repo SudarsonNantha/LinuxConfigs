@@ -61,21 +61,19 @@
 .ie (\B'\\$1') \{\
 .   nr arg \\$1         \" Assigns heading level if it is a valid integer
 .   ds title \\$2
-\}
+.\}
 .el \{\
 .   nr arg 1            \" Heading level defaults to 1 if no heading level is passed
 .   ds title \\$1
-\}
+.\}
 .if (\n[no-head-numbering] == 0) \{\
 .   if ((\\n[arg] > 1):(\\n[arg] <= \\n[old])) \{\
 .       nr s 0              \" Resets counter when heading level is reduced
 .       nr f 0
 .       nr t 0
 .   \}
-\}
+.\}
 .nr old \\n[arg]        \" Stores the value of heading level
-.                       \" for comparison next time .head is called
-.
 .nr size \n[PS]         \" Changes font heading size up to 3 levels
 .if (\\n[arg] == 1) .nr PS \\n[size]+3
 .if (\\n[arg] == 2) .nr PS \\n[size]+2
@@ -85,6 +83,7 @@
 .XN \\*[title]
 .PP
 ..
+.
 .
 \# Modification to .EQ macro
 \# This macro is set to display equation numbers by default
@@ -280,10 +279,10 @@
 .
 .write eqstream ".bp
 .write eqstream ".nr PO 1i
-.write eqstream ".ds RH
-.write eqstream ".ds LH
-.write eqstream ".ds CH
-.write eqstream ".ds CF - % -
+\#.write eqstream ".ds RH
+\#.write eqstream ".ds LH
+\#.write eqstream ".ds CH
+\#.write eqstream ".ds CF - % -
 .write eqstream ".CD
 .write eqstream ".ps 14
 .write eqstream ".B "List of Equations"
@@ -306,10 +305,10 @@
 .
 .write figstream ".bp
 .write figstream ".nr PO 1i
-.write figstream ".ds CH
-.write figstream ".ds RH
-.write figstream ".ds LH
-.write figstream ".ds CF - % -
+\#.write figstream ".ds CH
+\#.write figstream ".ds RH
+\#.write figstream ".ds LH
+\#.write figstream ".ds CF - % -
 .write figstream ".CD
 .write figstream ".ps 14
 .write figstream ".B "List of Figures"
@@ -332,10 +331,10 @@
 .
 .write tablestream ".bp
 .write tablestream ".nr PO 1i
-.write tablestream ".ds CH
-.write tablestream ".ds RH
-.write tablestream ".ds LH
-.write tablestream ".ds CF - % -
+\#.write tablestream ".ds CH
+\#.write tablestream ".ds RH
+\#.write tablestream ".ds LH
+\#.write tablestream ".ds CF - % -
 .write tablestream ".CD
 .write tablestream ".ps 14
 .write tablestream ".B "List of Tables"

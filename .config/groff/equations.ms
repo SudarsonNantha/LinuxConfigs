@@ -1,9 +1,5 @@
 .bp
 .nr PO 1i
-.ds RH
-.ds LH
-.ds CH
-.ds CF - % -
 .CD
 .ps 14
 .B "List of Equations"
@@ -22,16 +18,13 @@ List of Equations
 .ds eqtitle Equation Number 	 Page No.
 .B "\\*[eqtitle]"
 .br
-.ds entry 1. Equation (1) \t . . .1
-.pdfhref L -D eq1 \*[entry]
-.br
-.ds entry 2. A linear equation (2.1.1) \t . . .1
+.ds entry 1. A linear equation (2.1.1) \t . . .1
 .pdfhref L -D eq2.1.1 \*[entry]
 .br
-.ds entry 3. A long mathematical series (2.1.2) \t . . .1
+.ds entry 2. A long mathematical series (2.1.2) \t . . .1
 .pdfhref L -D eq2.1.2 \*[entry]
 .br
-.ds entry 4. Example matrix equation (2.1.3) \t . . .2
+.ds entry 3. Example matrix equation (2.1.3) \t . . .1
 .pdfhref L -D eq2.1.3 \*[entry]
 .br
 .bp

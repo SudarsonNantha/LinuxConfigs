@@ -1,56 +1,3 @@
-vim /usr/share/groff/current/tmac/s.tmac 
-cd Videos/groff-video/
-groff -Tpdf -ms videopoints.ms > videopoints.pdf 
-cat groffcommand 
-clear
-groff -Tpdf -ms videopoints.ms > videopoints.pdf 
-clear
-groff -Tpdf -ms videopoints.ms > videopoints.pdf 
-groff -Tpdf -e -ms videopoints.ms > videopoints.pdf 
-groff -Tpdf -et -ms videopoints.ms > videopoints.pdf 
-groff -Tpdf -et -mspdf -mpdfmark videopoints.ms > videopoints.pdf 
-clear
-yay -Ss groff-git
-
-groff -Tpdf -etR -ms videopoints.ms > videopoints.pdf 
-ls /usr/dict/papers/Ind 
-ls -l /usr/dict/papers/Ind 
-clear
-refer -e -p ~/Documents/bibliography |  groff -Tpdf -et -ms> videopoints.pdf 
-refer -e -p ~/Documents/bibliography |  groff -Tpdf -et -ms > videopoints.pdf 
-clear
-refer -e -p ~/Documents/bibliography videopoints.ms | groff-te -ms > videopoints.pdf 
-clear
-groff -Tpdf -ms videopoints.ms > videopoints.pdf 
-groff -Tpdf -e -ms videopoints.ms > videopoints.pdf 
-groff -Tpdf -et -ms videopoints.ms > videopoints.pdf 
-groff -Tpdf -et -mspdf -mpdfmark videopoints.ms > videopoints.pdf 
-groff -Tpdf -et -ms videopoints.ms > videopoints.pdf 
-clear
-yay -Ss groff-git
-clear
-groff -Tpdf -etR -ms videopoints.ms > videopoints.pdf 
-ls -l /usr/dict/papers/Ind 
-clear
-groff -Tps -e -ms videopoints.ms > videopoints.ps && ps2pdf videopoints.ps
-clear
-groff -Tps -e -mspdf -mpdfmark videopoints.ms > videopoints.ps && ps2pdf videopoints.ps
-clear
-groff -Tps -e -ms videopoints.ms > videopoints.ps && ps2pdf videopoints.pdf 
-groff -Tps -e -ms videopoints.ms > videopoints.ps && ps2pdf videopoints.pdf 
-groff -Tps -e -ms videopoints.ms > videopoints.ps && ps2pdf videopoints.ps
-clear
-groff -Tps -e -ms videopoints.ms > videopoints.ps && ps2pdf videopoints.ps 
-groff -Tps -e -ms videopoints.ms > videopoints.ps && ps2pdf videopoints.ps 
-clear
-groff -Tpdf -U -e -ms videopoints.ms > videopoints.pdf
-groff -Tpdf -U -e -ms videopoints.ms > videopoints.pdf
-yay -Ss lossless-cut
-yay -Ss losslesscut
-yay -S losslesscut-bin
-yay -Rns losslesscut
-yay -Rns losslesscut-bin
-yay -Ss videotrimmer
 yay -Ss video-trimmer
 yay -S video-trimmer
 sudo pacman -Syy
@@ -498,3 +445,56 @@ clear
 ffmpeg -i 4_noaudio.mp4 -i My\ recording\ 28.wav -c:v copy -c:a aac Video4.mp4
 sudo reboot
 redshift -O 3250
+cd .config/groff/
+ls
+ls -1
+cat compileCommands 
+cat groff.toc 
+rm groff.toc 
+rm input.pdf 
+clear
+github status
+git status
+cd ~
+git status
+mv capture1.mp4 Videos/ms/
+ls Videos/ms/
+rm capture2.mp4 
+git status
+git add .config/groff/drawing.*
+git status
+git add --all
+git status
+git commit -m "Groff updates"
+cat Backup/.gitREADME 
+git push -u origin master
+clear
+cd .config/groff/
+vim equations.ms 
+cd ~
+vim Videos/groff-video/point.sent 
+vim Videos/groff-video/FiniteElements.ms 
+cd .config/groff/
+vim ms_template.ms 
+cd ~
+git status
+git add --all
+git commit -m "Updated figure number"
+cat Backup/.gitREADME 
+git push -u origin master
+clear
+htop
+ffmpeg -i capture5.mp4 -c copy -an 5_noaudio.mp4
+ffmpeg -i 5_noaudio.mp4 -i My\ recording\ 32.wav -c:v copy -c:a aac Video5.mp4
+cat .local/bin/ffrecord 
+cd Videos/ms/
+ls capture*
+ffmpeg -fflags +igndts -f x11grab -video_size 1920x1080 -framerate 25 -i $DISPLAY -f alsa -i default -c:v libx265 -crf 28 -preset veryfast -c:a aac capture5.mp4
+nmcli c show
+nmcli connect device vpn.ec-nantes.fr
+nmcli connect wifi vpn.ec-nantes.fr
+nmcli con up id vpn.ec-nantes.fr
+cd .config/groff/
+vim ms_template.ms 
+cd .config/groff/
+vim opening_macros.ms

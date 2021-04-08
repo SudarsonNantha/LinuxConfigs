@@ -1,7 +1,7 @@
 .ig
   -------------------------------------------------------------
  |            Compile this document with the command(s):        |
- |   refer "$file" > temp.ms && echo ".ds CH                    |
+ |   refer "$file" > temp.ms && echo ".ds LH                    |
  |   .ds CF                                                     |
  |   .if '\*[.T]'pdf' \X'pdf: switchtopage before here'         |
  |   .TC" >> temp.ms &&                                         |
@@ -42,8 +42,10 @@ delim $$
 .so /home/sudarson/.config/groff/opening_macros.ms
 \#.so /home/sudarson/.config/groff/macros.ms
 .
-.nr HM 0.8i \" Set Header and footer margins
-.nr FM 0.8i
+.nr HM 0.3  \" Set Header and footer margins
+.nr FM 0.6i
+.nr LT 6.25i
+.nr LL 6.25i
 .
 \#  -------------------------------------------------------
 \# |                 *** MOVES TOC HERE ***                |
@@ -60,18 +62,30 @@ delim $$
 accumulate
 bracket-label \*([.[ ]\*(.] ", "
 .R2
-.
+\#
+\# The following lines define the headers and footers the document.
+\# LH stands for Left Header, LF stands for Left Footer, etc.
+\# \D sets the line width in points
+\# \l draws a line of specified length
+\# \v moves vertically
+\# \h moves horizontally
+\#
+.ds LH \D't 0.2p'\v'1.5'\l'6.25i'\v'-0.5'\h'-6.25i'Sample Header\D't 0.5p'
+.ds RH Groff Template for ms macros
+.ds LF \D't 0.2p'\v'-0.5'\l'6.25i'\v'1'\h'-6.25i'S. Nanthacoumarane\D't 0.5p'
+.ds RF Page No. %
 .ds RH This is a sample header  \" Right aligned header
 .ds CH          \" Empty header (centred)
-.ds CF - % -    \" Foooter with page number (centred)
+\#.ds CF - % -    \" Foooter with page number (centred)
 .
 .
+.sp -4
 .po 0.8i        \" Page offset
 .ll 6.7i        \" Line length
 \l'6.6i'        \" Draw horizontal line (Make sure it is a little smaller than line length)
 .br             \" Break line
 .po 1i          \" Change page offset (to default)
-.ll 6.3i        \" Change line length (to default)
+.ll 6.25i        \" Change line length (to default)
 .sp -0.8        \" More up because there is too much spacing
 .ad c           \" Center align
 .PS             \" Invoke GNU Pic
@@ -104,13 +118,15 @@ Ms macros template by
 \D't 0.5p'      \" Change line thickness (to default)
 .br
 .po 1i          \" Change page offset (to default)
-.nr LL 6.3i     \" Change line length (to default)
+.nr LL 6.25i     \" Change line length (to default)
 .
+.nr HM 1.2i
+.ds LH \D't 0.2p'\v'1.5'\l'6.25i'\v'-0.5'\h'-6.25i'Sample Header\D't 0.5p'
+.ds RH Groff Template for ms macros
 .PP
-.EQ
-E = m c sup 2
-.EN
-.sp -1
+\#.EQ
+\#E = m c sup 2
+\#.EN
 .head "First Section"       \" Numbered heading
 This starts an indented paragraph. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras malesuada, lectus ac fermentum pharetra, odio mi condimentum arcu, in ultrices dolor est hendrerit massa. Vestibulum sed sagittis metus. Donec velit risus, ultrices vel pretium nec, commodo id nisi. References can be added.
 \# Invoke references between .[ and ].
@@ -196,7 +212,6 @@ In this section, we will look at tables and PDF links.
 search
 .]
 .head 2 "Links using .pdfhref"
-.sp -1.5
 .RS
 .head 3 "Internet Hyperlinks"
 \# Add hyperlinks
@@ -265,8 +280,12 @@ Float height - all models;20-21mm (0.787-0.827in)
 .list-tables
 .bp     \" Page break necessary for references on a separate page
 .so /home/sudarson/.config/groff/closing_macros.ms
-\#.ds CH
-\#.ds CF
+.ds CH
+.ds RH
+.ds LH
+.ds CF
+.ds RF
+.nr HM 0.8i
 \#.if '\*[.T]'pdf' \{\
 \#\X'pdf: switchtopage after here'
 \#.TC
