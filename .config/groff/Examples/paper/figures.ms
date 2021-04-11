@@ -18,10 +18,10 @@ List of Figures
 .ds figtitle Figure Number 	 Page No.
 .B "\\*[figtitle]"
 .br
-.ds entry 1. This is a nice caption (Fig. 1) \t . . . 2
+.ds entry 1. The bicycle beikng studied (Fig. 1) \t . . . 1
 .pdfhref L -D fig1 \*[entry]
 .br
-.ds entry 2. Figure 2 \t . . . 2
+.ds entry 2. This is a section (Fig. 2) \t . . . 2
 .pdfhref L -D fig2 \*[entry]
 .br
 .bp

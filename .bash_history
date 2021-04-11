@@ -1,195 +1,3 @@
-yay -Ss video-trimmer
-yay -S video-trimmer
-sudo pacman -Syy
-yay -Syy
-yay -S video-trimmer
-yay -Rns video-trimmer 
-yay -Rdd video-trimmer 
-yay -Rns video-trimmer 
-clear
-ffmpeg -i take1.mp4 -i My\ recording\ 21.wav -c:v copy -c:a aac Video1.mp4
-rm Video1.mp4 
-ffmpeg -i take1.mp4 -c copy -an 1_noaudio.mp4
-ffmpeg -i 1_noaudio.mp4 -i My\ recording\ 21.wav -c:v copy -c:a aac Video1.mp4
-cat .local/bin/compiler 
-clear
-cat .local/bin/ffrecord 
-cd Videos/groff-video/
-ffmpeg -fflags +igndts -f x11grab -video_size 1920x1080 -framerate 25 -i $DISPLAY -f alsa -i default -c:v libx265 -crf 28 -preset veryfast -c:a aac take1.mp4
-rm take1.mp4 
-ffmpeg -fflags +igndts -f x11grab -video_size 1920x1080 -framerate 25 -i $DISPLAY -f alsa -i default -c:v libx265 -crf 28 -preset veryfast -c:a aac take1.mp4
-rm take1.mp4 
-ffmpeg -fflags +igndts -f x11grab -video_size 1920x1080 -framerate 25 -i $DISPLAY -f alsa -i default -c:v libx265 -crf 28 -preset veryfast -c:a aac take1.mp4
-rm take1.mp4 
-ffmpeg -fflags +igndts -f x11grab -video_size 1920x1080 -framerate 25 -i $DISPLAY -f alsa -i default -c:v libx265 -crf 28 -preset veryfast -c:a aac take1.mp4
-rm take1.mp4 
-ffmpeg -fflags +igndts -f x11grab -video_size 1920x1080 -framerate 25 -i $DISPLAY -f alsa -i default -c:v libx265 -crf 28 -preset veryfast -c:a aac take1.mp4
-ffmpeg -fflags +igndts -f x11grab -video_size 1920x1080 -framerate 25 -i $DISPLAY -f alsa -i default -c:v libx265 -crf 28 -preset veryfast -c:a aac take2.mp4
-rm take2.mp4 
-rm take1.mp4 
-ffmpeg -fflags +igndts -f x11grab -video_size 1920x1080 -framerate 25 -i $DISPLAY -f alsa -i default -c:v libx265 -crf 28 -preset veryfast -c:a aac take1.mp4
-ffmpeg -fflags +igndts -f x11grab -video_size 1920x1080 -framerate 25 -i $DISPLAY -f alsa -i default -c:v libx265 -crf 28 -preset veryfast -c:a aac take2.mp4
-ffmpeg -fflags +igndts -f x11grab -video_size 1920x1080 -framerate 25 -i $DISPLAY -f alsa -i default -c:v libx265 -crf 28 -preset veryfast -c:a aac take3.mp4
-rm take3.mp4 
-ffmpeg -fflags +igndts -f x11grab -video_size 1920x1080 -framerate 25 -i $DISPLAY -f alsa -i default -c:v libx265 -crf 28 -preset veryfast -c:a aac take3.mp4
-rm take3.mp4 
-ffmpeg -fflags +igndts -f x11grab -video_size 1920x1080 -framerate 25 -i $DISPLAY -f alsa -i default -c:v libx265 -crf 28 -preset veryfast -c:a aac take3.mp4
-rm take3.mp4 
-ffmpeg -fflags +igndts -f x11grab -video_size 1920x1080 -framerate 25 -i $DISPLAY -f alsa -i default -c:v libx265 -crf 28 -preset veryfast -c:a aac take3.mp4
-ffmpeg -fflags +igndts -f x11grab -video_size 1920x1080 -framerate 25 -i $DISPLAY -f alsa -i default -c:v libx265 -crf 28 -preset veryfast -c:a aac take4.mp4
-ffmpeg -fflags +igndts -f x11grab -video_size 1920x1080 -framerate 25 -i $DISPLAY -f alsa -i default -c:v libx265 -crf 28 -preset veryfast -c:a aac take5.mp4
-ffmpeg -fflags +igndts -f x11grab -video_size 1920x1080 -framerate 25 -i $DISPLAY -f alsa -i default -c:v libx265 -crf 28 -preset veryfast -c:a aac take5.mp4
-killall discord
-discord
-clear
-sudo pacman -Syy
-sudo pacman -S discord
-discord 
-cd Test/Mazar/
-octave-cli
-cd Videos/groff-video/
-vim PipeInspection.ms 
-zathura PipeInspection.pdf
-vim PipeInspection.ms 
-zathura PipeInspection.pdf &
-vim PipeInspection.ms 
-zathura test.pdf 
-zathura test.pdf &
-vim PipeInspection.ms 
-rm PipeInspection.pdf 
-vim PipeInspection.ms 
-rm PipeInspection.pdf 
-vim PipeInspection.ms 
-rm PipeInspection.pdf 
-vim PipeInspection.ms 
-rm PipeInspection.ms 
-rm PipeInspection.pdf 
-cp ~/Study/MEDET/groff_normal.ms .
-vim groff_normal.ms 
-vim test.ms 
-vim test.ms 
-mv test.ms drawing.ms
-ls
-rm test.pdf 
-vim drawing.ms 
-w
-cllear
-clear
-vim videopoints.ms 
-mv groff_normal.ms PipeInspection.ms
-rm groff_normal.pdf 
-vim PipeInspection.ms 
-mv PipeInspection.ms groff_normal.ms
-vim groff_normal.ms 
-clear
-pdfjam groff_normal.pdf '1-2,22,3-21,23' -o pipe.pdf
-zathura pipe.pdf &
-clear
-vim drawing.ms 
-vim FiniteElements.ms 
-vim FiniteElements.ms 
-zathura list.pdf &
-vim opening_macros.ms 
-zathura list.pdf &
-vim opening_macros.ms 
-vim groffcommand 
-ls
-vim videopoints.ms 
-clear
-pdfjam groff_normal.pdf '1-2,22,3-21,23' -o output.pdf
-zathura output.pdf &
-vim drawing.ms 
-zathura list.pdf &
-vim opening_macros.ms 
-clear
-vim FiniteElements.ms 
-vim point.sent 
-clear
-vim opening_macros.ms 
-vim ~/.config/groff/opening_macros.ms 
-vim ~/.config/groff/opening_macros.ms 
-man groff
-vim .local/bin/compiler 
-cat /usr/dict/papers/Ind 
-vim /usr/dict/papers/Ind 
-vim Documents/bibliography
-vim /usr/dict/papers/Ind 
-clear
-vim .local/bin/compiler 
-cd Videos/groff-video/AV_Files/
-ffmpeg -i take2.mp4 -c copy -an 2_noaudio.mp4
-ffmpeg -i take3.mp4 -c copy -an 3_noaudio.mp4
-ffmpeg -i take4.mp4 -c copy -an 4_noaudio.mp4
-
-ffmpeg -i 2_noaudio.mp4 -i My\ recording\ 22.wav -c:v copy -c:a aac Video2.mp4 
-ffmpeg -i 3_noaudio.mp4 -i My\ recording\ 23.wav -c:v copy -c:a aac Video2.mp4 
-ffmpeg -i 3_noaudio.mp4 -i My\ recording\ 23.wav -c:v copy -c:a aac Video3.mp4 
-ffmpeg -i 4_noaudio.mp4 -i My\ recording\ 24.wav -c:v copy -c:a aac Video4.mp4 
-groff -Tpdf -dPDF.EXPORT=1 -dLABEL.REFS=1 -ms -z  test.ms 2>&1 | LC_ALL=C
-grep '^\\. *ds' | groff -Tpdf -ms - test.ms > test.pdf
-groff -Tpdf -dPDF.EXPORT=1 -dLABEL.REFS=1 -ms -z  test.ms 2>&1 | LC_ALL=C grep '^\\. *ds' | groff -Tpdf -ms - test.ms
-cd Test/
-groff -Tpdf -dPDF.EXPORT=1 -dLABEL.REFS=1 -ms -z  test.ms 2>&1 | LC_ALL=C grep '^\\. *ds' | groff -Tpdf -ms - test.ms
-groff -Tpdf -dPDF.EXPORT=1 -dLABEL.REFS=1 -ms -z  test.ms 2>&1 | LC_ALL=C grep '^\\. *ds' | groff -Tpdf -ms - test.ms > test.pdf
-groff -Tpdf -dPDF.EXPORT=1 -dLABEL.REFS=1 -ms -z  test.ms 2>&1 | LC_ALL=C grep '^\\. *ds' | groff -Tpdf -U -et -ms test.ms > test.pdf
-groff -Tpdf -dPDF.EXPORT=1 -dLABEL.REFS=1 -ms -z  test.ms 2>&1 | LC_ALL=C grep '^\\. *ds' | groff -Tpdf -U -etpR -ms test.ms > test.pdf
-groff -Tpdf -dPDF.EXPORT=1 -dLABEL.REFS=1 -ms -z  test.ms 2>&1 | LC_ALL=C grep '^\\. *ds' | groff -Tpdf -U -etpR -ms - test.ms > test.pdf
-groff -Tpdf -dPDF.EXPORT=1 -dLABEL.REFS=1 -ms -z  test.ms 2>&1 | LC_ALL=C grep '^\\. *ds' | groff -Tpdf -U -etpR -mspdf  test.ms > test.pdf
-groff -Tpdf -dPDF.EXPORT=1 -ms -z test.ms 2>&1 | grep \"^\\.ds\" | groff -Tpdf -ms -
-groff -Tpdf -dPDF.EXPORT=1 -ms -z test.ms 2>&1 | grep \"^\\.ds\" | groff -Tpdf -U -tepR -ms - test.ms > test.pdf
-cd Test/
-vim test.ms 
-mkdir links
-cp test.ms links/
-cd links/
-vim test.ms 
-rm test.ms 
-rm test.pdf 
-vim test.ms
-cd ..
-ls
-vim rm -r mom-2.4-4_b
-rm -r mom-2.4-4_b
-rm mom-2.4-4_b.tar.gz 
-rm xrefs.troff 
-vim test.ms 
-cp test.ms ~/.config/groff/ms_template.ms 
-vim groff.ms
-cd ~
-vim .config/groff/ms_template.ms 
-cd .config/groff/
-vim ms_template.ms 
-vim ms_template.ms 
-cd Examples/
-vim FiniteElements.ms 
-cd ..
-vim ms_template.ms 
-cd Examples/
-vim FiniteElements.ms 
-rm equations.pdf 
-rm tables.pdf 
-rm figures.pdf 
-clear
-pdfjam FiniteElements.pdf '39,1-38' -o output.pdf
-zathura output.pdf &
-evince output.pdf &
-pdfroff -U -tepR -mspdf FiniteElements.ms > output.pdf 
-pdfroff -U -tepR -mspdf FiniteElements.ms > output.pdf 
-pdfroff -U -tepR -ms FiniteElements.ms > output.pdf 
-evince output.pdf &
-vim FiniteElements.ms 
-yay -Ss pdftk
-sudo pacman -Syy
-sudo pacman -S pdftk
-pdftk FiniteElements.pdf 39 1-38 output output.pdf 
-ls
-pdftk FiniteElements.pdf cat 39 1-38 output output.pdf 
-evince output.pdf &
-vim FiniteElements.ms 
-pdfroff FiniteElements.ms -mspdf > output.pdf
-pdfroff -tepR -mspdf FiniteElements.ms > output.pdf
-pdfroff -U -tepR -mspdf FiniteElements.ms > output.pdf
-clear
 vim .vimrc 
 cd .config/groff/Examples/
 vim FiniteElements.ms 
@@ -498,3 +306,195 @@ cd .config/groff/
 vim ms_template.ms 
 cd .config/groff/
 vim opening_macros.ms
+cd .config/groff/
+cp ms_template.ms backup.ms 
+vim backup.ms 
+vim opening_macros.ms
+cd ~
+git status
+git add --all
+git commit -m "Changes to header and footer"
+cat Backup/.gitREADME 
+git push -u origin master
+clear
+cd /usr/share/groff/current/tmac/
+ls
+vim m.tmac 
+grep -r 1c .
+grep -r MC .
+grep -r 1C .
+vim m.tmac 
+ls
+vim ms.tmac 
+vim mm.tmac 
+vim me.tmac 
+vim m.tmac 
+cd Test/
+groff -Tpdf -U -tepR -ms test.ms > test.pdf
+groff -Tpdf -U -tepR -mspdf test.ms > test.pdf
+groff -Tpdf -U -tepR -mspdf -me test.ms > test.pdf
+groff -Tpdf -U -tepR -mspdf -mm test.ms > test.pdf
+groff -Tpdf -U -tepR -mm test.ms > test.pdf
+vim .local/bin/executer 
+ffmpeg -i Zoom\ Meeting\ 2021-03-15\ 08-26-20.mp4 -c:v libx264 -crf 18 -preset veryslow -c:a copy Video1.mp4
+ffmpeg -i Zoom\ Meeting\ 2021-03-15\ 08-26-20.mp4 -c:v libx264 -crf 18 -preset fast -c:a copy Video1.mp4
+ffmpeg -i Zoom\ Meeting\ 2021-03-15\ 10-17-17.mp4 -c:v libx264 -crf 18 -preset fast -c:a copy Video2.mp4
+ffmpeg -i Zoom\ Meeting\ 2021-03-15\ 10-41-22.mp4 -c:v libx264 -crf 18 -preset fast -c:a copy Video3.mp4
+sudo fdisk -l
+cd /usr/share/groff/current/font/
+ls
+cd devpdf/
+ls
+vim DESC 
+cd enc/
+ls
+vim text.enc 
+ls
+cd ..
+cd map/
+ls
+cd ..
+cd ..
+ls
+find -iname *.afm
+cd devps/
+vim freeeuro.afm 
+cd ..
+ls 
+grep -r font .
+clear
+grep -r fontname .r
+grep -r fontname .
+grep -r FontName .
+cd ..
+ls
+cd oldfont/
+ls
+cd devps/
+ls
+vom CB
+vim CB
+cd ..
+cd ..
+cd font/
+ls
+cd devpdf/
+ls
+vim ab
+vim AB
+vim AR
+ls
+cd ..
+ls
+cd devpdf/
+ls
+vim ZD
+vim HR 
+vim S
+vim download 
+vim download 
+cd ~
+vim .local/bin/executer 
+fc-list
+fc-list > fontlist
+vim fontlist 
+sudo pacman -Syy
+sudo pacman -S gs
+sudo pacman -S ghostscript
+cd /usr/share/
+cd ghostscript/9.53.3/
+cd Resource/
+ls
+cd Font/
+ls
+vim URWGothic-Book
+ls
+cd ..
+cd /usr/share/ghostscript/9.54.0/
+ls
+cd Resource/Font/
+ls
+cd ~
+sudo pacman -Rns groff
+sudo pacman -Rdd groff
+sudo pacman -S groff
+cd bin/
+vim eqn
+xxd eqn
+xxd eqn > vieweqpn
+vim vieweqpn 
+rm vieweqpn 
+hexdump -C eqn
+clear
+info groff
+info eqn
+cd /usr/
+find -iname *eqn*
+man yay
+cd ~
+cd Packages/
+ls
+cd groff-git/
+ls
+find -iname *eqn*
+grep -r over .
+clear
+vim eqn.cpp 
+objdump -D eqn-over.o 
+man eqn
+man groff
+cd ~
+vim .local/bin/executer 
+man dpic
+yay -Ss dpic
+yay -Syy
+yay -S dpic-git
+ls
+yay -S dpic
+clear
+sudo pacman -Syy
+vf Packages/
+cd Packages/
+yay -S dpic-git
+ls
+clear
+vim eqn.1 
+cp eqn.1 eqn.ms
+vim eqn.ms 
+vim eqn.cpp 
+vim eqn.ms 
+whereis eqn
+vim /usr/bin/eqn
+vim /usr/share/groff/current/
+cd /usr/share/groff/current/
+vim eign 
+cd tmac/
+ls
+vim e.tmac 
+vim ec.tmac 
+man eqn
+vim eqnrc 
+killall gedit
+cd Test/octave/
+octave-cli
+octave-cli
+cd Test/
+mkdir octave
+cd octave/
+vim test.m
+vim slicerc.m
+mv slicerc.m sliderc.m
+vim sliderc.m 
+cp test.m example.m
+vim test.m 
+cd Test/octave/
+octave-cli
+cd Test/
+vim paper.ms
+vim paper.ms
+vim paper.ms
+vim paper.ms
+vim paper.ms
+vim paper.ms
+vim .local/bin/compiler 
+vim Test/paper.ms 

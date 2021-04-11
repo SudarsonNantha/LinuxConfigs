@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =5
+let g:netrw_dirhistcnt =6
+let g:netrw_dirhist_6='/usr/share/groff/1.22.4'
 let g:netrw_dirhist_5='/home/sudarson/Study/Sem1/NUMME/UploadFiles'
 let g:netrw_dirhist_4='/home/sudarson/Documents/Hackathon'
 let g:netrw_dirhist_3='/home/sudarson/Study'
@@ -9,4 +10,3 @@ let g:netrw_dirhist_0='/home/sudarson/Study/NUMME/FE_Lab2'
 let g:netrw_dirhist_9='/home/sudarson/Study/NUMME'
 let g:netrw_dirhist_8='/home/sudarson/Study/ALEMO'
 let g:netrw_dirhist_7='/home/sudarson/Study'
-let g:netrw_dirhist_6='/home/sudarson/Study/ALEMO'

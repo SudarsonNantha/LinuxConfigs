@@ -159,7 +159,8 @@
 .nr fstep 0 1               \" Counter for figure list
 .de PIC                     \" Define .PIC macro
 .ds cap "
-.ds figname Figure \\*[fn]
+\#.ds figname Figure \\*[fn]
+.ds figname Fig \\*[fn]
 .nr addentry 1
 .nr nocap 0
 .if (\\n[.$] == 3) \{\
@@ -194,12 +195,15 @@
 .\}
 .PDFPIC -\\$2 \\$1 \\$3     \" Prints image
 .ad c
-.B "\\*[figname]"           \" Displays figure caption
-.I " \\*[cap]"
-.sp
+\#.B "\\*[figname]"           \" Displays figure caption
+\#.I " \\*[cap]"
+.B "\\*[figname]"\" Displays figure caption
+.B "\h'-0.5n'."
+.I "\\*[cap]"
+.br
 .ad n
 .
-.sp -15
+.sp -15.5
 .ds fignum fig\\*[fnow]
 \# Create a pdf reference
 .pdfhref M -N \\*[fignum] -X \\*[figname]
@@ -367,4 +371,3 @@
 .nr show-equations-list 0
 .nr show-figures-list 0
 .nr show-tables-list 0
-

@@ -38,7 +38,7 @@
 .EQ 0
 delim $$
 .EN 0
-\#.nr no-head-numbering 1  \" Uncomment to disable equation/figure/table numbering based on heading
+.nr no-head-numbering 1 \" Uncomment to disable equation/figure/table numbering based on heading
 .so /home/sudarson/.config/groff/opening_macros.ms
 \#.so /home/sudarson/.config/groff/macros.ms
 .

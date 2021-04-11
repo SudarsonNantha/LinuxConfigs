@@ -38,7 +38,7 @@ case "$ext" in
 #	mom) preconv "$file" | pdfmom -e -Tps > "$base".pdf ;;
 #    ms) preconv "$file" | refer -PS -e | groff -me -ms -kept -Tps > "$base".ps && ps2pdf "$base".ps;;
 #    ms) refer -e -p ~/Documents/bibliography "$file" | pdfroff -U -t -e -mpdfmark -mspdf > "$base".pdf;;
-    ms) groff -Tpdf -Kutf8 -U -tepjR -mspdf "$file" > "$base".pdf;;
+    ms) groff -Tpdf -Kutf8 -U -tepR -mspdf "$file" > "$base".pdf;;
 #	py) python "$file" ;;
 #	[rR]md) Rscript -e "rmarkdown::render('$file', quiet=TRUE)" ;;
 #	rs) cargo build ;;
