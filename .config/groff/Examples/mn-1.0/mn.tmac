@@ -1,0 +1,247 @@
+.\"
+.\" mn.tmac
+.\"
+.\" written by Werner Lemberg <wl@gnu.org>
+.\"
+.\" Version 0.1: 13-Dec-2002
+.\"   Initial release.
+.\"
+.\" Version 0.2: 18-Jan-2005
+.\"   Add colour support and hyphenation control.  Based on a patch from
+.\"   Gaius Mulley.
+.\"
+.\" Version 1.0: 19-Jan-2005
+.\"   Rename MN.tmac to mn.tmac.
+.\"
+.\"
+.\" Usage:
+.\"
+.\"   ...
+.\"   MN left|right
+.\"   margin note text
+.\"   MN
+.\"   ...
+.\"
+.\" With a parameter, start a margin note, otherwise end a margin note.
+.\" If the parameter is the string `left', define a left margin note,
+.\" otherwise define a right margin note.
+.\"
+.de MN
+.  ie \\n[.$] \{\
+.    if \\n[mn-active] \{\
+.      tm mn: Can't handle nested margin notes.
+.      return
+.    \}
+.    nr mn-active 1
+.    ie '\\$1'left' \{\
+.      nr mn-left +1
+.      ds mn-curr l-\\n[mn-left]\"
+.    \}
+.    el \{\
+.      nr mn-right +1
+.      ds mn-curr r-\\n[mn-right]\"
+.    \}
+.
+.    mk mn-mk-\\*[mn-curr]
+.    ev mn-env
+.    di mn-div-\\*[mn-curr]
+.  \}
+.  el \{\
+.    if \\n[mn-active] \{\
+.      br
+.      di
+.      unformat mn-div-\\*[mn-curr]
+.      ev
+.    \}
+.    nr mn-active 0
+.  \}
+..
+.
+.
+.\"
+.\" This macro must be installed as a trap macro before the first
+.\" margin note on a page can occur.  It initializes some variables.
+.\"
+.de MNtop
+.  nr mn-left 0
+.  nr mn-right 0
+.  nr mn-active 0
+..
+.
+.
+.\"
+.\" This macro must be installed as a trap macro after the last
+.\" margin note on a page can occur.  It prints the margin notes
+.\" into the left and right margins.
+.\"
+.de MNbottom
+.  nr mn-curr 0
+.  nr mn-last-pos 0
+.
+.  vpt 0
+.
+.  mk mn-curr-pos
+.
+.  if \\n[mn-active] \{\
+.    di
+.    tm mn: Margin note finished by new page.  Ignored.
+.  \}
+.
+.  po \\n[mn-left-start]u
+.  ev mn-bottom-left-env
+.  while (\\n[mn-curr] < \\n[mn-left]) \{\
+.    nr mn-curr +1
+.    ie (\\n[mn-last-pos] < \\n[mn-mk-l-\\n[mn-curr]]) \
+.      sp |\\n[mn-mk-l-\\n[mn-curr]]u
+.    el \{\
+.      sp
+.      tm mn: Warning: Left margin note #\\n[mn-curr] on page \\n[%] shifted down.
+.    \}
+.    mn-div-l-\\n[mn-curr]
+.    br
+.    nr mn-last-pos \\n[nl]
+.  \}
+.  ev
+.  po
+.
+.  nr mn-curr 0
+.  nr mn-last-pos 0
+.  po \\n[mn-right-start]u
+.  ev mn-bottom-right-env
+.  while (\\n[mn-curr] < \\n[mn-right]) \{\
+.    nr mn-curr +1
+.    ie (\\n[mn-last-pos] < \\n[mn-mk-r-\\n[mn-curr]]) \
+.      sp |\\n[mn-mk-r-\\n[mn-curr]]u
+.    el \{\
+.      sp
+.      tm mn: Warning: Right margin note #\\n[mn-curr] on page \\n[%] shifted down.
+.    \}
+.    mn-div-r-\\n[mn-curr]
+.    br
+.    nr mn-last-pos \\n[nl]
+.  \}
+.  ev
+.  po
+.
+'  sp |\\n[mn-curr-pos]u
+.
+.  vpt 1
+..
+.
+.
+.\"
+.\" MNinit [ragged|symmetric] \
+.\"        left-width right-width separation \
+.\"        font fontsize vertical-spacing \
+.\"        color hyphenation-flags
+.\"
+.\" Initialize margin notes.  Empty arguments (denoted with "") set
+.\" default values.  If the first argument is the string `ragged',
+.\" left and right margin notes are printed ragged-right.  If it is
+.\" `symmetric', left margin notes are printed ragged-left and right
+.\" margin notes ragged-right.  If omitted, margin notes are left
+.\" and right adjusted.
+.\"
+.\" Default value for `separation' is 1n; default values for all
+.\" other options are the settings in use while calling MNinit.
+.\"
+.de MNinit
+.  ds mn-left-ad b\"
+.  ds mn-right-ad b\"
+.  if '\\$1'ragged' \{\
+.    ds mn-left-ad l\"
+.    ds mn-right-ad l\"
+.    shift
+.  \}
+.  if '\\$1'symmetric' \{\
+.    ds mn-left-ad r\"
+.    ds mn-right-ad l\"
+.    shift
+.  \}
+.
+.  ie \B'\\$3' \
+.    nr mn-sep (n;\\$3)
+.  el \
+.    nr mn-sep 1n
+.  if ((\\n[.o] - \\n[mn-sep]) < 1n) \
+.    ab mn: Left margin too small (<1n) for requested margin notes separation.
+.
+.  ie \B'\\$1' \{\
+.    nr mn-left-width (n;\\$1)
+.    nr mn-left-start (\\n[.o] - \\n[mn-sep] - \\n[mn-left-width])
+.  \}
+.  el \{\
+.    nr mn-left-width (\\n[.o] - \\n[mn-sep])
+.    nr mn-left-start 0
+.  \}
+.  if (\\n[mn-left-start] < 0) \
+.    ab mn: Left margin too small for requested margin notes settings.
+.  if (\\n[mn-left-width] < 1n) \
+.    ab mn: Left margin notes width too small (<1n).
+.
+.  ie \B'\\$2' \{\
+.    nr mn-right-width (n;\\$2)
+.    nr mn-right-start (\\n[.o] + \\n[.l] + \\n[mn-sep])
+.  \}
+.  el \{\
+.    nr mn-right-width \\n[mn-left-width]
+.    nr mn-right-start (\\n[.o] + \\n[.l] + \\n[mn-sep])
+.  \}
+.
+.  ie \A'\\$4' \
+.    ds mn-font \\$4\"
+.  el \
+.    ds mn-font
+.
+.  ie \B'\\$5' \
+.    nr mn-size (z;\\$5)
+.  el \
+.    nr mn-size 0
+.
+.  ie \B'\\$6' \
+.    nr mn-spacing (p;\\$6)
+.  el \
+.    nr mn-spacing 0
+.
+.  ie \A'\\$7' \
+.    ds mn-color \\$7\"
+.  el \
+.    ds mn-color
+.
+.  ie \B'\\$8' \
+.    nr mn-hy \\$8
+.  el \
+.    nr mn-hy \\n[.hy]
+.
+.  \" Initialize environments.
+.  ev mn-env
+.  if \A'\\*[mn-font]' \
+.    ft \\*[mn-font]
+.  if \\n[mn-size] \
+.    ps \\n[mn-size]u
+.  if \A'\\*[mn-color]' \
+.    nop \m[\\*[mn-color]]\c
+'  in 0
+'  nf
+.  ev
+.
+.  ev mn-bottom-left-env
+.  if \\n[mn-spacing] \
+.    vs \\n[mn-spacing]u
+.  ll \\n[mn-left-width]u
+.  ad \\*[mn-left-ad]
+.  hy \\n[mn-hy]
+.  ev
+.
+.  ev mn-bottom-right-env
+.  if \\n[mn-spacing] \
+.    vs \\n[mn-spacing]u
+.  ll \\n[mn-right-width]u
+.  ad \\*[mn-right-ad]
+.  hy \\n[mn-hy]
+.  ev
+.
+.  nr mn-active 0
+..
+.
+.\" EOF

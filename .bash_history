@@ -1,95 +1,3 @@
-vim .vimrc 
-cd .config/groff/Examples/
-vim FiniteElements.ms 
-cd ...
-cd ..
-vm ms_template.ms 
-vim ms_template.ms 
-pdftk ms_template.pdf cat 8 1-7 end output ms_template.pdf 
-pdftk ms_template.pdf cat 8 1-7 end output output.pdf
-
-groff -Tpdf -U -tepR -mspdf ms_template.ms > input.pdf
-pdftk input.pdf cat 8 1-7 end output ms_template.pdf 
-vim ms_template.ms 
-cp ms_template.ms backup.ms 
-vim ms_template.ms 
-groff -Tpdf -U -tep test.ms > ms_template.pdf 
-rm test.ms 
-vim ms_template.ms 
-groff -Tpdf -tep -mspdf test.ms > ms_template.pdf 
-groff -Tpdf -U -tep -mspdf test.ms > ms_template.pdf 
-clear
-refer ms_template.ms > test.ms 
-echo ".ds CH
-.ds CF
-.if '\*[.T]'pdf' \X'pdf: switchtopage after here'
-.TC" >> test.ms
-groff -Tpdf -U -tep -mspdf test.ms > ms_template.pdf 
-refer ms_template.ms > test.ms 
-echo ".ds CH
-.ds CF
-.if '\*[.T]'pdf' \X'pdf: switchtopage before here'
-.TC" >> test.ms
-groff -Tpdf -U -tep -mspdf test.ms > ms_template.pdf 
-refer ms_template.ms > test.ms 
-echo ".ds CH
-.ds CF
-.if '\*[.T]'pdf' \X'pdf: switchtopage before here'
-.TC" >> test.ms
-groff -Tpdf -U -tep -mspdf test.ms > ms_template.pdf 
-refer ms_template.ms > test.ms 
-echo ".ds CH
-.ds CF
-.if '\*[.T]'pdf' \X'pdf: switchtopage before here'
-.TC" >> test.ms
-groff -Tpdf -U -tep -mspdf test.ms > ms_template.pdf 
-refer ms_template.ms > test.ms 
-echo ".ds CH
-.ds CF
-.if '\*[.T]'pdf' \X'pdf: switchtopage after here'
-.TC" >> test.ms
-groff -Tpdf -U -tep -mspdf test.ms > ms_template.pdf 
-refer ms_template.ms > test.ms 
-echo ".ds CH
-.ds CF
-.if '\*[.T]'pdf' \X'pdf: switchtopage after here'
-.TC" >> test.ms
-groff -Tpdf -U -tep -mspdf test.ms > ms_template.pdf 
-refer ms_template.ms > test.ms 
-echo ".ds CH
-.ds CF
-.if '\*[.T]'pdf' \X'pdf: switchtopage after here'
-.TC" >> test.ms
-groff -Tpdf -U -tep -mspdf test.ms > ms_template.pdf 
-echo ".ds CH
-.ds CF
-.if '\*[.T]'pdf' \X'pdf: switchtopage after here'
-.TC" >> test.msclear
-clear
-ln -l /usr/dict/papers/Ind 
-ls -l /usr/dict/papers/Ind 
-clear
-ls -l /usr/dict/papers/Ind 
-man refer
-cd Videos/groff-video/
-vim point.sent 
-cd Study/
-cd INTIR/
-ls
-vim report.ms
-vim .local/bin/compiler 
-vim Videos/groff-video/groff_normal.ms 
-vim .local/bin/compiler 
-vim Videos/groff-video/groff_normal.ms 
-vim /usr/share/groff/current/tmac/m.tmac 
-vim Videos/groff-video/FiniteElements.ms 
-cp Test/Gnu.pdf .config/groff/
-cp Test/299px-Tux.svg.pdf .config/groff/tux.pdf
-mv .config/groff/Gnu.pdf .config/groff/gnu.pdf
-w
-w
-c;ear
-clear
 cd .config/groff/
 ls
 cd ~
@@ -498,3 +406,95 @@ vim paper.ms
 vim paper.ms
 vim .local/bin/compiler 
 vim Test/paper.ms 
+cd Test/
+groff -Tps -ms test.ms > test.ps && ps2pdf test.ps
+vim Test/paper.ms 
+cd Test/
+vim test.ms 
+vim test.ms 
+cd ~
+vim .config/groff/ms_template.ms 
+vim .config/groff/ms_template.ms 
+cp .config/groff/tux.pdf Test/
+cd Test/
+img2pdf archlinux-logo-black.png 
+feh archlinux-logo-black.pdf 
+zathura archlinux-logo-black.pdf 
+cp archlinux-logo-black.pdf ~/.config/groff/
+cd /usr/share/groff/current/
+ls
+cd tmac/
+vim m.tmac 
+vim s.tmac 
+cd ~
+vim .config/groff/ms_template.ms 
+vim .config/groff/drawing.
+vim .config/groff/drawing.ms 
+vim .config/groff/ms_template.ms 
+sudo pacman -S octave
+cat Test/Mazar/Mazar_1D.m 
+cd .config/groff/
+vim opening_macros.ms
+vim backup.ms 
+cd ~/Test/
+vim test.ms 
+cd Test/
+groff -s -ms -M. test.ms > test.ps
+ps2pdf test.ps 
+cd Test/
+mkdir paper
+cp paper.ms paper
+cd paper/
+ls
+img2pdf *.png
+img2pdf *.png
+clear
+vim paper.ms 
+cd ..
+mkdir ~/.config/groff/Examples/
+cp -R paper/ ~/.config/groff/Examples/
+cd ~/.config/groff/Examples/
+ls
+cd paper/
+ls
+vim paper.ms 
+cd ~
+git status
+rm fontlist 
+cp french.docs Study/
+git status
+rm french.docs 
+git add -r .config/groff/Examples/
+git add.config/groff/Examples/
+git add .config/groff/Examples/
+git status
+git add --all
+git status
+cat Backup/.gitREADME 
+git commit -m "Groff paper example"
+git push -u origin master
+cd .config/groff/Examples/paper/
+ls
+vim paper.ms 
+ls /usr/share/groff/current/tmac/
+vim mn-test
+cp mn-test mn-test.ms
+vim ms-test.ms
+vim mn-test.ms
+img2pdf bike.png 
+man tbl
+yay -Ss hdtbl
+yay -Ss tbl
+clear
+vim /usr/share/groff/current/tmac/hdtbl.tmac 
+sudo pacman -Syy
+sudo pacman -Ss tldr
+sudo pacman -S tldr
+clear
+tldr groff
+pacman -Ss cheat
+yay -Ss cheat
+clear
+tldr refer
+tldr pic
+tldr ffmpeg

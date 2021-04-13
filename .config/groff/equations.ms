@@ -18,13 +18,13 @@ List of Equations
 .ds eqtitle Equation Number 	 Page No.
 .B "\\*[eqtitle]"
 .br
-.ds entry 1. A linear equation (1) \t . . .1
-.pdfhref L -D eq1 \*[entry]
+.ds entry 1. A linear equation (2.1.1) \t . . .1
+.pdfhref L -D eq2.1.1 \*[entry]
 .br
-.ds entry 2. A long mathematical series (2) \t . . .1
-.pdfhref L -D eq2 \*[entry]
+.ds entry 2. A long mathematical series (2.1.2) \t . . .2
+.pdfhref L -D eq2.1.2 \*[entry]
 .br
-.ds entry 3. Example matrix equation (3) \t . . .1
-.pdfhref L -D eq3 \*[entry]
+.ds entry 3. Example matrix equation (2.1.3) \t . . .2
+.pdfhref L -D eq2.1.3 \*[entry]
 .br
 .bp

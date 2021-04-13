@@ -1,10 +1,7 @@
+.lf 1 paper.ms
 .nr no-head-numbering 1
 .mso /home/sudarson/.config/groff/opening_macros.ms
-\#bracket-label \*([.[ ]\*(.] ", "
-.R1
-accumulate
-bracket-label [ ] ", "
-.R2
+.lf 8 paper.ms
 .po 0.6i
 .ll 7.05i
 .nr LT 7.05i
@@ -113,17 +110,13 @@ A B S T R A C T
 .ps 8
 .vs 11
 \h'2'\fBThe contents of this paper are only used as a demonstration of the GNU troff typesetting system.\fR Two cracks were detected in the bike frame of an amateur cyclist, before the final failure ofthe component and after using it for around 35,000 km. The cracks were located in the jointbetween the bottom bracket, the chain stays, the seat tube and the down tube.
-.pdfhref L -D references cat
-.[
-caterpillar
-.]
+.pdfhref L -D references cat\*([.1\*(.]
+.lf 120 paper.ms
 .br
 \h'2'This paper analyses the causes of the cracking process and comprises, basically, chemicalanalysis for material identification, visual inspection of the frame, microstructural analysis,microhardness measurements, mechanical characterisation through Small Punch tests andSEM (plus EDX) analysis of the fracture surface.
 .br
-\h'2'The analysis concludes that both cracks were caused by corrosion and Stress CorrosionCracking (SCC) processes that are justified by the differences in the solution potentialsbetween the base material and equilibrium precipitates produced by an overageing treat-ment. The latter are more anodic and hence easily dissolved in a humid salineenvironment.
-.[
-simple
-.]
+\h'2'The analysis concludes that both cracks were caused by corrosion and Stress CorrosionCracking (SCC) processes that are justified by the differences in the solution potentialsbetween the base material and equilibrium precipitates produced by an overageing treat-ment. The latter are more anodic and hence easily dissolved in a humid salineenvironment.\*([.2\*(.]
+.lf 127 paper.ms
 .br
 .ad r
 \[co] 2010 Elsevier Ltd. All rights reserved.
@@ -139,7 +132,7 @@ simple
 .NH
 Introduction
 .PP
-After three years and around 35,000 km of service, two cracks were detected in the bike frame of an amateur cyclist. Bothcracks were located in the joint of the bottom bracket with the chain stays, the seat tube and the down tube, and were de-tected before the in-service failure of the component. The bike was used in the north coast of Spain, and therefore, in a humidclimate (average relative humidity around 80% over the year, precipitation of 1200â€“1300 mm/year, and 150â€“180 rainfalldays per year) with a saline environment.
+After three years and around 35,000 km of service, two cracks were detected in the bike frame of an amateur cyclist. Bothcracks were located in the joint of the bottom bracket with the chain stays, the seat tube and the down tube, and were de-tected before the in-service failure of the component. The bike was used in the north coast of Spain, and therefore, in a humidclimate (average relative humidity around 80% over the year, precipitation of 1200â1300 mm/year, and 150â180 rainfalldays per year) with a saline environment.
 .PIC "The bicycle beikng studied" "bike.pdf" C 2.5
 .PP
 .pdfhref L -D fig1 Fig.1
@@ -147,28 +140,22 @@ shows the bike frame and the location of the cracks, whileFig. 2shows a detail o
 .PP
 In
 .pdfhref L -D fig2 Fig. 2
-, some indications of corrosion can be noticed in the interior of the bottom bracketand also in the vicinity of the cracks, in which the cyclist had performed a manual sanding, depriving these zones of the paintlayer.Fig. 3presents the cracked section containing Crack 1,
-.[
-snake
-.]
+, some indications of corrosion can be noticed in the interior of the bottom bracketand also in the vicinity of the cracks, in which the cyclist had performed a manual sanding, depriving these zones of the paintlayer.Fig. 3presents the cracked section containing Crack 1,\*([.3\*(.]
+.lf 154 paper.ms
 which is the largest one. The extension of the crack and itsapproximate geometry can be observed here.
 .NH
 Chemical Analysis
 .PP
-Steel, aluminium alloys, titanium and carbon are the most used materials in bike frame fabrication. In the case being ana-lysed, it was known than the material was an aluminium alloy (AA), but the specific alloy was not known. The use of AAprovides light bike frames, with relatively simple fabrication processes, a wide variety of shapes and a significant stiffness provided by the high dimensions of the transversal sections used in the tubes.
-.[
-screw
-.]
+Steel, aluminium alloys, titanium and carbon are the most used materials in bike frame fabrication. In the case being ana-lysed, it was known than the material was an aluminium alloy (AA), but the specific alloy was not known. The use of AAprovides light bike frames, with relatively simple fabrication processes, a wide variety of shapes and a significant stiffness provided by the high dimensions of the transversal sections used in the tubes.\*([.4\*(.]
+.lf 162 paper.ms
 .PIC "This is a section" "Section1.pdf" C 2
 .1C
 .sp -2
 .NH
 Visual Inspection
 .PP
-As mentioned above,Fig. 2shows indications of corrosion in the interior of the bottom bracket and also in the vicinity ofthe two detected cracks. In order to establish the extension of the corrosion processes occurring in the bike frame, severalcuts were performed on it.Fig. 4shows the inner part of the joint between the bottom bracket, the seat tube and the downtube, with a widespread, clear and extended corrosion process occurring in the entire internal surface.
-.[
-magnet
-.]
+As mentioned above,Fig. 2shows indications of corrosion in the interior of the bottom bracket and also in the vicinity ofthe two detected cracks. In order to establish the extension of the corrosion processes occurring in the bike frame, severalcuts were performed on it.Fig. 4shows the inner part of the joint between the bottom bracket, the seat tube and the downtube, with a widespread, clear and extended corrosion process occurring in the entire internal surface.\*([.5\*(.]
+.lf 172 paper.ms
 .PP
 The rest of the cuts performed on the bike frame also revealed corrosion processes occurring all along the interior of theframe, in such a way that the closer to the bottom bracket, the more extended the corrosion process.Fig. 5shows the cor-rosion level found in some of the locations.Likewise,Fig. 6shows a hole found in the lower part of the bottom bracket. This hole provides an immediate access for theair, the water and the dirt to the interior of the tubes which, as shown inFig. 4, were connected through additional internalholes. The hole shown inFig. 6explains the images shown inFig. 5, given that the extension of the corrosion processes occur-ring on the different tubes depends on their corresponding proximity to the hole (that is, to the external environment).
 .br
@@ -193,16 +180,8 @@ The rest of the cuts performed on the bike frame also revealed corrosion process
 EDX Results
 .PP
 .pdfhref L -D tab1 Table 1
-shows the EDX results for the three different types of precipitates, confirming that they are all equilibrium (b) pre-cipitates with high order compositions. It can be observed that the so-called large dark precipitates have very high contentsof Si and Mg and lower contents of Al and Zn than AA 7005. The large bright precipitates have considerably high amounts ofSi and Mn, and a surprisingly high content of iron. Finally, the small precipitates have significant amounts of Si and Mn.Therefore, the three different types of precipitates distinguished through the SEM images effectively correspond to threeclearly different chemical compositions and their corresponding solution potentials. The table also gathers the chemicalcomposition of the weld material, confirming that it is an AA of the 5xxx series (Mg alloyed), as suggested in Section4.
-.[
-6x
-.]
-.[
-caterpillar
-.]
-.[
-simple
-.]
+shows the EDX results for the three different types of precipitates, confirming that they are all equilibrium (b) pre-cipitates with high order compositions. It can be observed that the so-called large dark precipitates have very high contentsof Si and Mg and lower contents of Al and Zn than AA 7005. The large bright precipitates have considerably high amounts ofSi and Mn, and a surprisingly high content of iron. Finally, the small precipitates have significant amounts of Si and Mn.Therefore, the three different types of precipitates distinguished through the SEM images effectively correspond to threeclearly different chemical compositions and their corresponding solution potentials. The table also gathers the chemicalcomposition of the weld material, confirming that it is an AA of the 5xxx series (Mg alloyed), as suggested in Section4.\*([.6, 1, 2\*(.]
+.lf 206 paper.ms
 .sp
 .TS
 tab(;) nospaces center expand;
@@ -223,8 +202,67 @@ a a a a a a a.
 ;;;;;;;
 .TE
 .bp
-.[
-$LIST$
-.]
+.]<
+.ds [F 1
+.]-
+.ds [A F. Chang, Lih-Tyng Hwang, Chih-Feng Liu, Wei-Sheng Wang, Jeng-Nan Lee, Shun-Min Wang, and Kai-Yi Cho
+.ds [D 2015
+.ds [J IEEE
+.ds [K pipe_caterpillar
+.ds [T Design of a pipeline inspection robot with belt driven ridged cone shaped skate model
+.nr [T 0
+.nr [A 0
+.][ 1 journal-article
+.ds [F 2
+.]-
+.ds [A M O Tatar and A Pop
+.ds [D 2016
+.ds [J IOP Conf. Series: Materials Sceince and Engineering
+.ds [K pipe_simple
+.ds [T Development of an in pipe inspection minirobot
+.ds [V 147
+.nr [T 0
+.nr [A 0
+.][ 1 journal-article
+.ds [F 3
+.]-
+.ds [D 2020
+.ds [I ""https://inspector-systems.com/pipe-crawler/ultrasonic-inspection-robots.html"
+.ds [K pipe_snake
+.ds [T Pipe Crawler - Ultrasonic Inspection Robots
+.nr [T 0
+.][ 2 book
+.ds [F 4
+.]-
+.ds [A Ankit Nayak and Sharad Pradhan
+.ds [D 2014
+.ds [J ScienceDirect
+.ds [K pipe_screw
+.ds [R 10.1016/j.proeng.2014.12.451
+.ds [T Design of a New In-Pipe Inspection Robot
+.nr [T 0
+.nr [A 0
+.][ 1 journal-article
+.ds [F 5
+.]-
+.ds [A ULC Robotics
+.ds [I ""https://ulcrobotics.com/services/robotic-cased-pipeline-inspection/"
+.ds [K pipe_magnet
+.ds [T Robot Cased Pipelie Inspection
+.nr [T 0
+.nr [A 0
+.][ 2 book
+.ds [F 6
+.]-
+.ds [A Hui Li, Ruiqin Li, Jianwei Zhang, and Pengyu Zhang
+.ds [D 2020
+.ds [J MDPI
+.ds [K pipe_6x
+.ds [T Development of Pipeline Inspection Robot for the Standard Oil Pipeline of China National Petroleum Corporation
+.nr [T 0
+.nr [A 0
+.][ 1 journal-article
+.]>
+.lf 229 paper.ms
 .so /home/sudarson/.config/groff/closing_macros.ms
 .pdfhref M -D references

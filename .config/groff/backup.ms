@@ -1,3 +1,7 @@
+.pl 8i
+\#.pl 21c
+\#.ll 29.7c
+.device papersize=8.25i,8i
 .ig
   -------------------------------------------------------------
  |            Compile this document with the command(s):        |
@@ -39,12 +43,12 @@
 delim $$
 .EN 0
 .nr HM 0.2i \" Set Header and footer margins
-.nr FM 0.5i
+.nr FM 1i
 .ds CH          \" Empty header (centred)
-.ds LH \v'1'\l'6.25i'\v'-0.5'\h'-6.25i'This is a sample header
+.ds LH \v'0'\l'6.25i'\v'-0.5'\h'-6.25i'This is a sample header
 .ds LF \l'6.25i'\v'1.5'\h'-3.125i'- % -
 \#.nr no-head-numbering 1  \" Uncomment to disable equation/figure/table numbering based on heading
-.so /home/sudarson/.config/groff/opening_macros.ms
+.mso /home/sudarson/.config/groff/opening_macros.ms
 \#.so /home/sudarson/.config/groff/macros.ms
 .
 .
@@ -89,6 +93,8 @@ Ms macros template by
 .I
 .pdfhref W -D https://github.com/SudarsonNantha/LinuxConfigs/tree/master/.config/groff Sudarson Nantha
 .br
+.nr HM 0.8i
+.nr FM 1i
 .ad n           \" Normal/Justify alignment
 .po 0.8i
 .ll 6.7i
@@ -253,6 +259,22 @@ a a s s.
 Float height - all models;20-21mm (0.787-0.827in)
 .TE "Carburetor specifications for Yamaha DT 125"
 .
+.ft CW
+.po 1m
+.ll 3i
+This test shows how line numbering works with groff.
+.nm 999
+This test shows how line numbering works with groff.
+.br
+.nm xxx 3 2
+.ll -\w'0'u
+This test shows how line numbering works with groff.
+.nn 2
+This test shows how line numbering works with groff.
+.ft
+.FS
+This is a footnote
+.FE
 \# No headers or footers on TOC page
 .list-equations
 .list-figures
