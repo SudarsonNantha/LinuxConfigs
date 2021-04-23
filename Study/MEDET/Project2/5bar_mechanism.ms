@@ -59,6 +59,11 @@ define cb2 'cos qb2'
 define sb2 'sin qb2'
 define cb12 'cos ( qb1 + qb2 )'
 define sb12 'sin ( qb1 + qb2 )'
+define ua1 'u bar sub {A 1}'
+define ua2 'u bar sub {A 2}'
+define ub1 'u bar sub {B 1}'
+define ub2 'u bar sub {B 2}'
+define Emat 'left [ matrix { ccol {0 above 1} ccol {-1 above 0} } right ]'
 .EN 0
 .PS 3.5
 r = 0.06
@@ -185,7 +190,7 @@ ${H P} bar$ can be found as:
 left [ pile { 1 smallover 2 ( l3 sb1 - l1 sa1 ) above 1 smallover 2 ( l1 ca1 + l3 cb1 ) - l0 smallover 2} right ]
 .EN
 .PP
-${O B1} bar$ and ${B1 B2}$ can be trivially found as,
+${O B1} bar$ and ${B1 B2} bar$ can be trivially found as,
 .EQ
 {O B1} bar = left [ pile { l0 smallover 2 above 0 } right ]
 ~~~~~~~
@@ -277,5 +282,168 @@ qb2 ~=~ tan sup -1 ~ left [ {2y - 2 l3 sb1} over {2x - l0 - 2 l3 cb1} right ] - 
 }
 .EN
 .head 2 "Jacobian Matrix"
+.PS 3
+r = 0.06
+linethick = 0.2
+O: circle rad r at (0,0) fill 1 "" "" "$size +5 O$" below
+A1: circle rad r at (-2,0) fill 1 "$size +5 A1$  " rjust
+B1: circle rad r at (2,0) fill 1 "" "    $size +5 B1$" ljust below
+A2: circle rad r at (-3,2.7) fill 1 "  $size +5 A2$" "" "" ljust above
+B2: circle rad r at (3,2.7) fill 1 "   $size +5 B2$" ljust
+P: circle rad r at (0,5.5) fill 1 "$size +5 P(x,y)$   " rjust
+L1: line from A1 to A2 "$size +5 l1$   " rjust
+L3: line from B1 to B2 "   $size +5 l3$" ljust
+L2: line from A2 to P "$size +5 l2$      " rjust
+L4: line from B2 to P "      $size +5 l4$" ljust
+line from A1 to B1
+
+linethick = 0.5
+line from A1 down 0.5 right 0.25
+line left 0.5
+line up 0.5 right 0.25
+line invis from end of 3rd last line left 0.03
+line down 0.15 left 0.10
+line invis up 0.15
+line down 0.15 left 0.10
+line invis up 0.15
+line down 0.15 left 0.10
+line invis up 0.15
+line down 0.15 left 0.10
+line invis up 0.15
+line down 0.15 left 0.10
+
+line from B1 down 0.5 right 0.25
+line left 0.5
+line up 0.5 right 0.25
+line invis from end of 3rd last line left 0.03
+line down 0.15 left 0.10
+line invis up 0.15
+line down 0.15 left 0.10
+line invis up 0.15
+line down 0.15 left 0.10
+line invis up 0.15
+line down 0.15 left 0.10
+line invis up 0.15
+line down 0.15 left 0.10
+
+move to O; move up 0.7
+arrow right 1 "$e under sub x$" below
+move to O; move up 0.7
+arrow up 1 "$e under sub y$ " rjust
+
+linethick = 1.5
+move to A1
+line color "red" to center of L1 -> "$size +3 ua1$   " rjust
+move to A2
+line color "red" to center of L2 -> "$size +3 ua2$  " rjust above
+move to B1
+line color "red" to center of L3 -> "    $size +3 ub1$" ljust
+move to B2
+line color "red" to center of L4 -> "    $size +3 ub2$" ljust above
+.PE
+.PP
+In order to write the Jacobian matrix, first let us rewrite the problem in terms of unit vectors $ua1$, $ua2$, $ub1$, and $ub2$. We can also rewrite ${OP} bar$ as $bold p$ and subsequently,
+.EQ I
+{OP} bar ~=~ {O A1} bar ~+~ {A1 A2} bar ~+~ {A2 P} bar
+~~~~~~~~~~~~~~~~~~~~~~~
+{OP} bar ~=~ {O B1} bar ~+~ {B2 H} bar ~+~ {H P} bar
+.EN
+.EQ I
+bold p ~=~ - l0 smallover 2 e bar sub x + l1 ua1 + l2 ua2
+~~~~~~~~~~~~~~~~~~~~~~
+bold p ~=~ l0 smallover 2 e bar sub x + l3 ub1 + l4 ub2
+.EN
+.PP
+Differentiating both of these equations with respect to time, we get
+.EQ I
+bold {p dot} ~=~ l1 q dot sub A1 E ua1 + l2 q dot sub A2 E ua2
+~~~~~~~~~~~~~~~~~~~~~
+bold {p dot} ~=~ l3 q dot sub B1 U ub1 + l4 q dot sub B2 E ub2
+.EN
+.PP
+Where $E ~=~ Emat$ is the rotation matrix.
+.PP
+Since $ua2$ and $ub2$ are the two unit vectors associated with the passive links. Multiplying the above equations by the transpose of these vectors, we obtain:
+.EQ I
+ua2 sup T bold {p dot} ~=~ l1 q dot sub A1 ua2 sup T E ua1 ~~+~~ l2 q dot sub A2 ua2 sup T E ua2
+~~~~~~~~~~
+ub2 sup T bold {p dot} ~=~ l3 q dot sub B1 ub2 sup T E ub1 ~~+~~ l4 q dot sub B2 ub2 sup T E ub2
+.EN
+.PP
+The product of a vector and its transpose is equal to 0. Hence the second terms in both of the above equations can be eliminated. By combining the remaining terms, we can form a the matrices:
+.EQ I
+left [ pile { ua2 sup T above ub2 sup T } right ] ~ bold {p dot } ~~=~~
+left [ matrix { ccol { l1 ua2 sup T E ua1 above 0 } ccol { 0 above l3 ub2 sup T E ub1 } } right ]~~
+left [ pile { q dot sub A1 above q dot sub B2} right ]
+.EN
+.PP
+If we substitute $A = left [ pile { ua2 sup T above ub2 sup T } right ]$ and $B = left [ matrix { ccol { l1 ua2 sup T E ua1 above 0 } ccol { 0 above l3 ub2 sup T E ub1 } } right ]$ then we have,
+.EQ I
+A bold {p dot} ~=~ B ~left [ pile { q dot sub A1 above q dot sub B2} right ]
+~~~\[rA]~~
+bold {p dot} ~=~ A sup -1 B ~left [ pile { q dot sub A1 above q dot sub B2} right ]
+.EN
+.PP
+Where Jacobian Matrix $J = A sup -1 B$
+.head 3 "Calculating the Inverse Jacobian Matrix"
+.EQ I
+A ~=~ left [ matrix { ccol { ca12 above cb12 } ccol { sa12 above sb12 } } right ]
+.EN
+.EQ I
+~~~~~\[rA]~~
+det ( A ) ~=~ sb12 ca12 - cb12 sa12
+.EN
+.sp -0.5
+.EQ 0 I
+~~~~~~~~~~~~~~~~~~~~~
+=~sin( qb1 + qb2 - qa1 - qa2 )
+.EN 0
+.sp -1
+.EQ I
+adj ( A ) ~=~ left [ matrix { ccol { sb12 above - cb12 } ccol { - sa12 above ca12 } } right ]
+.EN
+.EQ 0 I
+A sup -1 ~=~ 1 over {det ( A ) } adj ( A )
+.EN 0
+.sp -1
+.EQ I
+\[rA] ~~A sup -1 ~=~ 1 over {sin( qb1 + qb2 - qa1 - qa2 ) } ~~left [ matrix { ccol { sb12 above - cb12 } ccol { - sa12 above ca12 } } right ]
+.EN
+.head 3 "Calculating the Forward Jacobian Matrix"
+.PP
+Now, we find the values of $l1 ua2 sup T E ua1$ and $l3 ub2 sup T E ub1$.
+.EQ I
+l1 ua2 sup T E ua1 ~=~ l1 [ ca12 ~~~ sa12 ] ~ Emat ~ left [ pile { ca1 above sa1 } right ]
+.EN
+.EQ 0 I
+~~~~~~~~~~~~~~~~~=~
+l1 sin ( qa1 + qa2 - qa1 ) ~~=~ l1 sa2
+.EN
+.EQ I
+l3 ub2 sup T E ub ~=~ l3 [ cb12 ~~~ sb12 ] ~ Emat ~ left [ pile { cb1 above sb1 } right ]
+.EN
+.EQ 0 I
+~~~~~~~~~~~~~~~~~=~
+l3 sin ( qb1 + qb2 - qb1 ) ~~=~ l3 sin qb2
+.EN 0
+.EQ I
+\[rA] ~~B ~=~ left [ matrix { ccol { l1 sa2 above 0 } ccol { 0 above l3 sb2 } } right ]
+.EN
+.head 3 "Calculating the Jacobian Matrix"
+.PP
+We know that $J = A sup -1 B$
+.EQ I
+box {
+J ~=~ 1 over {sin( qb1 + qb2 - qa1 - qa2 } ~~
+left [ matrix { ccol { l1 sa2 sb12 above - l1 sa2 cb12 } ccol { - l3 sa12 sb2 above l3 ca12 sb2 } } right ] ~~
+}
+.EN
+.head 2 "Stiffness Matrix"
+.PP
+The Stiffness Matrix is usually written as $K sub x = J sup -T K sub theta J sup -1$. However, since Joint Stiffness $K sub theta$ is being ignored, the Cartesian Stiffness Matrix can be written as $K sub x = J sup -T J sup -1$. Where,
+.EQ I
+J ~=~ 1 over {sin( qb1 + qb2 - qa1 - qa2 } ~~
+left [ matrix { ccol { l1 sa2 sb12 above - l1 sa2 cb12 } ccol { - l3 sa12 sb2 above l3 ca12 sb2 } } right ] ~~
+.EN
 \#.so /home/sudarson/.config/groff/macros.ms
 .so /home/sudarson/.config/groff/closing_macros.ms

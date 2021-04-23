@@ -81,4 +81,52 @@ List of Equations
 .ds entry 21. Equation (21) \t . . .4
 .pdfhref L -D eq21 \*[entry]
 .br
+.ds entry 22. Equation (22) \t . . .4
+.pdfhref L -D eq22 \*[entry]
+.br
+.ds entry 23. Equation (23) \t . . .4
+.pdfhref L -D eq23 \*[entry]
+.br
+.ds entry 24. Equation (24) \t . . .4
+.pdfhref L -D eq24 \*[entry]
+.br
+.ds entry 25. Equation (25) \t . . .4
+.pdfhref L -D eq25 \*[entry]
+.br
+.ds entry 26. Equation (26) \t . . .5
+.pdfhref L -D eq26 \*[entry]
+.br
+.ds entry 27. Equation (27) \t . . .5
+.pdfhref L -D eq27 \*[entry]
+.br
+.ds entry 28. Equation (28) \t . . .5
+.pdfhref L -D eq28 \*[entry]
+.br
+.ds entry 29. Equation (29) \t . . .5
+.pdfhref L -D eq29 \*[entry]
+.br
+.ds entry 30. Equation (30) \t . . .5
+.pdfhref L -D eq30 \*[entry]
+.br
+.ds entry 31. Equation (31) \t . . .5
+.pdfhref L -D eq31 \*[entry]
+.br
+.ds entry 32. Equation (32) \t . . .5
+.pdfhref L -D eq32 \*[entry]
+.br
+.ds entry 33. Equation (32) \t . . .5
+.pdfhref L -D eq32 \*[entry]
+.br
+.ds entry 34. Equation (33) \t . . .5
+.pdfhref L -D eq33 \*[entry]
+.br
+.ds entry 35. Equation (34) \t . . .5
+.pdfhref L -D eq34 \*[entry]
+.br
+.ds entry 36. Equation (35) \t . . .6
+.pdfhref L -D eq35 \*[entry]
+.br
+.ds entry 37. Equation (36) \t . . .6
+.pdfhref L -D eq36 \*[entry]
+.br
 .bp
