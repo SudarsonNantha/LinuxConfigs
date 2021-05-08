@@ -57,7 +57,6 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh &					# Launch Polyb
 exec_always killall dunst
 exec_always --no-startup-id dunst --config ~/.config/dunst/dunstrc
 
-
 # 	Colours		#
 set $bg-color 	         #2f343f
 set $inactive-bg-color   #1A1A1A
@@ -78,6 +77,7 @@ client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color      
 
 bindsym $mod2+f exec "firefox"
 bindsym $mod2+t exec "thunar"
+bindsym $mod2+y exec "youtube-music-bin"
 bindsym $mod2+p exec "killall picom"
 
 # Print Screen
@@ -103,6 +103,15 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 # Screen brightness controls with notification
 bindsym XF86MonBrightnessUp exec xbacklight -inc 5
 bindsym XF86MonBrightnessDown exec xbacklight -dec 5
+
+# Multimedia controls
+#bindsym XF86AudioPlay exec playerctl play
+#bindsym XF86AudioPause exec playerctl pause
+#bindsym XF86AudioNext exec playerctl next
+#bindsym XF86AudioPrev exec playerctl previous
+bindsym $mod+Ctrl+space exec playerctl play-pause
+bindsym $mod+Ctrl+Right exec playerctl next
+bindsym $mod+Ctrl+Left exec playerctl previous
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -228,7 +237,7 @@ bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
 
 # Bind programs to specific workspaces
-assign [class="Thunderbird"] $ws1
+#assign [class="Thunderbird"] $ws1
 
 # Cycle through worksapces
 bindsym $mod+Tab workspace next

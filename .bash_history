@@ -1,500 +1,500 @@
-cd .config/groff/
-ls
-cd ~
-cd Videos/groff-video/
-vim groff_normal.ms 
-vim ~/.local/bin/compiler 
-cd ~
-cd .local/bin/
-vim compiler 
+rdesktop -a 16 -z -x m -P PC-B101-04.ec-nantes.fr
+rdesktop -g 100% -P -z PC-B101-04.ec-nantes.fr
+pacman -Ss freerdp
+sudo pacman -Syy
+sudo pacman -S freerdp rdesktop
 clear
-cd ~
-cd Videos/groff-video/
-vim videopoints.ms 
-cd Videos/groff-video/
-groff -Tpdf -U -tep -mspdf videopoints.ms > videopoints.pdf
-lear
+kinit
+kinit snanthacou2020
+klist
+man xfreerdp 
+xfreerdp /u:ec-nantes\snanthacou2020
+xfreerdp /u:ec-nantes\snanthacou2020 /v:ec-nantes.fr
+xfreerdp /u:ec-nantes\snanthacou2020 /v:ec-nantes
+xfreerdp /u:ec-nantes\snanthacou2020 /v:vpn.ec-nantes.fr
+xfreerdp /u:ec-nantes\snanthacou2020 /v:PC-B101-04.ec-nantes.fr
+xfreerdp /u:ec-nantes\snanthacou2020 /v:PC-B101-05.ec-nantes.fr
+xfreerdp /u:ec-nantes\snanthacou2020 /v:PC-B101-05.ec-nantes.fr
+xfreerdp /u:ec-nantes\snanthacou2020 /v:PC-B101-05.ec-nantes.fr
 clear
-groff -Tps -te -ms videopoints.ms > videopoints.ps && ps2pdf videopoints.ps 
-groff -Tps -te -ms videopoints.ms > videopoints.ps && ps2pdf videopoints.ps 
-groff -Tps -te -ms videopoints.ms > videopoints.ps && ps2pdf videopoints.ps 
-groff -Tps -te -mspdf videopoints.ms > videopoints.ps && ps2pdf videopoints.ps 
-groff -Tps -tepR -mspdf videopoints.ms > videopoints.ps && ps2pdf videopoints.ps 
-groff -Tps -ms videopoints.ms > videopoints.ps && ps2pdf videopoints.ps 
-groff -Tps -tepR -mspdf videopoints.ms > videopoints.ps && ps2pdf videopoints.ps 
-groff -Tps -tepR -mspdf videopoints.ms > videopoints.ps && ps2pdf videopoints.ps 
-groff -Tps -tepR -mspdf videopoints.ms > videopoints.ps && ps2pdf videopoints.ps 
-groff -Tps -tepR -mspdf videopoints.ms > videopoints.ps && ps2pdf videopoints.ps 
-groff -Tps -e -ms videopoints.ms > videopoints.ps && ps2pdf videopoints.ps 
-groff -Tps -e -mspdf videopoints.ms > videopoints.ps && ps2pdf videopoints.ps 
-groff -Tpdf -e -mspdf videopoints.ms > videopoints.pdf
-groff -Tpdf -U -e -mspdf videopoints.ms > videopoints.pdf
-cd .config/groff/
-pdfroff -U -tepR -mspdf --report ms_template.ms > ms_template.pdf 
-pdfroff -U -tepR -mspdf --report ms_template.ms > ms_template.pdf 
-pdfroff -U -tepR -mspdf --report ms_template.ms > ms_template.pdf 
-pdfroff -U -tepR -mspdf --report ms_template.ms > ms_template.pdf 
-pdfroff -U -tepR -mspdf --report ms_template.ms > ms_template.pdf 
-pdfroff -U -tepR -mspdf  ms_template.ms > ms_template.pdf 
-pdfroff -U -tepR -mspdf  ms_template.ms > ms_template.pdf 
-pdfroff -tepR -mspdf  ms_template.ms > ms_template.pdf 
-pdfroff -U -tepR -mspdf  ms_template.ms > ms_template.pdf 
-pdfroff -U -tepR -mspdf  ms_template.ms > ms_template.pdf 
-pdfroff -tepR -mspdf  ms_template.ms > ms_template.pdf 
-groff -pt -Tpdf -ms -m spdf -dPDF.EXPORT=1 -z ms_template.ms 2>&1 | grep '^.ds' | groff -pt -Tpdf -ms -m spdf ms_template.ms > ms_template.pdf 
+xfreerdp /u:snanthacou2020 /v:PC-B101-05.ec-nantes.fr
+xfreerdp /u:snanthacou2020 /v:PC-B101-05.ec-nantes.fr /f
+xfreerdp /dynamic-resolution /u:snanthacou2020 /v:PC-B101-05.ec-nantes.fr
+xfreerdp  /smart-sizing /u:snanthacou2020 /v:PC-B101-05.ec-nantes.fr
+xfreerdp /u:snanthacou2020 /v:PC-B101-05.ec-nantes.fr /f
+xfreerdp /u:snanthacou2020 /v:PC-B101-05.ec-nantes.fr /f /gfx:AVC444
+xfreerdp /u:snanthacou2020 /v:PC-B101-05.ec-nantes.fr /f /gfx[:RFX|AVC420|AVC444] +gfx-progressive
+xfreerdp /u:snanthacou2020 /v:PC-B101-05.ec-nantes.fr /f /gfx-h264[:AVC420|AVC444] +gfx-progressive
+xfreerdp /gfx +gfx-progressive -bitmap-cache -offscreen-cache -glyph-cache /u:snanthacou2020 /v:PC-B101-05.ec-nantes.fr /f
+xfreerdp /gfx +gfx-progressive -bitmap-cache -offscreen-cache -glyph-cache /u:snanthacou2020 /v:PC-B101-05.ec-nantes.fr
+xfreerdp /gfx +gfx-progressive -bitmap-cache -offscreen-cache -glyph-cache /u:snanthacou2020 /v:PC-B101-05.ec-nantes.fr
+rdesktop -g 1440x900 -P -z -x l -r sound:off -u snanthacou2020 PC-B101-04.ec-nantes.fr
 clear
-vim groff.toc 
-groff -tepR -mspdf ms_template.ms > ms_template.pdf 
-groff -Tpdf -tepR -mspdf ms_template.ms > ms_template.pdf 
-groff -Tpdf -U -tepR -mspdf ms_template.ms > ms_template.pdf 
-refer -e -p ~/Documents/bibliography ms_template.ms 
-refer -e -p ~/Documents/bibliography ms_template.ms > test.ms
-vim test.ms 
-clear
-refer ms_template.ms > test.ms
-vim test.ms 
-ls -1
-vim ~/Videos/groff-video/FiniteElements.ms 
-vim ms_template.ms 
-cd Test/Mazar/
-ls
-vim Mazar_General.m 
-cp Mazar_General.m Mazar_General_backup.m
-vim Mazar_General.m 
-clear
-cp Mazar_General.m Mazar_3D_v1.m
-mv Mazar_3D_v1.m Mazar_3D_v2.m 
-cp Mazar_General_backup.m Mazar_3D_v1.m
-octave-cli
-cd Test/Mazar/
-vim Mazar_3D_v1.m 
-cp Mazar_General_backup.m Mazar_3D_v1.m 
-cd Test/Mazar/
-octave-cli
-cd .config/groff/
-vim opening_macros.ms 
-vim closing_macros.ms 
-vim closing_macros.ms 
-vim macros.ms 
-vim toc.ms
-rm toc.ms 
-clear
-cd Examples/
-vim FiniteElements.ms 
-cd ..
-vim opening_macros.ms 
-vim closing_macros.ms 
-vim ms_template.ms 
-clear
-rm -r Examples/
-ls
-vim compileCommands 
-rm equations.ms 
-rm figures.ms 
-rm tables.ms 
+vim Examples/freerdp
+mv Examples/freerdp Examples/xfreerdp
+vim .config/groff/opening_macros.ms
 vim test.ms
-rm test.ms
-rm test.msclear 
-clear
-ls -1
-rm opening_macros.pdf 
-rm equations.pdf 
-ls -1
-clear
-ls -1
-rm closing_macros.pdf 
-rm figures.pdf 
-rm tables.pdf 
-clear
-ls -1
-git status
-cd ~
-clear
-git status
-rm -r .config/LosslessCut/
-rm test.pdf 
-mv FrenchOral02-04.docx Study/
-rm test.pdf 
-git status
-clear
-git add --all
-git status
-git commit -m "Groff modifications"
-cat Backup/.gitREADME 
-git pus -u origin master
-git push -u origin master
-clear
-cd .local/bin/
-ls
-vim executer 
-cd ~
-cp Videos/groff-video/drawing.ms ~/.config/groff/
-cd .config/groff/
-vim drawing.ms 
-vim drawing.ms 
-clear
-vim drawing.ms 
-cd .config/groff/
-vim ms_template.ms 
-vim .local/bin/executer 
-redshift -O 500
-redshift -O 3250
-clear
-cd .config/groff/
-vim ms_template.ms 
-cp opening_macros.ms opening_macros.ms.backup
-vim opening_macros.ms
-vim opening_macros.ms
-man groff
-cat .local/bin/compiler 
-cat .local/bin/ffrecord 
-cd Videos/ms/
-ls
-ffmpeg -fflags +igndts -f x11grab -video_size 1920x1080 -framerate 25 -i $DISPLAY -f alsa -i default -c:v libx265 -crf 28 -preset veryfast -c:a aac capture4.mp4
-cd .config/groff/
-vim ms_template.ms 
-cd .config/groff/
-vim drawing.
-vim drawing.ms 
-ffmpeg -i capture4.mp4 -c copy -an 4_noaudio.mp4
-clear
-ffmpeg -i 4_noaudio.mp4 -i My\ recording\ 28.wav -c:v copy -c:a aac Video4.mp4
-sudo reboot
-redshift -O 3250
-cd .config/groff/
-ls
-ls -1
-cat compileCommands 
-cat groff.toc 
-rm groff.toc 
-rm input.pdf 
-clear
-github status
-git status
-cd ~
-git status
-mv capture1.mp4 Videos/ms/
-ls Videos/ms/
-rm capture2.mp4 
-git status
-git add .config/groff/drawing.*
-git status
-git add --all
-git status
-git commit -m "Groff updates"
-cat Backup/.gitREADME 
-git push -u origin master
-clear
-cd .config/groff/
-vim equations.ms 
-cd ~
-vim Videos/groff-video/point.sent 
-vim Videos/groff-video/FiniteElements.ms 
-cd .config/groff/
-vim ms_template.ms 
-cd ~
-git status
-git add --all
-git commit -m "Updated figure number"
-cat Backup/.gitREADME 
-git push -u origin master
-clear
-htop
-ffmpeg -i capture5.mp4 -c copy -an 5_noaudio.mp4
-ffmpeg -i 5_noaudio.mp4 -i My\ recording\ 32.wav -c:v copy -c:a aac Video5.mp4
-cat .local/bin/ffrecord 
-cd Videos/ms/
-ls capture*
-ffmpeg -fflags +igndts -f x11grab -video_size 1920x1080 -framerate 25 -i $DISPLAY -f alsa -i default -c:v libx265 -crf 28 -preset veryfast -c:a aac capture5.mp4
-nmcli c show
-nmcli connect device vpn.ec-nantes.fr
-nmcli connect wifi vpn.ec-nantes.fr
+vim .config/groff/opening_macros.ms
+man xfreerdp 
+nmcli con
+nmcli con
+cat Examples/nmcli 
 nmcli con up id vpn.ec-nantes.fr
-cd .config/groff/
-vim ms_template.ms 
-cd .config/groff/
-vim opening_macros.ms
-cd .config/groff/
-cp ms_template.ms backup.ms 
-vim backup.ms 
-vim opening_macros.ms
-cd ~
-git status
-git add --all
-git commit -m "Changes to header and footer"
-cat Backup/.gitREADME 
-git push -u origin master
-clear
-cd /usr/share/groff/current/tmac/
-ls
-vim m.tmac 
-grep -r 1c .
-grep -r MC .
-grep -r 1C .
-vim m.tmac 
-ls
-vim ms.tmac 
-vim mm.tmac 
-vim me.tmac 
-vim m.tmac 
+redshift -O 3250
+cat Examples/xfreerdp 
+xfreerdp /u:snanthacou2020 /v:PC-B101-05.ec-nantes.fr
+xfreerdp /u:snanthacou2020 /v:PC-B101-05.ec-nantes.fr /f
+nmcli con
+nmcli up con id vpn.ec-nantes.fr
+nmcli con up id vpn.ec-nantes.fr
+xfreerdp /gfx-h264:AVC444  +gfx-progressive /bpp:24 /u:snanthacou2020 /v:PC-B101-05.ec-nantes.fr /f
+man xfreerdp 
+nmcli con
+nmcli con down id vpn-ec-nantes.fr
+nmcli con
+nmcli con up id vpn.ec-nantes.fr
+man xfreerdp 
+xfreerdp /gfx-h264:AVC444 +gfx-progressive /bpp:15 /u:snanthacou2020 /v:PC-B101-05.ec-nantes.fr /f
+man xfreerdp 
 cd Test/
-groff -Tpdf -U -tepR -ms test.ms > test.pdf
-groff -Tpdf -U -tepR -mspdf test.ms > test.pdf
-groff -Tpdf -U -tepR -mspdf -me test.ms > test.pdf
-groff -Tpdf -U -tepR -mspdf -mm test.ms > test.pdf
-groff -Tpdf -U -tepR -mm test.ms > test.pdf
-vim .local/bin/executer 
-ffmpeg -i Zoom\ Meeting\ 2021-03-15\ 08-26-20.mp4 -c:v libx264 -crf 18 -preset veryslow -c:a copy Video1.mp4
-ffmpeg -i Zoom\ Meeting\ 2021-03-15\ 08-26-20.mp4 -c:v libx264 -crf 18 -preset fast -c:a copy Video1.mp4
-ffmpeg -i Zoom\ Meeting\ 2021-03-15\ 10-17-17.mp4 -c:v libx264 -crf 18 -preset fast -c:a copy Video2.mp4
-ffmpeg -i Zoom\ Meeting\ 2021-03-15\ 10-41-22.mp4 -c:v libx264 -crf 18 -preset fast -c:a copy Video3.mp4
-sudo fdisk -l
-cd /usr/share/groff/current/font/
-ls
-cd devpdf/
-ls
-vim DESC 
-cd enc/
-ls
-vim text.enc 
-ls
-cd ..
-cd map/
-ls
-cd ..
-cd ..
-ls
-find -iname *.afm
-cd devps/
-vim freeeuro.afm 
-cd ..
-ls 
-grep -r font .
-clear
-grep -r fontname .r
-grep -r fontname .
-grep -r FontName .
-cd ..
-ls
-cd oldfont/
-ls
-cd devps/
-ls
-vom CB
-vim CB
-cd ..
-cd ..
-cd font/
-ls
-cd devpdf/
-ls
-vim ab
-vim AB
-vim AR
-ls
-cd ..
-ls
-cd devpdf/
-ls
-vim ZD
-vim HR 
-vim S
-vim download 
-vim download 
-cd ~
-vim .local/bin/executer 
-fc-list
-fc-list > fontlist
-vim fontlist 
-sudo pacman -Syy
-sudo pacman -S gs
-sudo pacman -S ghostscript
-cd /usr/share/
-cd ghostscript/9.53.3/
-cd Resource/
-ls
-cd Font/
-ls
-vim URWGothic-Book
-ls
-cd ..
-cd /usr/share/ghostscript/9.54.0/
-ls
-cd Resource/Font/
-ls
-cd ~
-sudo pacman -Rns groff
-sudo pacman -Rdd groff
-sudo pacman -S groff
-cd bin/
-vim eqn
-xxd eqn
-xxd eqn > vieweqpn
-vim vieweqpn 
-rm vieweqpn 
-hexdump -C eqn
-clear
-info groff
-info eqn
-cd /usr/
-find -iname *eqn*
-man yay
-cd ~
-cd Packages/
-ls
-cd groff-git/
-ls
-find -iname *eqn*
-grep -r over .
-clear
-vim eqn.cpp 
-objdump -D eqn-over.o 
-man eqn
-man groff
-cd ~
-vim .local/bin/executer 
-man dpic
-yay -Ss dpic
-yay -Syy
-yay -S dpic-git
-ls
-yay -S dpic
-clear
-sudo pacman -Syy
-vf Packages/
-cd Packages/
-yay -S dpic-git
-ls
-clear
-vim eqn.1 
-cp eqn.1 eqn.ms
-vim eqn.ms 
-vim eqn.cpp 
-vim eqn.ms 
-whereis eqn
-vim /usr/bin/eqn
-vim /usr/share/groff/current/
-cd /usr/share/groff/current/
-vim eign 
-cd tmac/
-ls
-vim e.tmac 
-vim ec.tmac 
-man eqn
-vim eqnrc 
-killall gedit
-cd Test/octave/
 octave-cli
-octave-cli
+mv Downloads/jadfh\ \(1\).txt Test/
 cd Test/
-mkdir octave
-cd octave/
-vim test.m
-vim slicerc.m
-mv slicerc.m sliderc.m
-vim sliderc.m 
-cp test.m example.m
-vim test.m 
-cd Test/octave/
-octave-cli
-cd Test/
-vim paper.ms
-vim paper.ms
-vim paper.ms
-vim paper.ms
-vim paper.ms
-vim paper.ms
-vim .local/bin/compiler 
-vim Test/paper.ms 
-cd Test/
-groff -Tps -ms test.ms > test.ps && ps2pdf test.ps
-vim Test/paper.ms 
-cd Test/
-vim test.ms 
-vim test.ms 
-cd ~
-vim .config/groff/ms_template.ms 
-vim .config/groff/ms_template.ms 
-cp .config/groff/tux.pdf Test/
-cd Test/
-img2pdf archlinux-logo-black.png 
-feh archlinux-logo-black.pdf 
-zathura archlinux-logo-black.pdf 
-cp archlinux-logo-black.pdf ~/.config/groff/
-cd /usr/share/groff/current/
-ls
-cd tmac/
-vim m.tmac 
-vim s.tmac 
-cd ~
-vim .config/groff/ms_template.ms 
-vim .config/groff/drawing.
+mv jadfh\ \(1\).txt jadfh.m
+vim jadfh.m 
+nmcli con
+vim .config/i3/config
+cat .config/i3/config
 vim .config/groff/drawing.ms 
-vim .config/groff/ms_template.ms 
-sudo pacman -S octave
-cat Test/Mazar/Mazar_1D.m 
-cd .config/groff/
-vim opening_macros.ms
-vim backup.ms 
-cd ~/Test/
+cd Test/
 vim test.ms 
-cd Test/
-groff -s -ms -M. test.ms > test.ps
-ps2pdf test.ps 
-cd Test/
-mkdir paper
-cp paper.ms paper
-cd paper/
-ls
-img2pdf *.png
-img2pdf *.png
-clear
+ls *.ms
+vim newgroff.ms 
+vim test_eqns.ms 
+vim test_eqns_eq.ms 
 vim paper.ms 
-cd ..
-mkdir ~/.config/groff/Examples/
-cp -R paper/ ~/.config/groff/Examples/
-cd ~/.config/groff/Examples/
-ls
-cd paper/
-ls
-vim paper.ms 
-cd ~
+vim Test/test_eqns_eq.ms 
+vim Test/test_eqns.ms 
+vim Test/paper.ms 
+ls Study/MEDET/Project2/
+git add Study/MEDET/Project2/
+git add Study/MEDET/Project2/ -f
 git status
-rm fontlist 
-cp french.docs Study/
-git status
-rm french.docs 
-git add -r .config/groff/Examples/
-git add.config/groff/Examples/
-git add .config/groff/Examples/
-git status
-git add --all
-git status
+git commit -m "MEDET Assignment"
 cat Backup/.gitREADME 
-git commit -m "Groff paper example"
 git push -u origin master
-cd .config/groff/Examples/paper/
+pacman -Ss texlive
+cd Test/
+mkdir latex
+cd latex/
+vim hello.tex
+pdflatx hello.tex 
+pdflatex hello.tex 
 ls
-vim paper.ms 
-ls /usr/share/groff/current/tmac/
-vim mn-test
-cp mn-test mn-test.ms
-vim ms-test.ms
-vim mn-test.ms
-img2pdf bike.png 
-man tbl
-yay -Ss hdtbl
-yay -Ss tbl
+evince hello.pdf 
+zathura hello.pdf &
+vim hello.tex
+pdflatex hello.tex 
+vim hello.tex
+pdflatex hello.tex 
 clear
-vim /usr/share/groff/current/tmac/hdtbl.tmac 
+pacman -Ss tikz
+clear
+cd ~
+cd Study/MEDET/Project2/
+ls
+vim 5R_Diagram.ms
+vim 5bar_mechanism.ms
+vim 5bar_mechanism.ms
+git status
+ls
+git add *
+git add * -f
+git status
+cd ~
+git commit -m "MEDET Assignment"
+cat Backup/.gitREADME 
+git push -u origin master
+git status
+killall zoom
 sudo pacman -Syy
-sudo pacman -Ss tldr
-sudo pacman -S tldr
+yay -Syy
+yay -S zoom
+sudo pacman -Rns thunderbird
 clear
-tldr groff
-pacman -Ss cheat
-yay -Ss cheat
+killall zoom
+htop
+neofetch
+nvidia-smi
+screenfetch
+neofetch
+man xfreerdp 
+cat Examples/nmcli 
+nmcli con ip id vpn.ec-nantes.fr
+nmcli con up id vpn.ec-nantes.fr
+ls Examples/
+cat Examples/xfreerdp 
+xfreeredp /u:snanthacou2020 /v:PC-B101-05.ec-nantes.fr /f /rfx
+xfreerdp /u:snanthacou2020 /v:PC-B101-05.ec-nantes.fr /f /rfx
+vim .config/groff/Examples/paper/paper.ms 
+cd Study/MEDET/Project1/
+ls
+cd Images/
+ls
+thunar
+cp Centrale_Nantes_Logo.pdf /home/sudarson/Study/MEDET/Project2/
+cd ..
+cd ..
+cd Project2/
+ls
+cd ..
+cd Project1/
+vim groff_normal.ms 
+nmcli con up id vpn.ec-nantes.fr
+cat Examples/xfreerdp
+xfreerdp /u:snanthacou2020 /v:PC-B101-05.ec-nantes.fr /f /gfx
+cd Study/MEDET/Project2/
+ls
+vim 5bar_mechanism.ms 
+cp 5bar_mechanism.ms Final.ms
+vim Final.ms 
+sudo pacman -Syy
+nmcli con
+sudo pacman -Syy
+sudo pacman -Ss pctave
+sudo pacman -Ss octave
 clear
-tldr refer
-tldr pic
-tldr ffmpeg
+nmcli con up id vpn.ec-nantes.fr
+cat Examples/xfreerdp 
+xfreerdp /u:snanthacou2020 /v:PC-B101-05.ec-nantes.fr /f
+nmcli con
+xfreerdp /u:snanthacou2020 /v:PC-B101-05.ec-nantes.fr /f
+xfreerdp /u:snanthacou2020 /v:PC-B101-06.ec-nantes.fr /f
+nmcli con
+cd Study/MEDET/Project2/
+mkdir test
+cd test/
+vim fun.m
+vim nonlcon.m
+vim testfun.m
+cd Study/MEDET/Project2/test/
+octave-cli
+cd Study/MEDET/Project2/
+ls
+mkdir matlab
+cd matlab/
+cd ..
+rm matlab/
+rm -R matlab/
+mkdir opt_2R
+cd opt_2R/
+vim nlcon.m
+vim getJacobian.m
+vim nlcon.m 
+vim 2Rscript.m
+vim 2Rscript.m
+ls
+cp  2Rscript.m test.m
+rm 2Rscript.m 
+mv test.m opt2R.m
+vim opt2R.m 
+cd Study/MEDET/Project2/opt_2R/
+vim nlcon.m 
+cd Study/MEDET/Project2/
+vim Final.ms 
+cd Study/MEDET/Project2/opt_2R/
+ls
+vim nlcon.m 
+octave-cli
+vim octave/optim-1.6.1/private/__lm_feasible__.m 
+vim octave/optim-1.6.1/private/__dfdp__.m 
+cd Downloads/
+ls *.m
+vim Exercise1.m 
+vim nonlcondex1 
+octave-cli
+cd Study/MEDET/Project2/opt_2R/
+octave-cli
+cd Study/MEDET/Project2/opt_2R/
+ls
+vim opt2R.m 
+nmcli con up id vpn.ec-nantes.fr
+cat Examples/xfreerdp 
+xfreerdp /u:snanthacou2020 /v:PC-B101-05.ec-nantes.fr /f
+nmcli con
+nmcli con up id vpn.ec-nantes.fr
+cat Examples/xfreerdp 
+xfreerdp /u:snanthacou2020 /v:PC-B101-05.ec-nantes.fr /f
+nmcli con up id vpn.ec-nantes.fr
+xfreerdp /u:snanthacou2020 /v:PC-B101-05.ec-nantes.fr /f
+nmcli con down id vpn.ec-nantes.fr
+nmcli con
+nmcli con up id vpn.ec-nantes.fr
+xfreerdp /u:snanthacou2020 /v:PC-B101-05.ec-nantes.fr /f
+xfreerdp /u:snanthacou2020 /v:PC-B101-05.ec-nantes.fr /f
+nmcli con up id vpn.ec-nantes.fr
+nmcli con up id vpn.ec-nantes.fr
+xfreerdp /u:snanthacou2020 /v:PC-B101-05.ec-nantes.fr /f
+cd Study/MEDET/Project2/opt_2R/
+ls
+cd ..
+vim Final.ms 
+pdftk Final.pdf cat 2-end output test.pdf
+evince test.pdf &
+vim Final.ms 
+pdftk Final.pdf cat 2-end output test.pdf
+pdftk Final.pdf cat 2-end output test.pdf
+evince test.pdf &
+vim Final.ms 
+pdftk Final.pdf cat 2-end output test.pdf
+evince test.pdf &
+clear
+vim test.ms
+nmcli con
+nmcli con up id Wifi-ECN
+nmcli con
+nmcli con up id Moto\ G5+
+nmcli con
+nmcli con down id Moto\ G5+ 
+nmcli con up id Wifi-ECN 
+cat ~/Desktop/merge_vido_commands.txt 
+ls -a ENGMA_2021-03-29
+ls -a ENGMA_2021-03-29*
+ls -a ENGMA_2021-03-29* > paths
+vim paths 
+ffmpeg -f concat -safe 0 -i paths -c copy 2021-03-29.mp4
+ls -a ENGMA_2021-03-22* > paths
+vim paths 
+ffmpeg -f concat -safe 0 -i paths -c copy 2021-03-22.mp4
+cd 2021-03-15/
+ls
+ls -a Video* > paths
+sed -e 's/^/file /' paths > paths
+cat paths 
+cat paths 
+ls -a Video* > paths
+cat paths 
+sed -e 's/^/file /' paths > paths
+cat paths 
+ls -a Video* > temp
+sed -e 's/^/file /' temp > paths
+cat paths 
+ffmpeg -f concat -safe 0 -i paths -c copy 2021-03-15.mp4
+cd ..
+cd ..
+cd 2021-03-08/
+ls
+cd ..
+cd ..
+cd 2021-02-08/
+ls
+ls -a * > temp
+sed -e 's/^/file /' temp > paths
+cat paths 
+ffmpeg -f concat -safe 0 -i paths -c copy 2021-02-08.mp4
+cd ..
+cd 2021-02-01/
+ls
+ls -a * > temp
+sed -e 's/^/file /' temp > paths
+cat paths 
+ffmpeg -f concat -safe 0 -i paths -c copy 2021-02-01.mp4
+cd ..
+cd 2021-02-15/
+ls -a * > temp
+sed -e 's/^/file /' temp > paths
+cat paths 
+ffmpeg -f concat -safe 0 -i paths -c copy 2021-02-15.mp4
+cd ..
+exit
+cd Pictures/
+feh wallhaven-230531.jpg 
+feh wallhaven-230531.jpg 
+feh wallhaven-230531.jpg 
+sudo pacman -Ss xclock
+sudo pacman -S xorg-xclock
+cd ~
+mpv Facebook\ video\ #10157876067571479-10157876067571479.mp4 
+clear
+yay -S i3-swalloq
+yay -S i3-swallow
+i3-swallow Facebook\ video\ #10157876067571479-10157876067571479.mp4 
+i3-swallow mpv Facebook\ video\ #10157876067571479-10157876067571479.mp4 
+clear
+cd Test/
+evince equations.pdf 
+evince equations.pdf 
+evince equations.pdf 
+cd Pictures/
+feh wallhaven-230531.jpg 
+yay -Ss i3-swallow
+yay -S i3-swallow
+clear
+ls
+mpv Facebook\ video\ #10157876067571479-10157876067571479.mp4 
+clear
+mpv Facebook\ video\ #10157876067571479-10157876067571479.mp4 
+clear
+cd Pictures/
+ls
+feh Dyno.png 
+whereis i3-swallow
+man i3-swallow
+i3-swallow 
+yay -Rns i3-swallow
+clear
+cd ~
+cd Packages/
+ls
+git clone https://github.com/jamesofarrell/i3-swallow
+cd i3-swallow
+python3 -m pip install -r requirements.txt
+sudo pacman -Ss pip
+sudo pacman -S pip
+python3 -m pip install -r requirements.txt
+sudo pacman -Ss python-pip
+sudo pacman -S python-pip
+python3 -m pip install -r requirements.txt
+ls
+make install
+python3 -m pip install -r requirements.txt
+make install
+pip3 install i3ipc
+cd ~
+cd .config/i3/
+vim i3-swallow.py
+chmod +x i3-swallow.py 
+python3 i3-swallow.py 
+vim config
+xclock
+xclock
+python3 i3-swallow.py 
+ls
+rm i3-swallow.py 
+vim config
+cd ~
+vim .bashrc
+cd Pictures/
+feh wallhaven-230531.jpg 
+cd ..
+ls
+t
+man trans
+thunar
+i3-swallow thunar
+sudo pacman -U /var/cache/pacman/pkg/qt5-base-5.15.1-3-x86_64.pkg.tar.zst 
+man qt-base
+pacman -Ss qt5-base
+sudo pacman -Syu
+sudo pacman -Syu
+pacman -Qs stremio-beta
+pacman -Ss icu
+yay -Rns stremio-beta
+sudo pacman -S stremio-beta
+sudo pacman -Ss icu
+yay -Ss icu64
+yay -S icu64
+yay -S stremio-beta
+stremio 
+sudo pacman -S qt-base
+sudo pacman -S qt5-base
+stremio 
+yay -Ss sonarr
+yay -S sonarr
+sudo systemctl daemon-reload
+sudo systemctl enable --now sonarr
+clear
+sudo systemctl disable sonarr
+sudo pacman -Rns sonarr stremio
+sudo pacman -Rns sonarr stremio-beta
+clear
+yay -Ss ombi
+pacman -Qm
+man pacman
+cd Downloads/Telegram\ Desktop/
+mpv The.Simpsons.S04E01.MULTi.DVDRip.AAC.x264-ZiGZag.mkv 
+baka-mplayer The.Simpsons.S04E01.MULTi.DVDRip.AAC.x264-ZiGZag.mkv 
+sudo pacman -Rdd qt5-base
+sudo pacman -Ss qt5-base
+sudo pacman -S qt5-base
+baka-mplayer The.Simpsons.S04E01.MULTi.DVDRip.AAC.x264-ZiGZag.mkv 
+cd Downloads/Telegram\ Desktop/
+vlc The.Simpsons.S04E01.MULTi.DVDRip.AAC.x264-ZiGZag.mkv 
+cd Downloads/
+cd Telegram\ Desktop/
+mpv The.Simpsons.S04E01.MULTi.DVDRip.AAC.x264-ZiGZag.mkv 
+cd Study/ENGMA/
+ls
+cd Python_Assignements/
+jupyter notebook 
+clear
+cd ~
+sudo pacman -Syy
+yay -Ss stremio
+yay -S stremio
+stremio
+killall stremio
+stremio
+yay -Rns stremio
+yay -Ss stremio
+yay -S stremio-beta
+stremio 
+yay -Rns stremio-beta
+yay -Ss overseer
+yay -Ss overseerr
+yay -S overseerr
+yay -S stremio-beta
+stremio 
+killall stremio
+stremio 
+sudo pacman -Ss qt5-base
+sudo pacman -S qt5-base
+clear
+sudo pacman -Syu
+sudo pacman -S stremio-beta
+yay -S stremio-beta
+stremio
+cat Desktop/merge_vido_commands.txt 
+ffmpeg -i Why\ NASCAR\ Is\ Getting\ Kinda\ Weird-ijjxidpq154.mkv -ss 00:00:00 to 00:00:30 -c:v copy -c:a copy nascar.mp4
+ffmpeg -i Why\ NASCAR\ Is\ Getting\ Kinda\ Weird-ijjxidpq154.mkv -ss 00:00:00 -to 00:00:30 -c:v copy -c:a copy nascar.mp4
+ffmpeg -i nascar.mp4 -vcodec libx264 -acodec aac nascar2.mp4
+man youtube-dl 
+youtube-dl https://www.youtube.com/watch?v=ijjxidpq154&t=28s
+cd Test/
+vim test.ms 
+vim paper.ms 
+groff -mspdf -UT pdf -p paper.ms > paper.pdf
+cd ..
+cd Documents/
+ls
+mkdir Jobs
+cd Jobs/
+vim motivation1.ms
+cp motivation1.pdf Armor_Motivation.pdf
+vim cover
+sudo pacman -Rns stremio-beta
+clear
+cd .config/groff/Examples/resume/
+cp cv.ms resume.ms
+vim resume.ms 
+vim resume.ms 
+cd ~
+cd Test/
+ls
+vim test.ms 
+cd ~
+cd .config/groff/Examples/resume/
+ls
+cd ..
+cp -R resume/ ~/Documents/Jobs/
+ls ~/Documents/Jobs/resume/
+cd resume/
+ls
+vim cv.ms 
+cd .config/groff/Examples/resume/
+vim cv.ms 
+vim resume.ms 
+cd .config/groff/Examples/resume/
+img2pdf tux2.png 
+cd .config/groff/Examples/resume/
+vim cv.ms 

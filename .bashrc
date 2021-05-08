@@ -59,10 +59,12 @@ shopt -s autocd		# Auto change directory
 alias ls="ls -hN --color=auto --group-directories-first"
 #alias cat="echo 'This is actually highlight, check .bashrc aliases for cat' && echo && highlight --out-format=ansi"
 alias mkdir="mkdir -pv"
-alias t="trans"
+alias t="trans"                     # Google translate
+alias evince="i3-swallow evince"    # i3-swallow aliases
+alias feh="i3-swallow feh"
 
 # Paths for executable files
-export PATH=$PATH:/usr/bin/thunderbird
+#export PATH=$PATH:/usr/bin/thunderbird
 export PATH=$PATH:/home/sudarson/.local/bin/
 ################################################################################
 

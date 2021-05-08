@@ -1,38 +1,21 @@
 .EQ
-define cancel 'special Ca'
-.EN
-.de Ca
-.ds 0s \
-\Z'\\*(0s'\
-\v'\\n(0du'\
-\D'l \\n(0wu -\\n(0hu-\\n(0du'\
-\v'\\n(0hu'
-..
-.EQ
-define box 'special Bx'
-.EN
-.de Bx
-.  ds 0s \
-\Z'\h'1n'\\*(0s'\
-\Z'\
-\v'\\n(0du+1n'\
-\D'l \\n(0wu+2n 0'\
-\D'l 0 -\\n(0hu-\\n(0du-2n'\
-\D'l -\\n(0wu-2n 0'\
-\D'l 0 \\n(0hu+\\n(0du+2n'\
-'\
-\h'\\n(0wu+2n'
-.  nr 0w +2n
-.  nr 0d +1n
-.  nr 0h +1n
-..
-.nr no-head-numbering 1 \" Uncomment to disable equation/figure/table numbering based on heading
-.so /home/sudarson/.config/groff/opening_macros.ms
-.head "2R Mechanism"
-.head "5-bar Mechanism"
-.head 2 "Defining the problem"
-.EQ 0
 delim $$
+.EN
+.EQ
+define t1 'theta sub 1'
+define t2 'theta sub 2'
+define s1 'sin t1'
+define s2 'sin t2'
+define s12 'sin ( t1 + t2 )'
+define s1_2 'sin sup 2 t1'
+define s2_2 'sin sup 2 t2'
+define s12_2 'sin sup 2 ( t1 + t2 )'
+define c1 'cos t1'
+define c2 'cos t2'
+define c12 'cos ( t1 + t2 )'
+define c1_2 'cos sup 2 t1'
+define c2_2 'cos sup 2 t2'
+define c12_2 'cos sup 2 ( t1 + t2 )'
 define A1 'A sub 1'
 define A2 'A sub 2'
 define B1 'B sub 1'
@@ -64,7 +47,102 @@ define ua2 'u bar sub {A 2}'
 define ub1 'u bar sub {B 1}'
 define ub2 'u bar sub {B 2}'
 define Emat 'left [ matrix { ccol {0 above 1} ccol {-1 above 0} } right ]'
-.EN 0
+.EN
+.EQ
+define cancel 'special Ca'
+.EN
+.de Ca
+.ds 0s \
+\Z'\\*(0s'\
+\v'\\n(0du'\
+\D'l \\n(0wu -\\n(0hu-\\n(0du'\
+\v'\\n(0hu'
+..
+.EQ
+define box 'special Bx'
+.EN
+.de Bx
+.  ds 0s \
+\Z'\h'1n'\\*(0s'\
+\Z'\
+\v'\\n(0du+1n'\
+\D'l \\n(0wu+2n 0'\
+\D'l 0 -\\n(0hu-\\n(0du-2n'\
+\D'l -\\n(0wu-2n 0'\
+\D'l 0 \\n(0hu+\\n(0du+2n'\
+'\
+\h'\\n(0wu+2n'
+.  nr 0w +2n
+.  nr 0d +1n
+.  nr 0h +1n
+..
+.nr no-head-numbering 1 \" Uncomment to disable equation/figure/table numbering based on heading
+.so /home/sudarson/.config/groff/opening_macros.ms
+.head "2R Mechanism"
+.PS 3
+A: circle invis at (0,0)
+C: circle invis at (1,0.8)
+G: circle invis at (0.4,1.6)
+
+B: circle invis at (-0.065,0.076)
+D: circle invis at (0.941,0.881)
+E: circle invis at (0.052, -0.085)
+F: circle invis at (1.06,0.72)
+
+H: circle invis at (0.48,1.659)
+I: circle invis at (1.082,0.857)
+J: circle invis at (0.329,1.529)
+K: circle invis at (0.917,.744)
+
+line from B to D "$l1$   " "" above
+line from E to F
+line from H to I
+line from J to K "$l2$" rjust below
+
+arc rad 0.1 from B to E
+arc rad 0.1 from H to J
+arc rad 0.1 from K to I
+
+move to D
+line down 0.057 right -0.072 color "white" thickness 1
+
+circle rad 0.01 fill 1 at A
+circle rad 0.01 fill 1 at C
+circle rad 0.01 fill 1 at G
+
+line dashed from A to C
+line dashed up 0.3 right 0.36
+line dashed from C to G
+
+line up 2 from A ->
+line right 2 from A ->
+circle invis "$x$" at (1.9,-0.15)
+circle invis "$y$" at (-0.15,1.9)
+
+T1: circle invis rad 0.01 at (0.6,0)
+T2: circle invis rad 0.01 at (0.45,0.355)
+arc from T1 to T2 <-> width 0.03 height 0.05
+move to T2
+circle invis "$theta sub 1$" at (0.7,0.2)
+
+T3: circle invis rad 0.01 at (1.24,1)
+T4: circle invis rad 0.01 at (0.775,1.1)
+arc from T3 to T4 <-> width 0.03 height 0.05
+circle invis "$theta sub 2$" at (1,1.3)
+
+circle invis "$A$" at (-0.15,-0.1)
+circle invis "$B$" at (1.17,0.8)
+circle invis "$C$" at (0.35,1.77)
+
+.PE
+.head 2 "Direct Geometric Model"
+.EQ
+x = l1 c1 + l2 c12
+~~~~~
+y = l1 s1 + l2 s12
+.EN
+.head "5-bar Mechanism"
+.head 2 "Defining the problem"
 .PS 3.5
 r = 0.06
 linethick = 1.5
