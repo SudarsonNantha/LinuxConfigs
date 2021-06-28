@@ -48,7 +48,7 @@
 .
 \# Macros for the right side of the page
 .de line
-\D'l 4.9i 0'\D'P -0.6m 0 0 -0.6m 0.6m 0'
+\D'l 4.9i 0 '\D'P -0.6m 0 0 -0.6m 0.6m 0'
 ..
 .de head
 \m[navy]\fR\s(14\\$*\fR\s(10\m[]

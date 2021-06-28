@@ -62,7 +62,7 @@ alias mkdir="mkdir -pv"
 alias t="trans"                     # Google translate
 alias evince="i3-swallow evince"    # i3-swallow aliases
 alias feh="i3-swallow feh"
-
+alias red="redshift -O 3250"
 # Paths for executable files
 #export PATH=$PATH:/usr/bin/thunderbird
 export PATH=$PATH:/home/sudarson/.local/bin/

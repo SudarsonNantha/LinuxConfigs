@@ -1,0 +1,53 @@
+#!/usr/bin/env sh
+#
+# A rofi powered menu to execute power related action.
+# Uses: amixer mpc poweroff reboot rofi rofi-prompt
+
+power_off='⏻  Shutdown'
+reboot='🔃  Reboot'
+lock='🔒  Lock Screen'
+suspend='🕒  Suspend'
+log_out='➡  Logout'
+hibernate='⏾  Hibernate'
+
+chosen=$(printf '%s;%s;%s;%s;%s;%s\n' "$lock" "$log_out" "$suspend" "$hibernate" "$reboot" "$power_off"    \
+    | rofi -theme customrofi \
+           -dmenu \
+           -sep ';' \
+           -selected-row 2)
+
+case "$chosen" in
+    "$power_off")
+        rofi-prompt --query 'Shutdown?' && poweroff
+        ;;
+
+    "$reboot")
+        rofi-prompt --query 'Reboot?' && reboot
+        ;;
+
+    "$lock")
+        # TODO Add your lockscreen command.
+        betterlockscreen -l
+        ;;
+
+    "$suspend")
+        # Pause music and mute volume before suspending.
+        mpc --quiet pause
+#        amixer set Master mute
+        systemctl suspend
+        ;;
+
+    "$hibernate")
+        # Pause music and mute volume before suspending.
+        mpc --quiet pause
+#        amixer set Master mute
+        systemctl hibernate
+        ;;
+
+    "$log_out")
+        loginctl terminate-session $XDG_SESSION_ID
+        ;;
+
+    *) exit 1 ;;
+esac
+
