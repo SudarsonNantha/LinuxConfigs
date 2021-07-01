@@ -1,500 +1,500 @@
-pip list
-pipenv install tensorflow
-pip list
-exit
-ls
-ls -a
-ls -1
-cd Work/
-ls
-mkdir Gravity
-cd Gravity/
-mkdir Test
-cd Test
+vim config
+vim ~/.local/bin/rofi-power-menu
+yay -Ss Iosevka
+yay -Ss Iosevka-nerd
+yay -Ss icomoon
+yay -S ttf-icomoon-feather
+yay -Ss material-icons
+yay -S otf-material-icons-git
+yay -Ss sfcompact
+yay -Ss sf-compact
+otf-apple-sf-compact
+yay -S otf-apple-sf-compact
+yay -Ss font-logo
+yay -Ss ttf-font-logos
+yay -S ttf-font-logos
 clear
-pipenv install requests
-pipenv install tensorflow pillow keras
-pipenv install keras-nightly
-pipenv uninstall keras
-pipenv uninstall keras-nightly
-clear
-ls
-cat Pipfile
-vim Pipfile
-pipenv shell
-pipenv --python 3.8
-sudo pacman -Ss pyenv
-sudo pacman -S pyenv
-clear
-pipenv --python 3.8
-pip check
-pipenv check
-clear
-pipenv shell
-sudo pacman -S python python3
-clear
-pipenv --python 3.6
-vim Pipfile
-pipenv check
-vim Pipfile
-pipenv check
-pip list
-pipenv shell
-sudo pacman -Ss anaconda
-sudo pacman -Ss conda
-yay -Ss anaconda
-killall picom
- . /home/sudarson/.local/share/virtualenvs/Test-g4N_IzB-/bin/activate
-python3
-python
-pip install --upgrade tensorflow
-python -c "import tensorflow as tf;print(tf.reduce_sum(tf.random.normal([1000, 1000])))"
-clear
-python
-clear
-python
-killall zoom
-killall picom
-cat Examples/xfreerdp 
-nmcli con up id vpn.ec-nantes.fr
-nmcli con up id vpn.ec-nantes.fr
-xfreerdp /u:snanthacou2020 /v:PC-B101-05.ec-nantes.fr /f
-nmcli con down id vpn.ec-nantes.fr
-nmcli con up id vpn.ec-nantes.fr
-xfreerdp /u:snanthacou2020 /v:PC-B101-05.ec-nantes.fr /f
-nmcli con down id vpn.ec-nantes.fr
-ffmpeg -loop 1 -i clip-2021-06-02_19\:32\:30.png -i Kanmani.aac -c:v libx264 -tune stillimage -c:a aac -b:a 192k -pix_fmt yuv420p -shortest out.mp4
-ffmpeg -loop 1 -i raja.png -i Kanmani.aac -c:v libx264 -tune stillimage -c:a aac -b:a 192k -pix_fmt yuv420p -shortest out.mp4
-ffmpeg -loop 1 -i raja.png -i Kanmani.aac -c:v libx264 -tune stillimage -c:a aac -b:a 192k -pix_fmt yuv420p -shortest out.mp4
-killall picom 
-sudo pacman -Stt
-sudo pacman -Syy
-yay -S zoom
-killall picom 
-htop
-killall picom
-sudo pacman -Syy
-sudo pacman -Ss midori
-sudo pacman -S midori
-sudo pacman -Syu
-clear
-pdfjam Gmail\ -\ Pay\ your\ rent\ Confirmation\ of\ payment.pdf Gmail\ -\ Pay\ your\ rent\ Confirmation\ of\ payment2.pdf output* -o rent.pdf
-mv output.pdf output1.pdf 
-pdfjam Gmail\ -\ Pay\ your\ rent\ Confirmation\ of\ payment.pdf Gmail\ -\ Pay\ your\ rent\ Confirmation\ of\ payment2.pdf output* -o rent.pdf
-exit
-vim cv.ms 
-cat Examples/xfreerdp 
-nmcli con up id vpn.ec-nantes.fr
-chmod +x Examples/xfreerdp 
-cd Examples/
-./xfreerdp 
-trans Bonjour à toutes et à tous,
- 
-Le Conseil d’Administration de l’Ecole Centrale de Nantes vote chaque année la répartition d’une enveloppe budgétaire (de 80 000 €) dédiée à la vie associative sur le campus, quels que soient les projets et les porteur·se·s concerné·e·s.
-man trans
-trans -shell -brief
-killall picom
-nmcli con show
-nmcli con show
-clear
-cat Desktop/merge_vido_commands.txt 
-ls -a
-cd Study/STRME/New\ Folder/
-clear
-ls -a
-cat ~/Desktop/ffmpeg_recording.txt 
-clear
-cat ~/Desktop/merge_vido_commands.txt 
-ls -a > file1
-cat file1 
-ls -a | grep STRME
-ls -a | grep STRME > file1
-cat file1 
-sed -e 's/^/file /' file1 > paths
-cat paths 
-ffmpeg -f concat -safe 0 -i paths -c copy output.mp4
-clear
-ls -a | grep STRME > file1
-sed -e 's/^/file /' file1 > paths
-ffmpeg -f concat -safe 0 -i paths -c copy output.mp4
-nmcli con up id vpn.ec-nantes.fr
-cp Examples/xfreerdp .local/bin/
-cd .local/bin/
-cat ffrecord 
-vim xfreerdp 
-mv xfreerdp ECN-Remote-Desktop
-mv ECN-Remote-Desktop ECN-Connect
-cp ECN-Connect ECN-QuickStart
-cp ECN-Connect ECN-Remote-Desktop
-vim ECN-QuickStart 
-vim ECN-Connect 
-vim ECN-Remote-Desktop 
-clear
-exit
-ECN-Disconnect 
-ECN-Disconnect 
-ECN-Connect 
-ECN-Disconnect 
-ECN-Connect 
-ECN-Disconnect 
-clear
-nmcli con show
-ECN-QuickStart 
-cd .local/bin/
-vim ECN-Connect 
-cp ECN-Connect ECN-Disconnect
-vim ECN-Disconnect 
-vim ECN-Disconnect 
-vim ECN-Connect 
-vim ECN-Connect 
-vim ECN-Disconnect 
-ls /etc/NetworkManager/system-connections/
-sudo ls /etc/NetworkManager/system-connections/
-sudo vim /etc/NetworkManager/system-connections/vpn.ec-nantes.fr.nmconnection
-cd /etc/NetworkManager/system-connections/
-su
-su
-sudo service network-manager restart
-sudo systemctl restard network-manager
-sudo systemctl restart network-manager
-sudo systemctl restart NetworkManager.service
-nmcli con show
-nmcli con up id vpn.ec-nantes.fr
-nmcli con show
-nmcli con down id vpn.ec-nantes.fr
-nmcli con show
-clear
-exit
-ffrecord Solidworks
-sudo pacman -Syy
-sudo pacman -Syu
-sudo os-prober
-cd ~
-clear
-sudo fdisk -l
-cat /etc/fstab
-sudo lsblk -f
-clear
-sudo fdisk -l
-su
-sudo vim /etc/default/grub
-uname -r
-uname -r
-uname -r
-uname -r
-uname -r
-uname -r
-uname -r
-uname -r
-sensors
-htop
-pacman -Ss bashtop
-sudo pacman -S bashtop
-bashtop 
-bashtop 
-sudo pacman -Ss glances
-glances
-sudo pacman -Rns glances
-clear
-bashtop 
-ECN-QuickStart 
-rm -R X30\ -\ Copie\ \(2\)/
-mv Y90Angle X90
-mv Y90Angle\ -\ Copie/ X-90
-mv X45\ -\ Copie/ X-45
-mv X60\ -\ Copie/ X-60
-cd X0/
-ls
-rename 's/X/Y/' *.PNG
-ls
-rename 's/X/Y' *.PNG
-ls
-rename -vn 's/*X/Y/' *
-ls
-rename 's/X/Y/' *.PNG
-ls
-rename -n 's/Y/X/' *
-rename -n X Y *
-rename -n X Y *.PNG
-rename -n Stress Pie *.PNG
-rename -n 's/Stress/Pie/' *.PNG
-rename -n 's/Stress/Pie' *.PNG
-ls
-clear
-kaar 
-ls
-kaar 
-ls
-clear
-ls
-tree
-cd ..
-cd X30/
-ls
-kaar 
-clear
-ls
-cd ..
-cd 45
-cd X45/
-ls
-kaar 
-clear
-kaar 
-cd 
-cd X60
-ls
-cd Work/Kaar/New\ Version\ 2/
-cd X60/
-ls
-kaar 
-cd ..
-cd X-60/
-kaar 
-cd ..
-cd X90/
-kaar 
-cd ..
-cd X-90/
-kaar 
-cd ..
-cd X-45/
-kaar 
-cd ..
-cd X-30/
-kaar 
-cd ..
-cd X45
-ls
-kaar 
-pwd
-cd ..
-cd ..
-cd Renamed\ Files/
-cd X45/
-ls
-kaar 
-ECN-QuickStart 
-ECN-Disconnect 
-man rename
-man rename
-tldr rename
-yay -Ss prename
-rename --version
-clear
-cd .local/bin/
-ls
-cp ffrecord kaar
-vim kaar 
-ls
-ncdu
-cd ..
-ncdu
-cd ?
-cd /
-ls
-sudo ncdu
-clear
-sudo pacman -Syu
-sudo pacman -Syy
-sudo pacman -Syu
-sudo pacman -Ss bspwm
-sudo pacman -S bspwm
-clear
-mkdir ~/.config/sxhkd
-cp /usr/share/doc/bspwm/examples/bspwmrc ~/.config/sxhkd/
-ls .config/sxhkd/
-cd .config/sxhkd/
-chmod +x bspwmrc 
-vim bspwmrc 
-cd ..
-ls
-rm -R sxhkd/
-clear
-install -Dm755 /usr/share/doc/bspwm/examples/bspwmrc ~/.config/bspwm/bspwmrc
-install -Dm644 /usr/share/doc/bspwm/examples/sxhkdrc ~/.config/sxhkd/sxhkdrc
-cd bspwm/
-ls
-chmod +x bspwmrc 
-ls
-cd ..
-cd ..
-vim .xinitrc 
-vim .bashrc
-sudo vim /etc/xdg/picom.conf 
-vim .config/i3/config
-vim .config/sxhkd/sxhkdrc 
-startx 
-clear
-systemctl reboot
-lightdm
-sudo lightdm
-nmcli show
-nmcli con show
-clear
-pacman -Ss xorg-server
-sudo pacman -S xorg-server-xephyr
-clear
-sudo lightdm --test-mode --debug
-sudo vim /etc/lightdm/lightdm.conf 
-sudo vim /etc/lightdm/lightdm-gtk-greeter.conf 
-clear
-sudo vim /etc/lightdm/lightdm.conf 
-systemctl restart
-systemctl reboot
-vim .dmrc 
-vim /usr/share/xsessions/bspwm.desktop 
-vim /usr/share/xsessions/i3.desktop 
-cd /usr/share/xsessions/
-sudo vim bspwm.desktop 
-ls
-chmod +x bspwm.desktop 
-sudo chmod +x bspwm.desktop 
-vim .xinitrc 
-vim /etc/profile
-vim /etc/X11/xinit/xinitrc
-vim /etc/X11/xinit/xinitrc.d/50-systemd-user.sh 
-vim /etc/X11/xinit/xinitrc.d/80xapp-gtk3-module.sh 
-vim /etc/X11/xinit/xinitrc.d/40-libcanberra-gtk-module.sh 
-chmod +x .config/bspwm/bspwmrc 
-chmod +x .config/sxhkd/sxhkdrc 
-systemctl reboot
-sudo pacman -Ss sxhkd
-sudo pacman -S sxhkd
-install -Dm644 /usr/share/doc/bspwm/examples/sxhkdrc ~/.config/sxhkd/sxhkdrc
-sudo pacman -Ss sxhkd
-chmod +x .config/sxhkd/sxhkdrc 
-sudo vim /usr/share/xsessions/bspwm.desktop 
-sudo vim /usr/share/xsessions/bspwm.desktop 
-vim .config/sxhkd/sxhkdrc 
-vim .config/sxhkd/sxhkdrc 
-exit
+vim .local/bin/rofi-power-menu
+sudo pacman -S ttf-dejavu noto-fonts noto-fonts-emoji noto-fonts-cjk
 exit
 redshift -O 3250
-exit
-sudo pacman -Ss nitrogen
-sudo pacman -S nitrogen
+vim .config/polybar/config
+locale
+cat /etc/locale.gen |grep UTF
+locale-gen
+sudo locale-gen
+printf "\u1F0A1"
+printf "\u1F0A1"
 clear
-nitrogen 
-vim .config/sxhkd/sxhkdrc 
+♠ Ἂ1 🂡
+sudo pacman -Ss unicode
+sudo pacman -S unicode-character-database
+killall polybar
+yay -Ss siji
+yay -S siji
+killall polybar
+killall polybar
+redshift -O 3250
+vim .local/bin/rofi-power-menu
+fc-match Monospace:weight=bold:size=12
+killall polybar
+polybar -l info
+polybar -l 
+polybar -l info
+.config/polybar/./launch.sh -l info
+.config/polybar/./launch.sh -l info
+fc-match Misc Termsyn:size=10;2
+fc-match Misc Termsyn:size=10
+fc-match Misc Termsyn
+yay -Ss gucharmap
+yay -S gucharmap
+gucharmap
+sudo pacman -Ss pywal
+sudo pacman -Ss calc
+sudo pacman -S pywal calc rofi-calc
+sudo pacman -S python-pywal calc rofi-calc
+sudo pacman -Ss networkmanager_dmenu
+yay -Ss networkmanager_dmenu
+yay -Ss networkmanager
+cd Packages/
+mkdir polybar
+cd polybar/
+$ git clone --depth=1 https://github.com/adi1090x/polybar-themes.git
+git clone --depth=1 https://github.com/adi1090x/polybar-themes.git
+cd polybar-themes/
+chmod +x setup.sh 
+./setup.sh 
+killall polybar
+killall polybar
+~/.config/polybar/./launch.sh --hack
+killall polybar
+~/.config/polybar/./launch.sh --shades
+killall polybar
+~/.config/polybar/./launch.sh --hack
+killall polybar
+redshift -O 3250
 vim .config/bspwm/bspwmrc 
-yay -S betterlockscreen
-yay -S betterlockscreen
+.config/polybar/./launch.sh --transparent
+.config/polybar/./launch.sh --transparent
+.config/polybar/./launch.sh --transparent
+.config/polybar/./launch.sh --transparent
+vim .config/bspwm/bspwmrc 
+vim .config/bspwm/bspwmrc 
+redshift -O 3250
+killall polybar
+polybar --transparent
+.config/polybar/./launch.sh --transparent
+.config/polybar/./launch.sh --transparent
+.config/polybar/./launch.sh --transparent
+.config/polybar/./launch.sh --transparent
+.config/polybar/./launch.sh --transparent
+.config/polybar/./launch.sh --transparent
+killall polybar 
+.config/polybar/./launch.sh --transparent
+killall polybar 
+.config/polybar/./launch.sh --pwidgets
+killall polybar 
+.config/polybar/./launch.sh --panels
+killall polybar 
+.config/polybar/./launch.sh --forest
+killall polybar 
+.config/polybar/./launch.sh --forest
+killall polybar
+killall polybar
+.config/polybar/./launch.sh --forest
+.config/polybar/./launch.sh --forest
+killall polybar
 vim .config/polybar/launch.sh 
-vim .config/sxhkd/sxhkdrc 
-vim .config/i3/config
-sudo pacman -Rns i3-lock
-sudo pacman -Rns i3lock 
-yay -S i3lock-color
-yay -Ss betterlock
-yay -Ss betterlockscreen
-yay -S betterlockscreen
-clear
+vim .config/polybar/custom/config.ini 
 redshift -O 3250
-exit
-yay -S xdpyinfo bc
-yay -Ss xdpy
-clear
-cd .config/sxhkd/
-cp sxhkdrc sxhkdrc.bak
-vim sxhkdrc
-vim .config/sxhkd/sxhkdrc
-exit
-rofi -show window
-rofi -show ssh
-rofi -show drun
-vim .config/i3/config
-picom
-clear
-vim .config/bspwm/bspwmrc 
-vim .config/sxhkd/sxhkdrc
-vim .config/bspwm/bspwmrc 
-vim .config/i3/config
-vim .config/bspwm/bspwmrc 
-systemctl reboot
-vim .config/bspwm/bspwmrc 
-vim .config/sxhkd/sxhkdrc
-vim .config/sxhkd/sxhkdrc
-vim .config/sxhkd/sxhkdrc
-vim .config/bspwm/bspwmrc 
-killall redshift
-clear
-vim .config/bspwm/bspwmrc 
-vim .config/sxhkd/sxhkdrc
-vim .config/bspwm/bspwmrc 
-redshift -P -O 3250
-clear
-plill -USR1 -x sxhkd
-pkill -USR1 -x sxhkd
-exit
-exit
-exit
-exit
-vim .config/bspwm/bspwmrc 
-vim .config/sxhkd/sxhkdrc
-vim .config/i3/config
-vim .config/bspwm/bspwmrc 
-betterlockscreen -l dimblur
-betterlockscreen -u ~/Pictures/Wallpapers/Night-Sky-Desktop-Wallpaper.jpg -b 1.0
-betterlockscreen -l dimblur
-betterlockscreen -u ~/Pictures/Wallpapers/Night-Sky-Desktop-Wallpaper.jpg
-betterlockscreen -l dimblur
-betterlockscreen
-betterlockscreen -l
-betterlockscreen -u ~/Pictures/Wallpapers/night-sky-wallpaper-18.jpg 
-betterlockscreen -l
-redshift -O 3250
-vim .config/sxhkd/sxhkdrc
-vim .config/bspwm/bspwmrc 
-redshift -O 3250
-redshift -O 3250
-vim .config/polybar/config.ini 
-vim .config/bspwm/bspwmrc 
-redshift -O 3250
-exit
-rofi -show power-menu -modi power-menu:rofi-power-menu
-vim .local/bin/rofi-power-menu 
-vim .config/polybar/config.ini 
-vim .config/sxhkd/sxhkdrc
-rofi -show power-menu -modi power-menu:rofi-power-menu
-vim .local/bin/rofi-power-menu 
-rofi -show power-menu -modi power-menu:rofi-power-menu
-rofi -show power-menu -modi power-menu:rofi-power-menu
+cd .config/polybar/custom/
 ls
+vim colors.ini 
+ncdu
+xprop
+xwininfo
+wmctrl -l
 redshift -O 3250
+nvidia-smi --query-gpu=utilization.gpu,memory.used, --format=csv,noheader, nounits | awk  '{print "GPU " $1"% " $3"MiB"}'
+nvidia-smi --query-gpu=utilization.gpu, --format=csv,noheader, nounits | awk  '{print " $1"% " $3"MiB"}'
+nvidia-smi --query-gpu=utilization.gpu, --format=csv,noheader, nounits | awk  '{print $1"% " $3"MiB"}'
+nvidia-smi --query-gpu=utilization.gpu, --format=csv,noheader, nounits | awk  '{print $1"%"}'
+nvidia-smi --query-gpu=utilization.gpu,memory.used, --format=csv,noheader, nounits | awk  '{print $1"% " $3"MiB"}'
+nvidia-smi --query-gpu=utilization.gpu,memory.used, --format=csv,noheader, nounits | awk  '{print " " $1"% " $3"MiB"}'
+nvidia-smi --query-gpu=utilization.gpu,memory.used, --format=csv,noheader, nounits | awk  '{print " " $1"% " $3"MiB"}'
+nvidia-smi --query-gpu=utilization.gpu,memory.used, --format=csv,noheader, nounits | awk  '{print $1"% " $3"MiB"}'
+nvidia-smi --query-gpu=utilization.gpu,memory.used, --format=csv,noheader, nounits | awk  '{print " " $1"% " $3"MiB"}'
+clear
+vim .config/bspwm/bspwmrc 
+pacman -S xdotool
+pacman -Ss xdotool
+sudo pacman -Ss xdotool
+sudo pacman -S xdotool
+xdotool getactivewindow getwindowname
+for for i in 10;
+for for i in 10
+for i in 10; xdotool getactivewindow getwindowname
+for i in 10; xdotool getactivewindow getwindowname; sleep 1; done
+xdotool getactivewindow getwindowname
+for i in 10; do xdotool getactivewindow getwindowname; sleep 1; done
+for i in 10; do xdotool getactivewindow getwindowname; sleep 10; done &
+for i in 10; do sleep 5; xdotool getactivewindow getwindowname; done
+xdotool getwindowfocus
+xdotool getactivewindow
+xprop -id $(xprop -root 32x '\t$0' _NET_ACTIVE_WINDOW | cut -f 2) _NET_WM_NAME
+bspc config -m focused top_padding
+bspc config top_padding
+bspc config bottom_padding
+bspc config -m focused bottom_padding
+bspc config -m focused bottom_padding 0
+bspc config -m focused bottom_padding 13
+bspc config -m focused bottom_padding 15
+bspc config -m focused bottom_padding 20
+bspc config -m focused bottom_padding 25
+bspc config -m focused bottom_padding
+bspc config -m focused bottom_padding
+bspc config -m focused bottom_padding
+bspc config -m focused bottom_padding
+redshift -O 3250
+vim .config/polybar/custom/config.ini 
+vim .config/bspwm/bspwmrc 
 vim .config/bspwm/bspwmrc 
 vim .config/sxhkd/sxhkdrc
+vim .config/polybar/custom/config.ini 
+vim .config/bspwm/bspwmrc 
+vim .config/polybar/custom/config.ini 
 redshift -O 3250
+vim .config/polybar/custom/config.ini 
+bspc config -m focused bottom_padding
+echo "($(bspc query -N -n .window -d focused | grep -n $(bspc query -N -n) | cut -f1 -d:)/$(bspc query -N -n .window -d focused | wc -l))"
+echo "($(bspc query -N -n .window -d focused | grep -n $(bspc query -N -n) | cut -f1 -d:)/$(bspc query -N -n .window -d focused | wc -l))"
+bspc query -T -d "$desk" | jq -r '.layout'
+bspc query -T -d "$desk" 
+bspc query -T -d $desk 
+bspc query -T -d $desk | jq -r .layout
+bspc query -T -d $desk | jq -r .layout
+yay -Ss jq
+clear
+sudo pacman -S jq
+vim .config/bspwm/bspwmrc 
+vim .config/polybar/custom/config.ini 
+cd .config/polybar/custom/scripts/
+cp gpu-stats.sh winnum.sh
+vim winnum.sh 
+cd ..
+vim config.ini 
+redshift -O 3250
+vim .config/polybar/custom/config.ini 
+vim .config/bspwm/bspwmrc 
+redshift -O 3250
+vim .config/bspwm/bspwmrc 
+vim .config/polybar/custom/config.ini 
+bspc config -m focused bottom_padding
+man bspwm
+sudo vim /usr/share/xsessions/bspwm.desktop 
+sudo vim /usr/share/xsessions/bspwm.desktop 
+vim .config/i3/config
+exit
+redshift -O 3250
+ls .config/bspwm/bspwmrc 
+pwd
+sudo vim /usr/share/xsessions/bspwm.desktop 
+vim .local/bin/rofi-power-menu
+sudo vim /usr/share/X11/xorg.conf.d/10-quirks.conf 
+sensors
+sensors
+redshift -O 3250
+sudo vim /usr/share/xsessions/bspwm.desktop 
+sudo vim /usr/share/xsessions/i3.desktop 
+sudo vim /usr/share/xsessions/bspwm.desktop 
+redshift -O 3250
+vim .config/bspwm/bspwm_startup.sh
+sudo vim /usr/share/xsessions/bspwm.desktop 
+chmod +x .config/bspwm/bspwm_startup.sh 
+sudo vim /usr/share/xsessions/bspwm.desktop 
+mv .config/bspwm/bspwm_startup.sh .local/bin/
+mv .local/bin/bspwm_startup.sh .local/bin/bspwm_startup
+clear
+sudo vim /usr/share/xsessions/bspwm.desktop 
+sudo vim /usr/share/xsessions/bspwm.desktop 
+sudo vim /usr/share/xsessions/bspwm.desktop 
+vim .xsession-errors
+yay -Ss xsession
+sudo vim /etc/lightdm/lightdm.conf 
+vim /usr/bin/bspwm 
+sudo vim /etc/lightdm/lightdm.conf 
+sudo vim /usr/share/xsessions/bspwm.desktop 
+sudo vim /usr/share/xsessions/bspwm.desktop 
+sudo vim /usr/share/xsessions/bspwm.desktop 
+redshift -O 3250
+vim .config/bspwm/bspwmrc 
+xev
+killall picom
+redshift -O 3250
+vim .config/i3/config
+vim .config/bspwm/bspwmrc 
+vim .config/polybar/custom/config.ini 
 vim .config/sxhkd/sxhkdrc
-vim .local/bin/rofi-power-menu 
-rofi -show power-menu -modi power-menu:rofi-power-menu -theme customrofi
-rofi -show power-menu -modi power-menu:rofi-power-menu -theme customrofi --no-symbols
-rofi -show power-menu -modi power-menu:rofi-power-menu -theme customrofi --no-symbols
-rofi -show power-menu -modi power-menu:rofi-power-menu -theme customrofi --no-symbols
-rofi -show power-menu -modi power-menu:rofi-power-menu -theme customrofi
-rofi -show power-menu -modi power-menu:rofi-power-menu  --no-symbols
-rofi -show power-menu -modi power-menu:rofi-power-menu -theme customrofi
-rofi -show power-menu -modi power-menu:rofi-power-menu -theme customrofi
-rofi -show power-menu -modi power-menu:rofi-power-menu -theme customrofi
-rofi -show power-menu -modi power-menu:rofi-power-menu -theme customrofi
-rofi -show power-menu -modi power-menu:rofi-power-menu -theme customrofi
-rofi -show power-menu -modi power-menu:rofi-power-menu -theme customrofi
-rofi -show power-menu -modi power-menu:rofi-power-menu -theme customrofi
-rofi -show power-menu -modi power-menu:rofi-power-menu -theme customrofi
-w
-rofi -show power-menu -modi power-menu:rofi-power-menu -theme customrofi --no-symbols
-rofi -show power-menu -modi power-menu:rofi-power-menu --no-symbols
-rofi -show power-menu -modi "power-menu:rofi-power-menu --no-symbols"
-rofi -show power-menu -modi "power-menu:rofi-power-menu -theme customrofi--no-symbols"
-rofi -show power-menu -modi "power-menu:rofi-power-menu -theme customrofi --no-symbols"
-rofi -show power-menu -modi power-menu:rofi-power-menu -theme customrofi --no-symbols
-rofi -show power-menu -modi power-menu:rofi-power-menu -theme customrofi
-rofi -show power-menu -modi power-menu:rofi-power-menu -theme customrofi
-rofi -show power-menu -modi power-menu:rofi-power-menu -theme customrofi
-rofi -show power-menu -modi power-menu:rofi-power-menu -theme customrofi
-rofi -show power-menu -modi power-menu:rofi-power-menu -theme customrofi
-rofi -show power-menu -modi power-menu:rofi-power-menu -theme customrofi
-rofi -show power-menu -modi power-menu:rofi-power-menu -theme customrofi
-xfce4-terminal -e "betterlockscreen -l >> /dev/null 2>&1"
-xfce4-terminal -e "betterlockscreen -l >> /dev/null 2>&1" &
-xfce4-terminal -e "betterlockscreen -l"
+vim .config/sxhkd/sxhkdrc
+vim .config/bspwm/bspwmrc 
+vim .config/sxhkd/sxhkdrc
+clear
+vim .config/polybar/custom/user_modules.ini 
+vim .config/bspwm/bspwmrc 
+.config/sxhkd/sxhkdrc
+clear
+vim .config/sxhkd/sxhkdrc
+vim .config/i3/config
+vim .config/polybar/custom/config.ini 
+bspc query -T -d|jq -r .layout
+bspc query -T -d|jq -r .layout
+polybar-msg hook bspwm-monocle-nb-windows 1)
+polybar-msg hook bspwm-monocle-nb-windows 1
+bspc query -N -n .window -d focused
+clear
+echo "($(bspc query -N -n .window -d focused | grep -n $(bspc query -N -n) | cut -f1 -d:)/$(bspc query -N -n .window -d focused | wc -l))"
+echo "($(bspc query -N -n .window -d focused | grep -n $(bspc query -N -n)
+echo "($(bspc query -N -n .window -d focused | grep -n $(bspc query -N -n) | cut -f1 -d:)
+"
+bspc query -N -n
+bspc query -N -n .window -d focused
+(bspc query -N -n .window -d focused | grep -n $(bspc query -N -n) | cut -f1 -d:)
+cd .config/polybar/custom/scripts/
+./winnumtest.sh 
+cat ~/.local/bin/ffrecord 
+cat ~/.local/bin/ffrecord 
+./winnumtest.sh 
+clear
+./winnumtest.sh 
+bspc query -N -n .window -d focused
+(bspc query -N -n .window -d focused | grep -n $(bspc query -N -n) | cut -f1 -d:)
+(bspc query -N -n .window -d focused | grep -n $(bspc query -N -n) | cut -f1 -d:)
+./winnumtest.sh 
+./winnumtest.sh 
+./winnumtest.sh 
+./winnumtest.sh 
+./winnumtest.sh 
+./winnumtest.sh 
+./winnumtest.sh 
+./winnumtest.sh 
+./winnumtest.sh 
+./winnumtest.sh 
+./winnumtest.sh 
+vim .config/polybar/custom/scripts/winnum.sh 
+cd .config/polybar/custom/scripts/
+cp winnum.sh winnumtest.sh
+chmod +x winnumtest.sh 
+vim winnumtest.sh 
+cp winnum.sh winnum.bak
+mv winnumtest.sh winnum.sh 
+vim winnum.sh 
+cd ..
+cd ..
+vim forest/scripts/style-switch.sh 
+cd ~
+vim .config/sxhkd/sxhkdrc
+vim .local/bin/
+cd .local/bin/
+cp ECN-Connect rofi-launcher
+vim rofi-launcher 
+vim rofi-launcher 
+cd ~
+rofi-launcher 
+yay -Syy
+yay -S zoom
+redshift -O 3250
+bashtop 
+redshift -O 3250
+redshift -P -O 3250
+redshift -P -O 3250
+redshift -P -O 3250
+redshift -P -O 3250
+redshift -P -O 3250
+redshift -P -O 3250
+redshift -P -O 3250
+redshift -O 3250
+redshift -P -O 3250
+vim .config/bspwm/bspwmrc 
+man bspc
+vim .config/sxhkd/sxhkdrc
+sudo vim /usr/share/xsessions/bspwm.desktop 
+sudo vim /usr/share/xsessions/xfce.desktop 
+sudo vim /usr/share/xsessions/bspwm.desktop 
+sudo vim /usr/share/xsessions/xfce.desktop 
+sudo vim /usr/share/xsessions/bspwm.desktop 
+whereis startxfce4
+q
+tldr bspwm
+man bspwm
+sudo vim /usr/share/xsessions/bspwm.desktop 
+sudo vim /usr/share/xsessions/bspwm.desktop 
+sudo vim /usr/share/xsessions/bspwm.desktop 
+lightdm -d --test-mode
+cd .local/bin/
+ls
+vim bspwm_startup 
+ls
+chmod +x bspwm_startup 
+sudo vim /usr/share/xsessions/bspwm.desktop 
+sudo vim /usr/share/xsessions/bspwm.desktop 
+sudo vim /usr/share/xsessions/bspwm.desktop 
+man bspwm 
+sudo vim /usr/share/xsessions/bspwm.desktop 
+systemctl reboot
+sudo vim /usr/share/xsessions/bspwm.desktop 
+sudo vim /usr/share/xsessions/bspwm.desktop 
+vim .config/bspwm/bspwmrc 
+vim .config/bspwm/bspwmrc 
+vim .config/bspwm/bspwmrc 
+cd .config/bspwm/
+ls
+sudo vim /usr/share/doc/bspwm/README.md 
+sudo vim /usr/share/doc/bspwm/examples/bspwmrc 
+sudo vim /usr/share/doc/bspwm/examples/bspwmrc 
+cd /
+sudo find -iname bspwmrc
+sudo vim /usr/share/xsessions/bspwm.desktop 
+sudo vim /usr/share/xsessions/bspwm.desktop 
+yay -Ss ttf-awesome
+yay -Ss ttf*awesome
+yay -Ss ttf-font-awesome
+sudo pacman -S ttf-font-awesome
+fc-match awesome
+fc-match Awesome
+fc-match Sans
+fc-match Monospace
+fc-match feather
+cd .config/polybar/custom/
+vim user_modules.ini 
+vim modules.ini 
+sudo pacman -Ss terminte
+sudo pacman -Ss termite
+sudo pacman -S termite
+sudo pacman -Rns termite
+sudo pacman -Ss alacritty
+sudo pacman -S alacritty
+vim config.ini 
+vim config.ini 
+vim modules.ini 
+vim modules.ini 
+sudo pacman -Rns alacritty
+clear
+vim .config/bspwm/bspwmrc 
+vim .config/sxhkd/sxhkdrc
+vim .config/bspwm/bspwmrc 
+bashtop
+man vtop
+vtop -h
+xprop
+xprop | grep WM_CLASS | awk '{print $4}'
+vim .config/bspwm/bspwmrc 
+xfce4-terminal -T Top 
+xfce4-terminal --drop-down
+xfce4-terminal --drop-down
+sudo pacman -Ss gtop
+sudo pacman -S gtop
+gtop
+sudo pacman -Rns bashtop
+sudo pacman -Rns gtop
+sudo pacman -Ss vtop
+nvtop 
+yay -Ss vtop
+yay -S vtop gotop
+yay -S vtop 
+vtop
+yay -Ss cli-visualizer
+yay -Ss cava
+yay -Ss cava
+yay -S cava
+man cava
+cava
+cava -i alsa -d 'hw:4,0'
+cava -i alsa
+vim .config/cava/config 
+cava
+vim .config/cava/config 
+cava
+vim .config/cava/config 
+cava
+man bspc
+i3-sensible-terminal --role floating_term
+nethogs
+yay -Ss calendar
+pacman -Ss calendar
+clear
+pacman -Ss calendar
+sudo pacman -S when
+when -h
+man when
+sudo pacman -Rns when
+sudo pacman -S gnome-calendar
+sudo pacman -Ss gsimplecal
+sudo pacman -S gsimplecal
+gsimplecal 
+gsimplecal -h
+gsimplecal next_month
+pacman -Ss clock
+sudo pacman -S gnome-clocks
+gnome-clocks 
+gnome-clocks -h
+gnome-clocks --help-all
+neofetch --ascii_distro arch
+neofetch --ascii_distro arch
+cd .config/polybar/custom/
+vim modules.ini 
+cd ~
+vim .config/sxhkd/sxhkdrc
+cd .config/polybar/custom/
+vim modules.ini 
+vim .config/sxhkd/sxhkdrc
+vim .config/bspwm/bspwmrc 
+vim .config/i3/config
+vim .config/polybar.old/modules.ini 
+vim .config/polybar/custom/config.ini 
+vim .config/polybar/custom/colors.ini 
+neofetch
+neofetch --ascii_distro arch
+xprop
+xprop | grep class
+xprop | grep WM_CLASS
+ffrecord test
+ffrecord test2
+vim .config/picom-jonaburg.conf 
+yay -Ss picom-
+yay -S picom-jonaburg-git
+picom -h
+clear
+find -iname picom*
+clear
+picom -h
+man picom
+pacman -Ss picom
+yay -Ss picom
+clear
+picom -h
+picom -h | grep config
+clear
+mv picom.sample.conf .config/picom-jonaburg.conf
+picom -h | grep config
+killall picom
+picom --config ~/.config/picom-jonaburg.conf 
+picom --config ~/.config/picom-jonaburg.conf &
+vim .config/bspwm/bspwmrc 
+killall picom
+cava
+cava
+cat /usr/share/xsessions/bspwm.desktop 
+qdbus org.mpris.MediaPlayer2.chromium.instance23882 /org/mpris/MediaPlayer2 
+qdbus org.mpris.MediaPlayer2.Player.Playbackstatus
+qdbus org.mpris.MediaPlayer2.chromium.instance23882 /org/mpris/MediaPlayer2 qdbus org.mpris.MediaPlayer2.Player.PlaybackStatus
+qdbus org.mpris.MediaPlayer2.chromium.instance23882 /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlaybackStatus
+clear
+qdbus org.mpris.MediaPlayer2.chromium.instance23882 /org/mpris/MediaPlayer2 
+dbus-send --print-reply --dest=org.mpris.MediaPlayer2.chromium.instance23882 /org/mpris/MediaPlayer2 org.freedesktop.DBus.Properties.Get string:org.mpris.MediaPlayer2.Player string:Metadata
+dbus-send --print-reply --dest=org.mpris.MediaPlayer2.chromium.instance23882 /org/mpris/MediaPlayer2 org.freedesktop.DBus.Properties.Get string:org.mpris.MediaPlayer2.Player string:Metadata | sed -n '/title/{n;p}' | cut -d '"' -f 2
+dbus-send --print-reply --dest=org.mpris.MediaPlayer2.chromium.* /org/mpris/MediaPlayer2 org.freedesktop.DBus.Properties.Get string:org.mpris.MediaPlayer2.Player string:Metadata | sed -n '/title/{n;p}' | cut -d '"' -f 2
+dbus-send --print-reply --dest=org.mpris.MediaPlayer2.chromium.instance23882 /org/mpris/MediaPlayer2 org.freedesktop.DBus.Properties.Get string:org.mpris.MediaPlayer2.Player string:Metadata | sed -n '/title/{n;p}' | cut -d '"' -f 2
+dbus 
+dbus-monitor 
+qdbus
+qdbus | grep MediaPlayer2.chromium

@@ -4,7 +4,7 @@
 # Uses: amixer mpc poweroff reboot rofi rofi-prompt
 
 power_off='⏻  Shutdown'
-reboot='🔃  Reboot'
+reboot='🔄  Reboot'
 lock='🔒  Lock Screen'
 suspend='🕒  Suspend'
 log_out='➡  Logout'
@@ -14,15 +14,15 @@ chosen=$(printf '%s;%s;%s;%s;%s;%s\n' "$lock" "$log_out" "$suspend" "$hibernate"
     | rofi -theme customrofi \
            -dmenu \
            -sep ';' \
-           -selected-row 2)
+           -selected-row 0)
 
 case "$chosen" in
     "$power_off")
-        rofi-prompt --query 'Shutdown?' && poweroff
+        systemctl poweroff
         ;;
 
     "$reboot")
-        rofi-prompt --query 'Reboot?' && reboot
+        systemctl reboot
         ;;
 
     "$lock")

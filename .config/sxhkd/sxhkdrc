@@ -25,17 +25,24 @@ super + Escape
 #
 
 # quit/restart bspwm
-super + shift + {q,r}
-	bspc {quit,wm -r}
+
+super + shift + r
+    bspc wm -r
+
+super + shift + q
+    ~/.local/bin/./rofi-power-menu
 
 # close and kill
 #alt + {_,shift + }q
 #	bspc node -{c,k}
 alt + shift + q
-	bspc node -c
+    bspc node -c
 
 # alternate between the tiled and monocle layout
-super + m
+super + w
+	bspc desktop -l next
+
+alt + w
 	bspc desktop -l next
 
 # send the newest marked node to the newest preselected node
@@ -44,15 +51,19 @@ super + y
 
 # swap the current node and the biggest window
 super + g
-	bspc node -s biggest.window
+	bspc node -s biggest.window.local
 
+
+# focus the node for the given path jump
+{super,alt} + bracket{left,right}
+    bspc node -f {next, prev}.local
 #
 # state/flags
 #
 
 # set the window state
-super + {e,shift + e,f,w}
-	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+super + {e,shift + e,f}
+	bspc node -t {tiled,pseudo_tiled,floating}
 
 # set the node flags
 super + ctrl + {m,x,y,z}
@@ -66,6 +77,8 @@ super + ctrl + {m,x,y,z}
 #super + {_,shift + }{h,j,k,l}
 #	bspc node -{f,s} {west,south,north,east}
 super + {_,shift + }{Left,Down,Up,Right}
+	bspc node -{f,s} {west,south,north,east}
+alt + {_,shift + }{Left,Down,Up,Right}
 	bspc node -{f,s} {west,south,north,east}
 
 # focus the node for the given path jump
@@ -156,3 +169,15 @@ super + shift + f
 
 super + shift + t
     thunar
+
+# User Key Bindings
+
+super + Print
+    scrot /home/sudarson/Pictures/Screenclips/clip-$(date +%F_%T).png -sf -e 'xclip -selection c -t image/png < $f'
+Print
+    scrot /home/sudarson/Pictures/Screenshots/screenshot-$(date +%F_%T).png -e 'xclip -selection c -t image/png < $f'
+
+
+
+
+
