@@ -20,6 +20,12 @@ super + shift + d
 super + Escape
 	pkill -USR1 -x sxhkd
 
+# Show polybar
+super + z
+    ~/.local/bin/polybar_toggle
+
+super + shift + z
+    ~/.local/bin/kill_polybar_autohide
 #
 # bspwm hotkeys
 #

@@ -1,500 +1,500 @@
-vim config
-vim ~/.local/bin/rofi-power-menu
-yay -Ss Iosevka
-yay -Ss Iosevka-nerd
-yay -Ss icomoon
-yay -S ttf-icomoon-feather
-yay -Ss material-icons
-yay -S otf-material-icons-git
-yay -Ss sfcompact
-yay -Ss sf-compact
-otf-apple-sf-compact
-yay -S otf-apple-sf-compact
-yay -Ss font-logo
-yay -Ss ttf-font-logos
-yay -S ttf-font-logos
-clear
-vim .local/bin/rofi-power-menu
-sudo pacman -S ttf-dejavu noto-fonts noto-fonts-emoji noto-fonts-cjk
-exit
-redshift -O 3250
-vim .config/polybar/config
-locale
-cat /etc/locale.gen |grep UTF
-locale-gen
-sudo locale-gen
-printf "\u1F0A1"
-printf "\u1F0A1"
-clear
-♠ Ἂ1 🂡
-sudo pacman -Ss unicode
-sudo pacman -S unicode-character-database
-killall polybar
-yay -Ss siji
-yay -S siji
-killall polybar
-killall polybar
-redshift -O 3250
-vim .local/bin/rofi-power-menu
-fc-match Monospace:weight=bold:size=12
-killall polybar
-polybar -l info
-polybar -l 
-polybar -l info
-.config/polybar/./launch.sh -l info
-.config/polybar/./launch.sh -l info
-fc-match Misc Termsyn:size=10;2
-fc-match Misc Termsyn:size=10
-fc-match Misc Termsyn
-yay -Ss gucharmap
-yay -S gucharmap
-gucharmap
-sudo pacman -Ss pywal
-sudo pacman -Ss calc
-sudo pacman -S pywal calc rofi-calc
-sudo pacman -S python-pywal calc rofi-calc
-sudo pacman -Ss networkmanager_dmenu
-yay -Ss networkmanager_dmenu
-yay -Ss networkmanager
-cd Packages/
-mkdir polybar
-cd polybar/
-$ git clone --depth=1 https://github.com/adi1090x/polybar-themes.git
-git clone --depth=1 https://github.com/adi1090x/polybar-themes.git
-cd polybar-themes/
-chmod +x setup.sh 
-./setup.sh 
-killall polybar
-killall polybar
-~/.config/polybar/./launch.sh --hack
-killall polybar
-~/.config/polybar/./launch.sh --shades
-killall polybar
-~/.config/polybar/./launch.sh --hack
-killall polybar
-redshift -O 3250
-vim .config/bspwm/bspwmrc 
-.config/polybar/./launch.sh --transparent
-.config/polybar/./launch.sh --transparent
-.config/polybar/./launch.sh --transparent
-.config/polybar/./launch.sh --transparent
-vim .config/bspwm/bspwmrc 
-vim .config/bspwm/bspwmrc 
-redshift -O 3250
-killall polybar
-polybar --transparent
-.config/polybar/./launch.sh --transparent
-.config/polybar/./launch.sh --transparent
-.config/polybar/./launch.sh --transparent
-.config/polybar/./launch.sh --transparent
-.config/polybar/./launch.sh --transparent
-.config/polybar/./launch.sh --transparent
-killall polybar 
-.config/polybar/./launch.sh --transparent
-killall polybar 
-.config/polybar/./launch.sh --pwidgets
-killall polybar 
-.config/polybar/./launch.sh --panels
-killall polybar 
-.config/polybar/./launch.sh --forest
-killall polybar 
-.config/polybar/./launch.sh --forest
-killall polybar
-killall polybar
-.config/polybar/./launch.sh --forest
-.config/polybar/./launch.sh --forest
-killall polybar
-vim .config/polybar/launch.sh 
-vim .config/polybar/custom/config.ini 
-redshift -O 3250
-cd .config/polybar/custom/
-ls
-vim colors.ini 
-ncdu
-xprop
+sudo systemctl stop dunst.service
+systemctl status | grep dunst
+grep -r org.freedesktop.Notifications /usr/share/dbus-1/services/
+pkill dunst
+/usr/lib/xfce4/notifyd/xfce4-notifyd
+htop
+killall thunderbird
+pkill thunderbird
+pkill thunderbird
+notify-send -u critical test
+man notify-send 
+man notifier
 xwininfo
-wmctrl -l
-redshift -O 3250
-nvidia-smi --query-gpu=utilization.gpu,memory.used, --format=csv,noheader, nounits | awk  '{print "GPU " $1"% " $3"MiB"}'
-nvidia-smi --query-gpu=utilization.gpu, --format=csv,noheader, nounits | awk  '{print " $1"% " $3"MiB"}'
-nvidia-smi --query-gpu=utilization.gpu, --format=csv,noheader, nounits | awk  '{print $1"% " $3"MiB"}'
-nvidia-smi --query-gpu=utilization.gpu, --format=csv,noheader, nounits | awk  '{print $1"%"}'
-nvidia-smi --query-gpu=utilization.gpu,memory.used, --format=csv,noheader, nounits | awk  '{print $1"% " $3"MiB"}'
-nvidia-smi --query-gpu=utilization.gpu,memory.used, --format=csv,noheader, nounits | awk  '{print " " $1"% " $3"MiB"}'
-nvidia-smi --query-gpu=utilization.gpu,memory.used, --format=csv,noheader, nounits | awk  '{print " " $1"% " $3"MiB"}'
-nvidia-smi --query-gpu=utilization.gpu,memory.used, --format=csv,noheader, nounits | awk  '{print $1"% " $3"MiB"}'
-nvidia-smi --query-gpu=utilization.gpu,memory.used, --format=csv,noheader, nounits | awk  '{print " " $1"% " $3"MiB"}'
+xprop
+htop | grep thunderbird
+ps aux | grep thunderbird
+xprop | grep WM_NAME
+xprop | grep WM_NAME
+xprop
+xprop | grep WM_NAME
+xprop | grep WM_NAME
+xprop 
+xprop 
+man grep
+man ps
+ps aux
 clear
-vim .config/bspwm/bspwmrc 
-pacman -S xdotool
-pacman -Ss xdotool
-sudo pacman -Ss xdotool
-sudo pacman -S xdotool
-xdotool getactivewindow getwindowname
-for for i in 10;
-for for i in 10
-for i in 10; xdotool getactivewindow getwindowname
-for i in 10; xdotool getactivewindow getwindowname; sleep 1; done
-xdotool getactivewindow getwindowname
-for i in 10; do xdotool getactivewindow getwindowname; sleep 1; done
-for i in 10; do xdotool getactivewindow getwindowname; sleep 10; done &
-for i in 10; do sleep 5; xdotool getactivewindow getwindowname; done
-xdotool getwindowfocus
-xdotool getactivewindow
-xprop -id $(xprop -root 32x '\t$0' _NET_ACTIVE_WINDOW | cut -f 2) _NET_WM_NAME
-bspc config -m focused top_padding
-bspc config top_padding
-bspc config bottom_padding
-bspc config -m focused bottom_padding
-bspc config -m focused bottom_padding 0
-bspc config -m focused bottom_padding 13
-bspc config -m focused bottom_padding 15
-bspc config -m focused bottom_padding 20
-bspc config -m focused bottom_padding 25
-bspc config -m focused bottom_padding
-bspc config -m focused bottom_padding
-bspc config -m focused bottom_padding
-bspc config -m focused bottom_padding
-redshift -O 3250
-vim .config/polybar/custom/config.ini 
-vim .config/bspwm/bspwmrc 
-vim .config/bspwm/bspwmrc 
-vim .config/sxhkd/sxhkdrc
-vim .config/polybar/custom/config.ini 
-vim .config/bspwm/bspwmrc 
-vim .config/polybar/custom/config.ini 
-redshift -O 3250
-vim .config/polybar/custom/config.ini 
-bspc config -m focused bottom_padding
-echo "($(bspc query -N -n .window -d focused | grep -n $(bspc query -N -n) | cut -f1 -d:)/$(bspc query -N -n .window -d focused | wc -l))"
-echo "($(bspc query -N -n .window -d focused | grep -n $(bspc query -N -n) | cut -f1 -d:)/$(bspc query -N -n .window -d focused | wc -l))"
-bspc query -T -d "$desk" | jq -r '.layout'
-bspc query -T -d "$desk" 
-bspc query -T -d $desk 
-bspc query -T -d $desk | jq -r .layout
-bspc query -T -d $desk | jq -r .layout
-yay -Ss jq
+man bash
+hide -h
+man notify-send 
+thunderbird -v
+pacman -Ss calculator
+bc
+calc
+yay -Ss polybar
+yay -Ss peaclock
+pacman -ss peaclock
+pacman -Ss peaclock
+yay -S peaclock
+peaclock 
+peaclock -h
 clear
-sudo pacman -S jq
-vim .config/bspwm/bspwmrc 
-vim .config/polybar/custom/config.ini 
-cd .config/polybar/custom/scripts/
-cp gpu-stats.sh winnum.sh
-vim winnum.sh 
-cd ..
-vim config.ini 
-redshift -O 3250
-vim .config/polybar/custom/config.ini 
-vim .config/bspwm/bspwmrc 
-redshift -O 3250
-vim .config/bspwm/bspwmrc 
-vim .config/polybar/custom/config.ini 
-bspc config -m focused bottom_padding
-man bspwm
-sudo vim /usr/share/xsessions/bspwm.desktop 
-sudo vim /usr/share/xsessions/bspwm.desktop 
-vim .config/i3/config
-exit
-redshift -O 3250
-ls .config/bspwm/bspwmrc 
-pwd
-sudo vim /usr/share/xsessions/bspwm.desktop 
-vim .local/bin/rofi-power-menu
-sudo vim /usr/share/X11/xorg.conf.d/10-quirks.conf 
-sensors
-sensors
-redshift -O 3250
-sudo vim /usr/share/xsessions/bspwm.desktop 
-sudo vim /usr/share/xsessions/i3.desktop 
-sudo vim /usr/share/xsessions/bspwm.desktop 
-redshift -O 3250
-vim .config/bspwm/bspwm_startup.sh
-sudo vim /usr/share/xsessions/bspwm.desktop 
-chmod +x .config/bspwm/bspwm_startup.sh 
-sudo vim /usr/share/xsessions/bspwm.desktop 
-mv .config/bspwm/bspwm_startup.sh .local/bin/
-mv .local/bin/bspwm_startup.sh .local/bin/bspwm_startup
+yay -Ss hideit
+yay -Ss hideit.sh-git
+yay -S hideit.sh-git
 clear
-sudo vim /usr/share/xsessions/bspwm.desktop 
-sudo vim /usr/share/xsessions/bspwm.desktop 
-sudo vim /usr/share/xsessions/bspwm.desktop 
-vim .xsession-errors
-yay -Ss xsession
-sudo vim /etc/lightdm/lightdm.conf 
-vim /usr/bin/bspwm 
-sudo vim /etc/lightdm/lightdm.conf 
-sudo vim /usr/share/xsessions/bspwm.desktop 
-sudo vim /usr/share/xsessions/bspwm.desktop 
-sudo vim /usr/share/xsessions/bspwm.desktop 
-redshift -O 3250
-vim .config/bspwm/bspwmrc 
-xev
-killall picom
-redshift -O 3250
-vim .config/i3/config
-vim .config/bspwm/bspwmrc 
-vim .config/polybar/custom/config.ini 
-vim .config/sxhkd/sxhkdrc
-vim .config/sxhkd/sxhkdrc
-vim .config/bspwm/bspwmrc 
-vim .config/sxhkd/sxhkdrc
+hideIt.sh -h
 clear
-vim .config/polybar/custom/user_modules.ini 
-vim .config/bspwm/bspwmrc 
-.config/sxhkd/sxhkdrc
-clear
-vim .config/sxhkd/sxhkdrc
-vim .config/i3/config
-vim .config/polybar/custom/config.ini 
-bspc query -T -d|jq -r .layout
-bspc query -T -d|jq -r .layout
-polybar-msg hook bspwm-monocle-nb-windows 1)
-polybar-msg hook bspwm-monocle-nb-windows 1
-bspc query -N -n .window -d focused
-clear
-echo "($(bspc query -N -n .window -d focused | grep -n $(bspc query -N -n) | cut -f1 -d:)/$(bspc query -N -n .window -d focused | wc -l))"
-echo "($(bspc query -N -n .window -d focused | grep -n $(bspc query -N -n)
-echo "($(bspc query -N -n .window -d focused | grep -n $(bspc query -N -n) | cut -f1 -d:)
-"
-bspc query -N -n
-bspc query -N -n .window -d focused
-(bspc query -N -n .window -d focused | grep -n $(bspc query -N -n) | cut -f1 -d:)
-cd .config/polybar/custom/scripts/
-./winnumtest.sh 
-cat ~/.local/bin/ffrecord 
-cat ~/.local/bin/ffrecord 
-./winnumtest.sh 
-clear
-./winnumtest.sh 
-bspc query -N -n .window -d focused
-(bspc query -N -n .window -d focused | grep -n $(bspc query -N -n) | cut -f1 -d:)
-(bspc query -N -n .window -d focused | grep -n $(bspc query -N -n) | cut -f1 -d:)
-./winnumtest.sh 
-./winnumtest.sh 
-./winnumtest.sh 
-./winnumtest.sh 
-./winnumtest.sh 
-./winnumtest.sh 
-./winnumtest.sh 
-./winnumtest.sh 
-./winnumtest.sh 
-./winnumtest.sh 
-./winnumtest.sh 
-vim .config/polybar/custom/scripts/winnum.sh 
-cd .config/polybar/custom/scripts/
-cp winnum.sh winnumtest.sh
-chmod +x winnumtest.sh 
-vim winnumtest.sh 
-cp winnum.sh winnum.bak
-mv winnumtest.sh winnum.sh 
-vim winnum.sh 
-cd ..
-cd ..
-vim forest/scripts/style-switch.sh 
-cd ~
-vim .config/sxhkd/sxhkdrc
-vim .local/bin/
+whereis hideIt.sh
+vim /usr/bin/hideIt.sh 
+cp /usr/bin/hideIt.sh ~/.local/bin/hide
 cd .local/bin/
-cp ECN-Connect rofi-launcher
-vim rofi-launcher 
-vim rofi-launcher 
+ls
+vim hide 
+cp /usr/bin/hideIt.sh ~/.local/bin/hide
+vim hide 
 cd ~
-rofi-launcher 
-yay -Syy
-yay -S zoom
-redshift -O 3250
-bashtop 
-redshift -O 3250
-redshift -P -O 3250
-redshift -P -O 3250
-redshift -P -O 3250
-redshift -P -O 3250
-redshift -P -O 3250
-redshift -P -O 3250
-redshift -P -O 3250
-redshift -O 3250
-redshift -P -O 3250
 vim .config/bspwm/bspwmrc 
-man bspc
-vim .config/sxhkd/sxhkdrc
-sudo vim /usr/share/xsessions/bspwm.desktop 
-sudo vim /usr/share/xsessions/xfce.desktop 
-sudo vim /usr/share/xsessions/bspwm.desktop 
-sudo vim /usr/share/xsessions/xfce.desktop 
-sudo vim /usr/share/xsessions/bspwm.desktop 
-whereis startxfce4
+vim .local/bin/hide 
 q
-tldr bspwm
-man bspwm
-sudo vim /usr/share/xsessions/bspwm.desktop 
-sudo vim /usr/share/xsessions/bspwm.desktop 
-sudo vim /usr/share/xsessions/bspwm.desktop 
-lightdm -d --test-mode
+man xfce4-terminal 
+xfce4-terminal -e hide --class '^Polybar$' -d bottom --signal -s 5
+xfce4-terminal -e "hide --class '^Polybar$' -d bottom --signal -s 5"
+bash hide --class '^Polybar$' -d bottom --signal -s 5
+bash hide --class '^Polybar$' -d bottom --signal -s 5
+vim .local/bin/hide 
+xfce4-terminal -e "hide --class '^Polybar$' -d bottom --signal -s 5"
+bash hide --class '^Polybar$' -d bottom --signal -s 5
+bash hide --class '^Polybar$' -d bottom --signal -s 5
 cd .local/bin/
 ls
-vim bspwm_startup 
-ls
-chmod +x bspwm_startup 
-sudo vim /usr/share/xsessions/bspwm.desktop 
-sudo vim /usr/share/xsessions/bspwm.desktop 
-sudo vim /usr/share/xsessions/bspwm.desktop 
-man bspwm 
-sudo vim /usr/share/xsessions/bspwm.desktop 
-systemctl reboot
-sudo vim /usr/share/xsessions/bspwm.desktop 
-sudo vim /usr/share/xsessions/bspwm.desktop 
-vim .config/bspwm/bspwmrc 
-vim .config/bspwm/bspwmrc 
-vim .config/bspwm/bspwmrc 
-cd .config/bspwm/
-ls
-sudo vim /usr/share/doc/bspwm/README.md 
-sudo vim /usr/share/doc/bspwm/examples/bspwmrc 
-sudo vim /usr/share/doc/bspwm/examples/bspwmrc 
-cd /
-sudo find -iname bspwmrc
-sudo vim /usr/share/xsessions/bspwm.desktop 
-sudo vim /usr/share/xsessions/bspwm.desktop 
-yay -Ss ttf-awesome
-yay -Ss ttf*awesome
-yay -Ss ttf-font-awesome
-sudo pacman -S ttf-font-awesome
-fc-match awesome
-fc-match Awesome
-fc-match Sans
-fc-match Monospace
-fc-match feather
-cd .config/polybar/custom/
-vim user_modules.ini 
-vim modules.ini 
-sudo pacman -Ss terminte
-sudo pacman -Ss termite
-sudo pacman -S termite
-sudo pacman -Rns termite
-sudo pacman -Ss alacritty
-sudo pacman -S alacritty
-vim config.ini 
-vim config.ini 
-vim modules.ini 
-vim modules.ini 
-sudo pacman -Rns alacritty
+chmod +x hide 
 clear
-vim .config/bspwm/bspwmrc 
-vim .config/sxhkd/sxhkdrc
-vim .config/bspwm/bspwmrc 
-bashtop
-man vtop
-vtop -h
-xprop
-xprop | grep WM_CLASS | awk '{print $4}'
-vim .config/bspwm/bspwmrc 
-xfce4-terminal -T Top 
-xfce4-terminal --drop-down
-xfce4-terminal --drop-down
-sudo pacman -Ss gtop
-sudo pacman -S gtop
-gtop
-sudo pacman -Rns bashtop
-sudo pacman -Rns gtop
-sudo pacman -Ss vtop
-nvtop 
-yay -Ss vtop
-yay -S vtop gotop
-yay -S vtop 
+hide -h
+clear
+ps aux | grep xev
+clear
+ps aux | grep xev
+ps aux | grep xev
+killall xev
+ps aux | grep xev
+ps aux | grep xev
+man infinitey
+man infinity
 vtop
-yay -Ss cli-visualizer
-yay -Ss cava
-yay -Ss cava
-yay -S cava
-man cava
-cava
-cava -i alsa -d 'hw:4,0'
-cava -i alsa
-vim .config/cava/config 
-cava
-vim .config/cava/config 
-cava
-vim .config/cava/config 
-cava
-man bspc
-i3-sensible-terminal --role floating_term
-nethogs
-yay -Ss calendar
-pacman -Ss calendar
-clear
-pacman -Ss calendar
-sudo pacman -S when
-when -h
-man when
-sudo pacman -Rns when
-sudo pacman -S gnome-calendar
-sudo pacman -Ss gsimplecal
-sudo pacman -S gsimplecal
-gsimplecal 
-gsimplecal -h
-gsimplecal next_month
-pacman -Ss clock
-sudo pacman -S gnome-clocks
-gnome-clocks 
-gnome-clocks -h
-gnome-clocks --help-all
-neofetch --ascii_distro arch
-neofetch --ascii_distro arch
-cd .config/polybar/custom/
-vim modules.ini 
-cd ~
-vim .config/sxhkd/sxhkdrc
-cd .config/polybar/custom/
-vim modules.ini 
-vim .config/sxhkd/sxhkdrc
-vim .config/bspwm/bspwmrc 
-vim .config/i3/config
-vim .config/polybar.old/modules.ini 
-vim .config/polybar/custom/config.ini 
-vim .config/polybar/custom/colors.ini 
-neofetch
-neofetch --ascii_distro arch
 xprop
-xprop | grep class
-xprop | grep WM_CLASS
-ffrecord test
-ffrecord test2
-vim .config/picom-jonaburg.conf 
-yay -Ss picom-
-yay -S picom-jonaburg-git
-picom -h
+hideIt.sh --class '^Polybar$' --region 0x1080+10+-40
+hideIt.sh --class '^Polybar$' --hover -1 0.3
+hideIt.sh --class '^Polybar$' --hover -i 0.3
+hideIt.sh --class '^Polybar$' -d bottom --hover -i 0.3
+hideIt.sh --class '^Polybar$' -d bottom --hover -i 0.3 --signal
+hideIt.sh --class '^Polybar$' -d bottom --hover -i 0.3
+hideIt.sh --class '^Polybar$' -d bottom --region 0x1080+10+-40
+hideIt.sh --class '^Polybar$' -d bottom --hover -i 0.3 --signal
+hideIt.sh --class '^Polybar$' -d bottom --hover -i 0.3
+hideIt.sh --class '^Polybar$' -d bottom --hover -i 0.3 --peek 25
+man bash
+vim .config/sxhkd/sxhkdrc
 clear
-find -iname picom*
+ps aux | grep hideIt.sh
+ps aux | grep hideIt.sh
+ps aux | grep hideIt.sh
+killall /usr/bin/hideIt.sh
+kill -9 593310
+ps aux | grep hideIt.sh
+kill -9 837060
+ps aux | grep hideIt.sh
+ps aux | grep hideIt.sh
+ps aux | grep hide
+killall hide
+killall /home/sudarson/.local/bin/hide
+bash /home/sudarson/.local/bin/hide --class ^Polybar$ -d bottom --signal -s 5
 clear
-picom -h
-man picom
-pacman -Ss picom
-yay -Ss picom
+htop
+for pid in $(ps -ef | grep "hide" | awk '{print $2}')
+for pid in $(ps -ef | grep "hide" | awk '{print $2}'); do echo $pid; done
+for pid in $(ps -ef | grep "/home/sudarson/.local/bin/hide" | awk '{print $2}'); do echo $pid; done
+for pid in $(ps -ef | grep "/home/sudarson/.local/bin/hide" | awk '{print $2}'); do kill -9 $pid; done
+ps aux | grep hide
+ps aux | grep hideIt
+ps aux | grep hide
 clear
-picom -h
-picom -h | grep config
+ps aux | grep hide
+ps aux | grep hide
+for pid in $(ps -ef | grep "/home/sudarson/.local/bin/hide" | awk '{print $2}'); do kill -9 $pid; done
+ps aux | grep hide
+ps aux | grep hide
+for pid in $(ps -ef | grep "bash /home/sudarson/.local/bin/hide" | awk '{print $2}'); do kill -9 $pid; done
+echo pid in $(ps -ef | grep "bash /home/sudarson/.local/bin/hide"
+)
+echo pid in $(ps -ef | grep "bash /home/sudarson/.local/bin/hide"
+)
+echo pid in $(ps -ef | grep "bash /home/sudarson/.local/bin/hide"
+)
+echo pid in $(ps -ef | grep "bash /home/sudarson/.local/bin/hide")
+echo pid in $(ps -ef | grep -v "grep" "bash /home/sudarson/.local/bin/hide")
+echo pid in $(ps -ef | grep -v "grep" -e "bash /home/sudarson/.local/bin/hide")
+echo pid in $(ps -ef | grep -e "bash /home/sudarson/.local/bin/hide")
+echo pid in $(ps -ef | grep -e "bash /home/sudarson/.local/bin/hide") | grep -v "grep"
+echo pid in $(ps -ef | grep -e "bash /home/sudarson/.local/bin/hide") | grep -v "grep"
+echo pid in $(ps -ef | grep -e "bash /home/sudarson/.local/bin/hide") | grep -v "grep"
+echo pid in $(ps -ef | grep -e "bash /home/sudarson/.local/bin/hide")
+echo pid in $(ps | grep -e "bash /home/sudarson/.local/bin/hide")
+echo pid in $(ps -s | grep -e "bash /home/sudarson/.local/bin/hide")
+echo pid in $(ps -s | grep -f "bash /home/sudarson/.local/bin/hide")
+echo pid in $(ps -sf | grep -f "bash /home/sudarson/.local/bin/hide")
+echo pid in $(ps -ef | grep -e "bash /home/sudarson/.local/bin/hide")
+echo pid in $(ps -e | grep -e "bash /home/sudarson/.local/bin/hide")
+echo pid in $(ps -f | grep -e "bash /home/sudarson/.local/bin/hide")
+echo pid in $(ps -ef | grep -e "bash /home/sudarson/.local/bin/hide")
 clear
-mv picom.sample.conf .config/picom-jonaburg.conf
-picom -h | grep config
-killall picom
-picom --config ~/.config/picom-jonaburg.conf 
-picom --config ~/.config/picom-jonaburg.conf &
+echo pid in $(ps -ef | grep -e "bash /home/sudarson/.local/bin/hide")
+for pid in $(ps -ef | grep "some search" | awk '{print $2}'); do echo $pid; done
+for pid in $(ps -ef | grep "bash /home/sudarson/.local/bin/hide" | awk '{print $2}'); do echo $pid; done
+for pid in $(ps -ef | grep "bash /home/sudarson/.local/bin/hide" | awk '{print $3}'); do echo $pid; done
+for pid in $(ps -ef | grep "bash /home/sudarson/.local/bin/hide" | awk '{print $4}'); do echo $pid; done
+for pid in $(ps -ef | grep "bash /home/sudarson/.local/bin/hide" | awk '{print $5}'); do echo $pid; done
+for pid in $(ps -ef | grep "bash /home/sudarson/.local/bin/hide" | awk '{print $7}'); do echo $pid; done
+for pid in $(ps -ef | grep "bash /home/sudarson/.local/bin/hide" | awk '{print $8}'); do echo $pid; done
+for pid in $(ps -ef | grep "bash /home/sudarson/.local/bin/hide" | awk '{print $9}'); do echo $pid; done
+for pid in $(ps -ef | grep "bash /home/sudarson/.local/bin/hide" | grep -v "grep" | awk '{print $9}'); do echo $pid; done
+for pid in $(ps -ef | grep "bash /home/sudarson/.local/bin/hide" | grep -v "grep" | awk '{print $9}'); do echo $pid; done
+for pid in $(ps -ef | grep "bash /home/sudarson/.local/bin/hide" | grep -v "grep" | awk '{print $9}'); do echo $pid; done
+clear
+polybar_toggle 
+polybar_toggle 
+polybar_toggle 
+polybar_toggle 
+polybar_toggle 
+polybar_toggle 
+polybar_toggle 
+polybar_toggle 
+polybar_toggle 
+polybar_toggle 
+polybar_toggle 
+polybar_toggle 
+polybar_toggle 
+polybar_toggle 
+polybar_toggle 
+polybar_toggle 
+polybar_toggle 
+polybar_toggle 
+polybar_toggle 
+polybar_toggle 
+polybar_toggle 
+for pid in $(ps -ef | grep "bash /home/sudarson/.local/bin/hide" | awk '{print $9}'); do echo $pid; done
+for pid in $(ps -ef | grep "bash /home/sudarson/.local/bin/hide" | grep -v "grep" | awk '{print $9}'); do echo $pid; done
+for pid in $(ps -ef | grep "bash /home/sudarson/.local/bin/hide" | grep -v "grep" | awk '{print $9}'); do echo $pid; done
+for pid in $(ps -ef | grep "bash /home/sudarson/.local/bin/hide" | grep -v "grep" | awk '{print $9}'); do echo $pid; done
+for pid in $(ps -ef | grep "bash /home/sudarson/.local/bin/hide" | grep -v "grep" | awk '{print $9}'); do echo $pid; done
+for pid in $(ps -ef | grep "bash /home/sudarson/.local/bin/hide" | grep -v "grep" | awk '{print $9}'); do echo $pid; done
+for pid in $(ps -ef | grep "bash /home/sudarson/.local/bin/hide" | grep -v "grep" | awk '{print $9}'); do echo $pid; done
+for pid in $(ps -ef | grep "bash /home/sudarson/.local/bin/hide" | grep -v "grep" | awk '{print $9}'); do echo $pid; done
+for pid in $(ps -ef | grep "/home/sudarson/.local/bin/hide" | grep -v "grep" | awk '{print $9}'); do echo $pid; done
+for pid in $(ps -ef | grep ".local/bin/hide" | grep -v "grep" | awk '{print $9}'); do echo $pid; done
+for pid in $(ps -ef | grep ".local/bin/hide" | grep -v "grep" | awk '{print $9}'); do echo $pid; done
+for pid in $(ps -ef | grep ".local/bin/hide" | grep -v "grep" | awk '{print $9}'); do echo $pid; done
+for pid in $(ps -ef | grep ".local/bin/hide" | awk '{print $2}'); do kill -9 $pid; done
+for pid in $(ps -ef | grep ".local/bin/hide" | grep -v "grep" | awk '{print $9}'); do echo $pid; done
+for pid in $(ps -ef | grep ".local/bin/hide" | grep -v "grep" | awk '{print $9}'); do echo $pid; done
+for pid in $(ps -ef | grep ".local/bin/hide" | grep -v "grep" | awk '{print $9}'); do echo $pid; done
+for pid in $(ps -ef | grep "/home/sudarson/.local/bin/hide" | grep -v "grep" | awk '{print $9}'); do echo $pid; done
+for pid in $(ps -ef | grep "/home/sudarson/.local/bin/hide" | grep -v "grep" | awk '{print $9}'); do echo $pid; done
+for pid in $(ps -ef | grep "/home/sudarson/.local/bin/hide" | grep -v "grep" | awk '{print $9}'); do echo $pid; done
+for pid in $(ps -ef | grep "/home/sudarson/.local/bin/hide" | grep -v "grep" | awk '{print $9}'); do echo $pid; done
+for pid in $(ps -ef | grep ".local/bin/hide" | grep -v "grep" | awk '{print $9}'); do echo $pid; done
+for pid in $(ps -ef | grep "hide" | grep -v "grep" | awk '{print $9}'); do echo $pid; done
+for pid in $(ps -ef | grep "hide" | awk '{print $2}'); do kill -9 $pid; done
+for pid in $(ps -ef | grep "hide" | grep -v "grep" | awk '{print $9}'); do echo $pid; done
+for pid in $(ps -ef | grep "hide" | grep -v "grep" | awk '{print $9}'); do echo $pid; done
+polybar_toggle 
+for pid in $(ps -ef | grep "xev" | awk '{print $2}'); do kill -9 $pid; done
+for pid in $(ps -ef | grep "hide" | awk '{print $2}'); do echo $pid; done
+for pid in $(ps -ef | grep "hide" | grep -v "grep" | awk '{print $2}'); do echo $pid; done
+for pid in $(ps -ef | grep "hide" | grep -v "grep" | awk '{print $1}'); do echo $pid; done
+for pid in $(ps -ef | grep "hide" | grep -v "grep" | awk '{print $9}'); do echo $pid; done
+for pid in $(ps -ef | grep "hide" | awk '{print $8}'); do echo $pid; done
+for pid in $(ps -ef | grep "/bin/bash*hide" | awk '{print $8}'); do echo $pid; done
+for pid in $(ps -ef | grep "/bin/bash.*hide" | awk '{print $8}'); do echo $pid; done
+for pid in $(ps -ef | grep "/bin/bash.*hide"); do echo $pid; done
+clear
+for pid in $(ps -ef | grep "/bin/bash.*hide" | awk '{print $8 $9}'); do echo $pid; done
+for pid in $(ps -ef | grep "/bin/bash.*hide" | awk '{print $7 " " $8 " " $9}'); do echo $pid; done
+for pid in $(ps -ef | grep "/bin/bash.*hide" | awk '{print $8" "$9}'); do echo $pid; done
+for pid in $(ps -ef | grep "/bin/bash.*hide" | awk '{print $9}'); do echo $pid; done
+for pid in $(ps -ef | grep "/bin/bash.*hide" | grep -v "grep" | awk '{print $9}'); do echo $pid; done
+for pid in $(ps -ef | grep "/bin/bash.*hide" | grep -v "grep" | awk '{print $2}'); do echo $pid; done
+for pid in $(ps -ef | grep "/bin/bash.*hide" | grep -v "grep" | awk '{print $2}'); do kill -SIGINT $pid; done
+for pid in $(ps -ef | grep "/bin/bash.*hide" | grep -v "grep" | awk '{print $2}'); do kill -SIGINT $pid; done
+for pid in $(ps -ef | grep "/bin/bash.*hide" | grep -v "grep" | awk '{print $2}'); do kill -SIGINT $pid; done
+for pid in $(ps -ef | grep "/bin/bash.*hide" | grep -v "grep" | awk '{print $2}'); do kill -SIGINT $pid; done
+for pid in $(ps -ef | grep "/bin/bash.*hide" | grep -v "grep" | awk '{print $2}'); do kill -SIGINT $pid; done
+for pid in $(ps -ef | grep "/bin/bash.*hide" | grep -v "grep" | awk '{print $2}'); do echo 1; done
+clear
+polybar_toggle 
+ps -ef | grep "bash /home/sudarson/.local/bin/hide" | grep -v "grep" | awk '{    print $9}'
+ps -ef | grep "bash /home/sudarson/.local/bin/hide" | grep -v "grep" | awk '{print $9}'
+ps -ef | grep "hide" | grep -v "grep" | awk '{print $9}'
+polybar_toggle 
+cd .local/bin/
+cp bspwm_startup hideIt_toggle
+vim hideIt_toggle 
+mv hideIt_toggle polybar_toggle
+hide -h
+clear
+ps aux | grep hide
+ps aux | grep hide
+ps aux | grep hide
+
+vim polybar_toggle 
+cp polybar_toggle kill_polybar_autohide
+vim kill_polybar_autohide 
+kill_polybar_autohide 
+vim kill_polybar_autohide 
+kill_polybar_autohide 
+ps aux | grep infinity
+killall infinity
+clear
+ps aux | hide
+ps aux | grep hide
+kill -s sudarson 973112
+kill -SIGINT 973112
+ps aux | grep hide
+clear
+vim .config/sxhkd/sxhkdrc
+vim .local/bin/hide 
+vim .config/polybar/custom/config.ini 
+hideIt.sh --class '^Polybar' --toggle
+hideIt.sh --class '^Polybar' --toggle
+hideIt.sh --class '^Polybar' --toggle
+hideIt.sh --class '^Polybar' --toggle
+hideIt.sh --class '^Polybar' --toggle
+hideIt.sh --class '^Polybar' --toggle
+hideIt.sh --class '^Polybar' --toggle
+hideIt.sh --class '^Polybar' --toggle
+hideIt.sh --class '^Polybar' --toggle
+hideIt.sh --class '^Polybar' --toggle
+hideIt.sh --class '^Polybar' --toggle
+hideIt.sh --class '^Polybar' --toggle-peek
+hideIt.sh --class '^Polybar' --toggle-peek
+hideIt.sh --class '^Polybar' --toggle-peek
+hideIt.sh --class '^Polybar' --toggle-peek
+hideIt.sh --class '^Polybar' --toggle-peek
+hideIt.sh --class '^Polybar' --toggle-peek
+hideIt.sh --class '^Polybar' --toggle-peek
+hideIt.sh --class '^Polybar' --toggle-peek
+hideIt.sh --class '^Polybar' --toggle-peek
+hideIt.sh --class '^Polybar' --toggle-peek
+hideIt.sh --class '^Polybar' --toggle-peek
+hideIt.sh --class '^Polybar' --toggle-peek
+hideIt.sh --class '^Polybar' --toggle
+hideIt.sh --class '^Polybar' --toggle
+hideIt.sh --class '^Polybar' --toggle
+hideIt.sh --class '^Polybar' --toggle
+hideIt.sh --class '^Polybar' --toggle
+hideIt.sh --class '^Polybar' --toggle
+hideIt.sh --class '^Polybar' --toggle
+hideIt.sh --class '^Polybar' --toggle
+hideIt.sh --class '^Polybar' --toggle
+hideIt.sh --class '^Polybar' --toggle
+hideIt.sh --class '^Polybar' --toggle
+hideIt.sh --class '^Polybar' --toggle
+hideIt.sh --class '^Polybar' --toggle
+hideIt.sh --class '^Polybar' --toggle
+hideIt.sh --class '^Polybar' --toggle
+hideIt.sh --class '^Polybar' --toggle
+hideIt.sh --class '^Polybar' --toggle-peek
+hideIt.sh --class '^Polybar' --toggle-peek
+hideIt.sh --class '^Polybar' --toggle-peek
+hideIt.sh --class '^Polybar' --toggle
+hideIt.sh --class '^Polybar' --toggle
+hideIt.sh --class '^Polybar' --toggle
+hideIt.sh --class '^Polybar' --toggle
+hideIt.sh --class '^Polybar' --toggle
+hideIt.sh --class '^Polybar' --toggle
+hideIt.sh --class '^Polybar' --toggle
+hideIt.sh --class '^Polybar' --toggle
+hideIt.sh --class '^Polybar' --toggle-peek
+hideIt.sh --class '^Polybar' --toggle
+hideIt.sh --class '^Polybar' --toggle
+hideIt.sh --class '^Polybar' --toggle
+hideIt.sh --class '^Polybar' --toggle
+hideIt.sh --class '^Polybar' --toggle
+hideIt.sh --class '^Polybar' --toggle
+hideIt.sh --class '^Polybar' --toggle
+hideIt.sh --class '^Polybar' --toggle
+hideIt.sh --class '^Polybar' --toggle
+hideIt.sh --class '^Polybar' --toggle
+hideIt.sh --class '^Polybar' --toggle
+hideIt.sh --class '^Polybar' --toggle
+hideIt.sh --class '^Polybar' --toggle
+hideIt.sh --class '^Polybar' --toggle
+hideIt.sh --class '^Polybar' --toggle
+hideIt.sh --class '^Polybar' --toggle
+hideIt.sh --class '^Polybar' --toggle
+hideIt.sh --class '^Polybar' --toggle
+hideIt.sh --class '^Polybar' --toggle
+hideIt.sh --class '^Polybar' --toggle
+hideIt.sh --class '^Polybar' --toggle
+hideIt.sh --class '^Polybar' --toggle
+hideIt.sh --class '^Polybar' --toggle
+hide --class '^Polybar$' -d bottom --signal -s 5
+ps aux | grep hide
+pkill hideIt.sh
+killall hideIt.sh
+
+hideIt.sh --class '^Polybar' --toggle
+hide --class '^Polybar' --kill
+hide --class '^Polybar' --toggle
+hide --class '^Polybar' --kill
+hide --class '^Polybar' --kill
+hide --class '^Polybar' --kill
+hide --class '^Polybar' --kill
+hide --class '^Polybar' --kill
+hide --class '^Polybar' --kill
+clear
+hide --class '^Polybar' --kill
+hide --class '^Polybar' --kill
+hide --class '^Polybar' --kill
+hide --class '^Polybar' --kill
+hide --class '^Polybar' --kill
+hide --class '^Polybar' --kill
+hide --class '^Polybar' --kill
+hide --class '^Polybar' --kill
+hide --class '^Polybar' --kill
+hide --class '^Polybar' --kill
+hide --class '^Polybar' --kill
+hideIt.sh --class '^Polybar' --toggle
+hideIt.sh --class '^Polybar' --toggle
+hideIt.sh --class '^Polybar' --toggle
+hide --class '^Polybar' --toggle
+hide --class '^Polybar' --toggle
+hide --class '^Polybar' --toggle
+hide --class '^Polybar' --toggle
+hide --class '^Polybar' --toggle
+clear
+hide --class '^Polybar' --toggle
+ps aux | grep xev
+hide --class '^Polybar' --toggle
+hide --class '^Polybar' --toggle
+hide --class '^Polybar' --kill
+hide --class '^Polybar' --kill
+hide --class '^Polybar' --kill
+hide --class '^Polybar' --kill
+notify-send test
 vim .config/bspwm/bspwmrc 
-killall picom
-cava
-cava
-cat /usr/share/xsessions/bspwm.desktop 
-qdbus org.mpris.MediaPlayer2.chromium.instance23882 /org/mpris/MediaPlayer2 
-qdbus org.mpris.MediaPlayer2.Player.Playbackstatus
-qdbus org.mpris.MediaPlayer2.chromium.instance23882 /org/mpris/MediaPlayer2 qdbus org.mpris.MediaPlayer2.Player.PlaybackStatus
-qdbus org.mpris.MediaPlayer2.chromium.instance23882 /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlaybackStatus
+notify-send test
+pacman -Ss evolution
+sudo pacman -S evolution
+sudo pacman -Rns evolution
+pacman -Ss kmail
+pacman -S geary
+pacman -Ss geary
+sudo pacman -S geary
+pacman -Ss bluemail
+pacman -Ss mailspring
+yay -Ss mailspring
+pacman -Ss thunderbird
+sudo pacman -S thunderbird
+sudo pacman -Rns geary
+vim .config/picom-jonaburg.conf 
 clear
-qdbus org.mpris.MediaPlayer2.chromium.instance23882 /org/mpris/MediaPlayer2 
-dbus-send --print-reply --dest=org.mpris.MediaPlayer2.chromium.instance23882 /org/mpris/MediaPlayer2 org.freedesktop.DBus.Properties.Get string:org.mpris.MediaPlayer2.Player string:Metadata
-dbus-send --print-reply --dest=org.mpris.MediaPlayer2.chromium.instance23882 /org/mpris/MediaPlayer2 org.freedesktop.DBus.Properties.Get string:org.mpris.MediaPlayer2.Player string:Metadata | sed -n '/title/{n;p}' | cut -d '"' -f 2
-dbus-send --print-reply --dest=org.mpris.MediaPlayer2.chromium.* /org/mpris/MediaPlayer2 org.freedesktop.DBus.Properties.Get string:org.mpris.MediaPlayer2.Player string:Metadata | sed -n '/title/{n;p}' | cut -d '"' -f 2
-dbus-send --print-reply --dest=org.mpris.MediaPlayer2.chromium.instance23882 /org/mpris/MediaPlayer2 org.freedesktop.DBus.Properties.Get string:org.mpris.MediaPlayer2.Player string:Metadata | sed -n '/title/{n;p}' | cut -d '"' -f 2
-dbus 
-dbus-monitor 
-qdbus
-qdbus | grep MediaPlayer2.chromium
+hide -h
+clear
+hide --class '^Polybar$' -d bottom --hover-signal -i 0.3
+hide --class '^Polybar$' -d bottom --hover-signal -i 0.3
+hide --class '^Polybar$' -d bottom --hover-signal -i 0.3
+hide --class '^Polybar$' -d bottom --hover-signal -i 0.3
+hide --class '^Polybar$' -d bottom --hover-signal -i 0.3
+killall hide
+pkill hide
+hide --class '^Polybar$' -d bottom --hover -i 0.3
+hide --class '^Polybar$' -d bottom --hover-signal -i 0.3
+hide --class '^Polybar$' -d bottom --signal -i 0.3
+hideIt.sh --class '^Polybar$' -d bottom --signal -i 0.3
+hide --class '^Polybar$' -d bottom --signal -i 0.3
+hide --class '^Polybar$' -d bottom --hover-signal -i 0.3
+hide --class '^Polybar$' -d bottom --signal -i 0.3
+hide --class '^Polybar$' -d bottom --signal -i 0.3
+hide --class '^Polybar$' -d bottom --signal -i 0.3
+hide --class '^Polybar$' -d bottom --hover -i 0.3
+hide --class '^Polybar$' -d bottom --hover-signal -i 0.3
+hide --class '^Polybar$' -d bottom --signal -i 0.3
+hide --class '^Polybar$' -d bottom --signal -i 0.3
+hide --class '^Polybar$' -d bottom --hover-signal -i 0.3
+hide --class '^Polybar$' -d bottom --signal -i 0.3
+hide --class '^Polybar$' -d bottom --signal -i 0.3
+hide --class '^Polybar$' -d bottom --signal -i 0.3
+hide --class '^Polybar$' -d bottom --signal -i 0.3 -s 5
+hide --class '^Polybar$' -d bottom --signal -i 0.3 -s 15
+hide --class '^Polybar$' -d bottom --signal -i 0.3 -s 5
+hide --class '^Polybar$' -d bottom --signal -s 5
+hide --class '^Polybar$' -d bottom --signal -i 4 -s 5
+hide --class '^Polybar$' -d bottom --signal -i 4 -s 5
+hide --class '^Polybar$' -d bottom --signal -s 5
+hide --class '^Polybar$' -d bottom --signal -s 5
+hide --class '^Polybar$' -d bottom --signal -s 5
+hide --class '^Polybar$' -d bottom --signal -s 5
+hide --class '^Polybar$' -d bottom --signal -s 5
+hide --class '^Polybar$' -d bottom --signal -s 5
+hide --class '^Polybar$' -d bottom --signal -s 5
+hide --class '^Polybar$' -d bottom --signal -s 5
+hide --class '^Polybar$' -d bottom --signal -s 5
+hide --class '^Polybar$' -d bottom --signal -s 5
+hide --class '^Polybar$' -d bottom --signal -s 5
+hide --class '^Polybar$' -d bottom --signal -s 5
+clear
+hide --class '^Polybar$' -d bottom --signal -s 5
+hide --class '^Polybar$' -d bottom --signal -s 5
+hide --class '^Polybar$' -d bottom --signal -s 5
+hide --class '^Polybar$' -d bottom --signal -s 5 &
+hide --class '^Polybar$' -d bottom --signal -s 5 &
+hide --class '^Polybar$' -d bottom --signal -s 5 &
+clear
+hide --class '^Polybar$' -d bottom --signal -s 5
+hide --class '^Polybar$' -d bottom --signal -s 5
+hide --class '^Polybar$' -d bottom --signal -s 5
+hide --class '^Polybar$' -d bottom --signal -s 5
+hide --class '^Polybar$' -d bottom --signal -s 5
+hide --class '^Polybar$' -d bottom --signal -s 5
+hide --class '^Polybar$' -d bottom --signal -s 5
+hide --class '^Polybar$' -d bottom --signal -s 5
+hide --class '^Polybar$' -d bottom --signal -s 5
+hide --class '^Polybar$' -d bottom --signal -s 5
+hide --class '^Polybar$' -d bottom --signal -s 5
+hide --class '^Polybar$' -d bottom --signal -s 5
+hide --class '^Polybar$' -d bottom --signal -s 5
+hide --class '^Polybar$' -d bottom --signal -s 5
+hide --class '^Polybar$' -d bottom --signal -s 5
+hide --class '^Polybar$' -d bottom --signal -s 5
+hide --class '^Polybar$' -d bottom --signal -s 5
+hide --class '^Polybar$' -d bottom --signal -s 5
+hide --class '^Polybar$' -d bottom --hover -s 5
+hide --class '^Polybar$' -d bottom --hover -s 5
+hide --class '^Polybar$' -d bottom --signal -s 5
+hide --class '^Polybar$' -d bottom --signal -s 5
+hide --class '^Polybar$' -d bottom --hover -s 5
+hide --class '^Polybar$' -d bottom --signal -s 5
+hide --class '^Polybar$' -d bottom --hover -s 5
+hide --class '^Polybar$' -d bottom --hover -s 5
+hide --class '^Polybar$' -d bottom --hover -s 5
+hide --class '^Polybar$' -d bottom --hover -s 5
+hide --class '^Polybar$' -d bottom --signal -s 5
+hide --class '^Polybar$' -d bottom --signal -s 5
+hide --class '^Polybar$' -d bottom --signal -s 5
+hide --class '^Polybar$' -d bottom --signal -s 5
+vim .config/polybar/custom/config.ini 
+htop
+vtop
+killall evolution
+pkill evolution
+pkill evolution
+killall evolution
+vim .config/polybar/custom/config.ini 
+vim .config/polybar/custom/config.ini 
+vim .config/polybar/custom/config.ini 
+vim .config/polybar/custom/config.ini 
+vim .config/polybar/custom/config.ini 
+xdo raise -N Polybar
+vim .config/polybar/custom/config.ini 

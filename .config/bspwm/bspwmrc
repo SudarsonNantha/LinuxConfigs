@@ -9,6 +9,9 @@ $HOME/.config/polybar/./launch.sh --custom
 #picom
 picom --config ~/.config/picom-jonaburg.conf &
 redshift -P -O 3250
+#hide --class '^Polybar$' -d bottom --signal -s 5
+/usr/lib/xfce4/notifyd/xfce4-notifyd &
+
 
 #bspc monitor -d I II III IV V VI VII VIII IX X
 
@@ -33,4 +36,3 @@ bspc rule -a mplayer2 state=floating
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
 
-#bspc rule -a Xfce4-terminal state=floating
