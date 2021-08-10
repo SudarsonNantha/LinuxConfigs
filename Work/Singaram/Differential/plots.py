@@ -27,9 +27,10 @@ with open("output.csv") as csv_file:
         output_vel.append(float(row[1]))
 
 ### Plots
-plot(input_time,input_v1, '--')
-plot(input_time,input_v2, '--')
+plot(input_time,input_v1, '--',label="Input Shaft 1")
+plot(input_time,input_v2, '--',label="Input Shaft 2")
+plot(output_time,output_vel,lw=2,label="Output Shaft 2")
 xlabel("Time (s)")
 ylabel("Velocity deg/s")
-plot(output_time,output_vel,lw=2)
+legend()
 show()
