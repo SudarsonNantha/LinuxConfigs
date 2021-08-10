@@ -5,11 +5,10 @@
 pgrep -x sxhkd > /dev/null || sxhkd &
 #sxhkd &
 feh --bg-scale ~/Pictures/Wallpapers/Cars/Formula-One-Sports-Wallpaper-For-Desktop-Background.jpg
-$HOME/.config/polybar/./launch.sh --custom
+$HOME/.config/polybar/custom/./launch.sh
 #picom
 picom --config ~/.config/picom-jonaburg.conf &
 redshift -P -O 3250
-#hide --class '^Polybar$' -d bottom --signal -s 5
 /usr/lib/xfce4/notifyd/xfce4-notifyd &
 
 
@@ -36,3 +35,6 @@ bspc rule -a mplayer2 state=floating
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
 
+exec xdo raise -N Polybar
+exec xdo raise -a top_bar
+exec xdo raise -a bottom_bar

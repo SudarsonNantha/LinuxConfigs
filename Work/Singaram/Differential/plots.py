@@ -29,5 +29,7 @@ with open("output.csv") as csv_file:
 ### Plots
 plot(input_time,input_v1, '--')
 plot(input_time,input_v2, '--')
+xlabel("Time (s)")
+ylabel("Velocity deg/s")
 plot(output_time,output_vel,lw=2)
 show()

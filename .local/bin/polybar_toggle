@@ -14,12 +14,16 @@ if [ $check -eq 0 ];
 then
 #    notify-send -u normal "Process Exists"
     notify-send -u normal "Polybar will now auto hide" "Press Super + Shift + Z to unhide"
-    /home/sudarson/.local/bin/./hide --class '^Polybar$' -d bottom --signal -s 5
+#    /home/sudarson/.local/bin/./hide --class '^Polybar$' -d bottom --signal -s 5
+    /home/sudarson/.local/bin/./hide --name 'top_bar' -d top --signal -s 5 &
+    /home/sudarson/.local/bin/./hide --name 'bottom_bar' -d bottom --signal -s 5 &
 else
-#    notify-send -u normal "Process DOES NOT exist"
-    hideIt.sh --class '^Polybar' --toggle
+    notify-send -u normal "Process DOES NOT exist"
+    hideIt.sh --name 'top_bar' --toggle &
+    hideIt.sh --name 'bottom_bar' --toggle &
     sleep 5
-    hideIt.sh --class '^Polybar' --toggle
+    hideIt.sh --name 'top_bar' --toggle &
+    hideIt.sh --name 'bottom_bar' --toggle &
 
 fi
 

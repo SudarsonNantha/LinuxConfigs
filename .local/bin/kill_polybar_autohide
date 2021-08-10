@@ -2,7 +2,6 @@
 
 notify-send -u normal "Polybar is now visible" "Press Super + Z to re-enable auto hide"
 for pid in $(ps -ef | grep "/bin/bash.*hide" | grep -v "grep" | awk '{print $2}'); do
+    echo $pid;
     kill -SIGINT $pid;
 done
-
-
