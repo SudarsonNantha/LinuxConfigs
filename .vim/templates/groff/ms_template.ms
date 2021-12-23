@@ -1,1 +1,0 @@
-/home/sudarson/.config/groff/ms_template.ms
