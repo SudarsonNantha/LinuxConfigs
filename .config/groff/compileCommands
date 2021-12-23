@@ -1,0 +1,8 @@
+groff -Tpdf -U -tepjR -mspdf -mpdfmark newgroff.ms > newgroff.pdf
+
+refer -e -p ~/Documents/bibliography newgroff.ms | pic | groff -Tpdf -U -te -mspdf -mpdfmark > newgroff.pdf
+
+refer "$file" > temp.ms && echo ".ds CH
+.ds CF
+.if '\*[.T]'pdf' \X'pdf: switchtopage before here'
+.TC" >> temp.ms && groff -Tpdf -U -tep -mspdf temp.ms > "$base".pdf && rm temp.ms;;

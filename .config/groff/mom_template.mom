@@ -1,0 +1,196 @@
+
+\" -*- mode: text; coding: utf-8; -*-
+\#
+\# Information for the cover pages
+\# Title, subtitle and copyright for the document cover.
+\#
+\# Will probably remove this page in most cases
+\#.TITLE DOC_COVER \
+\#  "Title Cover"
+\#.SUBTITLE DOC_COVER \
+\#  "Three types of mom documents" \
+\#  "assembled and collated" \
+\#  "by mom's author"
+\#
+\# What appears in the pdf viewer's window title
+.PDF_TITLE "PDF template"
+\#
+\# Reference macros (metadata) for the first section of the collated document
+\#
+.TITLE     "Document Title"
+.SUBTITLE  "Document Subtitle"
+.AUTHOR    "Sudarson Nanthacoumaranee"
+\#
+\# What to put on the cover for the whole document (in mom-speak,
+\# the "doc cover").  The title, subtitle, and author are what were
+\# given to TITLE DOC_COVER, SUBTITLE DOC_COVER, and COPYRIGHT
+\# DOC_COVER.
+\#
+\#.DOC_COVER TITLE SUBTITLE COPYRIGHT
+\#
+\# What to put on the first document's title page (in mom-speak, the
+\# "cover").  In this case, we're using the metadata from TITLE,
+\# SUBTITLE, AUTHOR and COPYRIGHT, which will also be used to
+\# generate the docheader (minus the copyright).
+\#
+\# Cover page is hidden by default
+\#.COVER TITLE AUTHOR DOCTYPE COPYRIGHT
+\#
+\# Docstyle macros (templates)
+\#
+\#.DOCTYPE    NAMED "Outline"
+.PRINTSTYLE TYPESET
+.PAPER      A4
+\#.PAPER      LETTER
+\#
+\# Here we style the covers a bit.
+\#
+.DOC_COVER_TITLE_STYLE \
+  SIZE +8 \
+  SMALLCAPS \
+\#  UNDERLINE 1 3p
+.DOC_COVER_SUBTITLE_STYLE \
+  FONT I \
+  SIZE +2 \
+  LEAD 18 \
+  SPACE .75v
+.DOC_COVER_COPYRIGHT_SIZE -.5
+\#
+.COVER_TITLE_SIZE +5
+.COVER_ATTRIBUTE_STYLE \
+  SIZE +2 \
+  SPACE .25v
+.COVER_AUTHOR_STYLE \
+  SIZE +2 \
+  LEAD 18
+.COVER_DOCTYPE_STYLE \
+  SIZE +4 \
+  UNDERLINE DOUBLE 1
+.COVER_COPYRIGHT_SIZE -.5
+\#
+\# Here we style the docheader a bit.
+\#
+.SUBTITLE_SPACE .25v
+.DOCTYPE_UNDERLINE 1 2p
+\#
+\# Styles for nested heading levels and paragraphs
+\#
+.HEADING_STYLE 1 \
+  FONT B \
+  SIZE +1.25 \
+  UNDERSCORE .5 2p \
+  QUAD C\
+  NO_SPACE_AFTER \
+  BASELINE_ADJUST +0 \
+  NUMBER
+
+.HEADING_STYLE 2 NUMBER\
+  FONT B \
+  SIZE +.5 \
+  QUAD L \
+  BASELINE_ADJUST \n[.v]/8 \" ie 1/8 the leading
+
+.INDENT_FIRST_PARAS
+.PARA_INDENT 2m
+.PARA_SPACE .25v
+.AUTO_RELOCATE_TOC \" Move table of contents to the top of the doc
+.SPACE_TOC_ITEMS   \" Prettify TOC spacing
+
+\#
+\# Begin the document
+\#
+.START
+\#
+.PP
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+nonumy eirmod tempor invidunt ut labore et do\%lo\%re magna ali\%quyam erat,
+sed diam voluptua. Stet clita kasd gubergren, no sea takimata sanctus est.
+At vero eos et accusam et justo duo do\%lo\%re et ea rebum.
+.PP
+Stet clita kasd gubergren, no sea takimata sanctus est.  Lorem ipsum
+dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+tempor invidunt ut labore et do\%lo\%re magna ali\%quyam erat, sed diam
+voluptua.
+\#
+\# List template. Use SHIFT_LIST to indent list
+\# Each line must be preceded by .ITEM
+.LIST BULLET
+.SHIFT_LIST 20p
+.ITEM
+Item
+test list
+.ITEM
+Bullet test
+.LIST OFF
+\# Add a starred linebreak
+.LINEBREAK
+.HEADING 1 "First Numbered Section"
+.HEADING 2 "Another Section"
+\# Equations can be left aligned with -L or indented with -I <number>
+\# Uses standard groff.ms equation syntax
+.EQ -I 4
+f = 1 smallover 10
+sin( theta ) = pi
+.EN
+.EQ -I 4
+f(x) = 5x + 3
+.EN
+.EQ -I 4
+e sup (i theta ) = mark 1 + e sup (i theta ) + 1 smallover 2! (i theta ) sup 2...
+.EN
+.EQ -I 4
+lineup + 1 smallover {N-1} (i theta ) sup {N-1} + 1 smallover N (i theta ) sup N
+.EN
+
+.EQ -I 4
+K sub e = int from {T sub e} K~~
+left [ matrix{
+ccol { (c sub 1 sup k ) sup 2 above  (c sub 1 sup l ) sup 2 above (c sub 1 sup m ) sup 2 }
+ccol { x sub k above x sub l above x sub m }
+ccol { y sub k above y sub l above y sub m }
+} right ]
+~~d OMEGA
+.EN
+
+
+\# Each line of Code must be LESS THAN 78 characters to ensure
+\# size 10 font comfortably fits on an A4 sheet of paper.
+\#
+\# Font size for code is recommended to be 10. Use .ps 10.
+\# Left Indentation ensures the line breaks don't have to be
+\# specified at the end of every line
+\#
+.ps 10
+.LEFT
+.CODE
+np.set_printoptions(suppress=True)
+# Coordinates are in [x,y,z] format
+# Represent x and y coordinates in vandermonde form without z coordinates12349
+#   [1 xk yk]
+#   [1 xl yl]
+#   [1 xm ym]
+# The find values of c using [coordinate matrix]*[c] = [f]
+#                         => [c] = [coorindate matrix]^-1 * [f]
+def getConstants(xyz,N):
+    coordinateMatrix = np.zeros((N,N))
+    f = np.eye(N)
+    for i in range (0,N):
+        coordinateMatrix[i][0] = 1
+        coordinateMatrix[i][1] = xyz[i][0]
+        coordinateMatrix[i][2] = xyz[i][1]
+
+    c = np.zeros((N,N))
+    # Find all c values, solution stored row-wise
+    inverseMat = np.linalg.inv(coordinateMatrix)
+    for i in range (0,N):
+        c[i] = np.matmul(inverseMat,f[i])
+
+    # Transpose c so the solutions for equations are along columns (not rows)
+    c = np.transpose(c)
+    return c
+.CODE OFF
+
+\# Conver images to .eps to insert into groff document
+\# -L, -R, and -I <n> can be used to position the image
+\# Image is horizontally centred by default
+.PSPIC /home/sudarson/.config/groff/pondy.eps
