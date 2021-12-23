@@ -31,7 +31,7 @@ def scan_images(l):
     print("Analysing %g images...\n" %(l2-l1))
     Liste_pos=[initial]
     for k in tqdm(range (l1,l2)):
-    #for k in range(2,l):
+
         input_filename = "image_"+str(Time[k])+".png"
         photo = imread(input_filename)
         M=photo.shape            # Stores the size of the photo

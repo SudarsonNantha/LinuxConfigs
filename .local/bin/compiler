@@ -18,15 +18,15 @@ clear
 
 cd "$dir" || exit
 
-#textype() { \
-#	command="pdflatex"
-#	( sed 5q "$file" | grep -i -q 'xelatex' ) && command="xelatex"
-#	$command --output-directory="$dir" "$base" &&
-#	grep -i addbibresource "$file" >/dev/null &&
-#	biber --input-directory "$dir" "$base" &&
-#	$command --output-directory="$dir" "$base" &&
-#	$command --output-directory="$dir" "$base"
-#}
+textype() { \
+	command="pdflatex"
+	( sed 5q "$file" | grep -i -q 'xelatex' ) && command="xelatex"
+	$command --output-directory="$dir" "$base" &&
+	grep -i addbibresource "$file" >/dev/null &&
+	biber --input-directory "$dir" "$base" &&
+	$command --output-directory="$dir" "$base" &&
+	$command --output-directory="$dir" "$base"
+}
 
 case "$ext" in
 #	[0-9]) preconv "$file" | refer -PS -e | groff -mandoc -T pdf > "$base".pdf ;;
@@ -42,30 +42,35 @@ case "$ext" in
 #		else
 #			pandoc "$file" --pdf-engine=xelatex -o "$base".pdf
 #		fi ; ;;
-#	mom) preconv "$file" | refer -PS -e | groff -mom -kept -T pdf > "$base".pdf ;;
-	mom) preconv "$file" | pdfmom -e -Tps > "$base".pdf ;;
+	mom) preconv "$file" | refer -PS -e | groff -mom -kept -T pdf > "$base".pdf ;;
+#	mom) preconv "$file" | pdfmom -e -Tps > "$base".pdf ;;
 #    ms) preconv "$file" | refer -PS -e | groff -e -me -tbl -ms -kept -Tps > "$base".ps && ps2pdf "$base".ps;;
 #    ms) groff -ms "$file" -e -tbl -Tps > "$base".ps && ps2pdf "$base".ps;;
 #    ms) groff -Tpdf -U -t -e -mpdfmark -mspdf "$file" > "$base".pdf;;
 #    ms) refer -e -p ~/Documents/bibliography "$file" | groff -Tpdf -U -tep -mspdf > "$base".pdf;;
 #    ms) groff -Tpdf -U -tepR -mspdf "$file" > "$base".pdf;;
 #
-#
-    ms) refer "$file" > temp.ms && echo ".ds CH
-.ds CF
-.if '\*[.T]'pdf' \X'pdf: switchtopage before here'
-.TC" >> temp.ms && groff -Tpdf -U -tep -mspdf temp.ms > "$base".pdf && rm temp.ms;;
+#    ms) refer "$file" > temp.ms && echo ".ds CH
+#.ds CF
+#.if '\*[.T]'pdf' \X'pdf: switchtopage before here'
+#.TC" >> temp.ms && groff -Tpdf -U -tep -mspdf temp.ms > "$base".pdf && rm temp.ms;;
 #
 #
 # Uncomment for ms landscape
 #    ms) preconv "$file" | refer -PS -e | groff -e -me -ms -kept -Tps -dpaper=a4l -P-pa4 -P-l > "$base".ps && ps2pdf "$base".ps;;
-	py) python "$file" ;;
+#
+#
+    ms) groff-lists "$file";;
+#
+    mm) groff -mm -Tpdf "$file" > "$base".pdf;;
+#
+	py) python3 "$file" ;;
     scala) scalac "$file" ;;
 #	[rR]md) Rscript -e "rmarkdown::render('$file', quiet=TRUE)" ;;
 #	rs) cargo build ;;
- #  sass) sassc -a "$file" "$base.css" ;;
+#   sass) sassc -a "$file" "$base.css" ;;
 #	scad) openscad -o "$base".stl "$file" ;;
 	sent) setsid -f sent "$file" 2>/dev/null ;;
-#	tex) textype "$file" ;;
+	tex) textype "$file" ;;
 #	*) sed 1q "$file" | grep "^#!/" | sed "s/^#!//" | xargs -r -I % "$file" ;;
 esac

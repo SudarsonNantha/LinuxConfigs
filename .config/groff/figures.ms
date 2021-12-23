@@ -18,10 +18,10 @@ List of Figures
 .ds figtitle Figure Number 	 Page No.
 .B "\\*[figtitle]"
 .br
-.ds entry 1. This is a nice caption (Fig. 2.1.1) \t . . . 3
-.pdfhref L -D fig2.1.1 \*[entry]
+.ds entry 1. This is a nice caption (Fig. 1) \t . . . 2
+.pdfhref L -D fig1 \*[entry]
 .br
-.ds entry 2. Figure 2.1.2 \t . . . 4
-.pdfhref L -D fig2.1.2 \*[entry]
+.ds entry 2. Figure 2 \t . . . 2
+.pdfhref L -D fig2 \*[entry]
 .br
 .bp

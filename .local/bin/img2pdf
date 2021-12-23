@@ -1,27 +1,89 @@
 #!/bin/bash
 
+
+normal_input() {
+    echo "Files saved as:"
+    for arg in "$@"
+    do
+        file=$(readlink -f "$arg")
+        base="${file%.*}"
+        #dir=${file%/*}
+        #ext="${file##*.}"
+
+        epsfile="${base}.eps"
+        pdffile="${base}.pdf"
+
+        convert $file $epsfile
+        ps2pdf -dEPSCrop $epsfile
+        rm $epsfile
+        echo "$pdffile"
+    done
+}
+
+std_input() {
+
+#    if [ -d "pdf-images" ]; then
+#        printf "Image directory exists.\n"
+#    else
+#        mkdir pdf-images
+#    fi
+
+    while read line
+    do
+        file=$(readlink -f "$line")
+        base="${file%.*}"
+        ext="${file##*.}"
+
+        dir="${file%/*}"
+#        dir="${file%/*}/pdf-images"
+#        newfile="$dir/${file##*/}"
+#        base="${newfile%.*}"
+
+        epsfile="${base}.eps"
+        pdffile="${base}.pdf"
+
+        convert $file $epsfile
+        ps2pdf -dEPSCrop $epsfile $pdffile
+        rm $epsfile
+        echo "Converted pdf: $pdffile"
+    done < "${1:-/dev/stdin}"
+
+}
+
+
+usage(){
+
+    printf "\n\033[1mUsage:\033[0m\n\timg2pdf [options] <files>\n\n"
+    printf "\033[1mOptions:\033[0m\n\t-c Convert images with list of files as arguments\n\t-s convert a list of files with standard input\n\n"
+    printf "\033[1mFiles:\033[0m\n\tImages should preferably be in .png or .jpg format\n\n"
+
+}
+
 set -e
-if [ "$#" -lt 1 ]
-then
-    echo  "Please insert at least one argument"
-    exit
+if [[ "$#" -ge 1 ]]; then
+    option=$1
+    case $option in
+        -c)
+            shift
+            normal_input "$@"
+            ;;
+
+        -s)
+            shift
+                std_input "$@"
+            ;;
+
+        -h)
+            usage
+            ;;
+
+        *)
+            echo "Unknown or badly placed parameter '$1'." 1>&2
+            usage
+            exit 1
+            ;;
+    esac
+
 else
-    echo -e "\c"
+    usage
 fi
-
-echo "Files saved as:"
-for arg in "$@"
-do
-    file=$(readlink -f "$arg")
-    base="${file%.*}"
-    dir=${file%/*}
-    ext="${file##*.}"
-
-    epsfile="${base}.eps"
-    pdffile="${base}.pdf"
-
-    convert $file $epsfile
-    ps2pdf -dEPSCrop $epsfile
-    rm $epsfile
-    echo "$pdffile"
-done

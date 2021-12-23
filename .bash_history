@@ -1,500 +1,500 @@
-ifconfig -a
-clear
-cat .local/bin/raspberry-send 
-mkdir Work/Cable\ Creep/shared
-cd Work/Cable\ Creep/shared/
-cd ..
-ls
-cd shared
-ls
-ls
-rm *
-ls
-rm -R *
-ls
-cd essai14/
-ls
-cd ..
-rm -R *
-ls
-ls
-ls
-exit
-scp pi@fe80::86f1:6722:3c4a:3867:images/essai15/cpu_loads .
-scp pi@fe80::86f1:6722:3c4a:3867%wlan0:images/essai15/cpu_loads .
-scp pi@192.168.43.146:images/essai15/cpu_loads .
-vim .local/bin/raspberry-send 
-exit
-cd Work/Cable\ Creep/
-ls
-cp shared/cpu_loads testing/
-cd testing/
-ls
-vim cpu_grapher.py
-ce ..
-ls
-cd ..
-ls
-ls essai8/
-cm essai8/algorithme_rouge_essai8.py testing/
-cd testing/
-cd ..
-cp essai8/algorithme_rouge_essai8.py testing/
-cd testing/
-vim algorithme_rouge_essai8.py 
-cd Test/
-vim ticks.py
-cd Work/Cable\ Creep/testing/
-vim cpu_grapher.py 
-raspberry-connect 
-exit
-raspberry-connect 
-exit
-nmcli con show
-nmcli con up id Moto\ G5
-nmcli con up id Moto\ G5+
-nmcli con show
-raspberry-connect 
-nmcli con show
-clear
-raspberry-
-raspberry-connect 
-cd Work/Lift2/
-ls
-vim platformForces.m 
-clear
-vim globalStiffness.m
-vim globalStiffness.m
-cp globalStiffness.m globalStiffness.bak
-vim globalStiffness.m
-cd Work/Lift2/
-vim stiffness
-vim stiffness.m 
-cd ..
-cd Work/
-mkdir Lift
-cd Lift/
-ls
-vim stiffness.m
-vim getStiffness.m 
-ls
-cd ..
-cp -R Lift/ Lift2/
-cd Lift2/
-ls
-clear
-vim getStiffness.m 
-mv stiffness.m platformStiffness.m
-vim platformStiffness.m 
-cd ..
-cp Lift/stiffness.m Lift2/
-cd Lift2/
-vim stiffness.m 
-ls
-mv platformStiffness.m platformForces.m
-vim stiffness.m 
-vim stiffness.m 
-cp getStiffness.m getStiffness.bak
-vim getStiffness.m
-vim getStiffness.m
-clear
-cp stiffness.m stiffness2.m
-vim stiffness2.m 
-cd ..
-cp Lift/stiffness.m Lift2/stiffness2.m 
-cd Lift2/
-vim stiffness2.m 
-ls
-vim getStiffness.
-vim getStiffness.m 
-ls
-vim myfile.mat 
-cat .local/bin/ECN-Remote-Desktop 
-ECN-Connect
-cat .local/bin/ECN-Remote-Desktop 
-xfreerdp /u:ec-nantes\snanthacou2020 /v:PC-B101-06.ec-nantes.fr /f
-ECN-Disconnect 
-clear
-ECN-QuickStart 
-pacman -Ss guacamole
-yay -Ss guacaamole
-ping -c 3 google.com
-yay -Syy
-yay -Ss guacamole
-yay -S guacamole-server
-vim globalStiffness.m 
-raspberry-connect 
-exit
-raspberry-connect 
-raspberry-connect 
-raspberry-connect 
-raspberry-connect 
-raspberry-connect 
-exit
-vim globalStiffness.m 
-raspberry-connect 
-vim stagephoto.py 
-cd testing/
-vim exp_photo.py 
-exit
-vim algorithme_rouge_essai8.py 
-exit
-vim photo_take_v2.py 
-cd ..
-cd testing/
-vim exp_photo.py 
-cd ..
-cd shared/
-vim photo_take_v2.py 
-cd ~
-cd Work/Lift2/
-ls
-vim stiffness.m 
-vim stiffness2.m 
-vim globalStiffness.m 
-ls
-clear
-ls -1
-cd ..
-mkdir Lift3
-cp Lift2/get* Lift3/
-clear
-cd Cable\ Creep/
-ls
-vim stagephoto.py 
-ifconfig -a
-ls /dev/video
-ls /dev/video*
-cd testing/
-ls
-rm client*
-rm server*
-ls
-vim test.py
-vim test.py
-yay -Rns guacamole-server 
-clear
-raspberry-connect 
-raspberry-connect 
-raspberry-connect 
-ECN-Connect 
-raspberry-connect 
-raspberry-connect 
-cd Work/Lift3/
-vim globalStiffnessMatrix.mat 
-vim globalStiffness.m 
-vim globalStiffness.m 
-cd Work/Lift3/
-ls
-octave-cli
-vim Temps.csv 
-cd ..
-cd essai15/
-vim algorithm_rouge_essai15.py 
-cd ..
-cd Overnight\ Comparison/
-ls
-mv algorithm_rouge_essai15.py algorithm_rouge_overnight.py
-vim algorithm_rouge_overnight.py 
-cd ..
-cd shared/
-vim photo_take_v2.py 
-vim algorithm_rouge_essai15.py
-cd ..
-cp essai15/algorithm_rouge_essai15.py Overnight\ Comparison/
-cd Overnight\ Comparison/
-ls
-vim Time.csv
-vim Time.csv
-vim algorithm_rouge_essai15.py 
-ls
-mv Time.csv Temps.csv
-vim algorithm_rouge_essai15.py 
-ls
-vim algorithm_rouge_essai15.py 
-vim algorithm_rouge_essai15.py 
-vim algorithm_rouge_essai15.py 
-cd ..
-cd essai15/
-ls
-vim plots.py
-vim plots.py
-peaclock
-cp plots.py stress.py
-vim stress.py 
-ls
-cd ..
-ls
-cd shared/
-ls
-vim photo_take_v2.py 
-exit
-vim test.groff
-test.ms
-vim test.ms
-rm test.ms 
 rm test.pdf 
-rm testfile 
+vim open.ms 
 clear
-peaclock
-man peaclock
-tldr peaclock
-peaclock -h
-peaclock stopwatch
+vim execute
+chmod +x execute 
+./execute 
+vim execute 
+cp test.ms backup.ms
+sed '/^.so toc.ms/d' backup.ms 
+sed -i '/^.so toc.ms/d' backup.ms 
+vim execute 
+./execute 
+vim execute 
+./execute 
+sed -i '1s/^/.so toc.ms\\n/' backup.ms
+sed -i '1s/^/.so toc.ms\n/' backup.ms
+vim execute 
+./execute 
+sed '/^.so open.ms/a\n.so toc.ms\n/' backup.ms 
+sed '/^.so open.ms/a \n.so toc.ms\n/' backup.ms 
+sed '/^.so open.ms/a .so toc.ms\n/' backup.ms 
+sed -i '/^.so open.ms/a .so toc.ms\n/' backup.ms 
 clear
-peaclock -h
-peaclock stopwatch start
-peaclock
-clear
-raspberry-connect 
-raspberry-connect 
-raspberry-connect 
-mv algorithm_rouge_essai15.py algorithm_rouge_essai16.py
-vim algorithm_rouge_essai16.py 
-cat pidinfo 
-cd Elasticity/
-ls
-cp filesnames Temps.csv
-vim Temps.csv 
-clear
-vim algorithm_rouge_essai16.py 
-cd ..
-cd ..
-cp essai15/plots.py essai16/Elasticity/
-cd essai16/Elasticity/
-ls
-vim plots.py 
-vim Millimeter_vals 
-vim plots.py 
- cd '/home/sudarson/Work/Cable Creep/shared'
- clear
-mkdir testimages
- cd /
- cd '/home/sudarson/Work/Cable Creep/shared/testimages'
-mkdir logs
- cd /
- cd /home/sudarson/Downloads
-convert Signature_BW.jpg Signature_BW.pdf
- cd '/home/sudarson/Work/Cable Creep/essai15'
- cd /
- cd '/home/sudarson/Work/Cable Creep/essai16/Elasticity'
-clear
-ls *
-ls * >> filesnames
-cat filesnames 
-clear
-cd ..
-cp algorithm_rouge_essai16.py Elasticity/
-cd Elasticity/
- cd /
-cat /etc/bash_completion.d/gmsh 
-cp Work/Cable\ Creep/shared/photo_take_v2.py .local/bin/
-chmod +x .local/bin/photo_take_v2.py 
-rm .local/bin/photo_take_v2.py 
-cp Work/Cable\ Creep/shared/bin/cable-experiment .local/bin/
-cable-experiment 
-clear
-cat /etc/bash_completion.d/gmsh 
-sudo cp /etc/bash_completion.d/gmsh /etc/bash_completion.d/cable-experiment
-sudo vim /etc/bash_completion.d/cable-experiment 
-sudo rm /etc/bash_completion.d/cable-experiment 
-vim .bashrc
-sudo vim /etc/bash_completion.d/cable-auto
-sudo vim /etc/bash_completion.d/cable-auto
-sudo vim /etc/bash_completion.d/cable-auto
-ls -r
-ls -R
-clear
-ls Work/Cable\ Creep/
-ls -r Work/Cable\ Creep/
-echo Work/Cable\ Creep/*/
-ls Work/Cable\ Creep/*/
-ls -d Work/Cable\ Creep/*/
-ls -d Cable\ Creep/*/
-ls -d Work/Cable\ Creep/*/ | cut -f1 -d'/'
-ls -d Work/Cable\ Creep/*/ | cut -f2 -d'/'
-ls -d Work/Cable\ Creep/*/ | cut -f3 -d'/'
-ls -d /home/sudarson/Work/Cable\ Creep/*/ | cut -f3 -d'/'
-ls -d /home/sudarson/Work/Cable\ Creep/*/ | cut -f5 -d'/'
-ls -d /home/sudarson/Work/Cable\ Creep/*/ | cut -f6 -d'/'
+vim macros.ms
+vim open.ms 
+cp open.ms write.ms
+vim write.ms 
+vim open.ms 
+vim execute 
+vim open.
+vim open.ms 
+cp test.ms  backup.ms 
+cat execute 
+sed '/^.de toc-here/.so oldtoc.ms' backup.ms 
+sed '/^.ds toc-here/\.so oldtoc.ms' backup.ms 
+sed '/^.ds toc-here/.so oldtoc.ms/' backup.ms 
+sed 's/^.ds toc-here/.so oldtoc.ms/' backup.ms 
+vim execute 
+./execute 
+vim backup.ms 
+vim execute 
+./execute 
+vim execute 
+./execute 
+vim newfigures.ms 
+cd ~
 cd .local/bin/
 ls
-cp ECN-Connect ls-test
-vim ls-test 
-ls-test 
-vim ls-test 
-sudo vim /etc/bash_completion.d/cable-auto
-sudo vim /etc/bash_completion.d/cable-auto
-cat .local/bin/cable-experiment 
-q
-clear
-cable-experiment --signal-info essai12 
-cable-experiment --signal-info essai11
-cable-experiment --list
-clear
-vim plots.py 
-sudo vim /etc/bash_completion.d/cable-auto
-cp /etc/bash_completion.d/cable-auto Work/Cable\ Creep/shared/
-ls Work/Cable\ Creep/shared/
-clear
-raspberry-connect 
-cd Work/Lift4/
-vim matrix_image.m
-cd Work/Lift4/
-octave-cli
-cd Work/Cable\ Creep/
-cp -r Lift3/ Lift4
-cd ..
-ls
-cp -r Lift3/ Lift4
-cd Lift4/
-cleac
-clear
-vim globalStiffness.m 
-vim globalStiffness.m 
-cd ..
-cd Lift3/
-ls
-vim globalStiffness.m 
-cd ..
-cd Lift4/
-vim globalStiffness.m 
-cd Downloads/
-ls
-ls *pdf
-clear
-ls -tr *pdf
-pdfjam pdfjam RLV_CHQ_300040018600002613634_20210806.pdf Releve_de_compte_cheques_-_6_mois.pdf -o Releve_de_compte_cheques_-_7_mois.pdf
-pdfjam RLV_CHQ_300040018600002613634_20210806.pdf Releve_de_compte_cheques_-_6_mois.pdf -o Releve_de_compte_cheques_-_7_mois.pdf
-pacman -Ss midiori
-pacman -Ss midori
-sudo pacman -S midori
-clear
-pacman -S inox
-pacman -Ss inox
-yay -Ss inox
-yay -Syy
-clear
-yay -Ss inox
-yay -Ss iridium
-yay -Ss ungoogled
-yay -Ss chromium
-clear
-yay -Ss chromium
-pacman -Ss firefox
-clear
-yay -Ss firefox
-clear
-yay -Ss iridium
-yay -Ss ungoogle
-yay -Ss iridium-rpm
-yay -S iridium-rpm
-yay -Rns iridium-rpm 
-sudo pacman -Rns midoru
-sudo pacman -Rns midori
-clear
+vim compiler 
 cd ~
-cd Work/Lift4/
+cd Test/newgroff/
+./execute 
+./execute 
+./execute 
+./execute 
+./execute 
+./execute 
+./execute 
+./execute 
+./execute
+./execute
+vim open.ms 
+./execute 
+vim open.ms 
+cp execute groff-toc
+vim groff-toc 
+vim groff-toc 
+./groff-toc backup.ms 
+vim groff-toc 
+./groff-toc backup.ms 
+./groff-toc backup.pdf 
+./groff-toc test.pdf 
+vim groff-toc 
+./groff-toc test.pdf 
+./groff-toc test.ms 
+vim groff-toc 
+./groff-toc test.ms 
+./groff-toc test.pdf 
+vim groff-toc 
+./groff-toc test.pdf 
+./groff-toc test.ms 
+vim groff-toc 
+./groff-toc test.ms 
+vim groff-toc 
+./groff-toc test.ms 
+vim groff-toc 
+./groff-toc test.pdf 
+./groff-toc test.ms 
+vim groff-toc 
+vim close.ms 
+mv groff-toc groff-lists
+cp groff-lists ~/.local/bin/
+mv groff-lists groff-toc
+vim groff-toc 
+vim test.ms 
+cd .
+cd ..
+cp -r newgroff newgroff-backup
 ls
-vim globalStiffnessMatrix.mat 
-sudo reboot
-sudo vim /etc/lightdm/lightdm.conf 
-sudo reboot
-peaclock 
-bashtop
-raspberry-send /etc/bash_completion.d/cable-auto 
-cat /etc/bash_completion.d/cable-auto 
-raspberry-connect 
-raspberry-connect 
-raspberry-connect 
+ls newgroff-backup/
+cd newgroff
 clear
-cd Work/Cable\ Creep/
 ls
-cd essai16/
-ls
+vim test.ms 
+vim title.ms
+rm title*
+vim open.ms 
+cat Backup/.gitREADME 
+git status
 clear
-vim algorithm_rouge_essai16.py 
-mkdir Test
-cp -r Elasticity/* Test/
+cd .config/groff/
+ls
+vim ms_full_feature_template.ms 
+ls
+vim opening_macros.ms
+ls
+cd ~
 cd Test/
+cp ~/.config/groff/opening_macros.ms .
+cp ~/.config/groff/closing_macros.ms .
+cp ~/.config/groff/ms_full_feature_template.ms .
 ls
-clear
-vim algorithm_rouge_essai16.py 
-cd ..
-vim algorithm_rouge_essai16.py 
-cp Test/algorithm_rouge_essai16.py .
-vim algorithm_rouge_essai16.py 
-exit
-bashtop
-killall feh
-sudo fdisk -l
-sudo umount /dev/sdb1
-nmcli con show
-nmcli con down id Wifi-ECN 
-nmcli con up id Moto\ G5+
-clear
-raspberry-connect 
-clear
-nmcli con show
-nmcli con down id eduroam 
-nmcli con show
-vim .local/bin/hide 
-vim .local/bin/polybar_toggle 
-/home/sudarson/.local/bin/./hide --name 'top_bar' -d top --signal -s 5 &
-cd Work/Cable\ Creep/essai16/Test/
+mkdir newgroff
+cd newgroff/
+cp ~/.config/groff/opening_macros.ms .
+cp ~/.config/groff/ms_full_feature_template.ms .
+cp ~/.config/groff/closing_macros.ms .
 ls
-vim coordinates
-cd ..
+mv opening_macros.ms open.ms
+mv closing_macros.ms close.ms
+mv ms_full_feature_template.ms test.ms
 ls
-rm Millimeter_vals 
-rm Pixel_vals 
-cd Test/
-cd ..
-cd Test2/
+vim test.ms 
 ls
-clear
-vim algorithm_rouge_essai16.py 
-cd ..
-cp Test2/algorithm_rouge_essai16.py .
-vim algorithm_rouge_essai16.py 
-rm Millimeter_vals 
+vim test.ms 
+mv toc.pdf TOC.pdf
+vim test.ms 
+vim test.ms 
+cp test.ms backup.ms 
+vim backup.ms 
+cp toc.ms oldtoc.ms
+vim backup.ms 
+ls
+ls -t
+vim test.ms 
+./execute 
+vim test.ms 
 
-vim algorithm_rouge_essai16.py 
-vim algorithm_rouge_essai16.py 
-vim Millimeter_vals 
-vim algorithm_rouge_essai16.py 
-rm Millimeter_vals 
-rm Pixel_vals 
-vim algorithm_rouge_essai16.py 
-vim Millimeter_vals 
-cp Elasticity/plots.py .
-vim plots.py 
-rm Millimeter_vals 
-rm Pixel_vals 
-vim algorithm_rouge_essai16.py 
-rm Millimeter_vals 
-rm Pixel_vals 
-vim algorithm_rouge_essai16.py 
-peaclock 
-cat .config/bspwm/
-cat .config/bspwm/bspwmrc 
-xdo lower -N Polybar
-xdo lower -N Polybar
-nmcli con show
-nmcli con up id Moto\ G5+
-nmcli con up id Moto\ G5+
-nmcli con show
+vim test.ms 
+./execute 
+vim test.ms 
+./execute 
+vim test.ms 
+./execute 
+vim test.ms 
+./execute 
+vim test.ms 
+./execute 
+vim test.ms 
+./execute 
+vim test.ms 
+./execute 
+vim test.ms 
+./execute 
+vim test.ms 
+./execute 
+vim test.ms 
+./execute 
+vim test.ms 
+./execute 
+vim test.ms 
+./execute 
+vim ~/.local/bin/compiler 
+ls
 clear
-raspberry-connect 
-nmcli con show
-raspberry-connect 
-nmcli con show
-peaclock 
+vim ~/.local/bin/compiler 
+./groff-toc backup.ms 
+./groff-toc backup.ms 
+./groff-toc backup.ms 
+./groff-toc backup.ms 
+./groff-toc backup.ms 
+./groff-toc backup.ms 
+./groff-toc backup.ms 
+./groff-toc backup.ms
+./groff-toc backup.ms
+./groff-toc backup.ms
 clear
-peaclock 
-raspberry-connect 
+./groff-toc backup.ms
+ls -a
+ls -a1
+ls -t
+cat newtoc.ms 
+clear
+./groff-toc backup.ms
+ls -t
+./groff-toc backup.ms
+vim test.ms 
+./groff-toc test.ms 
+./groff-toc test.ms 
+ls
+ls -t
+clear
+vim test-new.ms 
+./groff-toc test.ms 
+./groff-toc test.ms 
+./groff-toc test.ms 
+./groff-toc test.ms 
+./groff-toc test.ms 
+vim test-new.ms 
+./groff-toc test.ms 
+vim test-new.ms 
+./groff-toc test.ms 
+vim test-new.ms 
+vim test.ms 
+./groff-toc test.ms 
+vim test.ms 
+ls
+clear
+ls -t
+vim open.
+vim open.ms 
+if [ -f "temp" ]; then echo dir exists; fi
+mkdir temp
+if [ -f "temp" ]; then echo dir exists; fi
+if [ -F "temp" ]; then echo dir exists; fi
+if [ -f "temp/" ]; then echo dir exists; fi
+if [ -d "temp" ]; then echo dir exists; fi
+clear
+vim open.ms 
+if [ -d "temp" ]; then echo dir exists; el; echo DOES NOT EXISTS; fi
+if [ -d "temp" ]; then echo dir exists; else; echo DOES NOT EXISTS; fi
+if [ -d "temp" ]; then echo dir exists; else echo DOES NOT EXISTS; fi
+if [ -d "temp" ]; then echo dir exists; else mkdir temp; fi
+rm -r temp/
+if [ -d "temp" ]; then echo dir exists; else mkdir temp; fi
+vim open.ms 
+vim test.ms 
+ls
+ls lists/
+rm TOC.pdf 
+rm new*
+ls
+rm oldtoc.ms 
+clear
+ls
+rm equations.ms 
+rm tables.ms figures.ms toc.*
+ls
+rm backup*
+ls
+rm open.pdf 
+ls
+clear
+./groff-toc test.ms 
+ls
+ls lists/
+clear
+rm -r temp/
+ls
+ls -t
+ls lists/
+./groff-toc test.ms 
+ls lists/
+ls
+./groff-toc test.ms 
+ls lists/
+vim test-new.ms 
+vim ~/.local/bin/compiler 
+./groff-toc test.ms 
+vim ~/.local/bin/compiler 
+vim open.ms 
+vim lists/newequations.ms 
+vim lists/newequations.ms 
+vim open.ms 
+vim open.ms 
+vim test.ms 
+vim test.ms 
+cd ..
+cp -r newgroff newgroff-backup2
+cd newgroff-backup2/
+vim test.ms 
+cd ..
+cd newgroff
+ls
+rm open-new.ms 
+clear
+vim test.ms 
+groff -Tpdf -Kutf8 -U -tepR -mspdf test-new.ms > test-new.pdf
+groff -Tpdf -Kutf8 -U -tepR -mspdf test.ms > test-new.pdf
+groff -Tpdf -Kutf8 -U -tepR -mspdf test-new.ms > test-new.pdf
+vim test.ms 
+groff -Tpdf -Kutf8 -U -tepR -mspdf test-new.ms > test-new.pdf 
+vim test.ms 
+launch_redshift 
 cd Work/Cable\ Creep/
-mkdir Tools
-mv essai16/cableFunctions.py Tools/
-cd Tools/
-vim cableFunctions.py 
+ls
+vim ~/.local/bin/cable-experiment 
+exit
+man vim
+vim .local/bin/cable-experiment 
+cable-experiment -h
+vim .local/bin/cable-experiment 
+vim .local/bin/compiler 
+clear
+cd /home/sudarson/Work/OPTIM
+clear
+vim Sudarson_CV_English.ms 
+cd /usr/share/groff/current/tmac/
+ls
+grep -r B1
+vim m.tmac 
+vim s.tmac 
+sudo pacman -Syyu
+sudo rebooot
+sudo reboot
+vim .local/bin/compiler 
+vim .local/bin/opout 
+vim .local/bin/compiler 
+ls
+vim test.ms 
+clear
+vim boxtest.mm
+groff -mm boxtest.mm 
+groff -mm -Tpdf boxtest.mm > boxtest.pdf
+clear
+vim boxtest.mm
+vim test.ms 
+cd /usr/share/groff/current/tmac/
+vim s.tmac 
+grep -r ev
+grep -r ".de @"
+grep -r ".de ev"
+grep -r ".de @ev"
+vim s.tmac 
+raspberry-connect 
+exit
+ cd /home/sudarson
+ clear
+ cd /
+ cd /home/sudarson
+ cd /home/sudarson/Downloads
+ cd /home/sudarson/Work/OPTIM
+ cd /home/sudarson/Test/newgroff
+ cd /home/sudarson/Documents/Passport
+ cd /home/sudarson/Documents/Jobs
+ cd /home/sudarson/Pictures
+ cd /home/sudarson/Test/newgroff
+ cd /
+vim plots.py 
+cd Test/newgroff
+ls
+cp code linecode
+nl -w2 -s' ' linecode 
+cat -n linecode 
+cat -n code > linecode
+vim linecode 
+vim code
+cat -n code > linecode
+clear
+vim boxcode
+vim boxcode
+chmod +x boxcode 
+ls
+./boxcode strings
+vim boxcode
+./boxcode strings
+vim boxcode 
+
+vim boxcode
+./boxcode linecode 10
+vim boxcode
+./boxcode linecode 10
+clear
+./boxcode linecode 50
+./boxcode linecode 70
+clear
+cp linecode linecode.bak
+vim boxcode
+./boxcode linecode 50
+sed -i -e "1,43d" linecode
+cat linecode
+cp linecode.bak linecode
+cat linecode
+clear
+vim boxcode
+./boxcode linecode 50
+cat linecode
+clear
+vim box
+vim boxcode 
+./boxcode linecode 50
+vim boxcode 
+./boxcode linecode 50
+vim boxcode 
+./boxcode linecode 50
+vim boxcode 
+./boxcode linecode 50
+cat linecode
+cp linecode.bak linecode
+clear
+cat linecode
+ls
+cp linecode.bak linecode
+cat linecode
+clear
+cat linecode
+cp linecode.bak linecode
+./boxcode linecode 43
+cat linecode
+cp linecode.bak linecode
+cp linecode.bak linecode
+cat linecode
+cp linecode.bak linecode
+./boxcode linecode
+cat linecode
+clear
+./boxcode linecode 10
+cat linecode
+cat linecode
+cat linecode
+clear
+cp linecode.bak linecode
+cp linecode.bak linecode
+head -10 linecode 
+vim boxcode 
+mv boxcode popcode
+cp popcode headcode
+vim headcode 
+./headcode linecode 10
+clear
+vim headcode 
+vim headcode 
+./headcode linecode 10
+cat temp 
+clear
+ls
+cp linecode.bak linecode
+cat temp 
+cp linecode.bak linecode
+clear
+cat linecode
+cp linecode.bak linecode
+cp linecode.bak linecode
+cp linecode.bak linecode
+cp linecode.bak linecode
+cp linecode.bak linecode
+cp linecode.bak linecode
+cp linecode.bak linecode
+cp linecode.bak linecode
+cp linecode.bak linecode
+cp linecode.bak linecode
+cp linecode.bak linecode
+cp linecode.bak linecode
+cp linecode.bak linecode
+cp linecode.bak linecode
+cp linecode.bak linecode
+cp linecode.bak linecode
+cp linecode.bak linecode
+cp linecode.bak linecode
+cp linecode.bak linecode
+cp linecode.bak linecode
+cp linecode.bak linecode
+vim linecode
+cp linecode.bak linecode
+vim linecode
+cp linecode.bak linecode
+cp linecode.bak linecode
+vim linecode.bak 
+cp linecode.bak linecode
+vim linecode.bak 
+cp linecode.bak linecode
+vim linecode.bak 
+cp linecode.bak linecode
+cp linecode.bak linecode
+vim linecode.bak 
+clear
+vim popcode 
+cp linecode.bak linecode
+vim linecode
+cp linecode.bak linecode
+vim linecode
+cp linecode blah
+ls
+vim .local/bin/compiler 
+vim .local/bin/groff-lists 
+youtube-dl -F https://www.youtube.com/watch?v=RmRpmxOIgNk
+youtube-dl -F https://www.youtube.com/watch?v=iILYeylyywg&list=WL&index=8
+youtube-dl -f 140 https://www.youtube.com/watch?v=iILYeylyywg&list=WL&index=8
+exit
+youtube-dl -h
+youtube-dl -F https://www.youtube.com/watch?v=GwsH94OGwwU&list=WL&index=20
+youtube-dl -f 22 https://www.youtube.com/watch?v=GwsH94OGwwU&list=WL&index=20
+clear
+clear
+exit
+cd /usr/share/groff/current/tmac/
+grep -r chop
+vim om.tmac 
+exit
+sed -h
