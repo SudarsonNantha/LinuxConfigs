@@ -1,0 +1,3 @@
+#!/bin/bash
+
+rofi -i -show drun -theme customrofi

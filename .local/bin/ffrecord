@@ -1,0 +1,23 @@
+#!/bin/bash
+
+NAMEARG=$1
+DATEARG=$(date +"%Y-%m-%d")
+
+#NAME="/home/sudarson/Study/temp.mp4"
+NAME="/home/sudarson/Study/${NAMEARG}_${DATEARG}.mp4"
+
+
+echo "Running screen capture command for $NAMEARG..."
+echo
+#ffmpeg -fflags +igndts -f x11grab -video_size 1920x1080 -framerate 25 -i $DISPLAY -f alsa -i default -c:v libx265 -preset ultrafast -c:a aac $(date +"%Y_%m_%d")_out.mp4
+
+ffmpeg -fflags +igndts -f x11grab -video_size 1920x1080 -framerate 25 -i $DISPLAY -f alsa -i default -c:v libx265 -crf 28 -preset veryfast -c:a aac $NAME
+
+
+SIZE=$(du -sh $NAME | cut -f1)
+
+echo
+echo "Closing Screencapture..."
+echo
+echo "File size is $SIZE"
+echo "Recording saved to $NAME"

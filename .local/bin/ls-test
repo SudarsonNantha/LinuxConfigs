@@ -1,0 +1,5 @@
+#!/bin/bash
+
+p=$(ls -d /home/sudarson/Work/Cable\ Creep/*/ | cut -f6 -d'/')
+
+echo $p

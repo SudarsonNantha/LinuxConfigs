@@ -1,0 +1,3 @@
+#!/bin/bash
+
+prime-run java -jar /usr/lib/tlauncher/tlauncher.jar

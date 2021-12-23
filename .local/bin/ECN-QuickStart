@@ -1,0 +1,5 @@
+#!/bin/bash
+
+nmcli con up id vpn.ec-nantes.fr
+xfreerdp /u:snanthacou2020 /v:PC-B101-05.ec-nantes.fr /f
+

@@ -1,0 +1,4 @@
+#!/bin/bash
+
+#xfreerdp /u:snanthacou2020 /v:PC-B101-05.ec-nantes.fr /f
+xfreerdp /u:ec-nantes\snanthacou2020 /v:PC-B101-05.ec-nantes.fr /f

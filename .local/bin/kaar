@@ -1,0 +1,11 @@
+#!/bin/bash
+
+for file in $(find ./ -name '*.PNG'); do
+  new="$(echo "$file" | sed 's/X/Y/g')"
+  mv -iv "$file" "$new"
+done
+
+for file in $(find ./ -name '*.PNG'); do
+  new="$(echo "$file" | sed 's/Y45/X-45/g')"
+  mv -iv "$file" "$new"
+done

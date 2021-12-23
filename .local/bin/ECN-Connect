@@ -1,0 +1,5 @@
+#!/bin/bash
+
+clear
+nmcli con up id vpn.ec-nantes.fr
+nmcli con show

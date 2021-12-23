@@ -1,0 +1,3 @@
+#!/bin/bash
+
+bspwm -c /home/sudarson/.config/bspwm/bspwmrc

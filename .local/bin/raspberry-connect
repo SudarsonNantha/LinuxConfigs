@@ -1,0 +1,5 @@
+#!/bin/bash
+
+#avahi-resolve-host-name raspberrypi.local
+#ssh -X pi@fe80::45bb:fe0a:a7bb:5d5e%enp3s0
+ssh -X pi@fe80::86f1:6722:3c4a:3867%wlan0

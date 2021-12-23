@@ -1,0 +1,101 @@
+#!/bin/sh
+
+#
+# Read filename and gather info about file
+#
+file=$(readlink -f "$1")
+dir=${file%/*}
+base="${file%.*}"
+ext="${file##*.}"
+n="-new"
+newfile="$base$n.$ext"
+listdir="$dir/lists"
+#
+# Process only groff files with .ms extension
+#
+if [[ $ext == "ms" ]]
+then
+  printf "Identified groff-ms file...\n"
+else
+  printf "\nPlease use a groff file with .ms extension"
+  printf "\nExiting script...\n"
+  exit 0
+fi
+
+#
+# Make a copy of the groff document
+#
+printf "Writing changes to $newfile... \n\n"
+cp $file $newfile
+
+#
+# Checks if user wants images converted to pdf
+#
+if grep -Fxq ".no-image-convert" $file
+then
+    printf "Not converting images.\nRemove .no-image-convert from document to convert images to pdf.\n\n"
+else
+    echo "Converting images to pdf..."
+    awk '/^.newfig .*png$/ {print $2}' $newfile | img2pdf -s
+    awk '/^.newfig .*jpg$/ {print $2}' $newfile | img2pdf -s
+fi
+
+#
+# Replaces image filepath woth pdf filepath
+#
+sed -i 's|.png|.pdf|; s|.jpg|.pdf|' $newfile
+
+if grep -q ".so opening-macros.ms" $file
+then
+    #
+    # Compiles groff document and outputs to null.
+    # This done to produce a new document for toc
+    #   and list of figures, equations, and tables each
+    #
+    printf "\n\033[1mCreating list files...\033[0m\n\n"
+    #groff -Tpdf -Kutf8 -U -tepR -mspdf $file > /dev/null 2>&1
+    groff -Tpdf -Kutf8 -U -tepR -mspdf $newfile > "$base".pdf
+
+    #
+    # Inserts toc and list of figures, equations, and tables
+    #   into the NEW groff document
+    #
+    toc="$listdir/toc.ms"
+    if [ -f "$toc" ]; then
+        newtoc="$listdir/newtoc.ms"
+        cp $toc $newtoc
+        sed -i "s|^.toc|.so $newtoc|" "$newfile"
+    fi
+
+    equations="$listdir/equations.ms"
+    if [ -f "$equations" ]; then
+        newequations="$listdir/newequations.ms"
+        cp $equations $newequations
+        sed -i "s|^.list-of-equations|.so $newequations|" "$newfile"
+    fi
+
+    figures="$listdir/figures.ms"
+    if [ -f "$figures" ]; then
+        newfigures="$listdir/newfigures.ms"
+        cp $figures $newfigures
+        sed -i "s|^.list-of-figures|.so $newfigures|" "$newfile"
+    fi
+
+    tables="$listdir/tables.ms"
+    if [ -f "$tables" ]; then
+        newtables="$listdir/newtables.ms"
+        cp $tables $newtables
+        sed -i "s|^.list-of-tables|.so $newtables|" "$newfile"
+    fi
+else
+    echo NOT FOUND
+fi
+#
+# Compiles new groff document with inserted info
+#
+printf "\n\033[1mCompiling final document...\033[0m\n\n"
+groff -Tpdf -Kutf8 -U -tepR -mspdf $newfile > "$base".pdf
+
+#
+#
+#

@@ -1,0 +1,157 @@
+#!/bin/bash
+
+usage(){
+	echo -e "\nUsages:\n\033[1mcable-experiment [experiment signal]\033[0m"
+	echo -e "\tOptions:\t--list\t\tlists running experiment if any"
+	echo -e "\t\t\t--monitor\tmonitors experiment resource usage with top"
+	echo -e "\n\033[1mcable-experiment [experiment signal] [experiment name]\033[0m"
+	echo -e "\tOptions:\t--start\t\tstarts an experiment"
+	echo -e "\t\t\t--restart\trestarts experiment"
+	echo -e "\t\t\t--log\t\tprints out experiment log"
+	echo -e "\t\t\t--signal-info\tgets information from signal file"
+	echo -e "\t\t\t--last-image\tdisplays the last image taken in experiment through feh"
+	echo -e "\t\t\t--show\t\tdisplays files in experiment directory"
+	echo -e "\t\t\t--end\t\tends experiment"
+	echo -e "\n\033[1mcable-experiment [experiment signal] [experiment name] [additional argument]\033[0m"
+	echo -e "\tOptions:\t--show-image\tshows an image from the experiment, takes image number as additional argument"
+}
+
+signal=$1
+experiment=$2
+option=$3
+restartSignal=1
+infoSignal=2
+exitSignal=-1
+pid=$(ps aux | grep -v "grep" | grep python3 | awk '{print $2}')
+
+if [ $# -eq 1 ]; then
+
+	case $signal in
+
+		"--monitor")
+			if [ -z "$pid" ]; then
+				echo -e "\nNo experiment currently running\n"
+			else
+				top -p $pid
+			fi
+			;;
+
+		"--list")
+			exp=$(ps aux | grep -v "grep" | grep python3 | awk '{print $13}')
+			if [ -z "$exp" ]; then
+				echo -e "\nNo experiment currently running\n"
+			else
+				dir="/home/sudarson/Test/cable/$exp/"
+				pidfile=$dir/pidinfo
+				echo -e "\nRunning experiment $exp"
+				echo -e "Files can be found at $dir\n"
+				timeElapsed=$(ps -p $pid -o etime | tail -1 | awk '{print $1}')
+				ps -eo pid,lstart,etime,cmd | grep -v "grep" | grep $pid | awk '{print "PID: \t\t"$1"\nStart time: \t"$2" "$3" "$4" "$5" "$6"\nTime Elapsed: \t"$7"\nCommand:\t"$8" "$9" "$10}' > $pidfile
+				cat $pidfile
+			fi
+			;;
+
+		*)
+			usage
+			;;
+
+		esac
+
+elif [ $# -eq 2 ] || [ $# -eq 3 ]; then
+
+	#dir=/home/pi/images/$experiment
+	#logdir="/home/pi/images/$experiment/logs"
+	dir="/home/sudarson/Test/cable/$experiment"
+	logdir="$dir/logs"
+	signalfile=$dir/signal_file
+	pidfile=$dir/pidinfo
+
+	if [ -d $dir ]; then
+		lastSignal=$(tail -1 $signalfile)
+		logfile="$(ls -t $logdir | head -1)"
+	else
+		if [ $signal != "--start" ]; then
+			echo -e "\nExperiment does not exist.\nPlease start this experiment first.\n"
+			exit 0
+		fi
+	fi
+
+	case $signal in
+		"--start")
+			if [ -d $dir ]
+			then
+				ls -tr $dir
+				echo "Error:Directory $dir exists"
+				echo "Please delete directory before starting the experiment"
+				echo "Aborting..."
+				exit 0
+
+			else
+				echo "Directory $dir does not exist"
+				echo "Creating experiment directory..."
+				mkdir $dir
+				mkdir $logdir
+			fi
+
+			python3 /home/sudarson/Test/cable/photo_take_v2.py $experiment &
+			sleep 1
+			touch $dir/cpu_loads
+			cpuload-python $dir/cpu_loads &
+			ps aux | grep -v "grep" | grep python3 | awk '{print "PID:\t\t"$2"\nStart Time:\t"$9"\nCommand:\t"$11" "$12" "$13}' > $pidfile
+			;;
+
+		"--restart")
+			echo $(date "+%Y/%m/%d %H:%M:%S") >> $signalfile
+			echo $restartSignal >> $signalfile
+			;;
+
+		"--log")
+			echo $(date "+%Y/%m/%d %H:%M:%S") >> $signalfile
+			echo $infoSignal >> $signalfile
+			cat $logdir/"$logfile"
+			echo
+			;;
+
+		"--signal-info")
+			cat $signalfile
+			;;
+
+		"--show")
+			ls -tr $dir
+			echo -e "\nFiles can be found at $dir"
+			cat $pidfile
+			echo
+			;;
+
+		"--last-image")
+			image=$(ls -tr $dir | grep ".*\.png$" | tail -1)
+			feh $dir/$image
+			;;
+
+		"--show-image")
+			image=$(ls -tr $dir | grep ".*\.png$" | grep $3)
+			feh $dir/$image
+			;;
+		"--end")
+			read -p "Are you sure you want to end the experiment? [Y/n]" -r
+			echo    # (optional) move to a new line
+			if [[ $REPLY =~ ^[Yy]$ ]]
+			then
+			    echo $(date "+%Y/%m/%d %H:%M:%S") >> $signalfile
+			    echo $exitSignal >> $signalfile
+			fi
+
+			echo "The script may take some time to finish running. Please be patient and observe top."
+			cat $logdir/"$logfile"
+			echo
+			;;
+
+		*)
+			usage
+			;;
+		esac
+
+else
+	usage
+fi
+
