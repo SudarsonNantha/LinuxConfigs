@@ -1,0 +1,130 @@
+\&\m[comment]#!/bin/sh\m[]
+\&\m[comment]# This script will compile or run another finishing operation on a docume    nt. I\m[]
+\&\m[comment]# have this script run via vim.\m[]
+\&\m[comment]#\m[]
+\&\m[comment]# Compiles .tex. groff (.mom, .ms), .rmd, .md.  Opens .sent files as sent\m[]
+\&\m[comment]# presentations.  Runs scripts based on extention or shebang\m[]
+\&\m[comment]#\m[]
+\&\m[comment]# Note that .tex files which you wish to compile with XeLaTeX should have     the\m[]
+\&\m[comment]# string "xelatex" somewhere in a comment/command in the first 5 lines.\m[]
+\&
+\&file=$(readlink -f "$1")
+\&dir=${file%/*}
+\&base="${file%.*}"
+\&ext="${file##*.}"
+\&
+\&clear
+\&
+\&cd "$dir" || exit
+\&
+\&\m[red]textype()\m[] {
+\&    command="pdflatex"
+\&    ( sed 5q "$file" | grep -i -q 'xelatex' ) && command="xelatex"
+\&    $command --output-directory="$dir" "$base" &&
+\&    grep -i addbibresource "$file" >/dev/null &&
+\&    biber --input-directory "$dir" "$base" &&
+\&    $command --output-directory="$dir" "$base" &&
+\&    $command --output-directory="$dir" "$base"
+\&}
+\&
+\&file=$(readlink -f "$1")
+\&dir=${file%/*}
+\&base="${file%.*}"
+\&ext="${file##*.}"
+\&
+\&clear
+\&
+\&cd "$dir" || exit
+\&
+\&\m[red]textype()\m[] {
+\&    command="pdflatex"
+\&    ( sed 5q "$file" | grep -i -q 'xelatex' ) && command="xelatex"
+\&    $command --output-directory="$dir" "$base" &&
+\&    grep -i addbibresource "$file" >/dev/null &&
+\&    biber --input-directory "$dir" "$base" &&
+\&    $command --output-directory="$dir" "$base" &&
+\&    $command --output-directory="$dir" "$base"
+\&}
+\&file=$(readlink -f "$1")
+\&dir=${file%/*}
+\&base="${file%.*}"
+\&ext="${file##*.}"
+\&
+\&clear
+\&
+\&cd "$dir" || exit
+\&
+\&\m[red]textype()\m[] {
+\&    command="pdflatex"
+\&    ( sed 5q "$file" | grep -i -q 'xelatex' ) && command="xelatex"
+\&    $command --output-directory="$dir" "$base" &&
+\&    grep -i addbibresource "$file" >/dev/null &&
+\&    biber --input-directory "$dir" "$base" &&
+\&    $command --output-directory="$dir" "$base" &&
+\&    $command --output-directory="$dir" "$base"
+\&}
+\&\m[comment]#!/bin/sh\m[]
+\&\m[comment]# This script will compile or run another finishing operation on a docume    nt. I\m[]
+\&\m[comment]# have this script run via vim.\m[]
+\&\m[comment]#\m[]
+\&\m[comment]# Compiles .tex. groff (.mom, .ms), .rmd, .md.  Opens .sent files as sent\m[]
+\&\m[comment]# presentations.  Runs scripts based on extention or shebang\m[]
+\&\m[comment]#\m[]
+\&\m[comment]# Note that .tex files which you wish to compile with XeLaTeX should have     the\m[]
+\&\m[comment]# string "xelatex" somewhere in a comment/command in the first 5 lines.\m[]
+\&
+\&file=$(readlink -f "$1")
+\&dir=${file%/*}
+\&base="${file%.*}"
+\&ext="${file##*.}"
+\&
+\&clear
+\&
+\&cd "$dir" || exit
+\&
+\&\m[red]textype()\m[] {
+\&    command="pdflatex"
+\&    ( sed 5q "$file" | grep -i -q 'xelatex' ) && command="xelatex"
+\&    $command --output-directory="$dir" "$base" &&
+\&    grep -i addbibresource "$file" >/dev/null &&
+\&    biber --input-directory "$dir" "$base" &&
+\&    $command --output-directory="$dir" "$base" &&
+\&    $command --output-directory="$dir" "$base"
+\&}
+\&
+\&file=$(readlink -f "$1")
+\&dir=${file%/*}
+\&base="${file%.*}"
+\&ext="${file##*.}"
+\&
+\&clear
+\&
+\&cd "$dir" || exit
+\&
+\&\m[red]textype()\m[] {
+\&    command="pdflatex"
+\&    ( sed 5q "$file" | grep -i -q 'xelatex' ) && command="xelatex"
+\&    $command --output-directory="$dir" "$base" &&
+\&    grep -i addbibresource "$file" >/dev/null &&
+\&    biber --input-directory "$dir" "$base" &&
+\&    $command --output-directory="$dir" "$base" &&
+\&    $command --output-directory="$dir" "$base"
+\&}
+\&file=$(readlink -f "$1")
+\&dir=${file%/*}
+\&base="${file%.*}"
+\&ext="${file##*.}"
+\&
+\&clear
+\&
+\&cd "$dir" || exit
+\&
+\&\m[red]textype()\m[] {
+\&    command="pdflatex"
+\&    ( sed 5q "$file" | grep -i -q 'xelatex' ) && command="xelatex"
+\&    $command --output-directory="$dir" "$base" &&
+\&    grep -i addbibresource "$file" >/dev/null &&
+\&    biber --input-directory "$dir" "$base" &&
+\&    $command --output-directory="$dir" "$base" &&
+\&    $command --output-directory="$dir" "$base"
+\&}
