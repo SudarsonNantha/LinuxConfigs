@@ -9,7 +9,6 @@ f2py3
 f2py3.9
 swallow
 wheel
-
 nosetests
 nosetests-3.4
 jsonlint
